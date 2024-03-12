@@ -60,7 +60,9 @@ const Footer = () => {
         <div className={styles['attention']}>
           <p className={styles['attention-text']}>Любое копирование материалов сайта допускается только с разрешения правообладателя</p>
         </div>
-        <div className={styles['privacy-policy']}>
+      </div>
+      <div className={styles['privacy-policy']}>
+        <div className={styles['privacy-policy-wrapper']}>
           <div className={styles['privacy-policy-link']}>
             <Link href={'/'}>
               Пользовательское соглашение
