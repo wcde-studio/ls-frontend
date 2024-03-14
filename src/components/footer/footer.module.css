@@ -8,6 +8,7 @@
 .footer-wrapper {
   margin: 0 auto;
   max-width: 1110px;
+  /*width: 92vw;*/
 }
 
 .footer-container {
@@ -61,10 +62,12 @@
 .privacy-policy-wrapper {
   margin: 0 auto;
   max-width: 1110px;
+  /*width: 92vw;*/
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+  grid-template-columns: repeat(auto-fit, minmax(370px, auto));
   align-items: center;
   padding: 26px 0px;
+  /*border: 1px solid red;*/
 }
 
 .privacy-policy-link {
@@ -73,16 +76,19 @@
   font-size: 20px;
   text-decoration: underline;
   text-decoration-skip-ink: none;
-  color: var(--white);}
+  color: var(--white);
+}
 
 .creators{
   display: grid;
   grid-template-columns: min-content auto;
-  column-gap: 20px;
+  column-gap: 32px;
   justify-content: end;
   align-items: center;
 }
-.creators-logo {}
+
+.creators-logo {;
+}
 
 .creators-name {
   font-family: var(--font-family);
@@ -92,3 +98,12 @@
   text-align: right;
   color: var(--white);
 }
+
+@media screen and (max-width: 744px) {
+
+}
+
+@media screen and (max-width: 360px) {
+
+}
+

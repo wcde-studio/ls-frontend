@@ -58,7 +58,7 @@ const Footer = () => {
           </div>
         </div>
         <div className={styles['attention']}>
-          <p className={styles['attention-text']}>Любое копирование материалов сайта допускается только с разрешения правообладателя</p>
+          <p className={styles['attention-text']}>{'Любое копирование материалов сайта допускается только с разрешения правообладателя'}</p>
         </div>
       </div>
       <div className={styles['privacy-policy']}>
