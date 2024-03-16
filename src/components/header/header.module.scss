@@ -30,7 +30,7 @@
 }
 
 .link {
-	padding-right: 40px;
+	margin-right: 40px;
   cursor: pointer;
 
 	&_active {
@@ -39,7 +39,7 @@
 }
 
 .link:last-of-type {
-	padding-right: 165px;
+	margin-right: 165px;
 	display: flex;
 	align-items: center;
 }
