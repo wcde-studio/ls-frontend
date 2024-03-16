@@ -32,10 +32,15 @@
 .link {
 	margin-right: 40px;
   cursor: pointer;
+  transition: transform 0.2s ease-in-out;
 
 	&_active {
 		text-decoration: underline;
 	}
+}
+
+.link:hover {
+  transform: scale(1.1);
 }
 
 .link:last-of-type {
