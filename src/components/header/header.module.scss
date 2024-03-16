@@ -1,8 +1,15 @@
+.headerContainer {
+	width: 100%;
+	background-color: #fdf6f2;
+	display: flex;
+	justify-content: center;
+}
+
 .header {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	background-color: #fdf6f2;
+	width: 100%;
 	min-height: 120px;
 	max-width: 1440px;
 	font-family: 'Roboto', sans-serif;
@@ -20,8 +27,8 @@
 .logoContainer {
 	display: flex;
 	align-items: center;
-	padding-left: 165px;
-  cursor: pointer;
+	margin-left: 165px;
+	cursor: pointer;
 }
 
 .navigation {
@@ -31,8 +38,8 @@
 
 .link {
 	margin-right: 40px;
-  cursor: pointer;
-  transition: transform 0.2s ease-in-out;
+	cursor: pointer;
+	transition: transform 0.2s ease-in-out;
 
 	&_active {
 		text-decoration: underline;
@@ -40,7 +47,7 @@
 }
 
 .link:hover {
-  transform: scale(1.1);
+	transform: scale(1.1);
 }
 
 .link:last-of-type {
