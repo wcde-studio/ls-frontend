@@ -1,11 +1,12 @@
 import React from "react";
 
 import styles from './page.module.css';
-import Accordion from '@/components/accordion/accordion';
+
 import { courses } from '@/lib/courses-data';
 import { TCourse } from '@/lib/definitions';
 
-
+import Accordion from '@/components/accordion/accordion';
+import AccordionContent from '@/components/accordion/accordion-content';
 export default function Home() {
   return (
     <main>
@@ -15,7 +16,7 @@ export default function Home() {
           courses?.map((course: TCourse, index) => {
             return (
               <Accordion title={course.name} key={index}>
-                <div>{course.suitable}</div>
+                <AccordionContent/>
               </Accordion>
             )
           })
