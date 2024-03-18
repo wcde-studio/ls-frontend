@@ -1,0 +1,74 @@
+.headerContainer {
+	width: 100%;
+	background-color: #fdf6f2;
+	display: flex;
+	justify-content: center;
+}
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	min-height: 120px;
+	max-width: 1440px;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 120%;
+	color: #444;
+}
+
+.logoText {
+	max-width: 186px;
+	padding-left: 16px;
+}
+
+.logoContainer {
+	display: flex;
+	align-items: center;
+	margin-left: 165px;
+	cursor: pointer;
+}
+
+.navigation {
+	display: flex;
+	align-items: center;
+}
+
+.link {
+	margin-right: 40px;
+	cursor: pointer;
+	transition: transform 0.2s ease-in-out;
+
+	&_active {
+		text-decoration: underline;
+	}
+}
+
+.link:hover {
+	transform: scale(1.1);
+}
+
+.link:last-of-type {
+	margin-right: 165px;
+	display: flex;
+	align-items: center;
+}
+
+.profileLink {
+}
+
+.iconLogo {
+	width: 48px;
+	height: 48px;
+}
+
+.iconProfile {
+	width: 20px;
+	height: 20px;
+}
+
+.profileLinkText {
+	padding-left: 4px;
+}

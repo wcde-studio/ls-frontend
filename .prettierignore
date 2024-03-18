@@ -1,0 +1,11 @@
+# Ignore artifacts:
+build
+coverage
+storybook-static
+
+# next.js
+/.next/
+/out/
+
+# dependencies
+/node_modules
