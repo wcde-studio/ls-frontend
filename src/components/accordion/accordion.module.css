@@ -1,49 +1,47 @@
 /* Убираем стандартный маркер Chrome */
-.accordion-details .accordion-summary::-webkit-details-marker {
-  display: none
+.accordionDetails .accordionSummary::-webkit-details-marker {
+	display: none;
 }
 /* Убираем стандартный маркер Firefox */
-.accordion-details > .accordion-summary {
-  list-style: none;
+.accordionDetails > .accordionSummary {
+	list-style: none;
 }
 
-.accordion {}
-
-.accordion-details {
-  border-radius: 4px 4px 0px 0px;
-  padding: 16px 16px 16px 20px;
-  background: var(--violet);
+.accordion {
 }
 
-.accordion-summary {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  cursor: pointer;
-
-  background: var(--violet);
-  border-radius: 4px;
-  padding: 0px 0px;
-
-
+.accordionDetails {
+	border-radius: 4px 4px 0px 0px;
+	padding: 16px 16px 16px 20px;
+	background: var(--violet);
 }
 
-.accordion-summary-title {
-  font-family: var(--font-family);
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 125%;
-  color: var(--white);
+.accordionSummary {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	cursor: pointer;
+
+	background: var(--violet);
+	border-radius: 4px;
+	padding: 0px 0px;
 }
 
-.accordion-summary-chevron {}
-
-
-.accordion-details-content {
-  padding: 20px 0px;
+.accordionSummaryTitle {
+	font-family: var(--font-family);
+	font-weight: 700;
+	font-size: 24px;
+	line-height: 125%;
+	color: var(--white);
 }
 
-.accordion-details[open] .accordion-summary-chevron {
-  transform: rotate(180deg);
+.accordionSummaryChevron {
 }
 
+.accordionDetailsContent {
+	padding: 20px 0px;
+}
+
+.accordionDetails[open] .accordionSummaryChevron {
+	transform: rotate(180deg);
+}
