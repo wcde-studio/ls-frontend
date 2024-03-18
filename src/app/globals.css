@@ -1,63 +1,70 @@
 :root {
-  --white: #fff;
-  --beige-bg: #fdf6f2;
-  --brown: #bfb7b3;
-  --dark-beige: #968e8a;
-  --grey: #999;
-  --dark-grey: #444;
-  --black: #000;
-  --violet: #8a85c5;
-  --dark-violet: #6852d9;
-  --blue: #6197ff;
-  --yellow: #ffc754;
-  --orange: #ff4d00;
-  --light-violet: #efeefd;
-  --green: #39a851;
-  --blue-grey: #adbfdf;
-  --blue-grey: #71869d;
-  --ui-color-primary: #6750a3;
-  --blue-grey: #adbfdf;
+	--white: #fff;
+	--beige-bg: #fdf6f2;
+	--brown: #bfb7b3;
+	--dark-beige: #968e8a;
+	--grey: #999;
+	--dark-grey: #444;
+	--black: #000;
+	--violet: #8a85c5;
+	--dark-violet: #6852d9;
+	--blue: #6197ff;
+	--yellow: #ffc754;
+	--orange: #ff4d00;
+	--light-violet: #efeefd;
+	--green: #39a851;
+	--blue-grey: #adbfdf;
+	--blue-grey: #71869d;
+	--ui-color-primary: #6750a3;
+	--blue-grey: #adbfdf;
 }
 
 :root {
-  --font-family: "Roboto", sans-serif;
-  --second-family: "Inter", sans-serif;
-  --third-family: "Montserrat", sans-serif;
-  --font3: "Manrope", sans-serif;
-  --font4: "Miama Nueva", sans-serif;
-  --font5: "Brush Script MT", sans-serif;
-  --font6: "SF Pro Display", sans-serif;
+	--font-family: 'Roboto', sans-serif;
+	--second-family: 'Inter', sans-serif;
+	--third-family: 'Montserrat', sans-serif;
+	--font3: 'Manrope', sans-serif;
+	--font4: 'Miama Nueva', sans-serif;
+	--font5: 'Brush Script MT', sans-serif;
+	--font6: 'SF Pro Display', sans-serif;
 }
 
 :root {
-  --mobile-min-width: 360px;
-  --desctop-max-width: 1440px;
+	--mobile-min-width: 360px;
+	--desctop-max-width: 1440px;
 }
-
 
 /*
  * Reset Styles
  */
 
 a {
-  /*text-decoration: none;*/
-  color: inherit; /* blue colors for links too */
-  text-decoration: inherit;
+	/*text-decoration: none;*/
+	color: inherit; /* blue colors for links too */
+	text-decoration: inherit;
 }
 
 ul {
-  margin: 0px 0px;
-  padding-left: 0px;
+	margin: 0px 0px;
+	padding-left: 0px;
 }
 
 li {
-  list-style-type: none;
+	list-style-type: none;
 }
 
 /* Remove default margin in favour of better control in authored CSS */
-body, h1, h2, h3, h4, p,
-figure, blockquote, dl, dd {
-  margin: 0;
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+	margin: 0;
 }
 
 /*
@@ -65,6 +72,6 @@ figure, blockquote, dl, dd {
  */
 
 body {
-  margin: 0;
-  background: #FFFFFF;
+	margin: 0;
+	background: #ffffff;
 }
