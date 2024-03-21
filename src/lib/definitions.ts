@@ -1,14 +1,14 @@
 export type TPrice = {
-	pay: string;
-	description: Array<string>;
+	pay: string,
+	descriptions: Array<string>,
 };
 
 export type TCourse = {
-	name: string;
-	suitable: string;
-	description: Array<string>;
-	price?: Array<TPrice> | null;
-	note: string;
+	name: string,
+	suitable: string,
+	descriptions: Array<string>,
+	prices?: Array<TPrice> | null,
+	note: string | null,
 };
 
-export type TCourses = Array<TCourse>;
+//export type TCourses = Array<TCourse>;

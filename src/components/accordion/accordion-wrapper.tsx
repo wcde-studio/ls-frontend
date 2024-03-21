@@ -5,10 +5,12 @@ interface IAccordionWrapperProps {
 	children: ReactNode;
 }
 
-const AccordionWrapper: FC<IAccordionWrapper> = ({ children }) => {
+const AccordionWrapper: FC<IAccordionWrapperProps> = ({ children }) => {
 	return (
 		<div className={styles.accordionWrapper}>
-			<div className={styles.accordionContainer}>{children}</div>
+			<div className={styles.accordionContainer}>
+				{children}
+			</div>
 		</div>
 	);
 };

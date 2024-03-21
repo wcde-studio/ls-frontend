@@ -14,10 +14,10 @@ export default function Home() {
 		<>
 			<Header />
 			<AccordionWrapper>
-				{courses?.map((course: TCourse, index) => {
+				{courses?.map((course: TCourse, index: number) => {
 					return (
 						<Accordion title={course.name} key={index}>
-							<AccordionContent />
+							<AccordionContent course={course}/>
 						</Accordion>
 					);
 				})}
