@@ -1,7 +1,8 @@
 import React, { FC, ReactNode } from 'react';
 //import Link from 'next/link';
 import styles from './accordion.module.css';
-import DownChevronIcon from '@/ui/icons/down-chevron-icon';
+import DownChevronIcon from '@/components/ui/icons/down-chevron-icon';
+import Button from '@/components/ui/button/button'
 
 interface IAccordionFormProps {
 	title: string;
@@ -20,6 +21,9 @@ const Accordion: FC<IAccordionFormProps> = ({ title, children }) => {
 				</summary>
 				<div className={styles.accordionDetailsContent}>{children}</div>
 			</details>
+			<Button>
+				Оставить заявку
+			</Button>
 		</div>
 	);
 };

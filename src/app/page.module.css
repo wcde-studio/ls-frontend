@@ -1,9 +1,0 @@
-.page-wrapper {
-	margin: 0 auto;
-	max-width: 1110px;
-}
-.accordion-container {
-	display: flex;
-	flex-direction: column;
-	gap: 4px;
-}

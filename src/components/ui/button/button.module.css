@@ -1,0 +1,168 @@
+.button {
+	border: none;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	border-radius: 4px;
+}
+
+/*.button:active {
+	background: var(--grey);
+}
+*/
+
+.desctop {
+	font-family: var(--font-family);
+	font-weight: 700;
+	font-size: 18px;
+	line-height: 133%;
+	color: var(--dark-grey);
+	padding: 12px 0px;
+}
+
+.title_container {
+	display: grid;
+	grid-template-columns: auto max-content auto;
+	align-items: center;
+	gap: 8px;
+/*	border: 1px solid red;*/
+}
+
+.icon {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 24px;
+	height: 24px;
+}
+
+.left_icon .right_icon {
+}
+
+.left_icon {
+}
+
+.title {
+}
+
+.right_icon {
+}
+
+.button_1, .button_1_plus {
+	color: var(--white);
+	background: var(--violet);
+}
+
+.button_1:hover {
+	background: none;
+	color: var(--violet);
+	border: 2px solid var(--violet);
+}
+
+.button_1:disabled {
+	background: var(--grey);
+	color: var(--dark-grey);
+	border: none;
+}
+
+.button_1_plus {
+	color: var(--white);
+	background: var(--violet);
+}
+
+.button_1_plus:hover {
+	background: none;
+	color: var(--violet);
+	border: 2px solid var(--violet);
+}
+
+.button_1_plus:hover path {
+	stroke: #8A85C5;
+}
+
+.button_1_plus:disabled {
+	background: var(--grey);
+	color: var(--dark-grey);
+	border: none;
+}
+
+.button_1_plus:disabled path {
+	stroke: #444444;
+}
+
+.button_2 {
+	color: var(--dark-grey);
+	background: var(--white);
+}
+
+.button_2:hover {
+	background: var(--beige-bg);
+}
+
+.button_2:disabled {
+	background: var(--grey);
+	color: var(--dark-grey);
+}
+
+.button_3 {
+	color: var(--violet);
+	background: none;
+}
+
+.button_3:hover {
+	border: 2px solid var(--violet);
+}
+
+.button_3:disabled {
+	color: var(--grey);
+	border: none;
+}
+
+.button_4 {
+	color: var(--violet);
+	background: none;
+
+}
+
+.button_4:hover {
+	color: var(--dark-violet);
+}
+
+.button_4:disabled {
+	color: var(--grey);
+}
+.button_4 .icon {
+	width: 40px;
+	height: 40px;
+}
+.button_4 .title_container {
+	gap: 4px;
+}
+
+
+.button_ {
+	color: var(--dark-grey);
+	background: var(--white);
+}
+
+.button_:hover {
+	background: var(--beige-bg);
+}
+
+.button_:disabled {
+}
+
+.button_ {
+	color: var(--dark-grey);
+	background: var(--white);
+}
+
+.button_:hover {
+	background: var(--beige-bg);
+}
+
+.button_:disabled {
+}
+
