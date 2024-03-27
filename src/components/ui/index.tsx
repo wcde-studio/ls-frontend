@@ -7,10 +7,10 @@ import WhatsUpIcon from './icons/whats-up-icon';
 import VKIcon from './icons/vk-icon';
 
 import DownChevronIcon from './icons/down-chevron-icon';
-import PlusIcon from './icons/plus.svg';
-import PreviousIcon from './icons/previous.svg';
-import NextIcon from './icons/next.svg';
-import EditIcon from './icons/edit.svg';
+import PlusIcon from './icons/plus';
+import PreviousIcon from './icons/previous';
+import NextIcon from './icons/next';
+import EditIcon from './icons/edit';
 
 import Button from './button/button';
 

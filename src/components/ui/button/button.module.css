@@ -8,12 +8,25 @@
 	border-radius: 4px;
 }
 
-/*.button:active {
-	background: var(--grey);
-}
-*/
-
 .desctop {
+}
+
+.title_container {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+/*	border: 1px solid green;*/
+}
+
+.left_icon, .right_icon {
+	display: flex;
+	align-items: center;
+/*	border: 1px solid red;*/
+}
+
+.title {
 	font-family: var(--font-family);
 	font-weight: 700;
 	font-size: 18px;
@@ -22,54 +35,47 @@
 	padding: 12px 0px;
 }
 
-.title_container {
-	display: grid;
-	grid-template-columns: auto max-content auto;
-	align-items: center;
-	gap: 8px;
-/*	border: 1px solid red;*/
-}
-
-.icon {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	width: 24px;
-	height: 24px;
-}
-
-.left_icon .right_icon {
-}
-
-.left_icon {
-}
-
-.title {
-}
-
-.right_icon {
-}
-
-.button_1, .button_1_plus {
-	color: var(--white);
+.button_1 {
 	background: var(--violet);
+}
+
+.button_1 .title {
+	color: var(--white);
 }
 
 .button_1:hover {
 	background: none;
-	color: var(--violet);
 	border: 2px solid var(--violet);
 }
 
+.button_1:hover .title {
+	color: var(--violet);
+}
+
+
 .button_1:disabled {
 	background: var(--grey);
-	color: var(--dark-grey);
 	border: none;
 }
 
+.button_1:disabled .title {
+	color: var(--dark-grey);
+}
+
+.button_1 .left_icon {
+	display: none;
+}
+
+.button_1 .right_icon {
+	display: none;
+}
+
 .button_1_plus {
-	color: var(--white);
 	background: var(--violet);
+}
+
+.button_1_plus .title {
+	color: var(--white);
 }
 
 .button_1_plus:hover {
@@ -78,24 +84,42 @@
 	border: 2px solid var(--violet);
 }
 
+.button_1_plus:hover .title {
+	color: var(--violet);
+}
+
+
 .button_1_plus:hover path {
 	stroke: #8A85C5;
 }
 
 .button_1_plus:disabled {
 	background: var(--grey);
-	color: var(--dark-grey);
 	border: none;
+}
+
+.button_1_plus:disabled .title {
+	color: var(--dark-grey);
 }
 
 .button_1_plus:disabled path {
 	stroke: #444444;
 }
 
+.button_1_plus .right_icon {
+	display: none;
+}
+
+
 .button_2 {
 	color: var(--dark-grey);
 	background: var(--white);
 }
+
+.button_2 .title {
+	color: var(--dark-grey);
+}
+
 
 .button_2:hover {
 	background: var(--beige-bg);
@@ -106,9 +130,24 @@
 	color: var(--dark-grey);
 }
 
+.button_2:disabled .title {
+	color: var(--dark-grey);
+}
+
+.button_2 .left_icon {
+	display: none;
+}
+
+.button_2 .right_icon {
+	display: none;
+}
+
 .button_3 {
-	color: var(--violet);
 	background: none;
+}
+
+.button_3 .title {
+	color: var(--violet);
 }
 
 .button_3:hover {
@@ -116,53 +155,120 @@
 }
 
 .button_3:disabled {
-	color: var(--grey);
 	border: none;
 }
 
-.button_4 {
-	color: var(--violet);
-	background: none;
-
+.button_3:disabled .title {
+	color: var(--grey);
 }
 
-.button_4:hover {
+.button_3 .left_icon {
+	display: none;
+}
+
+.button_3 .right_icon {
+	display: none;
+}
+
+.button_4 {
+	background: none;
+}
+
+.button_4 .title {
+	color: var(--violet);
+}
+
+.button_4 path {
+	fill: #8A85C5;
+}
+
+.button_4:hover .title {
 	color: var(--dark-violet);
 }
 
-.button_4:disabled {
+.button_4:hover path {
+	fill: #6852D9;
+}
+
+
+.button_4:disabled .title {
 	color: var(--grey);
 }
-.button_4 .icon {
-	width: 40px;
-	height: 40px;
+
+.button_4:disabled path {
+	fill: #999999;
 }
+
 .button_4 .title_container {
 	gap: 4px;
 }
 
-
-.button_ {
-	color: var(--dark-grey);
-	background: var(--white);
+.button_4 .right_icon {
+	display: none;
 }
 
-.button_:hover {
-	background: var(--beige-bg);
+.button_5 {
+	background: none;
 }
 
-.button_:disabled {
+.button_5 .title {
+	color: var(--violet);
 }
 
-.button_ {
-	color: var(--dark-grey);
-	background: var(--white);
+.button_5 path {
+	fill: #8A85C5;
 }
 
-.button_:hover {
-	background: var(--beige-bg);
+.button_5:hover .title {
+	color: var(--dark-violet);
 }
 
-.button_:disabled {
+.button_5:hover path {
+	fill: #6852D9;
 }
 
+
+.button_5:disabled .title {
+	color: var(--grey);
+}
+
+.button_5:disabled path {
+	fill: #999999;
+}
+
+.button_5 .title_container {
+	gap: 4px;
+}
+
+.button_5 .left_icon {
+	display: none;
+}
+
+.button_6 {
+	font-weight: 400;
+	color: var(--dark-violet);
+	background: none;
+}
+
+.button_6 .title {
+	font-weight: 400;
+	color: var(--dark-violet);
+}
+
+.button_6:hover .title {
+	text-decoration: underline;
+	color: var(--dark-violet);
+}
+
+.button_6:disabled .title {
+	text-decoration: none;
+	color: var(--grey);
+}
+
+.button_6:disabled path {
+	fill: #999999;
+}
+
+.button_6 .right_icon {
+	display: none;
+}

@@ -36,13 +36,13 @@ const Button = (props: IProps) => {
 	return (
 		<button disabled={disabled} className={classNameButton} onClick={onClick}>
 			<div className={styles.title_container}>
-				<div className={clsx(styles.icon, styles.left_icon)}>
+				<div className={styles.left_icon}>
 					{buttonIcons[type]?.left}
 				</div>
 				<div className={styles.title}>
 					{children}
 				</div>
-				<div className={clsx(styles.icon, styles.right_icon)}>
+				<div className={styles.right_icon}>
 					{buttonIcons[type]?.right}
 				</div>
 			</div>
