@@ -1,33 +1,20 @@
-/* Убираем стандартный маркер Chrome */
-.accordionDetails .accordionSummary::-webkit-details-marker {
-	display: none;
-}
-/* Убираем стандартный маркер Firefox */
-.accordionDetails > .accordionSummary {
-	list-style: none;
-}
-
 .accordion {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
 }
 
-.accordionDetails {
-	border-radius: 4px 4px 0px 0px;
-	padding: 16px 16px 16px 20px;
-	background: var(--violet);
-}
-
-.accordionSummary {
+.title {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	cursor: pointer;
-
 	background: var(--violet);
-	border-radius: 4px;
-	padding: 0px 0px;
+	border-radius: 8px;
+	padding: 16px 20px;
 }
 
-.accordionSummaryTitle {
+.titleText {
 	font-family: var(--font-family);
 	font-weight: 700;
 	font-size: 24px;
@@ -35,13 +22,25 @@
 	color: var(--white);
 }
 
-.accordionSummaryChevron {
+.icon {
+	display: flex;
+	justify-content: center;
 }
 
-.accordionDetailsContent {
-	padding: 20px 0px;
+.content {
+	border-radius: 0px 0px 4px 4px;
+	padding: 20px 20px 20px 20px;
+	background: var(--violet);
 }
 
-.accordionDetails[open] .accordionSummaryChevron {
-	transform: rotate(180deg);
+.subtitle {
+	font-family: var(--font-family);
+	font-weight: 700;
+	font-size: 20px;
+	line-height: 120%;
+	color: var(--white);
+}
+.isActive {
+	border-radius: 4px 4px 0px 0px;
+
 }

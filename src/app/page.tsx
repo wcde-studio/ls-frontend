@@ -67,13 +67,11 @@ export default function Home() {
 
 
 			<AccordionWrapper>
-				{courses?.map((course: TCourse, index: number) => {
-					return (
-						<Accordion title={course.name} key={index}>
-							<AccordionContent course={course}/>
-						</Accordion>
-					);
-				})}
+				{
+					courses?.map((course: TCourse)=> 
+						<Accordion course={course} key={course.id} />
+					)
+				}
 			</AccordionWrapper>
 			<Footer />
 		</>

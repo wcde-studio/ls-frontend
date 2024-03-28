@@ -7,6 +7,7 @@ import WhatsUpIcon from './icons/whats-up-icon';
 import VKIcon from './icons/vk-icon';
 
 import DownChevronIcon from './icons/down-chevron-icon';
+import UpChevronIcon from './icons/up-chevron-icon';
 import PlusIcon from './icons/plus';
 import PreviousIcon from './icons/previous';
 import NextIcon from './icons/next';
@@ -22,6 +23,7 @@ export {
 	WhatsUpIcon, 
 	VKIcon, 
 	DownChevronIcon, 
+	UpChevronIcon, 
 	PlusIcon,
 	PreviousIcon,
 	NextIcon,

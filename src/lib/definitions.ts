@@ -1,13 +1,19 @@
-export type TPrice = {
-	pay: string,
-	descriptions: Array<string>,
+export type TProperty ={
+	id: number,
+	text: string
+};
+export type TPriceOfServices = {
+	id: number,
+	price: string,
+	properties: Array<TProperty>,
 };
 
 export type TCourse = {
-	name: string,
-	suitable: string,
-	descriptions: Array<string>,
-	prices?: Array<TPrice> | null,
+	id: number,
+	title: string,
+	subtitle: string,
+	properties: Array<TProperty>,
+	services?: Array<TPriceOfServices> | null,
 	note: string | null,
 };
 

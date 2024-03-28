@@ -1,29 +1,43 @@
-import React, { FC, ReactNode } from 'react';
+'use client';
+
+import React, { useState } from 'react';
+import clsx from 'clsx';
 //import Link from 'next/link';
 import styles from './accordion.module.css';
-import DownChevronIcon from '@/components/ui/icons/down-chevron-icon';
-import Button from '@/components/ui/button/button'
+import { DownChevronIcon, UpChevronIcon } from '@/components/ui';
 
-interface IAccordionFormProps {
-	title: string;
-	children: ReactNode;
+import { TCourse } from '@/lib/definitions';
+
+
+interface IAccordionProps {
+	course: TCourse;
 }
 
-const Accordion: FC<IAccordionFormProps> = ({ title, children }) => {
+const Accordion = (props: IAccordionProps) => {
+
+	const { course } = props;
+
+	const [isActive, setIsActive] = useState(false);
+
+const title = clsx(
+	styles.title,
+	{[styles.isActive]: isActive}
+);
+
 	return (
 		<div className={styles.accordion}>
-			<details className={styles.accordionDetails}>
-				<summary className={styles.accordionSummary}>
-					<p className={styles.accordionSummaryTitle}>{title}</p>
-					<div className={styles.accordionSummaryChevron}>
-						<DownChevronIcon />
-					</div>
-				</summary>
-				<div className={styles.accordionDetailsContent}>{children}</div>
-			</details>
-			<Button>
-				Оставить заявку
-			</Button>
+			<div className={title} onClick={() => setIsActive(!isActive)}>
+				<p className={styles.titleText} >{course?.title}</p>
+				<div className={styles.icon}>
+					{ isActive ? <UpChevronIcon/> : <DownChevronIcon/> }
+				</div>
+			</div>
+			{
+				isActive && 
+				<div className={styles.content}>
+					<p className={styles.subtitle}>{course?.subtitle}</p>
+				</div>
+			}
 		</div>
 	);
 };
