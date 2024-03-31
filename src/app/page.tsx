@@ -6,7 +6,7 @@ import Header from '@/components/header/header';
 import Footer from '@/components/footer/footer';
 
 import Accordion from '@/components/accordion/accordion';
-import AccordionContent from '@/components/accordion/accordion-content';
+//import AccordionContent from '@/components/accordion/accordion-content';
 import AccordionWrapper from '@/components/accordion/accordion-wrapper';
 
 import { courses } from '@/lib/courses-data';

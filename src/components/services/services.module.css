@@ -1,0 +1,33 @@
+.servicesWrapper {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+	row-gap: 40px;
+	justify-items: center;
+	padding-top: 40px;
+}
+
+.servicesContainer {
+	max-width: 280px;
+}
+
+.price {
+	font-family: var(--font-family);
+	font-weight: 700;
+	font-size: 24px;
+	line-height: 125%;
+	text-align: center;
+	color: var(--white);
+}
+
+.propertyContainer {
+	padding-top: 4px;
+}
+
+.propertyText {
+	font-family: var(--font-family);
+	font-weight: 400;
+	font-size: 14px;
+	text-align: center;
+	color: var(--white);
+}
+

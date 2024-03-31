@@ -4,14 +4,23 @@
 	width: 100%;
 }
 
+.accordionWrapper {
+	background: var(--violet);
+	border-radius: 4px;
+}
+
 .title {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	cursor: pointer;
 	background: var(--violet);
-	border-radius: 8px;
+	border-radius: 4px;
 	padding: 16px 20px;
+}
+
+.accordionOpened .title {
+	border-radius: 4px 4px 0px 0px;
 }
 
 .titleText {
@@ -25,12 +34,23 @@
 .icon {
 	display: flex;
 	justify-content: center;
+	transition-duration: 0.3s;
+	transition-property: transform;
 }
 
-.content {
-	border-radius: 0px 0px 4px 4px;
-	padding: 20px 20px 20px 20px;
-	background: var(--violet);
+.accordionOpened .icon {
+	transform: rotate(180deg);
+}
+
+.accordion .contentWrapper {
+	max-height: 0;
+	overflow: hidden;
+	transition-duration: 0.3s;
+	transition-property: max-height;
+}
+
+.accordionOpened .contentWrapper {
+	max-height: 100rem;
 }
 
 .subtitle {
@@ -40,7 +60,40 @@
 	line-height: 120%;
 	color: var(--white);
 }
-.isActive {
-	border-radius: 4px 4px 0px 0px;
+
+.content {
+	border-radius: 0px 0px 4px 4px;
+	padding: 20px 20px 20px 20px;
+	background: var(--violet);
+}
+
+.descriptionList {
+	padding: 40px 0px 0px 25px;
 
 }
+.descriptionItem{
+	padding-top: 16px;
+	list-style-type: disc;
+	list-style-position: outside;
+	color: var(--white);
+}
+
+.descriptionItem_text{
+	font-family: var(--font-family);
+	font-weight: 400;
+	font-size: 20px;
+	color: var(--white);
+}
+
+.applicationLinkWrapper {
+	padding-top: 24px;
+	max-width: 280px;
+}
+
+.note {
+	font-family: var(--font-family);
+	font-weight: 700;
+	font-size: 24px;
+	color: var(--white);
+}
+
