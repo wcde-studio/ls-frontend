@@ -1,0 +1,22 @@
+.main {
+	margin: 0 auto;
+	max-width: 1110px;
+}
+
+.accordionList {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+}
+
+.title {
+	font-family: var(--font-family);
+	font-weight: 500;
+	font-size: 48px;
+	color: var(--dark-grey);
+	padding-bottom: 64px;
+}
+.section {
+	padding-bottom: 140px;
+
+}

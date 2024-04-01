@@ -2,7 +2,18 @@ import React from 'react';
 
 import styles from './services.module.css';
 
-import { TPriceOfServices } from '@/lib/definitions';
+//import { TPriceOfServices } from '@/lib/definitions';
+
+type TProperty ={
+	id: number,
+	text: string
+};
+
+type TPriceOfServices = {
+	id: number,
+	price: string,
+	properties: Array<TProperty>,
+};
 
 interface IServices {
 	services?: Array<TPriceOfServices> | null;

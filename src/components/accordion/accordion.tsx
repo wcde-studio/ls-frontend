@@ -4,13 +4,32 @@ import React, { useState } from 'react';
 import styles from './accordion.module.css';
 import clsx from 'clsx';
 
-import Link from 'next/link';
+//import Link from 'next/link';
 
 import { UpChevronIcon } from '@/components/ui';
-import { TCourse } from '@/lib/definitions';
+//import { TCourse } from '@/lib/definitions';
 import { Button } from '@/components/ui'
-
 import Services from '@/components/services/services'
+
+type TProperty ={
+	id: number,
+	text: string
+};
+
+type TPriceOfServices = {
+	id: number,
+	price: string,
+	properties: Array<TProperty>,
+};
+
+type TCourse = {
+	id: number,
+	title: string,
+	subtitle: string,
+	properties: Array<TProperty>,
+	services?: Array<TPriceOfServices> | null,
+	note: string | null,
+};
 
 
 interface IAccordionProps {
@@ -18,28 +37,21 @@ interface IAccordionProps {
 }
 
 const Accordion = (props: IAccordionProps) => {
-
 	const { course } = props;
 	const [isActive, setIsActive] = useState(false);
-
-const accordion = clsx(
-	styles.accordion,
-	{[styles.accordionOpened]: isActive}
-);
-
+	const accordion = clsx(
+		styles.accordion,
+		{[styles.accordionOpened]: isActive}
+	);
 	return (
-		<div className={accordion}>
-			<div className={styles.accordionWrapper}>
-				<div className={styles.title} onClick={() => setIsActive(!isActive)}>
-					<p className={styles.titleText}>
-						{course?.title}
-					</p>
-				<div className={styles.icon}><UpChevronIcon/></div>
-			</div>
-			<div className={styles.contentWrapper}>
-				<div className={styles.content}>
-					<p className={styles.subtitle}>{course?.subtitle}</p>
-					<ul className={styles.descriptionList}>
+		<li className={accordion}>
+			<button className={styles.title} onClick={() => setIsActive(!isActive)}>
+				<h2 className={styles.titleText}>{course?.title}</h2>
+				<UpChevronIcon/>
+			</button>
+			<section className={styles.contentWrapper}>
+				<h3 className={styles.subtitle}>{course?.subtitle}</h3>
+				<ul className={styles.descriptionList}>
 					{
 						course?.properties?.map((property) =>
 						<li className={styles.descriptionItem} key={property.id}>
@@ -47,24 +59,23 @@ const accordion = clsx(
 						</li>
 						)
 					}
-					</ul>
-					<Services services={course.services} />
+				</ul>
+				<Services services={course.services} />
 					{
 						course.note ? 
 							<div className={styles.note}>{course.note}</div>
 						 : null
 					}
-					<div className={styles.applicationLinkWrapper}>
-						<Link href={'/'}>
-							<Button type={'button_2'} size={'desctop'}>
-								Оставить заявку
-							</Button>
-						</Link>
-					</div>
+				<div className={styles.buttonWrapper}>
+					<Button 
+						type={'button_2'}
+						size={'desctop'}
+						onClick={()=>{}}
+						title={'Оставить заявку'}
+					/>
 				</div>
-			</div>
-		</div>
-		</div>
+			</section>
+		</li>
 	);
 };
 

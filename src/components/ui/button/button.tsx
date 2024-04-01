@@ -4,16 +4,16 @@ import styles from './button.module.css';
 
 import { PlusIcon, PreviousIcon, NextIcon, EditIcon } from '@/components/ui';
 
-interface IProps
-	extends React.PropsWithChildren {
+interface IProps {
 	type?: 'button_1' | 'button_1_plus' | 'button_2' | 'button_3' | 'button_4' | 'button_5' | 'button_6';
-	size? : 'desctop' | 'pad' | 'mobile'
+	size? : 'desctop' | 'pad' | 'mobile';
+	title: string;
 	onClick?: () => void;
 	disabled?: boolean;
 }
 
 const Button = (props: IProps) => {
-	const {children, type='button_1', size = 'desctop', onClick, disabled=false} = props;
+	const {type='button_1', size = 'desctop', title, onClick, disabled=false} = props;
 
 	const classNameButton = clsx(
 		styles.button,
@@ -40,7 +40,7 @@ const Button = (props: IProps) => {
 					{buttonIcons[type]?.left}
 				</div>
 				<div className={styles.title}>
-					{children}
+					{title}
 				</div>
 				<div className={styles.right_icon}>
 					{buttonIcons[type]?.right}

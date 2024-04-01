@@ -1,11 +1,13 @@
-import { TCourse } from './definitions';
+//import { TCourse } from './definitions';
 
-/*
 export type TProperty ={
 	id: number,
 	text: string
 };
 export type TPriceOfServices = {
+	id: number,
+	price: string,
+	properties: Array<TProperty>,
 };
 
 export type TCourse = {
@@ -16,8 +18,6 @@ export type TCourse = {
 	services?: Array<TPriceOfServices> | null,
 	note: string | null,
 };
-*/
-
 
 export const courses: Array<TCourse> = [
 	{

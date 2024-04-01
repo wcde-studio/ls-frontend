@@ -1,9 +1,0 @@
-.accordionWrapper {
-	margin: 0 auto;
-	max-width: 1110px;
-}
-.accordionContainer {
-	display: flex;
-	flex-direction: column;
-	gap: 4px;
-}

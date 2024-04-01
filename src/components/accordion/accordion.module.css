@@ -2,12 +2,10 @@
 	display: flex;
 	flex-direction: column;
 	width: 100%;
-}
-
-.accordionWrapper {
 	background: var(--violet);
 	border-radius: 4px;
 }
+
 
 .title {
 	display: flex;
@@ -19,10 +17,6 @@
 	padding: 16px 20px;
 }
 
-.accordionOpened .title {
-	border-radius: 4px 4px 0px 0px;
-}
-
 .titleText {
 	font-family: var(--font-family);
 	font-weight: 700;
@@ -31,22 +25,27 @@
 	color: var(--white);
 }
 
-.icon {
+.title svg {
 	display: flex;
 	justify-content: center;
 	transition-duration: 0.3s;
 	transition-property: transform;
 }
 
-.accordionOpened .icon {
+.accordionOpened svg {
 	transform: rotate(180deg);
 }
 
-.accordion .contentWrapper {
+.contentWrapper {
 	max-height: 0;
 	overflow: hidden;
 	transition-duration: 0.3s;
 	transition-property: max-height;
+
+	border-radius: 0px 0px 4px 4px;
+	background: var(--violet);
+
+	padding: 0px 20px 0px 20px;
 }
 
 .accordionOpened .contentWrapper {
@@ -54,6 +53,8 @@
 }
 
 .subtitle {
+	padding-top: 20px;
+
 	font-family: var(--font-family);
 	font-weight: 700;
 	font-size: 20px;
@@ -61,11 +62,6 @@
 	color: var(--white);
 }
 
-.content {
-	border-radius: 0px 0px 4px 4px;
-	padding: 20px 20px 20px 20px;
-	background: var(--violet);
-}
 
 .descriptionList {
 	padding: 40px 0px 0px 25px;
@@ -85,9 +81,10 @@
 	color: var(--white);
 }
 
-.applicationLinkWrapper {
-	padding-top: 24px;
+.buttonWrapper {
 	max-width: 280px;
+	padding-top: 24px;
+	padding-bottom: 20px;
 }
 
 .note {
