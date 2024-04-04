@@ -14,6 +14,8 @@ import NextIcon from './icons/next';
 import EditIcon from './icons/edit';
 
 import Button from './button/button';
+//import IconButton from './button/icon-button/icon-button';
+
 
 export { 
 	LogoIcon, 
@@ -28,6 +30,6 @@ export {
 	PreviousIcon,
 	NextIcon,
 	EditIcon,
-
-	Button
+	Button,
+//	IconButton
 };

@@ -4,18 +4,19 @@ export type TProperty ={
 	id: number,
 	text: string
 };
-export type TPriceOfServices = {
+export type TPrice = {
 	id: number,
-	price: string,
-	properties: Array<TProperty>,
+	price: number,
+	currency: string,
+	properties: TProperty[],
 };
 
 export type TCourse = {
 	id: number,
 	title: string,
 	subtitle: string,
-	properties: Array<TProperty>,
-	services?: Array<TPriceOfServices> | null,
+	properties: TProperty[],
+	services?: TPrice[] | null,
 	note: string | null,
 };
 
@@ -50,7 +51,8 @@ export const courses: Array<TCourse> = [
 		services: [
 			{
 				id: 1,
-				price: '17 000 ₽',
+				price: 17000,
+				currency: '₽',
 				properties: [
 					{
 						id: 1,
@@ -64,7 +66,8 @@ export const courses: Array<TCourse> = [
 			},
 			{
 				id: 2,
-				price: '150 000 ₽',
+				price: 150000,
+				currency: '₽',
 				properties: [
 					{
 						id: 1,
@@ -78,7 +81,8 @@ export const courses: Array<TCourse> = [
 			},
 			{
 				id: 3,
-				price: '325 000 ₽',
+				price: 325000,
+				currency: '₽',
 				properties: [
 					{
 						id: 1,
@@ -104,22 +108,23 @@ export const courses: Array<TCourse> = [
 				text: 'Выявим направление, нишу, цветовые решения в логотипе, целевую аудиторию, как в начале бизнеса, так при его развитии;',
 			 },
 			{
-				id: 1,
+				id: 2,
 				text: 'Подберём идеальные даты в бизнесе: открытие бизнеса, сделки, встречи, заключение договоров. Чтобы всё получилось наилучшим образом;',
 			 },
 			{
-				id: 1,
+				id: 3,
 				text: 'Расставим приоритеты, высвободим время на себя. «Я ничего не успеваю» уйдёт из твоего лексикона, потому, что будешь успевать в разы больше;',
 			 },
 			{
-				id: 1,
+				id: 4,
 				text: 'Выстроим вместе пошаговый план успешного развития бизнеса. Поддержу в его реализации и доведу до результата.',
 			 }
 		],
 		services: [
 			{
 				id: 1,
-				price: '17 000 ₽',
+				price: 17000,
+				currency: '₽',
 				properties: [
 					{
 						id: 1,
@@ -133,7 +138,8 @@ export const courses: Array<TCourse> = [
 			},
 			{
 				id: 2,
-				price: '60 000 ₽',
+				price: 60000,
+				currency: '₽',
 				properties: [
 					{
 						id: 1,
@@ -147,7 +153,8 @@ export const courses: Array<TCourse> = [
 			},
 			{
 				id: 3,
-				price: '150 000 ₽',
+				price: 150000,
+				currency: '₽',
 				properties: [
 					{
 						id: 1,
@@ -161,7 +168,8 @@ export const courses: Array<TCourse> = [
 			},
 			{
 				id: 4,
-				price: '260 000 ₽',
+				price: 260000,
+				currency: '₽',
 				properties: [
 					{
 						id: 1,
@@ -175,7 +183,8 @@ export const courses: Array<TCourse> = [
 			},
 			{
 				id: 5,
-				price: '500 000 ₽',
+				price: 500000,
+				currency: '₽',
 				properties: [
 					{
 						id: 1,

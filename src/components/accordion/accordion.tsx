@@ -4,45 +4,49 @@ import React, { useState } from 'react';
 import styles from './accordion.module.css';
 import clsx from 'clsx';
 
-//import Link from 'next/link';
+import Link from 'next/link';
 
 import { UpChevronIcon } from '@/components/ui';
-//import { TCourse } from '@/lib/definitions';
-import { Button } from '@/components/ui'
-import Services from '@/components/services/services'
+import { Button } from '@/components/ui';
 
-type TProperty ={
-	id: number,
-	text: string
-};
+import { ButtonSize, ButtonType } from '@/components/ui/button/types';
 
-type TPriceOfServices = {
-	id: number,
-	price: string,
-	properties: Array<TProperty>,
-};
+import { Services, ServicesPrice } from '@/components/services'
+
 
 type TCourse = {
-	id: number,
-	title: string,
-	subtitle: string,
-	properties: Array<TProperty>,
-	services?: Array<TPriceOfServices> | null,
-	note: string | null,
+	id: number;
+	title: string;
+	subtitle: string;
+	properties: {
+		id: number;
+		text: string;
+	}[];
+	services?: {
+		id: number;
+		price: number;
+		curentcy: string;
+		properties: {
+			id: number;
+			text: string;
+		}[];
+	}[] | null;
+	note: string | null;
 };
 
-
-interface IAccordionProps {
+type AccordionProps = {
 	course: TCourse;
 }
 
-const Accordion = (props: IAccordionProps) => {
+const Accordion = (props: AccordionProps) => {
 	const { course } = props;
+
 	const [isActive, setIsActive] = useState(false);
 	const accordion = clsx(
 		styles.accordion,
 		{[styles.accordionOpened]: isActive}
 	);
+
 	return (
 		<li className={accordion}>
 			<button className={styles.title} onClick={() => setIsActive(!isActive)}>
@@ -60,26 +64,30 @@ const Accordion = (props: IAccordionProps) => {
 						)
 					}
 				</ul>
-				<Services services={course.services} />
+				{
+					course.services && 
+					<ul className={styles.servicesWrapper}>
 					{
-						course.note ? 
-							<div className={styles.note}>{course.note}</div>
-						 : null
+						course.services?.map((service)=>
+							<ServicesPrice price={service} key={service.id} />
+						)
 					}
+					</ul>
+				}
+				{ course.note && <p className={styles.note}>{course.note}</p> }
 				<div className={styles.buttonWrapper}>
-					<Button 
-						type={'button_2'}
-						size={'desctop'}
-						onClick={()=>{}}
-						title={'Оставить заявку'}
-					/>
+					<Link href={'/'}>
+						<Button 
+							type={ButtonType.White}
+							size={ButtonSize.Desctop}
+							title={'Оставить заявку'}
+						/>
+					</Link>
 				</div>
 			</section>
 		</li>
 	);
 };
-
-
 
 export default Accordion;
 

@@ -1,3 +1,4 @@
+
 .accordion {
 	display: flex;
 	flex-direction: column;
@@ -5,7 +6,6 @@
 	background: var(--violet);
 	border-radius: 4px;
 }
-
 
 .title {
 	display: flex;
@@ -92,5 +92,15 @@
 	font-weight: 700;
 	font-size: 24px;
 	color: var(--white);
+	padding-top: 40px;
+
+}
+
+.servicesWrapper {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+	row-gap: 40px;
+	justify-items: center;
+	padding-top: 40px;
 }
 

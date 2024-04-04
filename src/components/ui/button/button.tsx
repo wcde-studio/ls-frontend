@@ -2,50 +2,41 @@ import React from 'react';
 import clsx from 'clsx';
 import styles from './button.module.css';
 
-import { PlusIcon, PreviousIcon, NextIcon, EditIcon } from '@/components/ui';
+import { ButtonSize, ButtonType } from './types';;
 
-interface IProps {
-	type?: 'button_1' | 'button_1_plus' | 'button_2' | 'button_3' | 'button_4' | 'button_5' | 'button_6';
-	size? : 'desctop' | 'pad' | 'mobile';
+interface IButtonProps {
+	className?: string;
+	type?: ButtonType;
+	size? : ButtonSize;
 	title: string;
 	onClick?: () => void;
 	disabled?: boolean;
 }
 
-const Button = (props: IProps) => {
-	const {type='button_1', size = 'desctop', title, onClick, disabled=false} = props;
+const Button = (props: IButtonProps) => {
+	const {
+		className,
+		type = ButtonType.White, 
+		size = ButtonSize.Desctop, 
+		title,
+		onClick,
+		disabled = false
+	} = props;
 
 	const classNameButton = clsx(
 		styles.button,
+		className,
 		{[styles[`${size}`]]: size},
 		{[styles[`${type}`]]: type}
 	);
 
-	const buttonIcons = {
-		button_1: { left: null, right: null },
-		button_1_plus: { left:  <PlusIcon />, right: null },
-		button_2: { left: null, right: null },
-		button_3: { left: null, right: null },
-		button_4: { left: <PreviousIcon />, right: null },
-		button_5: { left: null, right: <NextIcon /> },
-		button_6: { left: <EditIcon />, right: null },
-	};
-
-//console.log(buttonIcons[type].left);
-
 	return (
-		<button disabled={disabled} className={classNameButton} onClick={onClick}>
-			<div className={styles.title_container}>
-				<div className={styles.left_icon}>
-					{buttonIcons[type]?.left}
-				</div>
-				<div className={styles.title}>
-					{title}
-				</div>
-				<div className={styles.right_icon}>
-					{buttonIcons[type]?.right}
-				</div>
-			</div>
+		<button 
+			disabled={disabled} 
+			className={classNameButton} 
+			onClick={onClick}
+			>
+				{title}
 		</button>
 	);
 };
