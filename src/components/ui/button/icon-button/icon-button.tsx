@@ -3,9 +3,7 @@ import React from 'react';
 //import styles from './icon-button.module.css';
 
 const IconButton = () => {
-	return (
-    <></>
-	);
+	return <></>;
 };
 
 export default IconButton;

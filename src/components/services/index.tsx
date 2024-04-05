@@ -1,6 +1,3 @@
-
 import ServicesPrice from './services-price';
 
-export { 
-	ServicesPrice,
-};
+export { ServicesPrice };

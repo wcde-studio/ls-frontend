@@ -16,20 +16,19 @@ import EditIcon from './icons/edit';
 import Button from './button/button';
 //import IconButton from './button/icon-button/icon-button';
 
-
-export { 
-	LogoIcon, 
-	ProfileIcon, 
-	WCDEIcon, 
-	TelegramIcon, 
-	WhatsUpIcon, 
-	VKIcon, 
-	DownChevronIcon, 
-	UpChevronIcon, 
+export {
+	LogoIcon,
+	ProfileIcon,
+	WCDEIcon,
+	TelegramIcon,
+	WhatsUpIcon,
+	VKIcon,
+	DownChevronIcon,
+	UpChevronIcon,
 	PlusIcon,
 	PreviousIcon,
 	NextIcon,
 	EditIcon,
 	Button,
-//	IconButton
+	//	IconButton
 };

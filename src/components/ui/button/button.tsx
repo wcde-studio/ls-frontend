@@ -2,12 +2,12 @@ import React from 'react';
 import clsx from 'clsx';
 import styles from './button.module.css';
 
-import { ButtonSize, ButtonType } from './types';;
+import { ButtonSize, ButtonType } from './types';
 
 interface IButtonProps {
 	className?: string;
 	type?: ButtonType;
-	size? : ButtonSize;
+	size?: ButtonSize;
 	title: string;
 	onClick?: () => void;
 	disabled?: boolean;
@@ -16,27 +16,23 @@ interface IButtonProps {
 const Button = (props: IButtonProps) => {
 	const {
 		className,
-		type = ButtonType.White, 
-		size = ButtonSize.Desctop, 
+		type = ButtonType.White,
+		size = ButtonSize.Desctop,
 		title,
 		onClick,
-		disabled = false
+		disabled = false,
 	} = props;
 
 	const classNameButton = clsx(
 		styles.button,
 		className,
-		{[styles[`${size}`]]: size},
-		{[styles[`${type}`]]: type}
+		{ [styles[`${size}`]]: size },
+		{ [styles[`${type}`]]: type }
 	);
 
 	return (
-		<button 
-			disabled={disabled} 
-			className={classNameButton} 
-			onClick={onClick}
-			>
-				{title}
+		<button disabled={disabled} className={classNameButton} onClick={onClick}>
+			{title}
 		</button>
 	);
 };

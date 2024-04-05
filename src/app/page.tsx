@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 import styles from './page.module.css';
@@ -18,11 +17,9 @@ export default function Home() {
 				<section className={styles.section}>
 					<h1 className={styles.title}>Услуги</h1>
 					<ul className={styles.accordionList}>
-					{
-						courses?.map((course) => 
+						{courses?.map((course) => (
 							<Accordion course={course} key={course.id} />
-						)
-					}
+						))}
 					</ul>
 				</section>
 			</main>

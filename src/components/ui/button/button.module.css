@@ -15,7 +15,8 @@
 	padding: 12px 0px;
 }
 
-.desctop {}
+.desctop {
+}
 
 .violet {
 	background: var(--violet);
@@ -34,7 +35,6 @@
 	border: none;
 	color: var(--dark-grey);
 }
-
 
 .white {
 	color: var(--dark-grey);
@@ -65,4 +65,3 @@
 	border: none;
 	color: var(--grey);
 }
-
