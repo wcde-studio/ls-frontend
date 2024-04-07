@@ -3,11 +3,6 @@ import React from 'react';
 
 import Link from 'next/link';
 
-//import WCDEIcon from '@/ui/icons/wcde-icon';
-//import TelegramIcon from '@/ui/icons/telegram-icon';
-//import WhatsUpIcon from '@/ui/icons/whats-up-icon';
-//import VKIcon from '@/ui/icons/vk-icon';
-
 import { WCDEIcon, TelegramIcon, WhatsUpIcon, VKIcon } from '@/components/ui';
 
 const Footer = () => {
