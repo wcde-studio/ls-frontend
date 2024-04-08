@@ -19,3 +19,12 @@
 .section {
 	padding-bottom: 140px;
 }
+
+.awardsList {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(165px, 1fr));
+	row-gap: 71px;
+	column-gap: 64px;
+	justify-items: center;
+	padding-top: 40px;
+}

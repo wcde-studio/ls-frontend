@@ -1,9 +1,9 @@
 'use client';
 
-import React, { useState } from 'react';
+import { useState } from 'react';
+
 import styles from './accordion.module.css';
 import clsx from 'clsx';
-
 import Link from 'next/link';
 
 import { UpChevronIcon } from '@/components/ui';
@@ -11,7 +11,7 @@ import { Button } from '@/components/ui';
 
 import { ButtonSize, ButtonType } from '@/components/ui/button/types';
 
-import { ServicesPrice } from '@/components/services';
+import { Price } from '@/components/services';
 
 type TProperty = {
 	id: number;
@@ -64,7 +64,7 @@ const Accordion = (props: Props) => {
 				{course.services && (
 					<ul className={styles.servicesWrapper}>
 						{course.services?.map((service) => (
-							<ServicesPrice price={service} key={service.id} />
+							<Price price={service} key={service.id} />
 						))}
 					</ul>
 				)}
