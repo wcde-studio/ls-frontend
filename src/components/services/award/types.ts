@@ -1,4 +1,4 @@
-export enum ServicesAwardType {
+export enum AwardType {
 	Team = 'team',
 	Game = 'game',
 	Book = 'book',
@@ -8,10 +8,10 @@ export enum ServicesAwardType {
 	Prize = 'prize',
 	Ribbon = 'ribbon',
 	Cup = 'cup',
-	Award = 'award'
+	Award = 'award',
 }
 
-export enum ServicesAwardSize {
+export enum AwardSize {
 	Desctop = 'desctop',
 	//	Pad = 'pad',
 	//	Mobile = 'mobile'

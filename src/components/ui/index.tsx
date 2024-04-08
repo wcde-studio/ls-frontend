@@ -24,7 +24,6 @@ import RibbonIcon from './icons/awards/ribbon-icon';
 import CupIcon from './icons/awards/cup-icon';
 import AwardIcon from './icons/awards/award-icon';
 
-
 import Button from './button/button';
 //import IconButton from './button/icon-button/icon-button';
 
@@ -37,11 +36,10 @@ export {
 	VKIcon,
 	DownChevronIcon,
 	UpChevronIcon,
-//	PlusIcon,
-//	PreviousIcon,
-//	NextIcon,
-//	EditIcon,
-
+	//	PlusIcon,
+	//	PreviousIcon,
+	//	NextIcon,
+	//	EditIcon,
 	TeamIcon,
 	GameIcon,
 	BookIcon,
@@ -52,7 +50,6 @@ export {
 	RibbonIcon,
 	CupIcon,
 	AwardIcon,
-
 	Button,
 	//	IconButton
 };

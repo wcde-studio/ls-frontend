@@ -1,6 +1,5 @@
-import React from 'react';
-
-import styles from './services-price.module.css';
+'use client';
+import styles from './price.module.css';
 
 type TProperty = {
 	id: number;
@@ -18,7 +17,7 @@ type Props = {
 	price: TPrice;
 };
 
-const ServicesPrice = (props: Props) => {
+const Price = (props: Props) => {
 	const { price } = props;
 
 	const options = {
@@ -30,7 +29,7 @@ const ServicesPrice = (props: Props) => {
 	const priceSymbol = numberFormat.format(price.price);
 
 	return (
-		<li className={styles.servicesContainer}>
+		<li className={styles.container}>
 			<p className={styles.price}>{`${priceSymbol}`}</p>
 			<ul className={styles.propertyContainer}>
 				{price.properties?.map((property) => (
@@ -43,4 +42,4 @@ const ServicesPrice = (props: Props) => {
 	);
 };
 
-export default ServicesPrice;
+export default Price;

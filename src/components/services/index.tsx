@@ -1,6 +1,5 @@
-import ServicesPrice from './services-price';
-import { ServicesAwardType, ServicesAwardSize } from './types';
-import ServicesAward from './services-award';
+import Price from './price/price';
+import { AwardType, AwardSize } from './award/types';
+import Award from './award/award';
 
-
-export { ServicesPrice, ServicesAward, ServicesAwardType, ServicesAwardSize };
+export { Price, Award, AwardType, AwardSize };
