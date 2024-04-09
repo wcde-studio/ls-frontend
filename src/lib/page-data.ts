@@ -6,6 +6,11 @@ type TPageData = {
 		type: AwardType;
 		text: string;
 	}[];
+	diplomas: {
+		id: number;
+		src: string;
+		alt: string;
+	}[];
 };
 
 export const pageData: TPageData = {
@@ -59,6 +64,28 @@ export const pageData: TPageData = {
 			id: 10,
 			type: AwardType.Award,
 			text: 'Победитель множества профессиональных соревнований в области магии, в том числе международных',
+		},
+	],
+	diplomas: [
+		{
+			id: 1,
+			src: '/diploma/image_5.png',
+			alt: 'sertificate 1',
+		},
+		{
+			id: 2,
+			src: '/diploma/image_6.png',
+			alt: 'diploma 1',
+		},
+		{
+			id: 3,
+			src: '/diploma/image_7.png',
+			alt: 'diploma 2',
+		},
+		{
+			id: 4,
+			src: '/diploma/image_8.png',
+			alt: 'sertificate 2',
 		},
 	],
 };

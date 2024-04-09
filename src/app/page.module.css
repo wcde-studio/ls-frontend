@@ -28,3 +28,12 @@
 	justify-items: center;
 	padding-top: 40px;
 }
+
+.diplomaList {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(259px, 1fr));
+	row-gap: 24px;
+	column-gap: 24px;
+	justify-items: center;
+	padding-top: 40px;
+}

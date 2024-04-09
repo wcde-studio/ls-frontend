@@ -4,7 +4,13 @@ import Header from '@/components/header/header';
 import Footer from '@/components/footer/footer';
 
 import Accordion from '@/components/accordion/accordion';
-import { Award, AwardType, AwardSize } from '@/components/services';
+import {
+	Award,
+	AwardType,
+	AwardSize,
+	Diploma,
+	DiplomaSize,
+} from '@/components/services';
 
 import { courses } from '@/lib/courses-data';
 import { pageData } from '@/lib/page-data';
@@ -31,6 +37,19 @@ export default function Home() {
 								type={award.type}
 								text={award.text}
 								key={award.id}
+							/>
+						))}
+					</ul>
+				</section>
+				<section className={styles.section}>
+					<h1 className={styles.title}>{'Дипломы'}</h1>
+					<ul className={styles.diplomaList}>
+						{pageData?.diplomas?.map((diploma) => (
+							<Diploma
+								size={DiplomaSize.Desctop}
+								src={diploma.src}
+								alt={diploma.alt}
+								key={diploma.id}
 							/>
 						))}
 					</ul>
