@@ -2,4 +2,7 @@ import Price from './price/price';
 import { AwardType, AwardSize } from './award/types';
 import Award from './award/award';
 
-export { Price, Award, AwardType, AwardSize };
+import { DiplomaSize } from './diploma/types';
+import Diploma from './diploma/diploma';
+
+export { Price, Award, AwardType, AwardSize, DiplomaSize, Diploma };
