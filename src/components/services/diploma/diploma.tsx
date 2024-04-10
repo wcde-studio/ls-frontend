@@ -11,7 +11,11 @@ interface IDiplomaProps {
 }
 
 const Diploma = (props: IDiplomaProps) => {
-	const { src = '', size = DiplomaSize.Desctop, alt = '' } = props;
+	const {
+		src = '/diploma/certificate-parent-child-coaching.png',
+		size = DiplomaSize.Desctop,
+		alt = 'certificateparent child coaching',
+	} = props;
 
 	return (
 		<li>

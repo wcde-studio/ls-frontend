@@ -69,23 +69,23 @@ export const pageData: TPageData = {
 	diplomas: [
 		{
 			id: 1,
-			src: '/diploma/image_5.png',
-			alt: 'sertificate 1',
+			src: '/diploma/certificate-parent-child-coaching.png',
+			alt: 'certificate parent child coaching',
 		},
 		{
 			id: 2,
-			src: '/diploma/image_6.png',
-			alt: 'diploma 1',
+			src: '/diploma/diploma-journalist.png',
+			alt: 'diploma journalist',
 		},
 		{
 			id: 3,
-			src: '/diploma/image_7.png',
-			alt: 'diploma 2',
+			src: '/diploma/diploma-lada.png',
+			alt: 'diploma lada',
 		},
 		{
 			id: 4,
-			src: '/diploma/image_8.png',
-			alt: 'sertificate 2',
+			src: '/diploma/certificate-of-conformity.png',
+			alt: 'certificate of conformity',
 		},
 	],
 };
