@@ -12,6 +12,7 @@ import {
 	DiplomaSize,
 } from '@/components/services';
 
+import { services } from '@/lib/services-data';
 import { courses } from '@/lib/courses-data';
 import { pageData } from '@/lib/page-data';
 
@@ -23,9 +24,14 @@ export default function Home() {
 				<section className={styles.section}>
 					<h1 className={styles.title}>Услуги</h1>
 					<ul className={styles.accordionList}>
-						{courses?.map((course) => (
-							<Accordion course={course} key={course.id} />
+						{services?.map((service) => (
+							<Accordion service={service} key={service.id} />
 						))}
+					</ul>
+				</section>
+				<section className={styles.section}>
+					<h1 className={styles.title}>{'Ближайшие курсы'}</h1>
+					<ul className={styles.corsesList}>
 					</ul>
 				</section>
 				<section className={styles.section}>
