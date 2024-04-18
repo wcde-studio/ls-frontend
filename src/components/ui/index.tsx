@@ -27,6 +27,10 @@ import AwardIcon from './icons/awards/award-icon';
 import Button from './button/button';
 //import IconButton from './button/icon-button/icon-button';
 
+import LadaVedIcon from './icons/lada-ved-icon';
+import LadaVedIconSvg from './icons/lada-ved-icon-svg.svg';
+
+
 export {
 	LogoIcon,
 	ProfileIcon,
@@ -52,4 +56,6 @@ export {
 	AwardIcon,
 	Button,
 	//	IconButton
+	LadaVedIcon,
+	LadaVedIconSvg
 };

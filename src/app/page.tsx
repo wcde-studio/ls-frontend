@@ -1,5 +1,9 @@
 import styles from './page.module.css';
 
+import Image from 'next/image';
+import Link from 'next/link';
+
+
 import Header from '@/components/header/header';
 import Footer from '@/components/footer/footer';
 
@@ -15,11 +19,20 @@ import {
 import { courses } from '@/lib/courses-data';
 import { pageData } from '@/lib/page-data';
 
+import { LadaVedIcon, LadaVedIconSvg, LogoIcon} from '@/components/ui';
+
+import { Button } from '@/components/ui';
+import { ButtonSize, ButtonType } from '@/components/ui/button/types';
+
+import Intro from '@/components/intro/intro';
+
+
 export default function Home() {
 	return (
 		<>
 			<Header />
 			<main className={styles.main}>
+				<Intro />
 				<section className={styles.section}>
 					<h1 className={styles.title}>Услуги</h1>
 					<ul className={styles.accordionList}>
