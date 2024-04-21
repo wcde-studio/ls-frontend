@@ -21,47 +21,50 @@
 .violet {
 	background: var(--violet);
 	color: var(--white);
-}
 
-.violet:hover {
-	box-sizing: border-box;
-	background: none;
-	outline: 2px solid var(--violet);
-	color: var(--violet);
-}
+		&:hover {
+		box-sizing: border-box;
+		background: none;
+		outline: 2px solid var(--violet);
+		color: var(--violet);
+	}
 
-.violet:disabled {
-	background: var(--grey);
-	border: none;
-	color: var(--dark-grey);
+	&:disabled {
+		background: var(--grey);
+		border: none;
+		color: var(--dark-grey);
+	}
+
 }
 
 .white {
 	color: var(--dark-grey);
 	background: var(--white);
 	color: var(--dark-grey);
-}
 
-.white:hover {
-	background: var(--beige-bg);
-}
+	&:hover {
+		background: var(--beige-bg);
+	}
 
-.white:disabled {
-	background: var(--grey);
-	color: var(--dark-grey);
-	color: var(--dark-grey);
+	&:disabled {
+		background: var(--grey);
+		color: var(--dark-grey);
+		color: var(--dark-grey);
+	}
+
 }
 
 .transparent {
 	background: none;
 	color: var(--violet);
-}
+	
+	&:hover {
+		outline: 2px solid var(--violet);
+	}
 
-.transparent:hover {
-	outline: 2px solid var(--violet);
-}
+	&:disabled {
+		border: none;
+		color: var(--grey);
+	}
 
-.transparent:disabled {
-	border: none;
-	color: var(--grey);
 }

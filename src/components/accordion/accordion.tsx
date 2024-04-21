@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 
-import styles from './accordion.module.css';
+import styles from './accordion.module.scss';
 import clsx from 'clsx';
 import Link from 'next/link';
 

@@ -1,5 +1,5 @@
 'use client';
-import styles from './price.module.css';
+import styles from './price.module.scss';
 
 type TProperty = {
 	id: number;

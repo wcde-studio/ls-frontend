@@ -1,5 +1,6 @@
 'use client';
-import styles from './award.module.css';
+
+import styles from './award.module.scss';
 
 import {
 	TeamIcon,
