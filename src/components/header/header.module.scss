@@ -43,7 +43,7 @@
 .link {
 	display: flex;
 	align-items: center;
-	jystify-content: center;
+	justify-content: center;
 	cursor: pointer;
 	transition: transform 0.2s ease-in-out;
 
@@ -51,10 +51,10 @@
 		text-decoration: underline;
 	}
 
-}
+	&:hover {
+		transform: scale(1.1);
+	}
 
-.link:hover {
-	transform: scale(1.1);
 }
 
 .link:last-of-type {
@@ -62,13 +62,12 @@
 
 .profileLink {
 	gap: 4px;
+
+	&:hover {
+		height: 23px;
+	}
+
 }
-
-
-.profileLink:hover {
-	height: 22px;
-}
-
 
 .iconLogo {
 	width: 48px;
