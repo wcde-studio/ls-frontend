@@ -27,16 +27,16 @@ const Award = (props: IAwardProps) => {
 	const { type = AwardType.Team, size = AwardSize.Desctop, text = '' } = props;
 
 	const icon = {
-		team: <TeamIcon />,
-		game: <GameIcon />,
-		book: <BookIcon />,
-		leadership: <LeadershipIcon />,
-		tvscreen: <TVScreenIcon />,
-		tv: <TVIcon />,
-		prize: <PrizeIcon />,
-		ribbon: <RibbonIcon />,
-		cup: <CupIcon />,
-		award: <AwardIcon />,
+		TEAM: <TeamIcon />,
+		GAME: <GameIcon />,
+		BOOK: <BookIcon />,
+		LEADERSHIP: <LeadershipIcon />,
+		TVSCREEN: <TVScreenIcon />,
+		TV: <TVIcon />,
+		PRIZE: <PrizeIcon />,
+		RIBBON: <RibbonIcon />,
+		CUP: <CupIcon />,
+		AWARD: <AwardIcon />,
 	};
 
 	return (

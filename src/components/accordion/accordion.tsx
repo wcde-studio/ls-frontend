@@ -13,33 +13,30 @@ import { ButtonSize, ButtonType } from '@/components/ui/button/types';
 
 import { Price } from '@/components/services';
 
-type TProperty = {
-	id: number;
-	text: string;
-};
-
-type TPrice = {
+interface TProperties {
 	id: number;
 	price: number;
 	currency: string;
-	properties: TProperty[];
+	properties?: {
+		id: number;
+		text: string;
+	}[] | null;
 };
 
-type TCourse = {
-	id: number;
+interface TCourse extends Pick<TProperties, 'id' | 'properties'> {
 	title: string;
 	subtitle: string;
-	properties?: TProperty[];
-	services?: TPrice[] | null;
+	services?:  TProperties[] | null;
 	note: string | null;
 };
 
 type Props = {
 	course: TCourse;
+	key?: number;
 };
 
 const Accordion = (props: Props) => {
-	const { course } = props;
+	const { course, key } = props;
 
 	const [isActive, setIsActive] = useState(false);
 	const accordion = clsx(styles.accordion, {

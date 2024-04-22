@@ -6,7 +6,7 @@ export enum AwardType {
 	TVScreen = 'TVSCREEN',
 	TV = 'TV',
 	Prize = 'PRIZE',
-	Ribbon = 'RIBOON',
+	Ribbon = 'RIBBON',
 	Cup = 'CUP',
 	Award = 'AWARD',
 }

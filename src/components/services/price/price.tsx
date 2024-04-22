@@ -1,21 +1,21 @@
 'use client';
 import styles from './price.module.scss';
 
-type TProperty = {
-	id: number;
-	text: string;
-};
-
-type TPrice = {
+interface TProperties {
 	id: number;
 	price: number;
 	currency: string;
-	properties: TProperty[];
+	properties?: {
+		id: number;
+		text: string;
+	}[] | null;
 };
 
 type Props = {
-	price: TPrice;
+	price: TProperties;
+	key?: number;
 };
+
 
 const Price = (props: Props) => {
 	const { price } = props;
