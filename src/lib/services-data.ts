@@ -10,14 +10,14 @@ interface TProperties {
 	}[] | null;
 };
 
-interface TCourse extends Pick<TProperties, 'id' | 'properties'> {
+interface TService extends Pick<TProperties, 'id' | 'properties'> {
 	title: string;
 	subtitle: string;
 	services?:  TProperties[] | null;
 	note: string | null;
 };
 
-export const courses: Array<TCourse> = [
+export const services: Array<TService> = [
 	{
 		id: 1,
 		title: 'Жизнь и самореализация',

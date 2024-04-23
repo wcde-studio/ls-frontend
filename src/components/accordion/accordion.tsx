@@ -23,7 +23,7 @@ interface TProperties {
 	}[] | null;
 };
 
-interface TCourse extends Pick<TProperties, 'id' | 'properties'> {
+interface TService extends Pick<TProperties, 'id' | 'properties'> {
 	title: string;
 	subtitle: string;
 	services?:  TProperties[] | null;
@@ -31,12 +31,12 @@ interface TCourse extends Pick<TProperties, 'id' | 'properties'> {
 };
 
 type Props = {
-	course: TCourse;
+	service: TService;
 	key?: number;
 };
 
 const Accordion = (props: Props) => {
-	const { course, key } = props;
+	const { service, key } = props;
 
 	const [isActive, setIsActive] = useState(false);
 	const accordion = clsx(styles.accordion, {
@@ -46,26 +46,26 @@ const Accordion = (props: Props) => {
 	return (
 		<li className={accordion}>
 			<button className={styles.title} onClick={() => setIsActive(!isActive)}>
-				<h2 className={styles.titleText}>{course?.title}</h2>
+				<h2 className={styles.titleText}>{service?.title}</h2>
 				<UpChevronIcon />
 			</button>
 			<section className={styles.contentWrapper}>
-				<h3 className={styles.subtitle}>{course?.subtitle}</h3>
+				<h3 className={styles.subtitle}>{service?.subtitle}</h3>
 				<ul className={styles.descriptionList}>
-					{course?.properties?.map((property) => (
+					{service?.properties?.map((property) => (
 						<li className={styles.descriptionItem} key={property.id}>
 							<p className={styles.descriptionItem_text}>{property.text}</p>
 						</li>
 					))}
 				</ul>
-				{course.services && (
+				{service.services && (
 					<ul className={styles.servicesWrapper}>
-						{course.services?.map((service) => (
+						{service.services?.map((service) => (
 							<Price price={service} key={service.id} />
 						))}
 					</ul>
 				)}
-				{course.note && <p className={styles.note}>{course.note}</p>}
+				{service.note && <p className={styles.note}>{service.note}</p>}
 				<div className={styles.buttonWrapper}>
 					<Link href={'/'}>
 						<Button
