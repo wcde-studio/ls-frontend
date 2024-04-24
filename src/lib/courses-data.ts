@@ -5,7 +5,7 @@ export type TProperty = {
 
 export type TContent = {
 	id: number;
-	title:1 string;
+	title: string;
 	content: TProperty[];
 };
 

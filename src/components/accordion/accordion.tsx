@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 
-import styles from './accordion.module.css';
+import styles from './accordion.module.scss';
 import clsx from 'clsx';
 import Link from 'next/link';
 
@@ -13,33 +13,30 @@ import { ButtonSize, ButtonType } from '@/components/ui/button/types';
 
 import { Price } from '@/components/services';
 
-type TProperty = {
-	id: number;
-	text: string;
-};
-
-type TPrice = {
+interface TProperties {
 	id: number;
 	price: number;
 	currency: string;
-	properties: TProperty[];
+	properties?: {
+		id: number;
+		text: string;
+	}[] | null;
 };
 
-type TService = {
-	id: number;
+interface TService extends Pick<TProperties, 'id' | 'properties'> {
 	title: string;
 	subtitle: string;
-	properties?: TProperty[];
-	services?: TPrice[] | null;
+	services?:  TProperties[] | null;
 	note: string | null;
 };
 
 type Props = {
-	course: TServoce;
+	service: TService;
+	key?: number;
 };
 
 const Accordion = (props: Props) => {
-	const { service } = props;
+	const { service, key } = props;
 
 	const [isActive, setIsActive] = useState(false);
 	const accordion = clsx(styles.accordion, {

@@ -1,6 +1,6 @@
 import React from 'react';
 //import clsx from 'clsx';
-//import styles from './icon-button.module.css';
+//import styles from './icon-button.module.scss';
 
 const IconButton = () => {
 	return <></>;

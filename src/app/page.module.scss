@@ -1,0 +1,100 @@
+.main {
+	margin: 0 auto;
+	max-width: 1110px;
+}
+
+.section {
+	padding-bottom: 140px;
+}
+
+.accordionList {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+}
+
+.title {
+	font-family: var(--font-family);
+	font-weight: 500;
+	font-size: 48px;
+	color: var(--dark-grey);
+	padding-bottom: 64px;
+}
+
+.awardsList {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(165px, 1fr));
+	row-gap: 71px;
+	column-gap: 64px;
+	justify-items: center;
+	padding-top: 40px;
+}
+
+.diplomaList {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(259px, 1fr));
+	row-gap: 24px;
+	column-gap: 24px;
+	justify-items: center;
+	padding-top: 40px;
+}
+
+.intro {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	padding-top: 92px;
+	padding-bottom: 128px;
+}
+
+.ladaImage {
+	width: 100%;
+	height: auto;
+	position: relative;
+	right: 72px;
+}
+
+.ladaVedIconSvg {
+	width: 100%;
+	height: auto;
+	max-height: 364px;
+	max-width: 543px;
+}
+
+.introButton {
+	max-width: 260px;
+	padding-top: 132px;
+}
+
+.sectionTitle {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding-bottom: 140px;
+}
+
+
+.topTitle {
+	font-family: var(--font-family);
+	font-weight: 400;
+	font-size: 32px;
+	line-height: 120%;
+	text-align: center;
+	color: var(--dark-grey);
+	padding-bottom: 40px;
+	border-bottom: 1px solid var(--brown);
+	max-width: 915px;
+}
+
+.bottomTitle {
+	font-family: var(--font-family);
+	font-style: italic;
+	font-weight: 300;
+	font-size: 32px;
+	line-height: 120%;
+	text-align: center;
+	color: var(--dark-grey);
+	border-bottom: 1px solid var(--brown);
+	max-width: 915px;
+	padding: 22px 0px;;
+}

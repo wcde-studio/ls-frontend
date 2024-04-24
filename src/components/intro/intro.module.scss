@@ -1,0 +1,61 @@
+.intro {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	padding-top: 92px;
+	padding-bottom: 128px;
+}
+
+.ladaImage {
+	height: 56vw;
+	width: 57.3vw;
+	max-height: 622px;
+	max-width: 637px;
+	position: relative;
+	right: 68px;
+}
+
+
+.ladaVedIconSvg {
+	height: 32.7vw;
+	width: 48.9vw;
+	max-height: 364px;
+	max-width: 543px;
+}
+
+.introButton {
+	max-width: 260px;
+	padding-top: 132px;
+}
+
+.sectionTitle {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding-bottom: 140px;
+}
+
+%mainFont {
+	font-family: var(--font-family);
+	font-size: 32px;
+	line-height: 120%;
+	text-align: center;
+	color: var(--dark-grey);
+}
+
+.topTitle {
+	@extend %mainFont;
+	font-weight: 400;
+	padding-bottom: 40px;
+	border-bottom: 1px solid var(--brown);
+	max-width: 915px;
+}
+
+.bottomTitle {
+	@extend %mainFont;
+	font-style: italic;
+	font-weight: 300;
+	border-bottom: 1px solid var(--brown);
+	max-width: 915px;
+	padding: 22px 0px;;
+}

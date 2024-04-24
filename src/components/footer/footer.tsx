@@ -1,4 +1,4 @@
-import styles from './footer.module.css';
+import styles from './footer.module.scss';
 import React from 'react';
 
 import Link from 'next/link';

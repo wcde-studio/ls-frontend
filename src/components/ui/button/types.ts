@@ -1,11 +1,11 @@
 export enum ButtonSize {
-	Desctop = 'desctop',
-	//	Pad = 'pad',
-	//	Mobile = 'mobile'
+	Desctop = 'DESCTOP',
+	//	Pad = 'PAD',
+	//	Mobile = 'MOBILE'
 }
 
 export enum ButtonType {
-	//	Violet = 'violet',
-	White = 'white',
-	//	Transparent = 'transparent'
+	Violet = 'VIOLET',
+	White = 'WHITE',
+	//	Transparent = 'TRANSPARENT'
 }
