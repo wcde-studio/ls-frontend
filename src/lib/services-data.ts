@@ -1,26 +1,23 @@
 //import { TCourse } from './definitions';
 
-export type TProperty = {
-	id: number;
-	text: string;
-};
-export type TPrice = {
+interface TProperties {
 	id: number;
 	price: number;
 	currency: string;
-	properties: TProperty[];
+	properties?: {
+		id: number;
+		text: string;
+	}[] | null;
 };
 
-export type TCourse = {
-	id: number;
+interface TService extends Pick<TProperties, 'id' | 'properties'> {
 	title: string;
 	subtitle: string;
-	properties?: TProperty[];
-	services?: TPrice[] | null;
+	services?:  TProperties[] | null;
 	note: string | null;
 };
 
-export const courses: Array<TCourse> = [
+export const services: Array<TService> = [
 	{
 		id: 1,
 		title: 'Жизнь и самореализация',

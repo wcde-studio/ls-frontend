@@ -1,3 +1,44 @@
+.main {
+	margin: 0 auto;
+	max-width: 1110px;
+}
+
+.section {
+	padding-bottom: 140px;
+}
+
+.accordionList {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+}
+
+.title {
+	font-family: var(--font-family);
+	font-weight: 500;
+	font-size: 48px;
+	color: var(--dark-grey);
+	padding-bottom: 64px;
+}
+
+.awardsList {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(165px, 1fr));
+	row-gap: 71px;
+	column-gap: 64px;
+	justify-items: center;
+	padding-top: 40px;
+}
+
+.diplomaList {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(259px, 1fr));
+	row-gap: 24px;
+	column-gap: 24px;
+	justify-items: center;
+	padding-top: 40px;
+}
+
 .intro {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
@@ -10,7 +51,6 @@
 	height: auto;
 	position: relative;
 	right: 72px;
-/*	border: 1px solid red;*/
 }
 
 .ladaVedIconSvg {
@@ -32,6 +72,7 @@
 	justify-content: center;
 	padding-bottom: 140px;
 }
+
 
 .topTitle {
 	font-family: var(--font-family);

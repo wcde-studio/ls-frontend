@@ -1,4 +1,4 @@
-import styles from './page.module.css';
+import styles from './page.module.scss';
 
 import Image from 'next/image';
 import Link from 'next/link';
@@ -16,7 +16,7 @@ import {
 	DiplomaSize,
 } from '@/components/services';
 
-import { courses } from '@/lib/courses-data';
+import { services } from '@/lib/services-data';
 import { pageData } from '@/lib/page-data';
 
 import { LadaVedIcon, LadaVedIconSvg, LogoIcon} from '@/components/ui';
@@ -36,8 +36,8 @@ export default function Home() {
 				<section className={styles.section}>
 					<h1 className={styles.title}>Услуги</h1>
 					<ul className={styles.accordionList}>
-						{courses?.map((course) => (
-							<Accordion course={course} key={course.id} />
+						{services?.map((service) => (
+							<Accordion service={service} key={service.id} />
 						))}
 					</ul>
 				</section>

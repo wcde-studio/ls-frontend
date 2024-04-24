@@ -1,13 +1,17 @@
 .container {
 }
 
-.price {
+%mainFont {
 	font-family: var(--font-family);
+	color: var(--white);
+	text-align: center;
+}
+
+.price {
+	@extend %mainFont;
 	font-weight: 700;
 	font-size: 24px;
 	line-height: 125%;
-	text-align: center;
-	color: var(--white);
 }
 
 .propertyContainer {
@@ -15,9 +19,7 @@
 }
 
 .propertyText {
-	font-family: var(--font-family);
+	@extend %mainFont;
 	font-weight: 400;
 	font-size: 14px;
-	text-align: center;
-	color: var(--white);
 }

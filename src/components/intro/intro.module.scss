@@ -35,7 +35,7 @@
 	padding-bottom: 140px;
 }
 
-@mixin main-font {
+%mainFont {
 	font-family: var(--font-family);
 	font-size: 32px;
 	line-height: 120%;
@@ -44,7 +44,7 @@
 }
 
 .topTitle {
-	@include main-font;
+	@extend %mainFont;
 	font-weight: 400;
 	padding-bottom: 40px;
 	border-bottom: 1px solid var(--brown);
@@ -52,7 +52,7 @@
 }
 
 .bottomTitle {
-	@include main-font;
+	@extend %mainFont;
 	font-style: italic;
 	font-weight: 300;
 	border-bottom: 1px solid var(--brown);

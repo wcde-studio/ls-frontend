@@ -1,31 +1,9 @@
-.footer {
+%maxWidth {
 	margin: 0 auto;
-	width: 100%;
-	/*max-width: var(--desctop-max-width);
-  min-width: var(--mobile-min-width);*/
-	background: var(--brown);
-}
-.footerWrapper {
-	margin: 0 auto;
-	max-width: 1110px;
-	/*width: 92vw;*/
-}
+	width: 1110px;
+};
 
-.footerContainer {
-	display: grid;
-	grid-template-columns: 1fr auto;
-	/*border: 1px red solid;*/
-}
-.siteMapContainer {
-	padding-top: 72px;
-}
-.siteMapLinksWrapper {
-	display: grid;
-	grid-template-rows: auto;
-	row-gap: 24px;
-}
-
-.siteMapLinkWrapper {
+%mainFont {
 	font-family: var(--font-family);
 	font-weight: 400;
 	font-size: 20px;
@@ -33,28 +11,60 @@
 	color: var(--white);
 }
 
+.footer {
+	margin: 0 auto;
+	width: 100%;
+	background: var(--brown);
+}
+
+.footerWrapper {
+	@extend %maxWidth;
+}
+
+.footerContainer {
+	display: grid;
+	grid-template-columns: 1fr auto;
+}
+
+.siteMapContainer {
+	padding-top: 72px;
+}
+
+.siteMapLinksWrapper {
+	display: grid;
+	grid-template-rows: auto;
+	row-gap: 24px;
+}
+
+.siteMapLinkWrapper {
+	@extend %mainFont;
+}
+
 .siteMapLink {
 	display: inline-block;
 	cursor: pointer;
 	transition: transform 0.2s ease-in-out;
-}
 
-.siteMapLink_active {
-	text-decoration: underline;
-}
+	&_active {
+		text-decoration: underline;
+ }
 
-.siteMapLink:hover {
-	transform: scale(1.1);
+	&:hover {
+		transform: scale(1.1);
+	}
+
 }
 
 .socialLinksContainer {
 	padding-top: 64px;
 }
+
 .socialLinksWrapper {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 	column-gap: 22px;
 }
+
 .socialLink {
 }
 
@@ -62,12 +72,11 @@
 	padding-top: 46px;
 	padding-bottom: 59px;
 }
+
 .attentionText {
-	font-family: var(--font-family);
-	font-weight: 400;
+	@extend %mainFont;
 	font-size: 16px;
 	line-height: 125%;
-	color: var(--white);
 }
 
 .privacyPolicy {
@@ -75,23 +84,18 @@
 }
 
 .privacyPolicyWrapper {
-	margin: 0 auto;
-	max-width: 1110px;
-	/*width: 92vw;*/
+	@extend %maxWidth;
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(370px, auto));
 	align-items: center;
 	padding: 26px 0px;
-	/*border: 1px solid red;*/
 }
 
 .privacyPolicyLink {
-	font-family: var(--font-family);
-	font-weight: 400;
-	font-size: 20px;
+	@extend %mainFont;
+	line-height: 100%;
 	text-decoration: underline;
 	text-decoration-skip-ink: none;
-	color: var(--white);
 }
 
 .creators {
@@ -106,12 +110,8 @@
 }
 
 .creatorsName {
-	font-family: var(--font-family);
-	font-weight: 400;
-	font-size: 20px;
-	line-height: 120%;
+	@extend %mainFont;
 	text-align: right;
-	color: var(--white);
 }
 
 @media screen and (max-width: 744px) {
