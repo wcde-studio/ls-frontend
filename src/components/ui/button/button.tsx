@@ -5,20 +5,20 @@ import styles from './button.module.scss';
 import { ButtonSize, ButtonType } from './types';
 
 interface IButtonProps {
-	className?: string;
-	type?: ButtonType;
-	size?: ButtonSize;
+	type: ButtonType;
+	size: ButtonSize;
 	title: string;
+	className?: string;
 	onClick?: () => void;
 	disabled?: boolean;
 }
 
 const Button = (props: IButtonProps) => {
 	const {
-		className,
-		type = ButtonType.White,
-		size = ButtonSize.Desctop,
+		type,
+		size,
 		title,
+		className,
 		onClick,
 		disabled = false,
 	} = props;
