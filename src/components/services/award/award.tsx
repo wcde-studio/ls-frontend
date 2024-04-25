@@ -18,13 +18,13 @@ import {
 import { AwardType, AwardSize } from './types';
 
 interface IAwardProps {
-	type?: AwardType;
-	size?: AwardSize;
-	text?: string;
+	type: AwardType;
+	size: AwardSize;
+	text: string;
 }
 
 const Award = (props: IAwardProps) => {
-	const { type = AwardType.Team, size = AwardSize.Desctop, text = '' } = props;
+	const { type, size, text = '' } = props;
 
 	const icon = {
 		TEAM: <TeamIcon />,
