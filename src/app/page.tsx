@@ -26,6 +26,9 @@ import { ButtonSize, ButtonType } from '@/components/ui/button/types';
 
 import Intro from '@/components/intro/intro';
 
+import { courses } from '@/lib/courses-data';
+import CourseCard from '@/components/course-card/course-card';
+
 
 export default function Home() {
 	return (
@@ -44,10 +47,17 @@ export default function Home() {
 				<section className={styles.section}>
 					<h1 className={styles.title}>{'Ближайшие курсы'}</h1>
 					<ul className={styles.coursesList}>
-
+						{courses?.map((course) => (
+							<CourseCard
+								name={course.name}
+								image={course.image}
+								date={course.date}
+								sity={course.sity}
+								key={course.id}
+							/>
+						))}
 					</ul>
 				</section>
-
 				<section className={styles.section}>
 					<h1 className={styles.title}>{'Премии и заслуги'}</h1>
 					<ul className={styles.awardsList}>

@@ -1,0 +1,81 @@
+.card {
+	display: grid;
+	grid-template-rows: 1fr min-content;
+	width: 100%;
+}
+
+.image {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.description {
+	padding: 16px 20px 20px 20px;
+}
+
+%mainFont {
+	font-family: var(--font-family);
+	font-weight: 700;
+	font-size: 18px;
+	line-height: 133%;
+	text-align: center;
+	color: var(--violet);
+}
+
+
+.name {
+	@extend %mainFont;
+
+	font-size: 24px;
+	line-height: 125%;
+	color: var(--dark-grey);
+	text-align: start;
+
+	padding-bottom: 16px;
+}
+
+.location {
+	display: flex;
+	align-items: center;
+	justiffy-content: center;
+
+	padding-bottom: 32px;
+}
+
+.date {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justiffy-content: center;
+
+	padding-right: 16px;
+}
+
+.day {
+	@extend %mainFont;
+	line-height: 100%;
+
+	font-weight: 400;
+	font-size: 48px;
+}
+
+.month {
+	@extend %mainFont;
+}
+
+.border {
+	background: var(--violet);
+	width: 2px;
+	height: 55px;
+}
+
+.sity {
+	@extend %mainFont;
+	padding-left: 16px;
+}
+
+.button {
+
+}
+
