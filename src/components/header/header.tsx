@@ -1,15 +1,25 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import { usePathname } from 'next/navigation';
 import { clsx } from 'clsx';
 import { LogoIcon, ProfileIcon } from '../ui';
 import styles from './header.module.scss';
 import Link from 'next/link';
 
+import { Modal } from '@/components/services';
+import { AuthorizationForm } from '@/components/forms';
+
+
+
 const Header = () => {
 	const pathname = usePathname();
 	const isActive = (path: string) => path === pathname;
+
+	const [modalOn, setModalOn] = useState(false);
+
+	const modalOnClick = () => setModalOn(!modalOn);
+
 
 	return (
 		<header className={styles.headerContainer}>
@@ -35,6 +45,7 @@ const Header = () => {
 						Контакты
 					</Link>
 					<Link
+						onClick={modalOnClick}
 						href="/"
 						className={clsx(
 							styles.link,
@@ -46,6 +57,11 @@ const Header = () => {
 					</Link>
 				</nav>
 			</div>
+
+			<Modal modalOn={modalOn} onClick={modalOnClick}>
+				<AuthorizationForm onClose={modalOnClick}/>
+			</Modal>
+
 		</header>
 	);
 };

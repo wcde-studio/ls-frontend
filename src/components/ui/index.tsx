@@ -23,13 +23,14 @@ import PrizeIcon from './icons/awards/prize-icon';
 import RibbonIcon from './icons/awards/ribbon-icon';
 import CupIcon from './icons/awards/cup-icon';
 import AwardIcon from './icons/awards/award-icon';
+import LadaVedIcon from './icons/lada-ved-icon';
+import LadaVedIconSvg from './icons/lada-ved-icon-svg.svg';
+import CloseIcon from './icons/close-icon';
 
 import Button from './button/button';
 //import IconButton from './button/icon-button/icon-button';
 
-import LadaVedIcon from './icons/lada-ved-icon';
-import LadaVedIconSvg from './icons/lada-ved-icon-svg.svg';
-
+import InputEmail from './input/input-email/input-email';
 
 export {
 	LogoIcon,
@@ -40,10 +41,6 @@ export {
 	VKIcon,
 	DownChevronIcon,
 	UpChevronIcon,
-	//	PlusIcon,
-	//	PreviousIcon,
-	//	NextIcon,
-	//	EditIcon,
 	TeamIcon,
 	GameIcon,
 	BookIcon,
@@ -54,8 +51,11 @@ export {
 	RibbonIcon,
 	CupIcon,
 	AwardIcon,
+	LadaVedIcon,
+	LadaVedIconSvg,
+	CloseIcon,
+
 	Button,
 	//	IconButton
-	LadaVedIcon,
-	LadaVedIconSvg
+	InputEmail,
 };
