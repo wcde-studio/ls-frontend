@@ -49,10 +49,7 @@ export default function Home() {
 					<ul className={styles.coursesList}>
 						{courses?.map((course) => (
 							<CourseCard
-								name={course.name}
-								image={course.image}
-								date={course.date}
-								sity={course.sity}
+								course={course}
 								key={course.id}
 							/>
 						))}

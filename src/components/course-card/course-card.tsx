@@ -6,46 +6,29 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import { LadaVedIcon, LadaVedIconSvg } from '@/components/ui';
-
 import { Button } from '@/components/ui';
 import { ButtonSize, ButtonType } from '@/components/ui/button/types';
 
+import { months } from '@/lib/constants/date';
 
 type Props = {
+	course: {
 		name: string;
 		image: string;
 		date: string;
-		sity: string;
-		id?: number;
+		city: string;
+		id: number;
+	};
+	key: number;
 };
 
 const CourseCard = ( props: Props ) => {
 
-	const {
-		name,
-		image,
-		date,
-		sity,
-		id
-	 } = props;
+	const { course } = props;
 
-	const months = [
-		'января',
-		'февраля',
-		'марта',
-		'апреля',
-		'мая',
-		'июня',
-		'июля',
-		'августа',
-		'сентября',
-		'октября',
-		'ноября',
-		'декабря'
-	];
+	const { name, image, date, city } = course;
 
 	const dateData = new Date(date);
-
 	const day = dateData.toLocaleString('ru-RU', { day: '2-digit' });
 	const month = months[dateData.getMonth()];
 
@@ -68,7 +51,7 @@ const CourseCard = ( props: Props ) => {
 						<p className={styles.month}>{month}</p>
 					</div>
 					<div className={styles.border}></div>
-					<p className={styles.sity}>{sity}</p>
+					<p className={styles.city}>{city}</p>
 				</div>
 				<div className={styles.button}>
 					<Link href={'/'} >
@@ -85,17 +68,3 @@ const CourseCard = ( props: Props ) => {
 }
 
 export default CourseCard;
-
-
-/*
-				<div className={styles.introButton}>
-						<Link href={'/'} >
-							<Button
-								type={ButtonType.Violet}
-								size={ButtonSize.Desctop}
-								title={'Курсы'}
-							/>
-						</Link>
-				</div>
-
-*/
