@@ -30,7 +30,6 @@ import Button from './button/button';
 import LadaVedIcon from './icons/lada-ved-icon';
 import LadaVedIconSvg from './icons/lada-ved-icon-svg.svg';
 
-
 export {
 	LogoIcon,
 	ProfileIcon,
@@ -57,5 +56,5 @@ export {
 	Button,
 	//	IconButton
 	LadaVedIcon,
-	LadaVedIconSvg
+	LadaVedIconSvg,
 };

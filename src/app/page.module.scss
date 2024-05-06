@@ -73,7 +73,6 @@
 	padding-bottom: 140px;
 }
 
-
 .topTitle {
 	font-family: var(--font-family);
 	font-weight: 400;
@@ -96,13 +95,13 @@
 	color: var(--dark-grey);
 	border-bottom: 1px solid var(--brown);
 	max-width: 915px;
-	padding: 22px 0px;;
+	padding: 22px 0px;
 }
 
 .coursesList {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-/*	grid-template-columns: repeat(3, 1fr);
+	/*	grid-template-columns: repeat(3, 1fr);
 	grid-template-rows: minmax(auto, 150px);*/
 
 	row-gap: 64px;
@@ -111,10 +110,3 @@
 	justify-items: center;
 	padding-top: 0px;
 }
-
-
-
-
-
-
-

@@ -3,7 +3,6 @@ import styles from './page.module.scss';
 import Image from 'next/image';
 import Link from 'next/link';
 
-
 import Header from '@/components/header/header';
 import Footer from '@/components/footer/footer';
 
@@ -19,7 +18,7 @@ import {
 import { services } from '@/lib/services-data';
 import { pageData } from '@/lib/page-data';
 
-import { LadaVedIcon, LadaVedIconSvg, LogoIcon} from '@/components/ui';
+import { LadaVedIcon, LadaVedIconSvg, LogoIcon } from '@/components/ui';
 
 import { Button } from '@/components/ui';
 import { ButtonSize, ButtonType } from '@/components/ui/button/types';
@@ -28,7 +27,6 @@ import Intro from '@/components/intro/intro';
 
 import { courses } from '@/lib/courses-data';
 import CourseCard from '@/components/course-card/course-card';
-
 
 export default function Home() {
 	return (
@@ -48,10 +46,7 @@ export default function Home() {
 					<h1 className={styles.title}>{'Ближайшие курсы'}</h1>
 					<ul className={styles.coursesList}>
 						{courses?.map((course) => (
-							<CourseCard
-								course={course}
-								key={course.id}
-							/>
+							<CourseCard course={course} key={course.id} />
 						))}
 					</ul>
 				</section>

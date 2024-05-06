@@ -1,7 +1,7 @@
 %maxWidth {
 	margin: 0 auto;
 	width: 1110px;
-};
+}
 
 %mainFont {
 	font-family: var(--font-family);
@@ -47,12 +47,11 @@
 
 	&_active {
 		text-decoration: underline;
- }
+	}
 
 	&:hover {
 		transform: scale(1.1);
 	}
-
 }
 
 .socialLinksContainer {

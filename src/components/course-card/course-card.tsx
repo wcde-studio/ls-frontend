@@ -22,8 +22,7 @@ type Props = {
 	key: number;
 };
 
-const CourseCard = ( props: Props ) => {
-
+const CourseCard = (props: Props) => {
 	const { course } = props;
 
 	const { name, image, date, city } = course;
@@ -37,11 +36,11 @@ const CourseCard = ( props: Props ) => {
 	return (
 		<li className={styles.card}>
 			<Image
-					alt="course"
-					src={imageSrc}
-					width={300}
-					height={300}
-					className={styles.image}
+				alt="course"
+				src={imageSrc}
+				width={300}
+				height={300}
+				className={styles.image}
 			/>
 			<section className={styles.description}>
 				<h2 className={styles.name}>{name}</h2>
@@ -54,17 +53,17 @@ const CourseCard = ( props: Props ) => {
 					<p className={styles.city}>{city}</p>
 				</div>
 				<div className={styles.button}>
-					<Link href={'/'} >
+					<Link href={'/'}>
 						<Button
 							type={ButtonType.Violet}
 							size={ButtonSize.Desctop}
 							title={'Узнать больше'}
 						/>
-						</Link>
+					</Link>
 				</div>
 			</section>
 		</li>
 	);
-}
+};
 
 export default CourseCard;
