@@ -5,17 +5,18 @@ interface TProperties {
 	id: number;
 	price: number;
 	currency: string;
-	properties?: {
-		id: number;
-		text: string;
-	}[] | null;
-};
+	properties?:
+		| {
+				id: number;
+				text: string;
+		  }[]
+		| null;
+}
 
 type Props = {
 	price: TProperties;
 	key?: number;
 };
-
 
 const Price = (props: Props) => {
 	const { price } = props;

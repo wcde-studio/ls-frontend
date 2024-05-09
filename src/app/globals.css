@@ -75,6 +75,13 @@ dd {
 }
 
 body {
-	margin: 0;
 	background: var(--beige-bg);
+}
+
+input {
+	all: unset;
+}
+
+span {
+	all: unset;
 }

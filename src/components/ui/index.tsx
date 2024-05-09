@@ -26,11 +26,16 @@ import AwardIcon from './icons/awards/award-icon';
 import LadaVedIcon from './icons/lada-ved-icon';
 import LadaVedIconSvg from './icons/lada-ved-icon-svg.svg';
 import CloseIcon from './icons/close-icon';
+import InputCloseIcon from './icons/input-close-icon';
+import EyeCloseIcon from './icons/eye-close-icon';
+import EyeOpenIcon from './icons/eye-open-icon';
 
 import Button from './button/button';
 //import IconButton from './button/icon-button/icon-button';
 
 import InputEmail from './input/input-email/input-email';
+import InputPassword from './input/input-password/input-password';
+import Input from './input/input';
 
 export {
 	LogoIcon,
@@ -54,8 +59,12 @@ export {
 	LadaVedIcon,
 	LadaVedIconSvg,
 	CloseIcon,
-
+	InputCloseIcon,
+	EyeCloseIcon,
+	EyeOpenIcon,
 	Button,
 	//	IconButton
 	InputEmail,
+	InputPassword,
+	Input,
 };

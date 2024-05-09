@@ -3,7 +3,7 @@ import React from 'react';
 import clsx from 'clsx';
 import styles from './button.module.scss';
 
-import { ButtonSize, ButtonType, ButtonHtmlType, } from './types';
+import { ButtonSize, ButtonType, ButtonHtmlType } from './types';
 
 interface IButtonProps {
 	type: ButtonType;
@@ -23,9 +23,8 @@ const Button = (props: IButtonProps) => {
 		className,
 		onClick,
 		disabled = false,
-		htmlType = ButtonHtmlType.Button
+		htmlType = ButtonHtmlType.Button,
 	} = props;
-
 
 	const classNameButton = clsx(
 		styles.button,
@@ -35,12 +34,11 @@ const Button = (props: IButtonProps) => {
 	);
 
 	return (
-		<button 
-			disabled={disabled} 
-			className={classNameButton} 
+		<button
+			disabled={disabled}
+			className={classNameButton}
 			onClick={onClick}
-			type={htmlType}
-		>
+			type={htmlType}>
 			{title}
 		</button>
 	);

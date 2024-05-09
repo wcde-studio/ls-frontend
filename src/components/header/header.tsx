@@ -10,16 +10,13 @@ import Link from 'next/link';
 import { Modal } from '@/components/services';
 import { AuthorizationForm } from '@/components/forms';
 
-
-
 const Header = () => {
 	const pathname = usePathname();
 	const isActive = (path: string) => path === pathname;
 
-	const [modalOn, setModalOn] = useState(false);
+	const [modalOn, setModalOn] = useState(true);
 
 	const modalOnClick = () => setModalOn(!modalOn);
-
 
 	return (
 		<header className={styles.headerContainer}>
@@ -59,9 +56,8 @@ const Header = () => {
 			</div>
 
 			<Modal modalOn={modalOn} onClick={modalOnClick}>
-				<AuthorizationForm onClose={modalOnClick}/>
+				<AuthorizationForm onClose={modalOnClick} />
 			</Modal>
-
 		</header>
 	);
 };

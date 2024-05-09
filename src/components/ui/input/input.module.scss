@@ -1,0 +1,103 @@
+.inputWrapper {
+	width: 100%;
+	display: grid;
+	position: relative;
+}
+
+.input {
+	border-radius: 4px;
+	background: var(--white);
+
+	&:hover {
+		outline: 1px solid var(--dark-grey);
+	}
+
+	&:focus {
+		outline: 2px solid var(--violet);
+		border-radius: 4px;
+	}
+}
+
+.iconButton {
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	&:hover {
+		cursor: pointer;
+	}
+}
+
+.upPlaceholder {
+	display: none;
+	position: absolute;
+}
+
+.errorMessage {
+	display: none;
+	position: absolute;
+}
+
+.value {
+	& .upPlaceholder {
+		display: block;
+	}
+}
+
+.DESCTOP {
+	margin-bottom: 17px;
+
+	.input {
+		padding: 18px 16px;
+		font-family: var(--font-family);
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 125%;
+		color: var(--grey);
+	}
+
+	&.value .input {
+		padding: 26px 16px 10px 16px;
+		color: var(--dark-grey);
+	}
+
+	.iconButton {
+		top: 16px;
+		right: 12px;
+	}
+
+	.upPlaceholder {
+		font-family: var(--font-family);
+		font-weight: 400;
+		font-size: 13px;
+		color: var(--grey);
+
+		top: 10px;
+		left: 16px;
+	}
+
+	.errorMessage {
+		font-family: var(--font-family);
+		font-weight: 400;
+		font-size: 13px;
+		color: var(--orange);
+
+		top: 60px;
+		left: 0px;
+	}
+}
+
+.error {
+	.errorMessage {
+		display: block;
+	}
+
+	.input {
+		outline: 2px solid var(--orange);
+	}
+
+	.upPlaceholder {
+		color: var(--orange);
+	}
+}

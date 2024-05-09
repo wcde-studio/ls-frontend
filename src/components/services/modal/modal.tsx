@@ -4,23 +4,16 @@ import styles from './modal.module.scss';
 type Props = {
 	children: ReactNode;
 	modalOn: boolean;
-	onClick: ()=>void;
+	onClick: () => void;
 };
 
 const Modal = (props: Props) => {
-
-	const {
-		children,
-		modalOn=false,
-		onClick=()=>{}
-	} = props;
+	const { children, modalOn = false, onClick = () => {} } = props;
 
 	return modalOn ? (
 		<div className={styles.modal}>
 			<div className={styles.background} onClick={onClick}></div>
-			<div className={styles.content}>
-			 {children}
-			</div>
+			<div className={styles.content}>{children}</div>
 		</div>
 	) : null;
 };

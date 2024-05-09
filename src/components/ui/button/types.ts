@@ -7,11 +7,11 @@ export enum ButtonSize {
 export enum ButtonType {
 	Violet = 'VIOLET',
 	White = 'WHITE',
-	Transparent = 'TRANSPARENT'
+	Transparent = 'TRANSPARENT',
 }
 
 export enum ButtonHtmlType {
 	Button = 'button',
 	Submit = 'submit',
-	Reset =  'reset'
+	Reset = 'reset',
 }

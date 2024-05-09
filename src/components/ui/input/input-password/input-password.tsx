@@ -23,8 +23,10 @@ type Props = {
 	setValue: (arg0: string) => void;
 };
 
-const InputEmail = (props: Props) => {
+const InputPassword = (props: Props) => {
 	const { size, className, value, setValue, error } = props;
+
+	const [visibility, setVisibility] = useState(false);
 
 	const classNameInput = clsx(className, styles.inputWrapper, {
 		[styles[`${size}`]]: size,
@@ -33,24 +35,25 @@ const InputEmail = (props: Props) => {
 	});
 
 	const onIconClick = () => {
-		setValue('');
+		setVisibility(!visibility);
 	};
 
-	const icon = value ? <InputCloseIcon /> : false;
+	const icon = visibility ? <EyeOpenIcon /> : <EyeCloseIcon />;
+	const textType = visibility ? InputType.Text : InputType.Password;
 
 	return (
 		<Input
-			type={InputType.Email}
+			type={textType}
 			size={InputSize.Desctop}
 			value={value}
 			setValue={setValue}
 			error={error}
-			placeholder={'Email'}
-			errorMessage={'Введите корректный email'}
+			placeholder={'Пароль'}
+			errorMessage={'Введите корректный пароль'}
 			icon={icon}
 			onIconClick={onIconClick}
 		/>
 	);
 };
 
-export default InputEmail;
+export default InputPassword;

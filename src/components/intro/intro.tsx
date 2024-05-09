@@ -15,7 +15,7 @@ const Intro = () => {
 				<div>
 					<LadaVedIconSvg className={styles.ladaVedIconSvg} />
 					<div className={styles.introButton}>
-						<Link href={'/'} >
+						<Link href={'/'}>
 							<Button
 								type={ButtonType.Violet}
 								size={ButtonSize.Desctop}
@@ -33,11 +33,19 @@ const Intro = () => {
 				/>
 			</section>
 			<section className={styles.sectionTitle}>
-				<p className={styles.topTitle}>{'Организационно-управленческий психолог, корпоративный бизнес-тренер, мотиватор, наставник'}</p>
-				<p className={styles.bottomTitle}>{'А ещё сильнейшая провидица современности, бизнес-маг, рунолог, этнолог, физик'}</p>
+				<p className={styles.topTitle}>
+					{
+						'Организационно-управленческий психолог, корпоративный бизнес-тренер, мотиватор, наставник'
+					}
+				</p>
+				<p className={styles.bottomTitle}>
+					{
+						'А ещё сильнейшая провидица современности, бизнес-маг, рунолог, этнолог, физик'
+					}
+				</p>
 			</section>
 		</>
 	);
-}
+};
 
 export default Intro;
