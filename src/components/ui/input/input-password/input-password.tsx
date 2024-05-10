@@ -26,7 +26,7 @@ type Props = {
 const InputPassword = (props: Props) => {
 	const { size, className, value, setValue, error } = props;
 
-	const [visibility, setVisibility] = useState(false);
+	const [visibility, setVisibility] = useState(true);
 
 	const classNameInput = clsx(className, styles.inputWrapper, {
 		[styles[`${size}`]]: size,
