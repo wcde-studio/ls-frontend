@@ -14,14 +14,7 @@ interface IButtonProps {
 }
 
 const Button = (props: IButtonProps) => {
-	const {
-		type,
-		size,
-		title,
-		className,
-		onClick,
-		disabled = false,
-	} = props;
+	const { type, size, title, className, onClick, disabled = false } = props;
 
 	const classNameButton = clsx(
 		styles.button,
