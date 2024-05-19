@@ -1,0 +1,65 @@
+.card {
+	display: flex;
+	flex-direction: column;
+	padding: 20px;
+	background: var(--white);
+}
+
+.title {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	padding-bottom: 32px;
+}
+
+.name {
+	font-family: var(--font-family);
+	font-weight: 700;
+	font-size: 24px;
+	line-height: 125%;
+	color: var(--dark-grey);
+}
+
+%chatFont {
+	font-family: var(--font-family);
+	font-weight: 400;
+	font-size: 20px;
+	color: var(--dark-grey);
+}
+
+.status {
+	@extend %chatFont;
+	line-height: 120%;
+}
+
+.contacts {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+}
+
+.contact {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	gap: 11px;
+	align-items: center;
+}
+
+
+.chatTitle {
+	@extend %chatFont;
+	line-height: 120%;
+}
+
+.chatLink {
+	@extend %chatFont;
+}
+
+.tel {
+	font-family: var(--font-family);
+	font-weight: 700;
+	font-size: 20px;
+	line-height: 120%;
+	color: var(--dark-grey);
+}

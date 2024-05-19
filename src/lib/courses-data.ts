@@ -27,7 +27,7 @@ interface TCourse {
 */
 }
 
-export const courses = [
+export const courses: TCourse[] = [
 	{
 		id: 0,
 		name: 'Магия женской силы',
