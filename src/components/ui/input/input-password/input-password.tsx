@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import clsx from 'clsx';
 
@@ -16,15 +16,16 @@ import {
 } from '@/components/ui';
 
 type Props = {
+	name: string;
 	size: InputSize;
 	className?: string;
 	error: boolean;
 	value: string;
-	setValue: (arg0: string) => void;
+	onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
 const InputPassword = (props: Props) => {
-	const { size, className, value, setValue, error } = props;
+	const { name, size, className, value, onChange, error } = props;
 
 	const [visibility, setVisibility] = useState(true);
 
@@ -33,6 +34,13 @@ const InputPassword = (props: Props) => {
 		[styles.error]: error,
 		[styles.value]: value,
 	});
+
+	const [inputError, setInputError] = useState(false);
+
+	useEffect(() => {
+		const valid = value.length > 10 || error;
+		value === '' || valid ? setInputError(false) : setInputError(true);
+	}, [value, error]);
 
 	const onIconClick = () => {
 		setVisibility(!visibility);
@@ -43,11 +51,12 @@ const InputPassword = (props: Props) => {
 
 	return (
 		<Input
+			name={name}
 			type={textType}
 			size={InputSize.Desctop}
 			value={value}
-			setValue={setValue}
-			error={error}
+			onChange={onChange}
+			error={inputError}
 			placeholder={'Пароль'}
 			errorMessage={'Введите корректный пароль'}
 			icon={icon}

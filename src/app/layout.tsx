@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import React from 'react';
 //import { Inter } from "next/font/google";
-import './globals.css';
+import './globals.scss';
 import styles from './layout.module.scss';
 
 import Header from '@/components/header/header';
@@ -21,9 +21,7 @@ export default function RootLayout({
 		<html lang="en">
 			<body>
 				<Header />
-				<main className={styles.main}>
-					{children}
-				</main>
+				<main className={styles.main}>{children}</main>
 				<Footer />
 			</body>
 		</html>

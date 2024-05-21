@@ -11,12 +11,13 @@ import { InputType, InputSize } from './types';
 import { InputCloseIcon, EyeCloseIcon, EyeOpenIcon } from '@/components/ui';
 
 type Props = {
+	name: string;
 	type: InputType;
 	size: InputSize;
 	className?: string;
 	error: boolean;
 	value: string;
-	setValue: (arg0: string) => void;
+	onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 	placeholder: string;
 	errorMessage: string;
 	icon: ReactNode;
@@ -25,11 +26,12 @@ type Props = {
 
 const Input = (props: Props) => {
 	const {
+		name,
 		type,
 		size,
 		className,
 		value,
-		setValue,
+		onChange,
 		error,
 		placeholder,
 		errorMessage,
@@ -43,13 +45,10 @@ const Input = (props: Props) => {
 		[styles.value]: value,
 	});
 
-	const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-		setValue(e.target.value);
-	};
-
 	return (
 		<div className={classNameInput}>
 			<input
+				name={name}
 				className={styles.input}
 				type={type}
 				value={value}

@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import clsx from 'clsx';
 
@@ -16,15 +16,19 @@ import {
 } from '@/components/ui';
 
 type Props = {
+	name: string;
 	size: InputSize;
 	className?: string;
 	error: boolean;
 	value: string;
-	setValue: (arg0: string) => void;
+	onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+	resetInput: (arg0: string) => void;
 };
 
 const InputEmail = (props: Props) => {
-	const { size, className, value, setValue, error } = props;
+	const { name, size, className, value, onChange, error, resetInput } = props;
+
+	const [inputError, setInputError] = useState(false);
 
 	const classNameInput = clsx(className, styles.inputWrapper, {
 		[styles[`${size}`]]: size,
@@ -32,19 +36,26 @@ const InputEmail = (props: Props) => {
 		[styles.value]: value,
 	});
 
+	useEffect(() => {
+		const valid =
+			value.toLowerCase().match('[^@\\s]+@[^@\\s]+[^@\\s]+') || error;
+		value === '' || valid ? setInputError(false) : setInputError(true);
+	}, [value, error]);
+
 	const onIconClick = () => {
-		setValue('');
+		resetInput(name);
 	};
 
 	const icon = value ? <InputCloseIcon /> : false;
 
 	return (
 		<Input
+			name={name}
 			type={InputType.Email}
 			size={InputSize.Desctop}
 			value={value}
-			setValue={setValue}
-			error={error}
+			onChange={onChange}
+			error={inputError}
 			placeholder={'Email'}
 			errorMessage={'Введите корректный email'}
 			icon={icon}

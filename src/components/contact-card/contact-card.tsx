@@ -15,7 +15,7 @@ type Props = {
 			title: string;
 			link: string;
 			id: number;
-		}[],
+		}[];
 		tel?: string;
 		id: number;
 	};
@@ -25,12 +25,7 @@ type Props = {
 const ContactCard = (props: Props) => {
 	const { contactInfo } = props;
 
-	const {
-		name,
-		status,
-		chats,
-		tel
-	} = contactInfo;
+	const { name, status, chats, tel } = contactInfo;
 
 	return (
 		<li className={styles.card}>
@@ -39,10 +34,14 @@ const ContactCard = (props: Props) => {
 				<p className={styles.status}>{status}</p>
 			</section>
 			<ul className={styles.contacts}>
-				{chats?.map((chat)=>(
+				{chats?.map((chat) => (
 					<li className={styles.contact} key={chat.id}>
 						<h2 className={styles.chatTitle}>{chat.title}</h2>
-						<Link href={`https://t.me/${chat.link}`} className={styles.chatLink}>{chat.link}</Link>
+						<Link
+							href={`https://t.me/${chat.link}`}
+							className={styles.chatLink}>
+							{chat.link}
+						</Link>
 					</li>
 				))}
 				<li className={styles.tel}>{tel}</li>

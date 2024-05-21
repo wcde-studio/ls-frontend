@@ -18,6 +18,8 @@ import { InputSize } from '@/components/ui/input/types';
 
 import { CloseIcon } from '@/components/ui';
 
+import { useInput } from '@/hooks';
+
 type Props = {
 	onClose: () => void;
 };
@@ -25,24 +27,18 @@ type Props = {
 const AuthorizationForm = (props: Props) => {
 	const { onClose } = props;
 
-	const [email, setEmail] = useState('');
-	const [password, setPassword] = useState('');
+	const { input, handleInputChange, resetInput } = useInput({
+		email: '',
+		password: '',
+	});
 
-	const [emailError, setEmailError] = useState(false);
-	const [passwordError, setPasswordError] = useState(false);
-
-	useEffect(() => {
-		const valid = email.toLowerCase().match('[^@\\s]+@[^@\\s]+[^@\\s]+');
-		email === '' || valid ? setEmailError(false) : setEmailError(true);
-	}, [email]);
-
-	useEffect(() => {
-		const valid = password.length > 10;
-		password === '' || valid ? setPasswordError(false) : setPasswordError(true);
-	}, [password]);
+	const { email, password } = {
+		email: 'email',
+		password: 'password',
+	};
 
 	const onSubmit = () => {
-		console.log('form submit');
+		console.log(input);
 	};
 
 	return (
@@ -57,18 +53,21 @@ const AuthorizationForm = (props: Props) => {
 				<ul className={styles.listContent}>
 					<li>
 						<InputEmail
+							name={email}
 							size={InputSize.Desctop}
-							value={email}
-							setValue={setEmail}
-							error={emailError}
+							value={input[email]}
+							onChange={handleInputChange}
+							error={false}
+							resetInput={resetInput}
 						/>
 					</li>
 					<li>
 						<InputPassword
+							name={password}
 							size={InputSize.Desctop}
-							value={password}
-							setValue={setPassword}
-							error={passwordError}
+							value={input[password]}
+							onChange={handleInputChange}
+							error={false}
 						/>
 					</li>
 				</ul>
