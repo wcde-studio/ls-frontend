@@ -1,24 +1,24 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
+
 import styles from './authorization-form.module.scss';
+
 import Link from 'next/link';
 
-import { Button } from '@/components/ui';
+import { Button, CloseIcon, InputEmail,  InputPassword } from '@/components/ui';
+
 import {
 	ButtonSize,
 	ButtonType,
 	ButtonHtmlType,
 } from '@/components/ui/button/types';
 
-import { InputEmail } from '@/components/ui';
-import { InputPassword } from '@/components/ui';
+import { InputSize, InputName } from '@/components/ui/input/types';
+import { FormName } from  '@/components/forms/types';
+import  Form  from '../form';
 
-import { InputSize } from '@/components/ui/input/types';
-
-import { CloseIcon } from '@/components/ui';
-
-import { useInput } from '@/hooks';
+import { useInput, useForm } from '@/hooks';
 
 type Props = {
 	onClose: () => void;
@@ -28,46 +28,49 @@ const AuthorizationForm = (props: Props) => {
 	const { onClose } = props;
 
 	const { input, handleInputChange, resetInput } = useInput({
-		email: '',
-		password: '',
+		 [InputName.Email]: '',
+		 [InputName.Password]: '',
 	});
 
-	const { email, password } = {
-		email: 'email',
-		password: 'password',
-	};
+	const { 
+		handlerOnSubmit, 
+		errors, 
+		valid, 
+		loading, 
+		checkEnd
+		} = useForm({[InputName.Email]: false, [InputName.Password]: false });
 
-	const onSubmit = () => {
-		console.log(input);
-	};
+		useEffect(() => {
+			if(valid && checkEnd) onClose();
+		}, [valid, checkEnd, onClose]);
 
 	return (
-		<form onSubmit={onSubmit} className={styles.form}>
+		<Form onSubmit={handlerOnSubmit} className={styles.form} name={FormName.Authorization} loading={loading}>
 			<section className={styles.formContent}>
 				<div className={styles.title}>
 					<h2>Вход</h2>
-					<button className={styles.closeIcon} onClick={onClose}>
+					<button className={styles.closeIcon} onClick={onClose} type={'button'}>
 						<CloseIcon />
 					</button>
 				</div>
 				<ul className={styles.listContent}>
 					<li>
 						<InputEmail
-							name={email}
+							name={InputName.Email}
 							size={InputSize.Desctop}
-							value={input[email]}
+							value={input[InputName.Email]}
 							onChange={handleInputChange}
-							error={false}
+							error={errors[InputName.Email]}
 							resetInput={resetInput}
 						/>
 					</li>
 					<li>
 						<InputPassword
-							name={password}
+							name={InputName.Password}
 							size={InputSize.Desctop}
-							value={input[password]}
+							value={input[InputName.Password]}
 							onChange={handleInputChange}
-							error={false}
+							error={errors[InputName.Password]}
 						/>
 					</li>
 				</ul>
@@ -96,7 +99,7 @@ const AuthorizationForm = (props: Props) => {
 					</li>
 				</ul>
 			</section>
-		</form>
+		</Form>
 	);
 };
 

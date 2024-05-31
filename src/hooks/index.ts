@@ -1,3 +1,5 @@
 import { useInput } from './useInput';
+import { useForm } from './useForm';
 
-export { useInput };
+
+export { useInput, useForm };

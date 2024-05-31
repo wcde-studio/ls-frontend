@@ -9,3 +9,14 @@ export enum InputSize {
 	//	Pad = 'PAD',
 	//	Mobile = 'MOBILE'
 }
+
+export enum InputName {
+	name = 'name',
+	surname = 'surname',
+	Email = 'email',
+	Telephone = 'telephone',
+	Telegram = 'telegram',
+	city = 'city',
+	Password = 'password',
+	RepeatPassword = 'repeatPassword',
+}

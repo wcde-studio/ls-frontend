@@ -6,7 +6,7 @@ import clsx from 'clsx';
 
 import styles from '../input.module.scss';
 
-import { InputType, InputSize } from '../types';
+import { InputType, InputSize, InputName } from '../types';
 
 import {
 	Input,
@@ -16,7 +16,7 @@ import {
 } from '@/components/ui';
 
 type Props = {
-	name: string;
+	name: InputName;
 	size: InputSize;
 	className?: string;
 	error: boolean;
@@ -38,8 +38,9 @@ const InputPassword = (props: Props) => {
 	const [inputError, setInputError] = useState(false);
 
 	useEffect(() => {
-		const valid = value.length > 10 || error;
-		value === '' || valid ? setInputError(false) : setInputError(true);
+//		const valid = !error;
+//		value === '' || valid ? setInputError(false) : setInputError(true);
+		error ? setInputError(true) : setInputError(false);
 	}, [value, error]);
 
 	const onIconClick = () => {

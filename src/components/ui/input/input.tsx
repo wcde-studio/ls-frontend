@@ -6,12 +6,12 @@ import clsx from 'clsx';
 
 import styles from './input.module.scss';
 
-import { InputType, InputSize } from './types';
+import { InputType, InputSize, InputName } from './types';
 
 import { InputCloseIcon, EyeCloseIcon, EyeOpenIcon } from '@/components/ui';
 
 type Props = {
-	name: string;
+	name: InputName;
 	type: InputType;
 	size: InputSize;
 	className?: string;

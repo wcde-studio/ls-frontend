@@ -6,7 +6,7 @@ import clsx from 'clsx';
 
 import styles from '../input.module.scss';
 
-import { InputType, InputSize } from '../types';
+import { InputType, InputSize, InputName } from '../types';
 
 import {
 	Input,
@@ -16,7 +16,7 @@ import {
 } from '@/components/ui';
 
 type Props = {
-	name: string;
+	name: InputName;
 	size: InputSize;
 	className?: string;
 	error: boolean;
@@ -37,9 +37,9 @@ const InputEmail = (props: Props) => {
 	});
 
 	useEffect(() => {
-		const valid =
-			value.toLowerCase().match('[^@\\s]+@[^@\\s]+[^@\\s]+') || error;
-		value === '' || valid ? setInputError(false) : setInputError(true);
+//		const valid = value.toLowerCase().match('[^@\\s]+@[^@\\s]+[^@\\s]+') && !error;
+//		value === '' || valid ? setInputError(false) : setInputError(true);
+		error ? setInputError(true) : setInputError(false);
 	}, [value, error]);
 
 	const onIconClick = () => {

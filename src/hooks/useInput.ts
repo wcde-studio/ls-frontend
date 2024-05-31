@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 
-export const useInput = (initialState: { [key: string]: string }) => {
+type InputName = 'email' | 'password';
+
+export const useInput = (initialState: Record<InputName, string>) => {
 	const [input, setInput] = useState(initialState);
 
 	const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -18,5 +20,3 @@ export const useInput = (initialState: { [key: string]: string }) => {
 		resetInput,
 	};
 };
-
-//export useInput;
