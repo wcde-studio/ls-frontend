@@ -55,6 +55,8 @@ const AuthorizationForm = (props: Props) => {
 						size={InputSize.Desctop}
 						value={input[InputName.Email]}
 						onChange={handleInputChange}
+						placeholder={'Email'}
+						errorMessage={'Введите корректный email'}
 						error={errors[InputName.Email]}
 						resetInput={resetInput}
 					/>
@@ -65,6 +67,8 @@ const AuthorizationForm = (props: Props) => {
 						size={InputSize.Desctop}
 						value={input[InputName.Password]}
 						onChange={handleInputChange}
+						placeholder={'Пароль'}
+						errorMessage={'Введите корректный пароль'}
 						error={errors[InputName.Password]}
 					/>
 				</li>

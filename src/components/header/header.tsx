@@ -54,7 +54,6 @@ const Header = () => {
 					</Link>
 				</nav>
 			</div>
-
 			<Modal modalOn={modalOn} onClick={modalOnClick}>
 				<AuthorizationForm onClose={modalOnClick} />
 			</Modal>

@@ -21,11 +21,22 @@ type Props = {
 	className?: string;
 	error: boolean;
 	value: string;
+	placeholder: string;
+	errorMessage: string;
 	onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
 const InputPassword = (props: Props) => {
-	const { name, size, className, value, onChange, error } = props;
+	const {
+		name,
+		size,
+		className,
+		value,
+		onChange,
+		placeholder,
+		errorMessage,
+		error,
+	} = props;
 
 	const [visibility, setVisibility] = useState(true);
 
@@ -58,8 +69,8 @@ const InputPassword = (props: Props) => {
 			value={value}
 			onChange={onChange}
 			error={inputError}
-			placeholder={'Пароль'}
-			errorMessage={'Введите корректный пароль'}
+			placeholder={placeholder}
+			errorMessage={errorMessage}
 			icon={icon}
 			onIconClick={onIconClick}
 		/>

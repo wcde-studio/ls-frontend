@@ -21,12 +21,24 @@ type Props = {
 	className?: string;
 	error: boolean;
 	value: string;
+	placeholder: string;
+	errorMessage: string;
 	onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 	resetInput: (arg0: string) => void;
 };
 
 const InputEmail = (props: Props) => {
-	const { name, size, className, value, onChange, error, resetInput } = props;
+	const {
+		name,
+		size,
+		className,
+		value,
+		onChange,
+		error,
+		placeholder,
+		errorMessage,
+		resetInput,
+	} = props;
 
 	const [inputError, setInputError] = useState(false);
 
@@ -56,8 +68,8 @@ const InputEmail = (props: Props) => {
 			value={value}
 			onChange={onChange}
 			error={inputError}
-			placeholder={'Email'}
-			errorMessage={'Введите корректный email'}
+			placeholder={placeholder}
+			errorMessage={errorMessage}
 			icon={icon}
 			onIconClick={onIconClick}
 		/>
