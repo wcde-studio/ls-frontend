@@ -38,8 +38,8 @@ const InputPassword = (props: Props) => {
 	const [inputError, setInputError] = useState(false);
 
 	useEffect(() => {
-//		const valid = !error;
-//		value === '' || valid ? setInputError(false) : setInputError(true);
+		//		const valid = !error;
+		//		value === '' || valid ? setInputError(false) : setInputError(true);
 		error ? setInputError(true) : setInputError(false);
 	}, [value, error]);
 

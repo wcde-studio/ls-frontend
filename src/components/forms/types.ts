@@ -2,6 +2,4 @@ enum FormName {
 	Authorization = 'authorization',
 }
 
-
-export {FormName};
-
+export { FormName };

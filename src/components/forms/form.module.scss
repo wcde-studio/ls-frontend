@@ -1,5 +1,4 @@
 .loading {
-
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -12,4 +11,46 @@
 	left: 0;
 	opacity: 0.7;
 	background: var(--dark-grey);
+}
+
+.form {
+	border-radius: 4px;
+	width: 468px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.04);
+	background: var(--beige-bg);
+}
+
+.formContent {
+	display: flex;
+	flex-direction: column;
+	padding: 28px 32px 32px 32px;
+}
+
+.title {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	h2 {
+		font-family: var(--font-family);
+		font-weight: 500;
+		font-size: 28px;
+		color: var(--dark-grey);
+	}
+}
+
+//	border: 1px solid red;
+
+.closeIcon {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+}
+
+.listContent {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	padding-top: 61px;
 }

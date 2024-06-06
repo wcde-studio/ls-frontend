@@ -37,8 +37,8 @@ const InputEmail = (props: Props) => {
 	});
 
 	useEffect(() => {
-//		const valid = value.toLowerCase().match('[^@\\s]+@[^@\\s]+[^@\\s]+') && !error;
-//		value === '' || valid ? setInputError(false) : setInputError(true);
+		//		const valid = value.toLowerCase().match('[^@\\s]+@[^@\\s]+[^@\\s]+') && !error;
+		//		value === '' || valid ? setInputError(false) : setInputError(true);
 		error ? setInputError(true) : setInputError(false);
 	}, [value, error]);
 
