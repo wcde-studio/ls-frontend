@@ -38,7 +38,7 @@ const Header = () => {
 						Контакты
 					</Link>
 					<Link
-						href="/"
+						href="/personal-area"
 						className={clsx(
 							styles.link,
 							styles.profileLink,
