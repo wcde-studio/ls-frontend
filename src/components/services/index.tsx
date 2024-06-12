@@ -10,4 +10,13 @@ import Modal from './modal/modal';
 
 import LoadingSpinner from './loading-spinner/loading-spinner';
 
-export { Price, Award, AwardType, AwardSize, DiplomaSize, Diploma, Modal, LoadingSpinner};
+export {
+	Price,
+	Award,
+	AwardType,
+	AwardSize,
+	DiplomaSize,
+	Diploma,
+	Modal,
+	LoadingSpinner,
+};
