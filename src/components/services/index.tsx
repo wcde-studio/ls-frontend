@@ -8,4 +8,6 @@ import Diploma from './diploma/diploma';
 
 import Modal from './modal/modal';
 
-export { Price, Award, AwardType, AwardSize, DiplomaSize, Diploma, Modal };
+import LoadingSpinner from './loading-spinner/loading-spinner';
+
+export { Price, Award, AwardType, AwardSize, DiplomaSize, Diploma, Modal, LoadingSpinner};

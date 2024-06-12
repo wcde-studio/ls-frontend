@@ -6,6 +6,7 @@ import clsx from 'clsx';
 import styles from './form.module.scss';
 
 import { CloseIcon } from '@/components/ui';
+import { LoadingSpinner } from '@/components/services';
 
 import { FormName } from './types';
 import { useForm } from '@/hooks';
@@ -27,7 +28,7 @@ const Form = (props: Props) => {
 
 	return (
 		<form onSubmit={onSubmit} className={styles.form} name={name}>
-			{loading ? <div className={styles.loading}>loading</div> : null}
+			{loading ? <LoadingSpinner /> : null}
 			<section className={styles.formContent}>
 				<div className={styles.title}>
 					<h2>{title}</h2>
