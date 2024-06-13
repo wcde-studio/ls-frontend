@@ -9,7 +9,7 @@
 
 .image {
 	border-radius: 50%;
-	object-fit: cover,
+	object-fit: cover;
 }
 
 .userInfo {
@@ -32,7 +32,7 @@
 	}
 }
 
-.email{
+.email {
 	font-family: var(--font-family);
 	font-weight: 400;
 	font-size: 16px;

@@ -5,10 +5,10 @@ interface TContact {
 		title: string;
 		link: string;
 		id: number;
-	}[],
+	}[];
 	tel?: string;
 	id: number;
-};
+}
 
 export const contacts: TContact[] = [
 	{
@@ -46,5 +46,5 @@ export const contacts: TContact[] = [
 		],
 		tel: '+7 977 260-49-19',
 		id: 2,
-	}
+	},
 ];

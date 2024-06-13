@@ -4,12 +4,12 @@ interface TUserInfo {
 	email: string;
 	image: string;
 	id: number;
-};
+}
 
 export const userInfo: TUserInfo = {
 	name: 'Валерия',
 	surname: 'Смиронова',
 	email: 'valery9@mail.ru',
 	image: 'valery.jpeg',
-	id: 1
+	id: 1,
 };

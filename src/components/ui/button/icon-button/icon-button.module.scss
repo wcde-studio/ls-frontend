@@ -1,0 +1,55 @@
+.button {
+	border: none;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	width: 100%;
+
+	padding: 8px;
+
+	.title {
+		font-family: var(--font-family);
+		font-weight: 400;
+		font-size: 18px;
+		line-height: 133%;
+		text-align: center;
+		color: var(--dark-violet);
+	}
+
+	&:hover {
+		.title {
+			text-decoration: underline;
+			text-decoration-skip-ink: none;
+		}
+	}
+
+	&:disabled {
+		.title {
+			text-decoration: none;
+			text-decoration-skip-ink: none;
+			color: var(--grey);
+		}
+	}
+}
+
+.icon {
+	display: grid;
+	place-content: center;
+}
+
+.DESCTOP {
+}
+
+.LEFT {
+	justify-content: flex-start;
+	padding-left: 0px;
+}
+
+.RIGHT {
+	justify-content: flex-end;
+}
+
+.CENTER {
+	justify-content: center;
+}

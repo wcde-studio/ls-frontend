@@ -1,6 +1,5 @@
 import styles from './page.module.scss';
 
-
 import { userInfo } from '@/lib/user-info';
 
 import { UserInfoPersonalArea } from '@/components/user-info';
@@ -21,7 +20,6 @@ export default function PersonalArea() {
 				<h1 className={styles.title}>Мои курсы</h1>
 				<div>courses</div>
 			</section>
-
 		</>
 	);
 }
