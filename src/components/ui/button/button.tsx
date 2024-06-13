@@ -23,7 +23,7 @@ const Button = (props: IButtonProps) => {
 		{ [styles[`${type}`]]: type }
 	);
 
-return (
+	return (
 		<button disabled={disabled} className={classNameButton} onClick={onClick}>
 			{title}
 		</button>
