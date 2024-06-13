@@ -1,8 +1,8 @@
 .section {
 	display: flex;
 	flex-direction: column;
-	gap: 76px;
-	padding: 140px 0px;
+	gap: 64px;
+	padding-top: 140px;
 }
 
 .title {
@@ -11,10 +11,4 @@
 	font-size: 48px;
 	text-align: start;
 	color: var(--dark-grey);
-}
-
-.contactsList {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(543px, 1fr));
-	gap: 24px;
 }
