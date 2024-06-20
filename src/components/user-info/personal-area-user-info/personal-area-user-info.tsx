@@ -1,6 +1,6 @@
 'use client';
 
-import styles from './user-info-personal-area.module.scss';
+import styles from './personal-area-user-info.module.scss';
 
 //import Image from 'next/image';
 import Link from 'next/link';
@@ -16,7 +16,7 @@ type Props = {
 	image: string;
 };
 
-const UserInfoPersonalArea = (props: Props) => {
+const PersonalAreaUserInfo = (props: Props) => {
 	const { name, surname, email, image } = props;
 
 	return (
@@ -56,4 +56,4 @@ const UserInfoPersonalArea = (props: Props) => {
 	);
 };
 
-export default UserInfoPersonalArea;
+export default PersonalAreaUserInfo;

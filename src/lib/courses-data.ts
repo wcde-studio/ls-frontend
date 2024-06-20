@@ -4,10 +4,12 @@ interface TCourse {
 	image: string;
 	date: string;
 	city: string;
-	/*
+	end: string;
 	duration: string;
-	description: string;
 	target: string;
+
+	/*
+	description: string;
 	objective: 
 		{
 			id: number;
@@ -34,6 +36,9 @@ export const courses: TCourse[] = [
 		image: 'women.png',
 		date: '05 Mar 2024 00:00:00 PDT',
 		city: 'Нижний новгород',
+		end: '05 Apr 2024 00:00:00 PDT',
+		duration: '16 уроков (32 часа)',
+		target: 'Стать настоящей Вестой, женщиной-мечтой для своего супруга.',
 	},
 	{
 		id: 1,
@@ -41,6 +46,9 @@ export const courses: TCourse[] = [
 		image: 'runes.png',
 		date: '28 Apr 2024 00:00:00 PDT',
 		city: 'Санкт-Питербург',
+		end: '05 Apr 2024 00:00:00 PDT',
+		duration: '16 уроков (32 часа)',
+		target: 'Стать настоящей Вестой, женщиной-мечтой для своего супруга.',
 	},
 	{
 		id: 2,
@@ -48,6 +56,9 @@ export const courses: TCourse[] = [
 		image: 'moon.png',
 		date: '09 May 2024 00:00:00 PDT',
 		city: 'Онлайн',
+		end: '05 Apr 2024 00:00:00 PDT',
+		duration: '16 уроков (32 часа)',
+		target: 'Стать настоящей Вестой, женщиной-мечтой для своего супруга.',
 	},
 	{
 		id: 3,
@@ -55,6 +66,9 @@ export const courses: TCourse[] = [
 		image: 'pendulum.png',
 		date: '10 Dec 2024 00:00:00 PDT',
 		city: 'Нижний новгород',
+		end: '05 Apr 2024 00:00:00 PDT',
+		duration: '16 уроков (32 часа)',
+		target: 'Стать настоящей Вестой, женщиной-мечтой для своего супруга.',
 	},
 	{
 		id: 4,
@@ -62,6 +76,9 @@ export const courses: TCourse[] = [
 		image: 'money.png',
 		date: '07 Jun 2024 00:00:00 PDT',
 		city: 'Нижний новгород',
+		end: '05 Apr 2024 00:00:00 PDT',
+		duration: '16 уроков (32 часа)',
+		target: 'Стать настоящей Вестой, женщиной-мечтой для своего супруга.',
 	},
 	{
 		id: 5,
@@ -69,5 +86,8 @@ export const courses: TCourse[] = [
 		image: 'taro.png',
 		date: '15 Mar 2024 00:00:00 PDT',
 		city: 'Нижний новгород',
+		end: '05 Apr 2024 00:00:00 PDT',
+		duration: '16 уроков (32 часа)',
+		target: 'Стать настоящей Вестой, женщиной-мечтой для своего супруга.',
 	},
 ];

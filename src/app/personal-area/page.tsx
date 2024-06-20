@@ -1,15 +1,16 @@
 import styles from './page.module.scss';
 
 import { userInfo } from '@/lib/user-info';
+import MyCourses from '@/components/my-courses/my-courses';
 
-import { UserInfoPersonalArea } from '@/components/user-info';
+import { PersonalAreaUserInfo } from '@/components/user-info';
 
 export default function PersonalArea() {
 	return (
 		<>
 			<section className={styles.section}>
 				<h1 className={styles.title}>Личный кабинет</h1>
-				<UserInfoPersonalArea
+				<PersonalAreaUserInfo
 					name={userInfo.name}
 					surname={userInfo.surname}
 					email={userInfo.email}
@@ -18,7 +19,9 @@ export default function PersonalArea() {
 			</section>
 			<section className={styles.section}>
 				<h1 className={styles.title}>Мои курсы</h1>
-				<div>courses</div>
+				<div className={styles.myCourses}>
+					<MyCourses userCourses={userInfo.courses} />
+				</div>
 			</section>
 		</>
 	);

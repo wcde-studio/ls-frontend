@@ -1,0 +1,50 @@
+.nav {
+	padding-bottom: 39px;
+	ul {
+		display: flex;
+		flex-direction: row;
+		gap: 40px;
+		border-bottom: 1px solid var(--dark-beige);
+	}
+}
+
+.link {
+	font-family: var(--font-family);
+	font-weight: 700;
+	font-size: 24px;
+	line-height: 125%;
+	text-align: center;
+	color: var(--grey);
+	
+	button {
+		cursor: pointer;
+		padding: 0px 27px 10px 27px;
+	}
+}
+
+.active {
+	border-bottom: 4px solid var(--violet);
+	color: var(--dark-grey);
+}
+
+.coursesList {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+	gap: 24px;
+	justify-items: center;
+	padding-top: 0px;
+}
+
+.message {
+	max-width: 353px;
+}
+
+.messageTitle {
+	font-family: var(--font-family);
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 120%;
+	color: var(--dark-grey);
+	padding-bottom: 32px;
+};
+
