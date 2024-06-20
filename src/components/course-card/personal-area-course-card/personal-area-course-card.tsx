@@ -37,19 +37,18 @@ const PersonalAreaCourseCard = (props: Props) => {
 	const startDate = [
 		dateData.toLocaleString('ru-RU', { day: '2-digit' }),
 		dateData.toLocaleString('ru-RU', { month: '2-digit' }),
-		dateData.getFullYear()
-	]
+		dateData.getFullYear(),
+	];
 
 	const endDate = [
 		endData.toLocaleString('ru-RU', { day: '2-digit' }),
 		endData.toLocaleString('ru-RU', { month: '2-digit' }),
-		endData.getFullYear()
-	]
+		endData.getFullYear(),
+	];
 
-//	const day = dateData.toLocaleString('ru-RU', { day: '2-digit' });
-//	const month = dateData.toLocaleString('ru-RU', { month: '2-digit' });
-//	const year = dateData.getFullYear();
-
+	//	const day = dateData.toLocaleString('ru-RU', { day: '2-digit' });
+	//	const month = dateData.toLocaleString('ru-RU', { month: '2-digit' });
+	//	const year = dateData.getFullYear();
 
 	const imageSrc = `/courses/${image}`;
 
@@ -80,7 +79,7 @@ const PersonalAreaCourseCard = (props: Props) => {
 						<li className={styles.target}>{target}</li>
 					</ul>
 				</section>
-				<Link href={'/'} >
+				<Link href={'/'}>
 					<Button
 						type={ButtonType.Violet}
 						size={ButtonSize.Desctop}

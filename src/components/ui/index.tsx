@@ -28,7 +28,6 @@ import ExitIcon from './icons/exit-icon';
 import CalendarIcon from './icons/calendar-icon';
 import ClockIcon from './icons/clock-icon';
 
-
 import Button from './button/button';
 import IconButton from './button/icon-button/icon-button';
 
