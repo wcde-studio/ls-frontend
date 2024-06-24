@@ -12,11 +12,8 @@ export default function Contacts() {
 			<section className={styles.section}>
 				<h1 className={styles.title}>Контакты</h1>
 				<ul className={styles.contactsList}>
-					{contacts?.map((contact)=>(
-						<ContactCard
-							contactInfo={contact}
-							key={contact.id}
-						/>
+					{contacts?.map((contact) => (
+						<ContactCard contactInfo={contact} key={contact.id} />
 					))}
 				</ul>
 			</section>

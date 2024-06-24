@@ -1,0 +1,18 @@
+.section {
+	display: flex;
+	flex-direction: column;
+	gap: 64px;
+	padding-top: 140px;
+}
+
+.title {
+	font-family: var(--font-family);
+	font-weight: 500;
+	font-size: 48px;
+	text-align: start;
+	color: var(--dark-grey);
+}
+
+.myCourses {
+	padding-bottom: 140px;
+}

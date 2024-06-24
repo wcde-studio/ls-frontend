@@ -23,9 +23,13 @@ import PrizeIcon from './icons/awards/prize-icon';
 import RibbonIcon from './icons/awards/ribbon-icon';
 import CupIcon from './icons/awards/cup-icon';
 import AwardIcon from './icons/awards/award-icon';
+import EditIcon from './icons/edit-icon';
+import ExitIcon from './icons/exit-icon';
+import CalendarIcon from './icons/calendar-icon';
+import ClockIcon from './icons/clock-icon';
 
 import Button from './button/button';
-//import IconButton from './button/icon-button/icon-button';
+import IconButton from './button/icon-button/icon-button';
 
 import LadaVedIcon from './icons/lada-ved-icon';
 import LadaVedIconSvg from './icons/lada-ved-icon-svg.svg';
@@ -54,7 +58,11 @@ export {
 	CupIcon,
 	AwardIcon,
 	Button,
-	//	IconButton
+	IconButton,
 	LadaVedIcon,
 	LadaVedIconSvg,
+	EditIcon,
+	ExitIcon,
+	ClockIcon,
+	CalendarIcon,
 };

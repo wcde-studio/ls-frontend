@@ -21,28 +21,25 @@ const Header = () => {
 				<nav className={styles.navigation}>
 					<Link
 						href="/"
-						className={clsx(styles.link, isActive('/') && styles.link_active)}
-					>
+						className={clsx(styles.link, isActive('/') && styles.link_active)}>
 						Главная
 					</Link>
 					<Link
 						href="/"
-						className={clsx(styles.link, isActive('/a') && styles.link_active)}
-					>
+						className={clsx(styles.link, isActive('/a') && styles.link_active)}>
 						Курсы
 					</Link>
 					<Link
 						href="/contacts"
-						className={clsx(styles.link, isActive('/b') && styles.link_active)}
-					>
+						className={clsx(styles.link, isActive('/contacts') && styles.link_active)}>
 						Контакты
 					</Link>
 					<Link
-						href="/"
+						href="/personal-area"
 						className={clsx(
 							styles.link,
 							styles.profileLink,
-							isActive('/c') && styles.link_active
+							isActive('/personal-area') && styles.link_active
 						)}>
 						<ProfileIcon className={styles.iconProfile} />
 						<span className={styles.profileLinkText}>Личный кабинет</span>
