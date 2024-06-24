@@ -29,9 +29,13 @@ import CloseIcon from './icons/close-icon';
 import InputCloseIcon from './icons/input-close-icon';
 import EyeCloseIcon from './icons/eye-close-icon';
 import EyeOpenIcon from './icons/eye-open-icon';
+import EditIcon from './icons/edit-icon';
+import ExitIcon from './icons/exit-icon';
+import CalendarIcon from './icons/calendar-icon';
+import ClockIcon from './icons/clock-icon';
 
 import Button from './button/button';
-//import IconButton from './button/icon-button/icon-button';
+import IconButton from './button/icon-button/icon-button';
 
 import InputEmail from './input/input-email/input-email';
 import InputPassword from './input/input-password/input-password';
@@ -56,15 +60,19 @@ export {
 	RibbonIcon,
 	CupIcon,
 	AwardIcon,
-	LadaVedIcon,
-	LadaVedIconSvg,
 	CloseIcon,
 	InputCloseIcon,
 	EyeCloseIcon,
 	EyeOpenIcon,
-	Button,
-	//	IconButton
 	InputEmail,
 	InputPassword,
 	Input,
+	Button,
+	IconButton,
+	LadaVedIcon,
+	LadaVedIconSvg,
+	EditIcon,
+	ExitIcon,
+	ClockIcon,
+	CalendarIcon,
 };

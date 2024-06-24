@@ -1,6 +1,6 @@
 'use client';
 
-import styles from './course-card.module.scss';
+import styles from './main-course-card.module.scss';
 
 import Image from 'next/image';
 import Link from 'next/link';
@@ -13,16 +13,19 @@ import { months } from '@/lib/constants/date';
 
 type Props = {
 	course: {
+		id: number;
 		name: string;
 		image: string;
 		date: string;
 		city: string;
-		id: number;
+		end: string;
+		duration: string;
+		target: string;
 	};
 	key: number;
 };
 
-const CourseCard = (props: Props) => {
+const MainCourseCard = (props: Props) => {
 	const { course } = props;
 
 	const { name, image, date, city } = course;
@@ -66,4 +69,4 @@ const CourseCard = (props: Props) => {
 	);
 };
 
-export default CourseCard;
+export default MainCourseCard;

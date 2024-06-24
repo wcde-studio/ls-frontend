@@ -15,3 +15,9 @@ export enum ButtonHtmlType {
 	Submit = 'submit',
 	Reset = 'reset',
 }
+
+export enum ContentPosition {
+	Left = 'LEFT',
+	Right = 'RIGHT',
+	Center = 'CENTER',
+}

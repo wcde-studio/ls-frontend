@@ -28,9 +28,9 @@ const Button = (props: IButtonProps) => {
 
 	const classNameButton = clsx(
 		styles.button,
-		className,
 		{ [styles[`${size}`]]: size },
-		{ [styles[`${type}`]]: type }
+		{ [styles[`${type}`]]: type },
+		className
 	);
 
 	return (

@@ -101,12 +101,7 @@
 .coursesList {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-	/*	grid-template-columns: repeat(3, 1fr);
-	grid-template-rows: minmax(auto, 150px);*/
-
-	row-gap: 64px;
-	column-gap: 24px;
-	column-gap: 64px;
+	gap: 24px;
 	justify-items: center;
 	padding-top: 0px;
 }
