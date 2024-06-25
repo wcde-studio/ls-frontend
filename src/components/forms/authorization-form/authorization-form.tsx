@@ -6,7 +6,7 @@ import styles from './authorization-form.module.scss';
 
 import Link from 'next/link';
 
-import { Button, InputEmail, InputPassword } from '@/components/ui';
+import { Button, Input } from '@/components/ui';
 
 import {
 	ButtonSize,
@@ -14,7 +14,7 @@ import {
 	ButtonHtmlType,
 } from '@/components/ui/button/types';
 
-import { InputSize, InputName } from '@/components/ui/input/types';
+import { InputSize, InputName, InputType } from '@/components/ui/input/types';
 import { FormName } from '@/components/forms/types';
 import Form from '../form';
 
@@ -27,14 +27,16 @@ type Props = {
 const AuthorizationForm = (props: Props) => {
 	const { onClose } = props;
 
-	const { input, handleInputChange, resetInput } = useInput({
+	const { inputValue, handleInputChange, resetInputValue } = useInput({
 		[InputName.Email]: '',
 		[InputName.Password]: '',
+		[InputName.UserName]: '',
 	});
 
 	const { handlerOnSubmit, errors, valid, loading, checkEnd } = useForm({
 		[InputName.Email]: false,
 		[InputName.Password]: false,
+		[InputName.UserName]: false,
 	});
 
 	useEffect(() => {
@@ -50,26 +52,42 @@ const AuthorizationForm = (props: Props) => {
 			loading={loading}>
 			<ul className={styles.listContent}>
 				<li>
-					<InputEmail
+					<Input
 						name={InputName.Email}
 						size={InputSize.Desctop}
-						value={input[InputName.Email]}
+						value={inputValue}
+						type={InputType.Email}
 						onChange={handleInputChange}
 						placeholder={'Email'}
 						errorMessage={'Введите корректный email'}
-						error={errors[InputName.Email]}
-						resetInput={resetInput}
+						errors={errors}
+						resetValue={resetInputValue}
 					/>
 				</li>
 				<li>
-					<InputPassword
+					<Input
 						name={InputName.Password}
 						size={InputSize.Desctop}
-						value={input[InputName.Password]}
+						value={inputValue}
+						type={InputType.Password}
 						onChange={handleInputChange}
 						placeholder={'Пароль'}
 						errorMessage={'Введите корректный пароль'}
-						error={errors[InputName.Password]}
+						errors={errors}
+						resetValue={resetInputValue}
+					/>
+				</li>
+				<li>
+					<Input
+						name={InputName.UserName}
+						size={InputSize.Desctop}
+						value={inputValue}
+						type={InputType.Text}
+						onChange={handleInputChange}
+						placeholder={'Фамилия'}
+						errorMessage={'Введите корректный имя'}
+						errors={errors}
+						resetValue={resetInputValue}
 					/>
 				</li>
 			</ul>

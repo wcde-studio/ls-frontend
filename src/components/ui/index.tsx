@@ -36,9 +36,6 @@ import ClockIcon from './icons/clock-icon';
 
 import Button from './button/button';
 import IconButton from './button/icon-button/icon-button';
-
-import InputEmail from './input/input-email/input-email';
-import InputPassword from './input/input-password/input-password';
 import Input from './input/input';
 
 export {
@@ -64,9 +61,6 @@ export {
 	InputCloseIcon,
 	EyeCloseIcon,
 	EyeOpenIcon,
-	InputEmail,
-	InputPassword,
-	Input,
 	Button,
 	IconButton,
 	LadaVedIcon,
@@ -75,4 +69,5 @@ export {
 	ExitIcon,
 	ClockIcon,
 	CalendarIcon,
+	Input,
 };

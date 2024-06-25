@@ -11,12 +11,12 @@ export enum InputSize {
 }
 
 export enum InputName {
-	name = 'name',
-	surname = 'surname',
+	UserName = 'userName',
+	UserSurname = 'userSurname',
 	Email = 'email',
 	Telephone = 'telephone',
 	Telegram = 'telegram',
-	city = 'city',
+	City = 'city',
 	Password = 'password',
 	RepeatPassword = 'repeatPassword',
 }

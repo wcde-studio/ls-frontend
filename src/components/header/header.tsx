@@ -14,7 +14,7 @@ const Header = () => {
 	const pathname = usePathname();
 	const isActive = (path: string) => path === pathname;
 
-	const [modalOn, setModalOn] = useState(false);
+	const [modalOn, setModalOn] = useState(true);
 
 	const modalOnClick = () => setModalOn(!modalOn);
 
