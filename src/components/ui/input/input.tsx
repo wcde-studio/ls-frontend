@@ -8,11 +8,7 @@ import styles from './input.module.scss';
 
 import { InputType, InputSize, InputName } from './types';
 
-import { 
-	InputCloseIcon, 
-	EyeCloseIcon, 
-	EyeOpenIcon
-} from '@/components/ui';
+import { InputCloseIcon, EyeCloseIcon, EyeOpenIcon } from '@/components/ui';
 
 type Props = {
 	name: InputName;
