@@ -2,10 +2,7 @@
 
 import styles from './contact-card.module.scss';
 
-//import Image from 'next/image';
 import Link from 'next/link';
-
-//import { LadaVedIcon, LadaVedIconSvg } from '@/components/ui';
 
 type Props = {
 	contactInfo: {

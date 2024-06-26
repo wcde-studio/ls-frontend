@@ -1,8 +1,9 @@
 import React from 'react';
+
 import clsx from 'clsx';
 import styles from './button.module.scss';
 
-import { ButtonSize, ButtonType } from './types';
+import { ButtonSize, ButtonType, ButtonHtmlType } from './types';
 
 interface IButtonProps {
 	type: ButtonType;
@@ -11,10 +12,19 @@ interface IButtonProps {
 	className?: string;
 	onClick?: () => void;
 	disabled?: boolean;
+	htmlType?: ButtonHtmlType;
 }
 
 const Button = (props: IButtonProps) => {
-	const { type, size, title, className, onClick, disabled = false } = props;
+	const {
+		type,
+		size,
+		title,
+		className,
+		onClick,
+		disabled = false,
+		htmlType = ButtonHtmlType.Button,
+	} = props;
 
 	const classNameButton = clsx(
 		styles.button,
@@ -24,7 +34,11 @@ const Button = (props: IButtonProps) => {
 	);
 
 	return (
-		<button disabled={disabled} className={classNameButton} onClick={onClick}>
+		<button
+			disabled={disabled}
+			className={classNameButton}
+			onClick={onClick}
+			type={htmlType}>
 			{title}
 		</button>
 	);
