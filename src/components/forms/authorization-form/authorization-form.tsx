@@ -77,19 +77,6 @@ const AuthorizationForm = (props: Props) => {
 						resetValue={resetInputValue}
 					/>
 				</li>
-				<li>
-					<Input
-						name={InputName.UserName}
-						size={InputSize.Desctop}
-						value={inputValue}
-						type={InputType.Text}
-						onChange={handleInputChange}
-						placeholder={'Фамилия'}
-						errorMessage={'Введите корректный имя'}
-						errors={errors}
-						resetValue={resetInputValue}
-					/>
-				</li>
 			</ul>
 			<ul className={styles.listContent}>
 				<li>
