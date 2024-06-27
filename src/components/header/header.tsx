@@ -32,8 +32,8 @@ const Header = () => {
 						Главная
 					</Link>
 					<Link
-						href="/"
-						className={clsx(styles.link, isActive('/a') && styles.link_active)}>
+						href="/courses"
+						className={clsx(styles.link, isActive('/courses') && styles.link_active)}>
 						Курсы
 					</Link>
 					<Link
