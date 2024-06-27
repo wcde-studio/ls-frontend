@@ -1,0 +1,101 @@
+%mainFont {
+	font-family: var(--font-family);
+	font-weight: 700;
+	color: var(--white);
+}
+
+.accordion {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	background: var(--violet);
+	border-radius: 4px;
+}
+
+.title {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	cursor: pointer;
+	background: var(--violet);
+	border-radius: 4px;
+	padding: 16px 20px;
+}
+
+.titleText {
+	@extend %mainFont;
+	font-size: 24px;
+	line-height: 125%;
+}
+
+.title {
+	svg {
+		display: flex;
+		justify-content: center;
+		transition-duration: 0.3s;
+		transition-property: transform;
+	}
+}
+
+.accordionOpened {
+	svg {
+		transform: rotate(180deg);
+	}
+	.contentWrapper {
+		max-height: 100rem;
+	}
+}
+
+.contentWrapper {
+	max-height: 0;
+	overflow: hidden;
+	transition-duration: 0.3s;
+	transition-property: max-height;
+	border-radius: 0px 0px 4px 4px;
+	background: var(--violet);
+	padding: 0px 20px 0px 20px;
+}
+
+.subtitle {
+	@extend %mainFont;
+	font-size: 20px;
+	line-height: 120%;
+	padding-top: 20px;
+}
+
+.descriptionList {
+	padding: 40px 0px 0px 25px;
+}
+
+.descriptionItem {
+	padding-top: 16px;
+	list-style-type: disc;
+	list-style-position: outside;
+	color: var(--white);
+}
+
+.descriptionItem_text {
+	@extend %mainFont;
+	font-weight: 400;
+	font-size: 20px;
+}
+
+.buttonWrapper {
+	max-width: 280px;
+	padding-top: 24px;
+	padding-bottom: 20px;
+}
+
+.note {
+	@extend %mainFont;
+	font-size: 24px;
+	padding-top: 40px;
+}
+
+.servicesWrapper {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+	row-gap: 40px;
+	justify-items: center;
+	padding-top: 40px;
+}

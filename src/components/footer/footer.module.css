@@ -1,3 +1,19 @@
+<<<<<<< HEAD:src/components/footer/footer.module.css
+=======
+%maxWidth {
+	margin: 0 auto;
+	width: 1110px;
+}
+
+%mainFont {
+	font-family: var(--font-family);
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 120%;
+	color: var(--white);
+}
+
+>>>>>>> develop:src/components/footer/footer.module.scss
 .footer {
 	margin: 0 auto;
 	width: 100%;
@@ -39,12 +55,22 @@
 	transition: transform 0.2s ease-in-out;
 }
 
+<<<<<<< HEAD:src/components/footer/footer.module.css
 .siteMapLink_active {
 	text-decoration: underline;
 }
 
 .siteMapLink:hover {
 	transform: scale(1.1);
+=======
+	&_active {
+		text-decoration: underline;
+	}
+
+	&:hover {
+		transform: scale(1.1);
+	}
+>>>>>>> develop:src/components/footer/footer.module.scss
 }
 
 .socialLinksContainer {

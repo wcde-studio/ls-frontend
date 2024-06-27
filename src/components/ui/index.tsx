@@ -23,9 +23,20 @@ import PrizeIcon from './icons/awards/prize-icon';
 import RibbonIcon from './icons/awards/ribbon-icon';
 import CupIcon from './icons/awards/cup-icon';
 import AwardIcon from './icons/awards/award-icon';
+import LadaVedIcon from './icons/lada-ved-icon';
+import LadaVedIconSvg from './icons/lada-ved-icon-svg.svg';
+import CloseIcon from './icons/close-icon';
+import InputCloseIcon from './icons/input-close-icon';
+import EyeCloseIcon from './icons/eye-close-icon';
+import EyeOpenIcon from './icons/eye-open-icon';
+import EditIcon from './icons/edit-icon';
+import ExitIcon from './icons/exit-icon';
+import CalendarIcon from './icons/calendar-icon';
+import ClockIcon from './icons/clock-icon';
 
 import Button from './button/button';
-//import IconButton from './button/icon-button/icon-button';
+import IconButton from './button/icon-button/icon-button';
+import Input from './input/input';
 
 export {
 	LogoIcon,
@@ -36,10 +47,6 @@ export {
 	VKIcon,
 	DownChevronIcon,
 	UpChevronIcon,
-	//	PlusIcon,
-	//	PreviousIcon,
-	//	NextIcon,
-	//	EditIcon,
 	TeamIcon,
 	GameIcon,
 	BookIcon,
@@ -50,6 +57,17 @@ export {
 	RibbonIcon,
 	CupIcon,
 	AwardIcon,
+	CloseIcon,
+	InputCloseIcon,
+	EyeCloseIcon,
+	EyeOpenIcon,
 	Button,
-	//	IconButton
+	IconButton,
+	LadaVedIcon,
+	LadaVedIconSvg,
+	EditIcon,
+	ExitIcon,
+	ClockIcon,
+	CalendarIcon,
+	Input,
 };

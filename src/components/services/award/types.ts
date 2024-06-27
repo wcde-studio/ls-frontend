@@ -1,18 +1,18 @@
 export enum AwardType {
-	Team = 'team',
-	Game = 'game',
-	Book = 'book',
-	Leadership = 'leadership',
-	TVScreen = 'tvscreen',
-	TV = 'tv',
-	Prize = 'prize',
-	Ribbon = 'ribbon',
-	Cup = 'cup',
-	Award = 'award',
+	Team = 'TEAM',
+	Game = 'GAME',
+	Book = 'BOOK',
+	Leadership = 'LEADERSHIP',
+	TVScreen = 'TVSCREEN',
+	TV = 'TV',
+	Prize = 'PRIZE',
+	Ribbon = 'RIBBON',
+	Cup = 'CUP',
+	Award = 'AWARD',
 }
 
 export enum AwardSize {
-	Desctop = 'desctop',
-	//	Pad = 'pad',
-	//	Mobile = 'mobile'
+	Desctop = 'DESCTOP',
+	//	Pad = 'PAD',
+	//	Mobile = 'MOBILE'
 }

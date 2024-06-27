@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 
-import styles from './accordion.module.css';
+import styles from './accordion.module.scss';
 import clsx from 'clsx';
 import Link from 'next/link';
 
@@ -13,33 +13,32 @@ import { ButtonSize, ButtonType } from '@/components/ui/button/types';
 
 import { Price } from '@/components/services';
 
-type TProperty = {
-	id: number;
-	text: string;
-};
-
-type TPrice = {
+interface TProperties {
 	id: number;
 	price: number;
 	currency: string;
-	properties: TProperty[];
-};
+	properties?:
+		| {
+				id: number;
+				text: string;
+		  }[]
+		| null;
+}
 
-type TCourse = {
-	id: number;
+interface TService extends Pick<TProperties, 'id' | 'properties'> {
 	title: string;
 	subtitle: string;
-	properties?: TProperty[];
-	services?: TPrice[] | null;
+	services?: TProperties[] | null;
 	note: string | null;
-};
+}
 
 type Props = {
-	course: TCourse;
+	service: TService;
+	key?: number;
 };
 
 const Accordion = (props: Props) => {
-	const { course } = props;
+	const { service, key } = props;
 
 	const [isActive, setIsActive] = useState(false);
 	const accordion = clsx(styles.accordion, {
@@ -49,26 +48,26 @@ const Accordion = (props: Props) => {
 	return (
 		<li className={accordion}>
 			<button className={styles.title} onClick={() => setIsActive(!isActive)}>
-				<h2 className={styles.titleText}>{course?.title}</h2>
+				<h2 className={styles.titleText}>{service?.title}</h2>
 				<UpChevronIcon />
 			</button>
 			<section className={styles.contentWrapper}>
-				<h3 className={styles.subtitle}>{course?.subtitle}</h3>
+				<h3 className={styles.subtitle}>{service?.subtitle}</h3>
 				<ul className={styles.descriptionList}>
-					{course?.properties?.map((property) => (
+					{service?.properties?.map((property) => (
 						<li className={styles.descriptionItem} key={property.id}>
 							<p className={styles.descriptionItem_text}>{property.text}</p>
 						</li>
 					))}
 				</ul>
-				{course.services && (
+				{service.services && (
 					<ul className={styles.servicesWrapper}>
-						{course.services?.map((service) => (
+						{service.services?.map((service) => (
 							<Price price={service} key={service.id} />
 						))}
 					</ul>
 				)}
-				{course.note && <p className={styles.note}>{course.note}</p>}
+				{service.note && <p className={styles.note}>{service.note}</p>}
 				<div className={styles.buttonWrapper}>
 					<Link href={'/'}>
 						<Button

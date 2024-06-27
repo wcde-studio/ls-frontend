@@ -1,11 +1,23 @@
 export enum ButtonSize {
-	Desctop = 'desctop',
-	//	Pad = 'pad',
-	//	Mobile = 'mobile'
+	Desctop = 'DESCTOP',
+	//	Pad = 'PAD',
+	//	Mobile = 'MOBILE'
 }
 
 export enum ButtonType {
-	//	Violet = 'violet',
-	White = 'white',
-	//	Transparent = 'transparent'
+	Violet = 'VIOLET',
+	White = 'WHITE',
+	Transparent = 'TRANSPARENT',
+}
+
+export enum ButtonHtmlType {
+	Button = 'button',
+	Submit = 'submit',
+	Reset = 'reset',
+}
+
+export enum ContentPosition {
+	Left = 'LEFT',
+	Right = 'RIGHT',
+	Center = 'CENTER',
 }

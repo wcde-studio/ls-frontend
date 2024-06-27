@@ -5,17 +5,13 @@ import Image from 'next/image';
 import { DiplomaSize } from './types';
 
 interface IDiplomaProps {
-	src?: string;
-	size?: DiplomaSize;
-	alt?: string;
+	src: string;
+	size: DiplomaSize;
+	alt: string;
 }
 
 const Diploma = (props: IDiplomaProps) => {
-	const {
-		src = '/diploma/certificate-parent-child-coaching.png',
-		size = DiplomaSize.Desctop,
-		alt = 'certificateparent child coaching',
-	} = props;
+	const { src, size, alt } = props;
 
 	return (
 		<li>

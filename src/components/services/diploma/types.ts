@@ -1,5 +1,5 @@
 export enum DiplomaSize {
-	Desctop = 'desctop',
-	//	Pad = 'pad',
-	//	Mobile = 'mobile'
+	Desctop = 'DESCTOP',
+	//	Pad = 'PAD',
+	//	Mobile = 'MOBILE'
 }
