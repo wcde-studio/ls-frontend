@@ -1,22 +1,22 @@
 import React, { useState } from 'react';
 
-type InputName = 'email' | 'password';
+//type InputName = 'email' | 'password' | 'name';
 
-export const useInput = (initialState: Record<InputName, string>) => {
-	const [input, setInput] = useState(initialState);
+export const useInput = (initialState: Record<string, string>) => {
+	const [inputValue, setInputValue] = useState(initialState);
 
 	const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		e.persist();
-		setInput((input) => ({ ...input, [e.target.name]: e.target.value }));
+		setInputValue((inputValue) => ({ ...inputValue, [e.target.name]: e.target.value }));
 	};
 
-	const resetInput = (name: string) => {
-		setInput((input) => ({ ...input, [name]: '' }));
+	const resetInputValue = (name: string) => {
+		setInputValue((inputValue) => ({ ...inputValue, [name]: '' }));
 	};
 
 	return {
-		input,
+		inputValue,
 		handleInputChange,
-		resetInput,
+		resetInputValue,
 	};
 };
