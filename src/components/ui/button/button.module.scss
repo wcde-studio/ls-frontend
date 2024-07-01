@@ -22,7 +22,7 @@
 	background: var(--violet);
 	color: var(--white);
 
-		&:hover {
+	&:hover {
 		box-sizing: border-box;
 		background: none;
 		outline: 2px solid var(--violet);
@@ -34,7 +34,6 @@
 		border: none;
 		color: var(--dark-grey);
 	}
-
 }
 
 .WHITE {
@@ -51,13 +50,12 @@
 		color: var(--dark-grey);
 		color: var(--dark-grey);
 	}
-
 }
 
 .TRANSPARENT {
 	background: none;
 	color: var(--violet);
-	
+
 	&:hover {
 		outline: 2px solid var(--violet);
 	}
@@ -66,5 +64,4 @@
 		border: none;
 		color: var(--grey);
 	}
-
 }

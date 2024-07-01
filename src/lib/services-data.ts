@@ -4,18 +4,20 @@ interface TProperties {
 	id: number;
 	price: number;
 	currency: string;
-	properties?: {
-		id: number;
-		text: string;
-	}[] | null;
-};
+	properties?:
+		| {
+				id: number;
+				text: string;
+		  }[]
+		| null;
+}
 
 interface TService extends Pick<TProperties, 'id' | 'properties'> {
 	title: string;
 	subtitle: string;
-	services?:  TProperties[] | null;
+	services?: TProperties[] | null;
 	note: string | null;
-};
+}
 
 export const services: Array<TService> = [
 	{

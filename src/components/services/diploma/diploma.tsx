@@ -11,11 +11,7 @@ interface IDiplomaProps {
 }
 
 const Diploma = (props: IDiplomaProps) => {
-	const {
-		src,
-		size,
-		alt,
-	} = props;
+	const { src, size, alt } = props;
 
 	return (
 		<li>
