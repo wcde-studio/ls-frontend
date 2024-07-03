@@ -11,7 +11,6 @@ const formsValid: Record<string, Record<string, string>> = {
 };
 
 export const useForm = (errorsInitialState: Record<string, boolean>) => {
-
 	const [errors, setErrors] = useState(errorsInitialState);
 	const [loading, setLoading] = useState(false);
 	const [valid, setValid] = useState(true);
@@ -23,7 +22,6 @@ export const useForm = (errorsInitialState: Record<string, boolean>) => {
 		const formData = new FormData(event.target);
 		const formDataPairs = Array.from(formData.entries());
 		const formName = event.target.name;
-
 
 		const formValid = formsValid[formName];
 

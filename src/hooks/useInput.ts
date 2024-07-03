@@ -7,7 +7,10 @@ export const useInput = (initialState: Record<string, string>) => {
 
 	const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		e.persist();
-		setInputValue((inputValue) => ({ ...inputValue, [e.target.name]: e.target.value }));
+		setInputValue((inputValue) => ({
+			...inputValue,
+			[e.target.name]: e.target.value,
+		}));
 	};
 
 	const resetInputValue = (name: string) => {

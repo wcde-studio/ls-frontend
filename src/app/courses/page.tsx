@@ -1,5 +1,5 @@
-"use client"
-import {useMemo, useState } from 'react';
+'use client';
+import { useMemo, useState } from 'react';
 import Header from '@/components/header/header';
 import Footer from '@/components/footer/footer';
 import Pagination from '@/components/pagination/pagination';
@@ -32,7 +32,7 @@ export default function Courses() {
 						</tr>
 					</thead>
 					<tbody>
-						{currentTableData.map(item => {
+						{currentTableData.map((item) => {
 							return (
 								<tr key={item.id}>
 									<td>{item.id}</td>
@@ -51,7 +51,7 @@ export default function Courses() {
 						currentPage={currentPage}
 						totalCount={data.length}
 						pageSize={PageSize}
-						onPageChange={page => setCurrentPage(page as number)}
+						onPageChange={(page) => setCurrentPage(page as number)}
 					/>
 				</div>
 			</main>
