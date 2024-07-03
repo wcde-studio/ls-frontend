@@ -1,18 +1,32 @@
-import React, { FC } from "react";
+import React, { SetStateAction } from "react";
+
 import clsx from "clsx";
-import { usePagination } from "./usePagination";
-import { IPagination } from "./types";
-import RightArrowIcon from "../ui/icons/right-arrow-icon";
-import LeftArrowIcon from "../ui/icons/left-arrow-icon";
+import { usePagination } from "@/hooks";
+
+import RightArrowIcon from "@/components/ui/icons/right-arrow-icon";
+import LeftArrowIcon from "@/components/ui/icons/left-arrow-icon";
+
 import styles from "./pagination.module.scss";
 
-const Pagination: FC<IPagination> = ({
-    onPageChange,
-    totalCount,
-    siblingCount = 1,
-    currentPage,
-    pageSize,
-    className }) => {
+interface IPagination {
+    onPageChange: (currentPage: SetStateAction<number | string>) => void;
+    totalCount: number;
+    siblingCount?: number;
+    currentPage: number;
+    pageSize: number;
+    className: string
+}
+
+const Pagination = ( props: IPagination ) => {
+    const {
+			onPageChange,
+			totalCount,
+			siblingCount = 1,
+			currentPage,
+			pageSize,
+			className 
+		} = props;
+
     const paginationRange = usePagination({
         currentPage,
         totalCount,

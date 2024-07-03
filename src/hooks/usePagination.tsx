@@ -1,6 +1,11 @@
-import React from 'react';
 import { useMemo } from 'react';
-import { TUsePaginationProps } from './types';
+
+type TUsePaginationProps = {
+    totalCount: number;
+    pageSize: number;
+    siblingCount: number,
+    currentPage: number
+}
 
 const DOTS = '...';
 

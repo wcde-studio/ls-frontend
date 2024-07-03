@@ -1,4 +1,6 @@
 import { useInput } from './useInput';
 import { useForm } from './useForm';
+import { usePagination } from './usePagination';
 
-export { useInput, useForm };
+
+export { useInput, useForm, usePagination };

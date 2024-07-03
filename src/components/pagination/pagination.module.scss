@@ -2,41 +2,43 @@
   display: flex;
   list-style-type: none;
   gap: 8px;
-  font-family: 'Roboto', sans-serif;
 }
 
 .paginationItem {
   display: flex;
   align-items: center;
-  color: #444444;
   padding: 10px 12px;
   border-radius: 4px;
-  font-size: 18px;
-  font-weight: 700;
 
+	font-family: var(--font-family);
+	font-weight: 700;
+	font-size: 18px;
+	line-height: 133%;
+	color: var(--dark-grey);
   & {
     svg {
       path {
-        fill: #444444;
+				fill: var(--dark-grey);
       }
     }
   }
 }
+
 
 .disabled {
   pointer-events: none;
   & {
     svg {
       path {
-        fill: #968E8A;
+				fill: var(--dark-beige);
       }
     }
   }
 }
 
 .selected {
-  color: #FFFFFF;
-  background-color: #8A85C5;
+	color: var(--white);
+	background: var(--violet);
 }
 
 .paginationItem:hover:not(.selected) {

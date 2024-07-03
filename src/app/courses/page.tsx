@@ -2,9 +2,10 @@
 import {useMemo, useState } from 'react';
 import Header from '@/components/header/header';
 import Footer from '@/components/footer/footer';
-import Pagination from '@/components/pagination';
-import data from '@/mock/mock-data.json';
-import styles from './courses.module.css';
+import Pagination from '@/components/pagination/pagination';
+
+import data from '@/lib/mock-data.json';
+import styles from './page.module.scss';
 
 const PageSize = 6;
 
@@ -19,7 +20,6 @@ export default function Courses() {
 
 	return (
 		<>
-			<Header />
 			<main className={styles.main}>
 				<table className={styles.table}>
 					<thead>
@@ -47,7 +47,7 @@ export default function Courses() {
 				</table>
 				<div className={styles.paginationWrapper}>
 					<Pagination
-						className="pagination-bar"
+						className="paginationBar"
 						currentPage={currentPage}
 						totalCount={data.length}
 						pageSize={PageSize}
@@ -55,7 +55,6 @@ export default function Courses() {
 					/>
 				</div>
 			</main>
-			<Footer />
 		</>
 	);
 }
