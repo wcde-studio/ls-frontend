@@ -6,6 +6,7 @@ const formsValid: Record<string, Record<string, string>> = {
 	authorization: {
 		email: 'gog3d@mail.ru',
 		password: '123123',
+		userName: 'oleg',
 	},
 };
 
@@ -21,6 +22,7 @@ export const useForm = (errorsInitialState: Record<string, boolean>) => {
 		const formData = new FormData(event.target);
 		const formDataPairs = Array.from(formData.entries());
 		const formName = event.target.name;
+
 		const formValid = formsValid[formName];
 
 		setValid(true);
