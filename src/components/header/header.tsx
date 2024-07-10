@@ -14,7 +14,7 @@ const Header = () => {
 	const pathname = usePathname();
 	const isActive = (path: string) => path === pathname;
 
-	const [modalOn, setModalOn] = useState(true);
+	const [modalOn, setModalOn] = useState(false);
 
 	const modalOnClick = () => setModalOn(!modalOn);
 
@@ -47,8 +47,8 @@ const Header = () => {
 						)}>
 						Контакты
 					</Link>
-					<Link
-						href="/personal-area"
+					<button
+						onClick={modalOnClick}
 						className={clsx(
 							styles.link,
 							styles.profileLink,
@@ -56,7 +56,7 @@ const Header = () => {
 						)}>
 						<ProfileIcon className={styles.iconProfile} />
 						<span className={styles.profileLinkText}>Личный кабинет</span>
-					</Link>
+					</button>
 				</nav>
 			</div>
 			<Modal modalOn={modalOn} onClick={modalOnClick}>

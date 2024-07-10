@@ -5,6 +5,7 @@ import React, { useState, useEffect } from 'react';
 import styles from './authorization-form.module.scss';
 
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 import { Button, Input } from '@/components/ui';
 
@@ -39,8 +40,13 @@ const AuthorizationForm = (props: Props) => {
 		[InputName.UserName]: false,
 	});
 
+	const router = useRouter();
+
 	useEffect(() => {
-		if (valid && checkEnd) onClose();
+		if (valid && checkEnd) {
+			onClose();
+			router.push('/personal-area');
+		}
 	}, [valid, checkEnd, onClose]);
 
 	return (
