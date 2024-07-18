@@ -3,6 +3,7 @@ export enum InputType {
 	Password = 'password',
 	Text = 'text',
 	Tel = 'tel',
+	Number = 'number',
 }
 
 export enum InputSize {

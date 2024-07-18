@@ -62,6 +62,8 @@ const Input = (props: Props) => {
 	const currentType = {
 		[InputType.Email]: type,
 		[InputType.Text]: type,
+		[InputType.Tel]: type,
+		[InputType.Number]: type,
 		[InputType.Password]: visibility ? InputType.Text : InputType.Password,
 	};
 
