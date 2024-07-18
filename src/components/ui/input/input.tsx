@@ -37,6 +37,8 @@ const Input = (props: Props) => {
 		resetValue,
 	} = props;
 
+	console.log({type});
+
 	const [visibility, setVisibility] = useState(false);
 
 	const classNameInput = clsx(className, styles.inputWrapper, {

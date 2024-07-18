@@ -1,13 +1,14 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-
 import styles from './authorization-form.module.scss';
 
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 
 import { Button, Input } from '@/components/ui';
+import FormWrapper from '@/components/services/form-wrapper/form-wrapper';
+
 
 import {
 	ButtonSize,
@@ -22,6 +23,7 @@ import Form from '../form';
 import { useInput, useForm } from '@/hooks';
 
 type Props = {
+	name: FormName;
 	onClose: () => void;
 };
 
@@ -50,13 +52,12 @@ const AuthorizationForm = (props: Props) => {
 	}, [valid, checkEnd, onClose]);
 
 	return (
+	<FormWrapper title={'Вход'} onClose={onClose} loading={loading}>
 		<Form
-			title={'Вход'}
-			onClose={onClose}
 			onSubmit={handlerOnSubmit}
 			name={FormName.Authorization}
-			loading={loading}>
-			<ul className={styles.listContent}>
+		>
+			<ul className={styles.inputListContent}>
 				<li>
 					<Input
 						name={InputName.Email}
@@ -84,8 +85,8 @@ const AuthorizationForm = (props: Props) => {
 					/>
 				</li>
 			</ul>
-			<ul className={styles.listContent}>
-				<li>
+			<ul className={styles.buttonListContent}>
+				<li className={styles.interButton}>
 					<Button
 						type={ButtonType.Violet}
 						size={ButtonSize.Desctop}
@@ -100,7 +101,7 @@ const AuthorizationForm = (props: Props) => {
 						title={'Забыли пароль?'}
 					/>
 				</li>
-				<li>
+				<li className={styles.registrationButton}>
 					<Button
 						type={ButtonType.Transparent}
 						size={ButtonSize.Desctop}
@@ -109,6 +110,7 @@ const AuthorizationForm = (props: Props) => {
 				</li>
 			</ul>
 		</Form>
+	</FormWrapper>
 	);
 };
 
