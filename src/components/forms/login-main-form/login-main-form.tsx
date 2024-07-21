@@ -12,11 +12,10 @@ import { AuthorizationForm } from '@/components/forms';
 
 import { RegistrationForm } from '@/components/forms';
 
-
-import { FormName } from './types';
+//import { FormName } from './types';
 
 type Props = {
-//	startFormName?: FormName;
+	//	startFormName?: FormName;
 	onClose: () => void;
 };
 
@@ -25,12 +24,8 @@ const LoginMainForm = (props: Props) => {
 
 	return (
 		<>
-			{
-				false && <AuthorizationForm onClose={onClose}/>
-			}
-			{
-				true && <RegistrationForm onClose={onClose}/>
-			}
+			{false && <AuthorizationForm onClose={onClose} />}
+			{true && <RegistrationForm onClose={onClose} />}
 		</>
 	);
 };

@@ -9,7 +9,6 @@ import { useRouter } from 'next/navigation';
 import { Button, Input } from '@/components/ui';
 import FormWrapper from '@/components/services/form-wrapper/form-wrapper';
 
-
 import {
 	ButtonSize,
 	ButtonType,
@@ -23,7 +22,7 @@ import Form from '../form';
 import { useInput, useForm } from '@/hooks';
 
 type Props = {
-	name: FormName;
+//	name: FormName;
 	onClose: () => void;
 };
 
@@ -52,65 +51,62 @@ const AuthorizationForm = (props: Props) => {
 	}, [valid, checkEnd, onClose]);
 
 	return (
-	<FormWrapper title={'Вход'} onClose={onClose} loading={loading}>
-		<Form
-			onSubmit={handlerOnSubmit}
-			name={FormName.Authorization}
-		>
-			<ul className={styles.inputListContent}>
-				<li>
-					<Input
-						name={InputName.Email}
-						size={InputSize.Desctop}
-						value={inputValue}
-						type={InputType.Email}
-						onChange={handleInputChange}
-						placeholder={'Email'}
-						errorMessage={'Введите корректный email'}
-						errors={errors}
-						resetValue={resetInputValue}
-					/>
-				</li>
-				<li>
-					<Input
-						name={InputName.Password}
-						size={InputSize.Desctop}
-						value={inputValue}
-						type={InputType.Password}
-						onChange={handleInputChange}
-						placeholder={'Пароль'}
-						errorMessage={'Введите корректный пароль'}
-						errors={errors}
-						resetValue={resetInputValue}
-					/>
-				</li>
-			</ul>
-			<ul className={styles.buttonListContent}>
-				<li className={styles.interButton}>
-					<Button
-						type={ButtonType.Violet}
-						size={ButtonSize.Desctop}
-						htmlType={ButtonHtmlType.Submit}
-						title={'Войти'}
-					/>
-				</li>
-				<li>
-					<Button
-						type={ButtonType.Transparent}
-						size={ButtonSize.Desctop}
-						title={'Забыли пароль?'}
-					/>
-				</li>
-				<li className={styles.registrationButton}>
-					<Button
-						type={ButtonType.Transparent}
-						size={ButtonSize.Desctop}
-						title={'Регистрация'}
-					/>
-				</li>
-			</ul>
-		</Form>
-	</FormWrapper>
+		<FormWrapper title={'Вход'} onClose={onClose} loading={loading}>
+			<Form onSubmit={handlerOnSubmit} name={FormName.Authorization}>
+				<ul className={styles.inputListContent}>
+					<li>
+						<Input
+							name={InputName.Email}
+							size={InputSize.Desctop}
+							value={inputValue}
+							type={InputType.Email}
+							onChange={handleInputChange}
+							placeholder={'Email'}
+							errorMessage={'Введите корректный email'}
+							errors={errors}
+							resetValue={resetInputValue}
+						/>
+					</li>
+					<li>
+						<Input
+							name={InputName.Password}
+							size={InputSize.Desctop}
+							value={inputValue}
+							type={InputType.Password}
+							onChange={handleInputChange}
+							placeholder={'Пароль'}
+							errorMessage={'Введите корректный пароль'}
+							errors={errors}
+							resetValue={resetInputValue}
+						/>
+					</li>
+				</ul>
+				<ul className={styles.buttonListContent}>
+					<li className={styles.interButton}>
+						<Button
+							type={ButtonType.Violet}
+							size={ButtonSize.Desctop}
+							htmlType={ButtonHtmlType.Submit}
+							title={'Войти'}
+						/>
+					</li>
+					<li>
+						<Button
+							type={ButtonType.Transparent}
+							size={ButtonSize.Desctop}
+							title={'Забыли пароль?'}
+						/>
+					</li>
+					<li className={styles.registrationButton}>
+						<Button
+							type={ButtonType.Transparent}
+							size={ButtonSize.Desctop}
+							title={'Регистрация'}
+						/>
+					</li>
+				</ul>
+			</Form>
+		</FormWrapper>
 	);
 };
 

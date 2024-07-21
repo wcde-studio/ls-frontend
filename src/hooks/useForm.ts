@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FormName } from  '@/components/forms/types';
+import { FormName } from '@/components/forms/types';
 import { InputName } from '@/components/ui/input/types';
 
 /*
@@ -21,12 +21,11 @@ import { InputName } from '@/components/ui/input/types';
 
 */
 
-
 const authorizatonFormValid: Record<string, string> = {
-//	authorization: {
-		email: 'gog3d@mail.ru',
-		password: '123123',
-//	},
+	//	authorization: {
+	email: 'gog3d@mail.ru',
+	password: '123123',
+	//	},
 };
 
 export const useForm = (errorsInitialState: Record<string, boolean>) => {
@@ -49,7 +48,6 @@ export const useForm = (errorsInitialState: Record<string, boolean>) => {
 		setLoading(true);
 
 		setTimeout(() => {
-
 			if (formName === FormName.Authorization) {
 				for (const [key, value] of formDataPairs) {
 					if (authorizatonFormValid[key] === value) {
@@ -61,15 +59,14 @@ export const useForm = (errorsInitialState: Record<string, boolean>) => {
 				}
 				setLoading(false);
 				setCheckEnd(true);
-
 			} else if (formName === FormName.Registration) {
 				for (const [key, value] of formDataPairs) {
 					//if (authorizatonFormValid[key] === value) {
 					//console.log({key, value});
 					setErrors((errors) => ({ ...errors, [key]: true }));
 					//} else {
-						//setErrors((errors) => ({ ...errors, [key]: true }));
-						//setValid(false);
+					//setErrors((errors) => ({ ...errors, [key]: true }));
+					//setValid(false);
 					//}
 				}
 				setLoading(false);
@@ -78,9 +75,8 @@ export const useForm = (errorsInitialState: Record<string, boolean>) => {
 				setLoading(false);
 				setCheckEnd(false);
 			}
-
 		}, 1500);
-	}
+	};
 
 	return {
 		handlerOnSubmit,

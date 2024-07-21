@@ -54,8 +54,6 @@
 	}
 }
 
-
-
 .inputCheckboxWrapper {
 	display: flex;
 	align-items: center;
@@ -75,13 +73,12 @@
 		&:hover ~ .iconButton {
 			border: 2px solid var(--dark-grey);
 		}
-
 	}
-	
+
 	.iconButton {
 		display: flex;
 		align-items: center;
-		justify-content: center;	
+		justify-content: center;
 		width: 18px;
 		height: 18px;
 		border-radius: 1px;
@@ -91,15 +88,14 @@
 			display: none;
 		}
 	}
-	
+
 	.input:checked ~ .iconButton svg {
-			display: block;
-		}
+		display: block;
+	}
 
 	.input:checked ~ .iconButton {
 		border: none;
-			
-		}
+	}
 
 	&.error {
 		.iconButton {
@@ -116,7 +112,6 @@
 		display: none;
 		position: absolute;
 	}
-
 }
 
 ////
