@@ -8,7 +8,7 @@ import styles from './input.module.scss';
 
 import { InputType, InputSize, InputName } from './types';
 
-import { InputCloseIcon, EyeCloseIcon, EyeOpenIcon } from '@/components/ui';
+import { InputCloseIcon, EyeCloseIcon, EyeOpenIcon, CheckboxIcon } from '@/components/ui';
 
 type Props = {
 	name: InputName;
@@ -18,8 +18,8 @@ type Props = {
 	errors: Record<string, boolean>;
 	value: Record<string, string>;
 	onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-	placeholder: string;
-	errorMessage: string;
+	placeholder?: string;
+	errorMessage?: string;
 	resetValue: (arg0: string) => void;
 };
 
@@ -37,15 +37,26 @@ const Input = (props: Props) => {
 		resetValue,
 	} = props;
 
-	console.log({type});
-
 	const [visibility, setVisibility] = useState(false);
 
-	const classNameInput = clsx(className, styles.inputWrapper, {
-		[styles[`${size}`]]: size,
-		[styles.error]: errors[name],
-		[styles.value]: value[name],
-	});
+	const classNameInput = clsx(className, 
+		type === InputType.Checkbox ? 
+			[
+				styles.inputCheckboxWrapper, {
+					[styles[`${size}`]]: size,
+					[styles.error]: errors[name],
+					//[styles.value]: value[name],
+				}
+			] 
+				: 
+			[
+				styles.inputWrapper, {
+					[styles[`${size}`]]: size,
+					[styles.error]: errors[name],
+					[styles.value]: value[name],
+				}
+			]
+	);
 
 	const onIconClick = {
 		[InputType.Email]: () => resetValue(name),
@@ -57,13 +68,14 @@ const Input = (props: Props) => {
 		[InputType.Email]: value[name] ? <InputCloseIcon /> : null,
 		[InputType.Text]: value[name] ? <InputCloseIcon /> : null,
 		[InputType.Password]: visibility ? <EyeOpenIcon /> : <EyeCloseIcon />,
+		[InputType.Checkbox]: <CheckboxIcon />,
 	};
 
 	const currentType = {
 		[InputType.Email]: type,
 		[InputType.Text]: type,
 		[InputType.Tel]: type,
-		[InputType.Number]: type,
+		[InputType.Checkbox]: type,
 		[InputType.Password]: visibility ? InputType.Text : InputType.Password,
 	};
 
@@ -82,7 +94,9 @@ const Input = (props: Props) => {
 				type={'button'}
 				className={styles.iconButton}
 				onClick={onIconClick[type]}>
-				{icon[type]}
+				{
+					icon[type]
+				}
 			</button>
 			<p className={styles.errorMessage}>{errorMessage}</p>
 		</div>

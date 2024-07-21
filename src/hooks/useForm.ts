@@ -42,6 +42,8 @@ export const useForm = (errorsInitialState: Record<string, boolean>) => {
 		const formDataPairs = Array.from(formData.entries());
 		const formName = event.target.name;
 
+		console.log(event.target);
+
 		setValid(true);
 		setCheckEnd(false);
 		setLoading(true);
@@ -49,7 +51,6 @@ export const useForm = (errorsInitialState: Record<string, boolean>) => {
 		setTimeout(() => {
 
 			if (formName === FormName.Authorization) {
-
 				for (const [key, value] of formDataPairs) {
 					if (authorizatonFormValid[key] === value) {
 						setErrors((errors) => ({ ...errors, [key]: false }));
@@ -63,12 +64,13 @@ export const useForm = (errorsInitialState: Record<string, boolean>) => {
 
 			} else if (formName === FormName.Registration) {
 				for (const [key, value] of formDataPairs) {
-					if (authorizatonFormValid[key] === value) {
-						setErrors((errors) => ({ ...errors, [key]: false }));
-					} else {
-						setErrors((errors) => ({ ...errors, [key]: true }));
-						setValid(false);
-					}
+					//if (authorizatonFormValid[key] === value) {
+					//console.log({key, value});
+					setErrors((errors) => ({ ...errors, [key]: true }));
+					//} else {
+						//setErrors((errors) => ({ ...errors, [key]: true }));
+						//setValid(false);
+					//}
 				}
 				setLoading(false);
 				setCheckEnd(true);

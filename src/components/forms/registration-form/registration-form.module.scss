@@ -19,3 +19,21 @@
 .registrationButton {
 	padding-bottom: 5px;
 }
+
+.confirm {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 19px;
+	padding-left: 11px;
+	span {
+		font-family: var(--font-family);
+		font-weight: 400;
+		font-size: 13px;
+		color: var(--grey);
+	}
+	.confirmLink {
+		color: var(--blue);
+	}
+
+}

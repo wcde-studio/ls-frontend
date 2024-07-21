@@ -39,12 +39,19 @@ const RegistrationForm = (props: Props) => {
 		[InputName.City]: '',
 		[InputName.Password]: '',
 		[InputName.RepeatPassword]: '',
+		[InputName.ConfirmRegistration]: false,
 	});
 
 	const { handlerOnSubmit, errors, valid, loading, checkEnd } = useForm({
-		[InputName.Email]: false,
-		[InputName.Password]: false,
 		[InputName.UserName]: false,
+		[InputName.UserSurname]: false,
+		[InputName.Email]: false,
+		[InputName.Telephone]: false,
+		[InputName.Telegram]: false,
+		[InputName.City]: false,
+		[InputName.Password]: false,
+		[InputName.RepeatPassword]: false,
+		[InputName.ConfirmRegistration]: false,
 	});
 
 	const router = useRouter();
@@ -55,6 +62,13 @@ const RegistrationForm = (props: Props) => {
 //			router.push('/personal-area');
 		}
 	}, [valid, checkEnd, onClose]);
+
+	const onClickConfirm = () => {
+			onClose();
+			router.push('/');
+	};
+
+	console.log({inputValue, errors});
 
 	return (
 	<FormWrapper title={'Регистрация'} onClose={onClose} loading={loading}>
@@ -167,7 +181,6 @@ const RegistrationForm = (props: Props) => {
 						resetValue={resetInputValue}
 					/>
 				</li>
-
 			</ul>
 			<ul className={styles.buttonListContent}>
 				<li className={styles.interButton}>
@@ -178,11 +191,21 @@ const RegistrationForm = (props: Props) => {
 						title={'Зарегистрироваться'}
 					/>
 				</li>
-
-				<li>
-						<input type={'tel'}/>
+				<li className={styles.confirm}>
+					<Input
+						name={InputName.ConfirmRegistration}
+						size={InputSize.Desctop}
+						value={inputValue}
+						type={InputType.Checkbox}
+						onChange={handleInputChange}
+						errors={errors}
+						resetValue={resetInputValue}
+					/>
+						<span>
+							Нажимая кнопку Регистрация, я подтверждаю своё согласие на обработку моих персональных данных, и соглашаюсь с 
+							<Link href={'/contacts'} onClick={onClose} className={styles.confirmLink}>политикой сайта</Link>
+						</span>
 				</li>
-
 				<li className={styles.registrationButton}>
 					<Button
 						type={ButtonType.Transparent}
