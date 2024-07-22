@@ -22,7 +22,7 @@ import Form from '../form';
 import { useInput, useForm } from '@/hooks';
 
 type Props = {
-//	name: FormName;
+	//	name: FormName;
 	onClose: () => void;
 };
 

@@ -37,7 +37,7 @@ import ClockIcon from './icons/clock-icon';
 import Button from './button/button';
 import IconButton from './button/icon-button/icon-button';
 import Input from './input/input';
-import CheckboxIcon from './icons/checkbox-icon.tsx';
+import CheckboxIcon from './icons/checkbox-icon';
 
 export {
 	LogoIcon,

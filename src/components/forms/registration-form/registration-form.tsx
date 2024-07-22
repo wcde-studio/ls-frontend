@@ -22,9 +22,9 @@ import Form from '../form';
 import { useInput, useForm } from '@/hooks';
 
 type Props = {
-//	name: FormName;
 	onClose: () => void;
 };
+
 
 const RegistrationForm = (props: Props) => {
 	const { onClose } = props;
@@ -50,15 +50,14 @@ const RegistrationForm = (props: Props) => {
 		[InputName.City]: false,
 		[InputName.Password]: false,
 		[InputName.RepeatPassword]: false,
-		[InputName.ConfirmRegistration]: false,
+//		[InputName.ConfirmRegistration]: false,
 	});
 
 	const router = useRouter();
 
 	useEffect(() => {
 		if (valid && checkEnd) {
-			//			onClose();
-			//			router.push('/personal-area');
+			onClose();
 		}
 	}, [valid, checkEnd, onClose]);
 
@@ -66,8 +65,6 @@ const RegistrationForm = (props: Props) => {
 		onClose();
 		router.push('/');
 	};
-
-	console.log({ inputValue, errors });
 
 	return (
 		<FormWrapper title={'Регистрация'} onClose={onClose} loading={loading}>
@@ -197,15 +194,19 @@ const RegistrationForm = (props: Props) => {
 							errors={errors}
 							resetValue={resetInputValue}
 						/>
-						<span>
-							<p>Нажимая кнопку Регистрация, я подтверждаю своё согласие на обработку моих персональных данных, и соглашаюсь с </p>
+						<p>
+							<span>
+								{
+									'Нажимая кнопку Регистрация, я подтверждаю своё согласие на обработку моих персональных данных, и соглашаюсь с'
+								}
+							</span>
 							<Link
 								href={'/contacts'}
 								onClick={onClose}
 								className={styles.confirmLink}>
-								политикой сайта
+								{'политикой сайта'}
 							</Link>
-						</span>
+						</p>
 					</li>
 					<li className={styles.registrationButton}>
 						<Button
