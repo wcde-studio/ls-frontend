@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 
-
 import { InputName, InputType } from '@/components/ui/input/types';
 
-export const useInput= (initialState: Record<string, string>) => {
+export const useInput = (initialState: Record<string, string>) => {
 	const [inputValue, setInputValue] = useState(initialState);
 
 	const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {

@@ -25,7 +25,6 @@ type Props = {
 	onClose: () => void;
 };
 
-
 const RegistrationForm = (props: Props) => {
 	const { onClose } = props;
 
@@ -50,7 +49,7 @@ const RegistrationForm = (props: Props) => {
 		[InputName.City]: false,
 		[InputName.Password]: false,
 		[InputName.RepeatPassword]: false,
-//		[InputName.ConfirmRegistration]: false,
+		//		[InputName.ConfirmRegistration]: false,
 	});
 
 	const router = useRouter();

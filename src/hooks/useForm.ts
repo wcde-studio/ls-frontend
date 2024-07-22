@@ -93,7 +93,7 @@ export const useForm = (errorsInitialState: Record<string, boolean>) => {
 								}
 								break;
 							default:
-//								setValid(false);
+							//								setValid(false);
 						}
 					}
 
