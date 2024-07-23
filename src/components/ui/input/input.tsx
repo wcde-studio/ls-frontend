@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, ReactNode } from 'react';
 
 import clsx from 'clsx';
 
@@ -65,13 +65,13 @@ const Input = (props: Props) => {
 				]
 	);
 
-	const onIconClick = {
+	const onIconClick: Record<string, () => void> = {
 		[InputType.Email]: () => resetValue(name),
 		[InputType.Text]: () => resetValue(name),
 		[InputType.Password]: () => setVisibility(!visibility),
 	};
 
-	const icon = {
+	const icon: Record<string, ReactNode | null> = {
 		[InputType.Email]: value[name] ? <InputCloseIcon /> : null,
 		[InputType.Text]: value[name] ? <InputCloseIcon /> : null,
 		[InputType.Password]: visibility ? <EyeOpenIcon /> : <EyeCloseIcon />,

@@ -37,7 +37,7 @@ const RegistrationForm = (props: Props) => {
 		[InputName.City]: '',
 		[InputName.Password]: '',
 		[InputName.RepeatPassword]: '',
-		[InputName.ConfirmRegistration]: false,
+		//		[InputName.ConfirmRegistration]: false,
 	});
 
 	const { handlerOnSubmit, errors, valid, loading, checkEnd } = useForm({
@@ -49,7 +49,7 @@ const RegistrationForm = (props: Props) => {
 		[InputName.City]: false,
 		[InputName.Password]: false,
 		[InputName.RepeatPassword]: false,
-		//		[InputName.ConfirmRegistration]: false,
+		[InputName.ConfirmRegistration]: false,
 	});
 
 	const router = useRouter();

@@ -77,7 +77,10 @@ export const useForm = (errorsInitialState: Record<string, boolean>) => {
 								}
 								break;
 							case InputName.Password:
-								if (value === formData.get(InputName.RepeatPassword)) {
+								if (
+									value === formData.get(InputName.RepeatPassword) &&
+									value !== ''
+								) {
 									setErrors((errors) => ({ ...errors, [key]: false }));
 								} else {
 									setErrors((errors) => ({ ...errors, [key]: true }));
@@ -85,7 +88,10 @@ export const useForm = (errorsInitialState: Record<string, boolean>) => {
 								}
 								break;
 							case InputName.RepeatPassword:
-								if (value === formData.get(InputName.Password)) {
+								if (
+									value === formData.get(InputName.Password) &&
+									value !== ''
+								) {
 									setErrors((errors) => ({ ...errors, [key]: false }));
 								} else {
 									setErrors((errors) => ({ ...errors, [key]: true }));
@@ -96,7 +102,6 @@ export const useForm = (errorsInitialState: Record<string, boolean>) => {
 							//								setValid(false);
 						}
 					}
-
 					setLoading(false);
 					setCheckEnd(true);
 				}, 1500);

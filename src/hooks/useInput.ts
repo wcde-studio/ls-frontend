@@ -9,8 +9,8 @@ export const useInput = (initialState: Record<string, string>) => {
 		e.persist();
 		setInputValue((inputValue) => ({
 			...inputValue,
-			[e.target.name]:
-				e.target.type === 'checkbox' ? e.target.checked : e.target.value,
+			//				e.target.type === 'checkbox' ? e.target.checked : e.target.value,
+			[e.target.name]: e.target.value,
 		}));
 	};
 
