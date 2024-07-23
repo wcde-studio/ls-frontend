@@ -21,8 +21,9 @@ import Form from '../form';
 
 import { useInput, useForm } from '@/hooks';
 
+import useLoginStore from '@/components/forms/useLoginStore';
+
 type Props = {
-	//	name: FormName;
 	onClose: () => void;
 };
 
@@ -50,7 +51,10 @@ const AuthorizationForm = (props: Props) => {
 		}
 	}, [valid, checkEnd, onClose]);
 
-	return (
+	const formName = useLoginStore((state) => state.formName);
+	const setFormName = useLoginStore((state) => state.setFormName);
+
+	return formName === FormName.Authorization ? (
 		<FormWrapper title={'Вход'} onClose={onClose} loading={loading}>
 			<Form onSubmit={handlerOnSubmit} name={FormName.Authorization}>
 				<ul className={styles.inputListContent}>
@@ -95,6 +99,7 @@ const AuthorizationForm = (props: Props) => {
 							type={ButtonType.Transparent}
 							size={ButtonSize.Desctop}
 							title={'Забыли пароль?'}
+							onClick={() => setFormName(FormName.Registration)}
 						/>
 					</li>
 					<li className={styles.registrationButton}>
@@ -102,11 +107,14 @@ const AuthorizationForm = (props: Props) => {
 							type={ButtonType.Transparent}
 							size={ButtonSize.Desctop}
 							title={'Регистрация'}
+							onClick={() => setFormName(FormName.Registration)}
 						/>
 					</li>
 				</ul>
 			</Form>
 		</FormWrapper>
+	) : (
+		<></>
 	);
 };
 
