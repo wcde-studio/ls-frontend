@@ -18,15 +18,20 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
-	children,
+	children, 
+	parallel
 }: Readonly<{
 	children: React.ReactNode;
+	parallel: React.ReactNode;
 }>) {
 	return (
 		<html lang="en">
 			<body>
 				<Header />
-				<main className={styles.main}>{children}</main>
+				<main className={styles.main}>
+					{children}
+					{parallel}
+				</main>
 				<Footer />
 			</body>
 		</html>

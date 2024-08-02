@@ -1,22 +1,24 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import { clsx } from 'clsx';
 import { LogoIcon, ProfileIcon } from '../ui';
 import styles from './header.module.scss';
 import Link from 'next/link';
 
-import { Modal } from '@/components/services';
-import { LoginMainForm } from '@/components/forms';
+import useLoginStore from '@/components/forms/useLoginStore';
 
 const Header = () => {
 	const pathname = usePathname();
 	const isActive = (path: string) => path === pathname;
 
-	const [modalOn, setModalOn] = useState(true);
+	const login = useLoginStore((state) => state.login);
+	const setLoginReturnPath = useLoginStore((state) => state.setLoginReturnPath);
 
-	const modalOnClick = () => setModalOn(!modalOn);
+useEffect(()=>{
+	pathname.indexOf('auth') === -1 ? setLoginReturnPath(pathname) : null;
+},[pathname]);
 
 	return (
 		<header className={styles.headerContainer}>
@@ -47,8 +49,9 @@ const Header = () => {
 						)}>
 						Контакты
 					</Link>
-					<button
-						onClick={modalOnClick}
+					<Link
+						href={login ? '/auth/personal-area' : '/auth/login'}
+						scroll={false}
 						className={clsx(
 							styles.link,
 							styles.profileLink,
@@ -56,12 +59,9 @@ const Header = () => {
 						)}>
 						<ProfileIcon className={styles.iconProfile} />
 						<span className={styles.profileLinkText}>Личный кабинет</span>
-					</button>
+					</Link>
 				</nav>
 			</div>
-			<Modal modalOn={modalOn} onClick={modalOnClick}>
-				<LoginMainForm onClose={modalOnClick} />
-			</Modal>
 		</header>
 	);
 };

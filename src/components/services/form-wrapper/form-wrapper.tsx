@@ -8,18 +8,25 @@ import styles from './form-wrapper.module.scss';
 import { CloseIcon } from '@/components/ui';
 import { LoadingSpinner } from '@/components/services';
 
+import { useRouter } from 'next/navigation';
+
+import useLoginStore from '@/components/forms/useLoginStore';
+
 type Props = {
-	onClose: () => void;
 	title: string;
-	//	className?: string;
 	loading: boolean;
 	children: ReactNode;
 };
 
 const FormWrapper = (props: Props) => {
-	const { onClose, title, loading, children } = props;
+	const { title, loading, children } = props;
 
-	//	const formClassName = clsx(className, styles.form);
+	const router = useRouter();
+	const loginReturnPath = useLoginStore((state) => state.loginReturnPath);
+
+	const closeIconOnClick = () => {
+		router.push(loginReturnPath, {scroll: false});
+	}; 
 
 	return (
 		<div className={styles.formWrapper}>
@@ -29,7 +36,7 @@ const FormWrapper = (props: Props) => {
 					<h2>{title}</h2>
 					<button
 						className={styles.closeIcon}
-						onClick={onClose}
+						onClick={closeIconOnClick}
 						type={'button'}>
 						<CloseIcon />
 					</button>

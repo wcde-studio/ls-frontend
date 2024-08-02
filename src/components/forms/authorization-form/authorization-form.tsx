@@ -23,12 +23,7 @@ import { useInput, useForm } from '@/hooks';
 
 import useLoginStore from '@/components/forms/useLoginStore';
 
-type Props = {
-	onClose: () => void;
-};
-
-const AuthorizationForm = (props: Props) => {
-	const { onClose } = props;
+const AuthorizationForm = () => {
 
 	const { inputValue, handleInputChange, resetInputValue } = useInput({
 		[InputName.Email]: '',
@@ -46,16 +41,12 @@ const AuthorizationForm = (props: Props) => {
 
 	useEffect(() => {
 		if (valid && checkEnd) {
-			onClose();
 			router.push('/personal-area');
 		}
-	}, [valid, checkEnd, onClose]);
+	}, [valid, checkEnd]);
 
-	const formName = useLoginStore((state) => state.formName);
-	const setFormName = useLoginStore((state) => state.setFormName);
-
-	return formName === FormName.Authorization ? (
-		<FormWrapper title={'Вход'} onClose={onClose} loading={loading}>
+	return (
+		<FormWrapper title={'Вход'} loading={loading}>
 			<Form onSubmit={handlerOnSubmit} name={FormName.Authorization}>
 				<ul className={styles.inputListContent}>
 					<li>
@@ -99,7 +90,7 @@ const AuthorizationForm = (props: Props) => {
 							type={ButtonType.Transparent}
 							size={ButtonSize.Desctop}
 							title={'Забыли пароль?'}
-							onClick={() => setFormName(FormName.Registration)}
+							onClick={() => router.push('/auth/reset', {scroll: false})}
 						/>
 					</li>
 					<li className={styles.registrationButton}>
@@ -107,14 +98,12 @@ const AuthorizationForm = (props: Props) => {
 							type={ButtonType.Transparent}
 							size={ButtonSize.Desctop}
 							title={'Регистрация'}
-							onClick={() => setFormName(FormName.Registration)}
+							onClick={() => router.push('/auth/register', {scroll: false})}
 						/>
 					</li>
 				</ul>
 			</Form>
 		</FormWrapper>
-	) : (
-		<></>
 	);
 };
 

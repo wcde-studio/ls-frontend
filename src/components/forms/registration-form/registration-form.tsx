@@ -21,14 +21,7 @@ import Form from '../form';
 
 import { useInput, useForm } from '@/hooks';
 
-import useLoginStore from '@/components/forms/useLoginStore';
-
-type Props = {
-	onClose: () => void;
-};
-
-const RegistrationForm = (props: Props) => {
-	const { onClose } = props;
+const RegistrationForm = () => {
 
 	const { inputValue, handleInputChange, resetInputValue } = useInput({
 		[InputName.UserName]: '',
@@ -58,20 +51,18 @@ const RegistrationForm = (props: Props) => {
 
 	useEffect(() => {
 		if (valid && checkEnd) {
-			onClose();
+			router.push('/')
 		}
-	}, [valid, checkEnd, onClose]);
-
+	}, [valid, checkEnd]);
+/*
 	const onClickConfirm = () => {
 		onClose();
 		router.push('/');
 	};
+*/
 
-	const formName = useLoginStore((state) => state.formName);
-	const setFormName = useLoginStore((state) => state.setFormName);
-
-	return formName === FormName.Registration ? (
-		<FormWrapper title={'Регистрация'} onClose={onClose} loading={loading}>
+	return (
+		<FormWrapper title={'Регистрация'} loading={loading}>
 			<Form onSubmit={handlerOnSubmit} name={FormName.Registration}>
 				<ul className={styles.inputListContent}>
 					<li>
@@ -205,8 +196,8 @@ const RegistrationForm = (props: Props) => {
 								}
 							</span>
 							<Link
+								scroll={false}
 								href={'/contacts'}
-								onClick={onClose}
 								className={styles.confirmLink}>
 								{'политикой сайта'}
 							</Link>
@@ -217,14 +208,12 @@ const RegistrationForm = (props: Props) => {
 							type={ButtonType.Transparent}
 							size={ButtonSize.Desctop}
 							title={'Войти с паролем'}
-							onClick={() => setFormName(FormName.Authorization)}
+							onClick={() => router.push('/auth/login', {scroll: false})}
 						/>
 					</li>
 				</ul>
 			</Form>
 		</FormWrapper>
-	) : (
-		<></>
 	);
 };
 

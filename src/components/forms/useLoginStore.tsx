@@ -1,16 +1,21 @@
 'use client';
 
 import { create } from 'zustand';
-import { FormName } from '@/components/forms/types';
 
 interface LoginStore {
-	formName: FormName;
-	setFormName: (name: FormName) => void;
+	loginReturnPath: string;
+	setLoginReturnPath: (name: string) => void;
+	login: boolean;
+	setLogin: (auth: boolean) => void;
+
 }
 
 const useLoginStore = create<LoginStore>((set) => ({
-	formName: FormName.Authorization,
-	setFormName: (name: FormName) => set((state) => ({ formName: name })),
+	loginReturnPath: '/',
+	setLoginReturnPath: (name: string) => set((state) => ({ loginReturnPath: name })),
+	login: false,
+	setLogin: (auth: boolean) => set((state) => ({ login: auth })),
+
 }));
 
 export default useLoginStore;
