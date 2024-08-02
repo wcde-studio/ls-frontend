@@ -18,20 +18,20 @@ const Modal = (props: Props) => {
 	const router = useRouter();
 	const pathname = usePathname();
 
-//import useLoginStore from '@/components/forms/useLoginStore';
+	//import useLoginStore from '@/components/forms/useLoginStore';
 	const loginReturnPath = useLoginStore((state) => state.loginReturnPath);
 	const setLoginReturnPath = useLoginStore((state) => state.setLoginReturnPath);
 
 	const modalOnClick = () => {
-		router.push(loginReturnPath, {scroll: false});
-	}; 
+		router.push(loginReturnPath, { scroll: false });
+	};
 
 	return pathname.indexOf('auth') > -1 ? (
 		<div>
 			<div onClick={modalOnClick} className={styles.modal}></div>
 			<div className={styles.content}>{children}</div>
 		</div>
-	) : null
+	) : null;
 };
 
 export default Modal;

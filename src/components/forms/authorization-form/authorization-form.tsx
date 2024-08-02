@@ -24,7 +24,6 @@ import { useInput, useForm } from '@/hooks';
 import useLoginStore from '@/components/forms/useLoginStore';
 
 const AuthorizationForm = () => {
-
 	const { inputValue, handleInputChange, resetInputValue } = useInput({
 		[InputName.Email]: '',
 		[InputName.Password]: '',
@@ -90,7 +89,7 @@ const AuthorizationForm = () => {
 							type={ButtonType.Transparent}
 							size={ButtonSize.Desctop}
 							title={'Забыли пароль?'}
-							onClick={() => router.push('/auth/reset', {scroll: false})}
+							onClick={() => router.push('/auth/reset', { scroll: false })}
 						/>
 					</li>
 					<li className={styles.registrationButton}>
@@ -98,7 +97,7 @@ const AuthorizationForm = () => {
 							type={ButtonType.Transparent}
 							size={ButtonSize.Desctop}
 							title={'Регистрация'}
-							onClick={() => router.push('/auth/register', {scroll: false})}
+							onClick={() => router.push('/auth/register', { scroll: false })}
 						/>
 					</li>
 				</ul>

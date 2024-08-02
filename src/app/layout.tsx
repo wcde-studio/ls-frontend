@@ -18,8 +18,8 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
-	children, 
-	parallel
+	children,
+	parallel,
 }: Readonly<{
 	children: React.ReactNode;
 	parallel: React.ReactNode;

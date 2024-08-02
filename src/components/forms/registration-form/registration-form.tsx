@@ -22,7 +22,6 @@ import Form from '../form';
 import { useInput, useForm } from '@/hooks';
 
 const RegistrationForm = () => {
-
 	const { inputValue, handleInputChange, resetInputValue } = useInput({
 		[InputName.UserName]: '',
 		[InputName.UserSurname]: '',
@@ -51,10 +50,10 @@ const RegistrationForm = () => {
 
 	useEffect(() => {
 		if (valid && checkEnd) {
-			router.push('/')
+			router.push('/');
 		}
 	}, [valid, checkEnd]);
-/*
+	/*
 	const onClickConfirm = () => {
 		onClose();
 		router.push('/');
@@ -208,7 +207,7 @@ const RegistrationForm = () => {
 							type={ButtonType.Transparent}
 							size={ButtonSize.Desctop}
 							title={'Войти с паролем'}
-							onClick={() => router.push('/auth/login', {scroll: false})}
+							onClick={() => router.push('/auth/login', { scroll: false })}
 						/>
 					</li>
 				</ul>

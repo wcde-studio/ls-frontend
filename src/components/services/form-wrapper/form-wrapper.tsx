@@ -25,8 +25,8 @@ const FormWrapper = (props: Props) => {
 	const loginReturnPath = useLoginStore((state) => state.loginReturnPath);
 
 	const closeIconOnClick = () => {
-		router.push(loginReturnPath, {scroll: false});
-	}; 
+		router.push(loginReturnPath, { scroll: false });
+	};
 
 	return (
 		<div className={styles.formWrapper}>

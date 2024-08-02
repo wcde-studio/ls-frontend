@@ -16,9 +16,9 @@ const Header = () => {
 	const login = useLoginStore((state) => state.login);
 	const setLoginReturnPath = useLoginStore((state) => state.setLoginReturnPath);
 
-useEffect(()=>{
-	pathname.indexOf('auth') === -1 ? setLoginReturnPath(pathname) : null;
-},[pathname]);
+	useEffect(() => {
+		pathname.indexOf('auth') === -1 ? setLoginReturnPath(pathname) : null;
+	}, [pathname]);
 
 	return (
 		<header className={styles.headerContainer}>
