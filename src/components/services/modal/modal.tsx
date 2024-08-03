@@ -1,7 +1,6 @@
 'use client';
-import { ReactNode } from 'react';
+import { ReactNode, useEffect, useMemo } from 'react';
 import styles from './modal.module.scss';
-import { useEffect, useMemo } from 'react';
 
 import { useRouter, usePathname } from 'next/navigation';
 
@@ -18,7 +17,14 @@ const Modal = (props: Props) => {
 	const router = useRouter();
 	const pathname = usePathname();
 
-	//import useLoginStore from '@/components/forms/useLoginStore';
+	useEffect(() => {
+		if (pathname.indexOf('auth') === -1) {
+			document.body.style.overflow='scroll';
+		} else {
+			document.body.style.overflow='hidden';
+		}
+	}, [pathname]);
+
 	const loginReturnPath = useLoginStore((state) => state.loginReturnPath);
 	const setLoginReturnPath = useLoginStore((state) => state.setLoginReturnPath);
 
