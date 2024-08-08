@@ -18,7 +18,7 @@ const Header = () => {
 
 	useEffect(() => {
 		pathname.indexOf('auth') === -1 ? setLoginReturnPath(pathname) : null;
-	}, [pathname]);
+	}, [pathname, setLoginReturnPath]);
 
 	return (
 		<header className={styles.headerContainer}>

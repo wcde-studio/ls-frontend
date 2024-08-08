@@ -52,13 +52,7 @@ const RegistrationForm = () => {
 		if (valid && checkEnd) {
 			router.push('/');
 		}
-	}, [valid, checkEnd]);
-	/*
-	const onClickConfirm = () => {
-		onClose();
-		router.push('/');
-	};
-*/
+	}, [valid, checkEnd, router]);
 
 	return (
 		<FormWrapper title={'Регистрация'} loading={loading}>

@@ -38,13 +38,15 @@ const MainCourseCard = (props: Props) => {
 
 	return (
 		<li className={styles.card}>
-			<Image
-				alt="course"
-				src={imageSrc}
-				width={300}
-				height={300}
-				className={styles.image}
-			/>
+			<div className={styles.imageWrapper}>
+				<Image
+					alt="course"
+					src={imageSrc}
+					width={300}
+					height={300}
+					className={styles.image}
+				/>
+			</div>
 			<section className={styles.description}>
 				<h2 className={styles.name}>{name}</h2>
 				<div className={styles.location}>

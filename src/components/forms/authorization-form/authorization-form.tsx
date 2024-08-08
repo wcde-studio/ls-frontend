@@ -42,7 +42,7 @@ const AuthorizationForm = () => {
 		if (valid && checkEnd) {
 			router.push('/personal-area');
 		}
-	}, [valid, checkEnd]);
+	}, [valid, checkEnd, router]);
 
 	return (
 		<FormWrapper title={'Вход'} loading={loading}>
