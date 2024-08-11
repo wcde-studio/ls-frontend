@@ -9,7 +9,8 @@ import Footer from '@/components/footer/footer';
 
 export const metadata: Metadata = {
 	title: 'Школа Лады/WCDE',
-	description: 'Сильнейшая провидица современности, бизнес-маг, рунолог, этнолог, бизнес-тренер, наставник. Приемы по вопросам бизнеса, личным вопросам, онлайн и офлайн.',
+	description:
+		'Сильнейшая провидица современности, бизнес-маг, рунолог, этнолог, бизнес-тренер, наставник. Приемы по вопросам бизнеса, личным вопросам, онлайн и офлайн.',
 	generator: 'Next.js',
 	applicationName: 'Школа Лады/WCDE',
 	referrer: 'origin-when-cross-origin',
@@ -18,14 +19,19 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
 	children,
+	parallel,
 }: Readonly<{
 	children: React.ReactNode;
+	parallel: React.ReactNode;
 }>) {
 	return (
 		<html lang="en">
 			<body>
 				<Header />
-				<main className={styles.main}>{children}</main>
+				<main className={styles.main}>
+					{children}
+					{parallel}
+				</main>
 				<Footer />
 			</body>
 		</html>

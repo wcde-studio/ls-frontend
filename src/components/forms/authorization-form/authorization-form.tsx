@@ -1,12 +1,13 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-
 import styles from './authorization-form.module.scss';
 
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 import { Button, Input } from '@/components/ui';
+import FormWrapper from '@/components/services/form-wrapper/form-wrapper';
 
 import {
 	ButtonSize,
@@ -20,13 +21,9 @@ import Form from '../form';
 
 import { useInput, useForm } from '@/hooks';
 
-type Props = {
-	onClose: () => void;
-};
+import useLoginStore from '@/components/forms/useLoginStore';
 
-const AuthorizationForm = (props: Props) => {
-	const { onClose } = props;
-
+const AuthorizationForm = () => {
 	const { inputValue, handleInputChange, resetInputValue } = useInput({
 		[InputName.Email]: '',
 		[InputName.Password]: '',
@@ -39,70 +36,73 @@ const AuthorizationForm = (props: Props) => {
 		[InputName.UserName]: false,
 	});
 
+	const router = useRouter();
+
 	useEffect(() => {
-		if (valid && checkEnd) onClose();
-	}, [valid, checkEnd, onClose]);
+		if (valid && checkEnd) {
+			router.push('/personal-area');
+		}
+	}, [valid, checkEnd, router]);
 
 	return (
-		<Form
-			title={'Вход'}
-			onClose={onClose}
-			onSubmit={handlerOnSubmit}
-			name={FormName.Authorization}
-			loading={loading}>
-			<ul className={styles.listContent}>
-				<li>
-					<Input
-						name={InputName.Email}
-						size={InputSize.Desctop}
-						value={inputValue}
-						type={InputType.Email}
-						onChange={handleInputChange}
-						placeholder={'Email'}
-						errorMessage={'Введите корректный email'}
-						errors={errors}
-						resetValue={resetInputValue}
-					/>
-				</li>
-				<li>
-					<Input
-						name={InputName.Password}
-						size={InputSize.Desctop}
-						value={inputValue}
-						type={InputType.Password}
-						onChange={handleInputChange}
-						placeholder={'Пароль'}
-						errorMessage={'Введите корректный пароль'}
-						errors={errors}
-						resetValue={resetInputValue}
-					/>
-				</li>
-			</ul>
-			<ul className={styles.listContent}>
-				<li>
-					<Button
-						type={ButtonType.Violet}
-						size={ButtonSize.Desctop}
-						htmlType={ButtonHtmlType.Submit}
-						title={'Войти'}
-					/>
-				</li>
-				<li>
-					<Button
-						type={ButtonType.Transparent}
-						size={ButtonSize.Desctop}
-						title={'Забыли пароль?'}
-					/>
-				</li>
-				<li>
-					<Button
-						type={ButtonType.Transparent}
-						size={ButtonSize.Desctop}
-						title={'Регистрация'}
-					/>
-				</li>
-			</ul>
-		</Form>
+		<FormWrapper title={'Вход'} loading={loading}>
+			<Form onSubmit={handlerOnSubmit} name={FormName.Authorization}>
+				<ul className={styles.inputListContent}>
+					<li>
+						<Input
+							name={InputName.Email}
+							size={InputSize.Desctop}
+							value={inputValue}
+							type={InputType.Email}
+							onChange={handleInputChange}
+							placeholder={'Email'}
+							errorMessage={'Введите корректный email'}
+							errors={errors}
+							resetValue={resetInputValue}
+						/>
+					</li>
+					<li>
+						<Input
+							name={InputName.Password}
+							size={InputSize.Desctop}
+							value={inputValue}
+							type={InputType.Password}
+							onChange={handleInputChange}
+							placeholder={'Пароль'}
+							errorMessage={'Введите корректный пароль'}
+							errors={errors}
+							resetValue={resetInputValue}
+						/>
+					</li>
+				</ul>
+				<ul className={styles.buttonListContent}>
+					<li className={styles.interButton}>
+						<Button
+							type={ButtonType.Violet}
+							size={ButtonSize.Desctop}
+							htmlType={ButtonHtmlType.Submit}
+							title={'Войти'}
+						/>
+					</li>
+					<li>
+						<Button
+							type={ButtonType.Transparent}
+							size={ButtonSize.Desctop}
+							title={'Забыли пароль?'}
+							onClick={() => router.push('/auth/reset', { scroll: false })}
+						/>
+					</li>
+					<li className={styles.registrationButton}>
+						<Button
+							type={ButtonType.Transparent}
+							size={ButtonSize.Desctop}
+							title={'Регистрация'}
+							onClick={() => router.push('/auth/register', { scroll: false })}
+						/>
+					</li>
+				</ul>
+			</Form>
+		</FormWrapper>
 	);
 };
 

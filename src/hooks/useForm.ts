@@ -1,13 +1,10 @@
 import React, { useState } from 'react';
-//import { FormName } from  '@/components/forms/types';
+import { FormName } from '@/components/forms/types';
 import { InputName } from '@/components/ui/input/types';
 
-const formsValid: Record<string, Record<string, string>> = {
-	authorization: {
-		email: 'gog3d@mail.ru',
-		password: '123123',
-		userName: 'oleg',
-	},
+const authorizatonFormValid: Record<string, string> = {
+	email: 'gog3d@mail.ru',
+	password: '123123',
 };
 
 export const useForm = (errorsInitialState: Record<string, boolean>) => {
@@ -19,29 +16,110 @@ export const useForm = (errorsInitialState: Record<string, boolean>) => {
 	const handlerOnSubmit = (event: React.ChangeEvent<HTMLFormElement>) => {
 		event.preventDefault();
 
-		const formData = new FormData(event.target);
-		const formDataPairs = Array.from(formData.entries());
-		const formName = event.target.name;
-
-		const formValid = formsValid[formName];
-
 		setValid(true);
 		setCheckEnd(false);
 		setLoading(true);
 
-		setTimeout(() => {
-			for (const [key, value] of formDataPairs) {
-				if (formValid[key] === value) {
-					setErrors((errors) => ({ ...errors, [key]: false }));
-				} else {
-					setErrors((errors) => ({ ...errors, [key]: true }));
-					setValid(false);
+		const formName = event.target.name;
+		const formData = new FormData(event.target);
+		const formDataPairs = Array.from(formData.entries());
+
+		//		console.log(formData);
+
+		if (formName === FormName.Authorization) {
+			setTimeout(() => {
+				for (const [key, value] of formDataPairs) {
+					if (authorizatonFormValid[key] === value) {
+						setErrors((errors) => ({ ...errors, [key]: false }));
+					} else {
+						setErrors((errors) => ({ ...errors, [key]: true }));
+						setValid(false);
+					}
 				}
+				setLoading(false);
+				setCheckEnd(true);
+			}, 1500);
+		} else if (formName === FormName.Registration) {
+			if (formData.getAll(InputName.ConfirmRegistration).length) {
+				setTimeout(() => {
+					for (const [key, value] of formDataPairs) {
+						switch (key) {
+							case InputName.UserName:
+								if (value) {
+									setErrors((errors) => ({ ...errors, [key]: false }));
+								} else {
+									setErrors((errors) => ({ ...errors, [key]: true }));
+									setValid(false);
+								}
+								break;
+							case InputName.UserSurname:
+								if (value) {
+									setErrors((errors) => ({ ...errors, [key]: false }));
+								} else {
+									setErrors((errors) => ({ ...errors, [key]: true }));
+									setValid(false);
+								}
+								break;
+							case InputName.Email:
+								if (value) {
+									setErrors((errors) => ({ ...errors, [key]: false }));
+								} else {
+									setErrors((errors) => ({ ...errors, [key]: true }));
+									setValid(false);
+								}
+								break;
+							case InputName.Telephone:
+								if (value) {
+									setErrors((errors) => ({ ...errors, [key]: false }));
+								} else {
+									setErrors((errors) => ({ ...errors, [key]: true }));
+									setValid(false);
+								}
+								break;
+							case InputName.Password:
+								if (
+									value === formData.get(InputName.RepeatPassword) &&
+									value !== ''
+								) {
+									setErrors((errors) => ({ ...errors, [key]: false }));
+								} else {
+									setErrors((errors) => ({ ...errors, [key]: true }));
+									setValid(false);
+								}
+								break;
+							case InputName.RepeatPassword:
+								if (
+									value === formData.get(InputName.Password) &&
+									value !== ''
+								) {
+									setErrors((errors) => ({ ...errors, [key]: false }));
+								} else {
+									setErrors((errors) => ({ ...errors, [key]: true }));
+									setValid(false);
+								}
+								break;
+							default:
+							//								setValid(false);
+						}
+					}
+					setLoading(false);
+					setCheckEnd(true);
+				}, 1500);
+			} else {
+				setErrors((errors) => ({
+					...errors,
+					[InputName.ConfirmRegistration]: true,
+				}));
+				setValid(false);
+				setLoading(false);
+				setCheckEnd(true);
 			}
+		} else {
 			setLoading(false);
 			setCheckEnd(true);
-		}, 1500);
+		}
 	};
+
 	return {
 		handlerOnSubmit,
 		errors,

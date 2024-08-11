@@ -1,18 +1,40 @@
-import { ReactNode } from 'react';
+'use client';
+import { ReactNode, useEffect, useMemo } from 'react';
 import styles from './modal.module.scss';
 
+import { useRouter, usePathname } from 'next/navigation';
+
+import useLoginStore from '@/components/forms/useLoginStore';
+
 type Props = {
+	returnPath?: string;
 	children: ReactNode;
-	modalOn: boolean;
-	onClick: () => void;
 };
 
 const Modal = (props: Props) => {
-	const { children, modalOn = false, onClick = () => {} } = props;
+	const { children, returnPath } = props;
 
-	return modalOn ? (
-		<div className={styles.modal}>
-			<div className={styles.background} onClick={onClick}></div>
+	const router = useRouter();
+	const pathname = usePathname();
+
+	useEffect(() => {
+		if (pathname.indexOf('auth') === -1) {
+			document.body.style.overflow='scroll';
+		} else {
+			document.body.style.overflow='hidden';
+		}
+	}, [pathname]);
+
+	const loginReturnPath = useLoginStore((state) => state.loginReturnPath);
+	const setLoginReturnPath = useLoginStore((state) => state.setLoginReturnPath);
+
+	const modalOnClick = () => {
+		router.push(loginReturnPath, { scroll: false });
+	};
+
+	return pathname.indexOf('auth') > -1 ? (
+		<div>
+			<div onClick={modalOnClick} className={styles.modal}></div>
 			<div className={styles.content}>{children}</div>
 		</div>
 	) : null;

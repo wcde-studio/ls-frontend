@@ -2,6 +2,8 @@ export enum InputType {
 	Email = 'email',
 	Password = 'password',
 	Text = 'text',
+	Tel = 'tel',
+	Checkbox = 'checkbox',
 }
 
 export enum InputSize {
@@ -19,4 +21,5 @@ export enum InputName {
 	City = 'city',
 	Password = 'password',
 	RepeatPassword = 'repeatPassword',
+	ConfirmRegistration = 'confirmRegistration',
 }

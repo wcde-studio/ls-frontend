@@ -1,22 +1,24 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import { clsx } from 'clsx';
 import { LogoIcon, ProfileIcon } from '../ui';
 import styles from './header.module.scss';
 import Link from 'next/link';
 
-import { Modal } from '@/components/services';
-import { AuthorizationForm } from '@/components/forms';
+import useLoginStore from '@/components/forms/useLoginStore';
 
 const Header = () => {
 	const pathname = usePathname();
 	const isActive = (path: string) => path === pathname;
 
-	const [modalOn, setModalOn] = useState(true);
+	const login = useLoginStore((state) => state.login);
+	const setLoginReturnPath = useLoginStore((state) => state.setLoginReturnPath);
 
-	const modalOnClick = () => setModalOn(!modalOn);
+	useEffect(() => {
+		pathname.indexOf('auth') === -1 ? setLoginReturnPath(pathname) : null;
+	}, [pathname, setLoginReturnPath]);
 
 	return (
 		<header className={styles.headerContainer}>
@@ -48,7 +50,8 @@ const Header = () => {
 						Контакты
 					</Link>
 					<Link
-						href="/personal-area"
+						href={login ? '/auth/personal-area' : '/auth/login'}
+						scroll={false}
 						className={clsx(
 							styles.link,
 							styles.profileLink,
@@ -59,9 +62,6 @@ const Header = () => {
 					</Link>
 				</nav>
 			</div>
-			<Modal modalOn={modalOn} onClick={modalOnClick}>
-				<AuthorizationForm onClose={modalOnClick} />
-			</Modal>
 		</header>
 	);
 };

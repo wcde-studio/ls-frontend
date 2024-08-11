@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-//type InputName = 'email' | 'password' | 'name';
+import { InputName, InputType } from '@/components/ui/input/types';
 
 export const useInput = (initialState: Record<string, string>) => {
 	const [inputValue, setInputValue] = useState(initialState);
@@ -9,6 +9,7 @@ export const useInput = (initialState: Record<string, string>) => {
 		e.persist();
 		setInputValue((inputValue) => ({
 			...inputValue,
+			//				e.target.type === 'checkbox' ? e.target.checked : e.target.value,
 			[e.target.name]: e.target.value,
 		}));
 	};
