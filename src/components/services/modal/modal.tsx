@@ -19,9 +19,9 @@ const Modal = (props: Props) => {
 
 	useEffect(() => {
 		if (pathname.indexOf('auth') === -1) {
-			document.body.style.overflow='scroll';
+			document.body.style.overflow = 'scroll';
 		} else {
-			document.body.style.overflow='hidden';
+			document.body.style.overflow = 'hidden';
 		}
 	}, [pathname]);
 

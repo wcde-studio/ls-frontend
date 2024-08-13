@@ -47,14 +47,16 @@ const RegistrationForm = () => {
 	});
 
 	const router = useRouter();
-
+	/*
 	useEffect(() => {
 		if (valid && checkEnd) {
 			router.push('/');
 		}
 	}, [valid, checkEnd, router]);
-
-	return (
+*/
+	return valid && checkEnd ? (
+		<FormWrapper title={''} text={'Вы успешно зарегистрировались'} />
+	) : (
 		<FormWrapper title={'Регистрация'} loading={loading}>
 			<Form onSubmit={handlerOnSubmit} name={FormName.Registration}>
 				<ul className={styles.inputListContent}>

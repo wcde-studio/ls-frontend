@@ -1,0 +1,21 @@
+.inputListContent {
+	display: flex;
+	flex-direction: column;
+	gap: 34px;
+	padding-top: 32px;
+}
+
+.buttonListContent {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	padding-top: 72px;
+}
+
+.interButton {
+	padding-bottom: 8px;
+}
+
+.registrationButton {
+	padding-bottom: 5px;
+}
