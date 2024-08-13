@@ -39,6 +39,24 @@ export const useForm = (errorsInitialState: Record<string, boolean>) => {
 				setLoading(false);
 				setCheckEnd(true);
 			}, 1500);
+		} else if (formName === FormName.Recovery) {
+			setTimeout(() => {
+				for (const [key, value] of formDataPairs) {
+					switch (key) {
+						case InputName.Email:
+							if (value) {
+								setErrors((errors) => ({ ...errors, [key]: false }));
+							} else {
+								setErrors((errors) => ({ ...errors, [key]: true }));
+								setValid(false);
+							}
+							break;
+						default:
+					}
+				}
+				setLoading(false);
+				setCheckEnd(true);
+			}, 1500);
 		} else if (formName === FormName.Registration) {
 			if (formData.getAll(InputName.ConfirmRegistration).length) {
 				setTimeout(() => {

@@ -3,7 +3,7 @@ import { RegistrationForm } from '@/components/forms';
 
 const RegisterPage = () => {
 	return (
-		<Modal returnPath={'/'}>
+		<Modal>
 			<RegistrationForm />
 		</Modal>
 	);

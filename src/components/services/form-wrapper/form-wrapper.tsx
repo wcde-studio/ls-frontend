@@ -13,13 +13,14 @@ import { useRouter } from 'next/navigation';
 import useLoginStore from '@/components/forms/useLoginStore';
 
 type Props = {
-	title: string;
-	loading: boolean;
-	children: ReactNode;
+	title?: string;
+	text?: string;
+	loading?: boolean;
+	children?: ReactNode;
 };
 
 const FormWrapper = (props: Props) => {
-	const { title, loading, children } = props;
+	const { title = '', text, loading = false, children } = props;
 
 	const router = useRouter();
 	const loginReturnPath = useLoginStore((state) => state.loginReturnPath);
@@ -41,6 +42,7 @@ const FormWrapper = (props: Props) => {
 						<CloseIcon />
 					</button>
 				</div>
+				{text ? <p className={styles.text}>{text}</p> : null}
 				{children}
 			</section>
 		</div>
