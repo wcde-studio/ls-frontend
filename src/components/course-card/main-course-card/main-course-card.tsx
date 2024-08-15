@@ -21,6 +21,7 @@ type Props = {
 		end: string;
 		duration: string;
 		target: string;
+		topic: string;
 	};
 	key: number;
 };

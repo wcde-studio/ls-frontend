@@ -40,9 +40,11 @@ export default function Home() {
 			<section className={styles.section}>
 				<h1 className={styles.title}>{'Ближайшие курсы'}</h1>
 				<ul className={styles.coursesList}>
-					{courses?.map((course) => (
-						<MainCourseCard course={course} key={course.id} />
-					))}
+					{courses?.map((course) => {
+						const date = new Date(course.date);
+						const year = date.getFullYear();
+						return year < 2025 ? <MainCourseCard course={course} key={course.id} /> : null;
+					})}
 				</ul>
 			</section>
 			<section className={styles.section}>

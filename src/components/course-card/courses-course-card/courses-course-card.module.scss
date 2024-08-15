@@ -1,0 +1,66 @@
+.card {
+	display: grid;
+	grid-template-columns: max-content 1fr;
+	width: 100%;
+}
+
+.image {
+	object-fit: cover;
+}
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: 20px 23px;
+}
+
+.description {
+	ul {
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+	}
+}
+
+.name {
+	font-family: var(--font-family);
+	font-weight: 700;
+	font-size: 24px;
+	line-height: 125%;
+	color: var(--dark-grey);
+	padding-bottom: 16px;
+}
+
+.calendar {
+	display: flex;
+	gap: 12px;
+}
+
+.date {
+	font-family: var(--font-family);
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 133%;
+	color: var(--dark-grey);
+}
+
+.target {
+	font-family: var(--font-family);
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 133%;
+	color: var(--dark-grey);
+}
+
+.targetTitle {
+	font-family: var(--font-family);
+	font-weight: 700;
+	font-size: 18px;
+	line-height: 133%;
+	color: var(--dark-grey);
+
+	padding-top: 8px;
+}
+
+.button {
+}

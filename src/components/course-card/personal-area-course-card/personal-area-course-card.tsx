@@ -22,9 +22,11 @@ type Props = {
 		end: string;
 		duration: string;
 		target: string;
+		topic: string;
 	};
 	key: number;
 };
+
 
 const PersonalAreaCourseCard = (props: Props) => {
 	const { course } = props;
