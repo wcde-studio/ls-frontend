@@ -14,7 +14,7 @@ interface IPagination {
 	siblingCount?: number;
 	currentPage: number;
 	pageSize: number;
-	className?: string;
+	className: string;
 }
 
 const Pagination = (props: IPagination) => {

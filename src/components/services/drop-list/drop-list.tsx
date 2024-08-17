@@ -1,46 +1,60 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 
 import styles from './drop-list.module.scss';
 import clsx from 'clsx';
-import Link from 'next/link';
 
-import { UpChevronIcon } from '@/components/ui';
-import { Button } from '@/components/ui';
+import { UpChevronGreyIcon } from '@/components/ui';
 
-import { ButtonSize, ButtonType } from '@/components/ui/button/types';
+type TItem = {
+		id: number;
+		text: string;
+}
 
 type Props = {
 	title: string;
-	items: {
-		id: number;
-		text: string;
- 	}[];
-	currentItem: string;
-	setCurrentItem: (name: string)=> void;
+	items: TItem[];
+	currentItem: TItem;
+	setCurrentItem: (item: TItem)=> void;
 };
 
 const DropList = (props: Props) => {
 	const { title, items, currentItem, setCurrentItem } = props;
 
 	const [isActive, setIsActive] = useState(false);
-
-	const list = clsx(styles.list, {
-		[styles.listOpened]: isActive,
-	});
+	const dropList = clsx(
+		styles.dropList, 
+		{[styles.listOpened]: isActive}
+	);
+	
+	const itemOnClick = (item: TItem) => () => {
+			setCurrentItem(item);
+			setIsActive(false);
+		};
 
 	return (
-		<section className={list}>
+		<section className={dropList}>
 			<button className={styles.title} onClick={() => setIsActive(!isActive)}>
 				<h2 className={styles.titleText}>{title}</h2>
-				<UpChevronIcon />
+				<UpChevronGreyIcon />
 			</button>
-			<nav className={styles.contentWrapper}>
-				<ul className={styles.descriptionList}>
+			<nav className={styles.menu}>
+				<ul className={styles.menuItems}>
 					{items?.map((item) => (
-						<li className={styles.descriptionItem} key={item.id}>
-							<button className={styles.descriptionItem_text}>{item.text}</button>
+						<li 
+							className={
+								clsx(styles.menuItemWrapper, 
+								{[styles.activeItem]: currentItem.text === item.text} 
+							)} 
+							key={item.id}
+						>
+							<button 
+								className={styles.menuItem}
+								onClick={itemOnClick(item)}
+							>
+								{item.text}
+							</button>
 						</li>
 					))}
 				</ul>

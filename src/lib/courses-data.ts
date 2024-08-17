@@ -20,7 +20,7 @@ export const courses: TCourse[] = [
 		end: '05 Apr 2024 00:00:00 PDT',
 		duration: '16 уроков (32 часа)',
 		target: 'Стать настоящей Вестой, женщиной-мечтой для своего супруга.',
-		topic: 'business'
+		topic: 'Бизнес'
 	},
 	{
 		id: 1,
@@ -31,7 +31,7 @@ export const courses: TCourse[] = [
 		end: '05 Apr 2024 00:00:00 PDT',
 		duration: '16 уроков (32 часа)',
 		target: 'Стать настоящей Вестой, женщиной-мечтой для своего супруга.',
-		topic: 'esoteric'
+		topic: 'Эзотерика'
 	},
 	{
 		id: 2,
@@ -42,7 +42,7 @@ export const courses: TCourse[] = [
 		end: '05 Apr 2024 00:00:00 PDT',
 		duration: '16 уроков (32 часа)',
 		target: 'Стать настоящей Вестой, женщиной-мечтой для своего супруга.',
-		topic: 'business'
+		topic: 'Бизнес'
 	},
 	{
 		id: 3,
@@ -53,7 +53,7 @@ export const courses: TCourse[] = [
 		end: '05 Apr 2024 00:00:00 PDT',
 		duration: '16 уроков (32 часа)',
 		target: 'Стать настоящей Вестой, женщиной-мечтой для своего супруга.',
-		topic: 'esoteric'
+		topic: 'Эзотерика'
 	},
 	{
 		id: 4,
@@ -64,7 +64,7 @@ export const courses: TCourse[] = [
 		end: '05 Apr 2024 00:00:00 PDT',
 		duration: '16 уроков (32 часа)',
 		target: 'Стать настоящей Вестой, женщиной-мечтой для своего супруга.',
-		topic: 'esoteric'
+		topic: 'Эзотерика'
 	},
 	{
 		id: 5,
@@ -75,7 +75,7 @@ export const courses: TCourse[] = [
 		end: '05 Apr 2024 00:00:00 PDT',
 		duration: '16 уроков (32 часа)',
 		target: 'Стать настоящей Вестой, женщиной-мечтой для своего супруга.',
-		topic: 'business'
+		topic: 'Бизнес'
 	},
 	{
 		id: 6,
@@ -86,7 +86,7 @@ export const courses: TCourse[] = [
 		end: '05 Apr 2025 00:00:00 PDT',
 		duration: '16 уроков (32 часа)',
 		target: 'Стать настоящей Вестой, женщиной-мечтой для своего супруга.',
-		topic: 'business'
+		topic: 'Бизнес'
 	},
 	{
 		id: 7,
@@ -97,7 +97,7 @@ export const courses: TCourse[] = [
 		end: '05 Apr 2024 00:00:00 PDT',
 		duration: '16 уроков (32 часа)',
 		target: 'Стать настоящей Вестой, женщиной-мечтой для своего супруга.',
-		topic: 'business'
+		topic: 'Бизнес'
 	},
 	{
 		id: 8,
@@ -108,7 +108,7 @@ export const courses: TCourse[] = [
 		end: '05 Apr 2025 00:00:00 PDT',
 		duration: '16 уроков (32 часа)',
 		target: 'Стать настоящей Вестой, женщиной-мечтой для своего супруга.',
-		topic: 'esoteric'
+		topic: 'Эзотерика'
 	},
 	{
 		id: 9,
@@ -119,7 +119,7 @@ export const courses: TCourse[] = [
 		end: '05 Apr 2025 00:00:00 PDT',
 		duration: '16 уроков (32 часа)',
 		target: 'Стать настоящей Вестой, женщиной-мечтой для своего супруга.',
-		topic: 'business'
+		topic: 'Бизнес'
 	},
 	{
 		id: 10,
@@ -130,7 +130,7 @@ export const courses: TCourse[] = [
 		end: '05 Apr 2025 00:00:00 PDT',
 		duration: '16 уроков (32 часа)',
 		target: 'Стать настоящей Вестой, женщиной-мечтой для своего супруга.',
-		topic: 'esoteric'
+		topic: 'Эзотерика'
 	},
 	{
 		id: 11,
@@ -141,7 +141,7 @@ export const courses: TCourse[] = [
 		end: '05 Apr 2025 00:00:00 PDT',
 		duration: '16 уроков (32 часа)',
 		target: 'Стать настоящей Вестой, женщиной-мечтой для своего супруга.',
-		topic: 'esoteric'
+		topic: 'Эзотерика'
 	},
 	{
 		id: 12,
@@ -152,7 +152,7 @@ export const courses: TCourse[] = [
 		end: '05 Apr 2025 00:00:00 PDT',
 		duration: '16 уроков (32 часа)',
 		target: 'Стать настоящей Вестой, женщиной-мечтой для своего супруга.',
-		topic: 'business'
+		topic: 'Бизнес'
 	},
 	{
 		id: 13,
@@ -163,7 +163,7 @@ export const courses: TCourse[] = [
 		end: '05 Apr 2025 00:00:00 PDT',
 		duration: '16 уроков (32 часа)',
 		target: 'Стать настоящей Вестой, женщиной-мечтой для своего супруга.',
-		topic: 'business'
+		topic: 'Бизнес'
 	},
 	{
 		id: 14,
@@ -174,7 +174,7 @@ export const courses: TCourse[] = [
 		end: '05 Apr 2025 00:00:00 PDT',
 		duration: '16 уроков (32 часа)',
 		target: 'Стать настоящей Вестой, женщиной-мечтой для своего супруга.',
-		topic: 'esoteric'
+		topic: 'Эзотерика'
 	},
 	{
 		id: 15,
@@ -185,7 +185,7 @@ export const courses: TCourse[] = [
 		end: '05 Apr 2025 00:00:00 PDT',
 		duration: '16 уроков (32 часа)',
 		target: 'Стать настоящей Вестой, женщиной-мечтой для своего супруга.',
-		topic: 'esoteric'
+		topic: 'Эзотерика'
 	},
 	{
 		id: 16,
@@ -196,7 +196,7 @@ export const courses: TCourse[] = [
 		end: '05 Apr 2025 00:00:00 PDT',
 		duration: '16 уроков (32 часа)',
 		target: 'Стать настоящей Вестой, женщиной-мечтой для своего супруга.',
-		topic: 'business'
+		topic: 'Бизнес'
 	},
 	{
 		id: 17,
@@ -207,7 +207,7 @@ export const courses: TCourse[] = [
 		end: '05 Apr 2025 00:00:00 PDT',
 		duration: '16 уроков (32 часа)',
 		target: 'Стать настоящей Вестой, женщиной-мечтой для своего супруга.',
-		topic: 'esoteric'
+		topic: 'Эзотерика'
 	},
 	{
 		id: 18,
@@ -218,7 +218,7 @@ export const courses: TCourse[] = [
 		end: '05 Apr 2025 00:00:00 PDT',
 		duration: '16 уроков (32 часа)',
 		target: 'Стать настоящей Вестой, женщиной-мечтой для своего супруга.',
-		topic: 'esoteric'
+		topic: 'Эзотерика'
 	},
 	{
 		id: 19,
@@ -229,7 +229,7 @@ export const courses: TCourse[] = [
 		end: '05 Apr 2025 00:00:00 PDT',
 		duration: '16 уроков (32 часа)',
 		target: 'Стать настоящей Вестой, женщиной-мечтой для своего супруга.',
-		topic: 'business'
+		topic: 'Бизнес'
 	},
 	{
 		id: 20,
@@ -240,7 +240,7 @@ export const courses: TCourse[] = [
 		end: '05 Apr 2025 00:00:00 PDT',
 		duration: '16 уроков (32 часа)',
 		target: 'Стать настоящей Вестой, женщиной-мечтой для своего супруга.',
-		topic: 'business'
+		topic: 'Бизнес'
 	},
 	{
 		id: 21,
@@ -251,7 +251,7 @@ export const courses: TCourse[] = [
 		end: '05 Apr 2025 00:00:00 PDT',
 		duration: '16 уроков (32 часа)',
 		target: 'Стать настоящей Вестой, женщиной-мечтой для своего супруга.',
-		topic: 'esoteric'
+		topic: 'Эзотерика'
 	},
 	{
 		id: 22,
@@ -262,7 +262,7 @@ export const courses: TCourse[] = [
 		end: '05 Apr 2025 00:00:00 PDT',
 		duration: '16 уроков (32 часа)',
 		target: 'Стать настоящей Вестой, женщиной-мечтой для своего супруга.',
-		topic: 'business'
+		topic: 'Бизнес'
 	},
 	{
 		id: 23,
@@ -273,7 +273,7 @@ export const courses: TCourse[] = [
 		end: '05 Apr 2025 00:00:00 PDT',
 		duration: '16 уроков (32 часа)',
 		target: 'Стать настоящей Вестой, женщиной-мечтой для своего супруга.',
-		topic: 'esoteric'
+		topic: 'Эзотерика'
 	},
 	{
 		id: 24,
@@ -284,7 +284,7 @@ export const courses: TCourse[] = [
 		end: '05 Apr 2025 00:00:00 PDT',
 		duration: '16 уроков (32 часа)',
 		target: 'Стать настоящей Вестой, женщиной-мечтой для своего супруга.',
-		topic: 'esoteric'
+		topic: 'Эзотерика'
 	},
 	{
 		id: 25,
@@ -295,6 +295,6 @@ export const courses: TCourse[] = [
 		end: '05 Apr 2025 00:00:00 PDT',
 		duration: '16 уроков (32 часа)',
 		target: 'Стать настоящей Вестой, женщиной-мечтой для своего супруга.',
-		topic: 'business'
+		topic: 'Бизнес'
 	},
 ];

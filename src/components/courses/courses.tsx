@@ -32,19 +32,17 @@ const Courses = (props: Props) => {
 		const firstPageIndex = (currentPage - 1) * PageSize;
 		const lastPageIndex = firstPageIndex + PageSize;
 		return coursesData.slice(firstPageIndex, lastPageIndex);
-	}, [currentPage]);
+	}, [currentPage, coursesData]);
 
 
 	return (
-		<div>
+		<div className={styles.courses}>
 			{coursesData.length ? (
 				<ul className={styles.coursesList}>
 					{currentCoursesData?.map((course) => (
 						<CoursesCourseCard course={course} key={course.id} />
 					))}
-				</ul>
-			) : null
-			}
+				</ul>) : null}
 				<div className={styles.paginationWrapper}>
 					<Pagination
 						className="paginationBar"
