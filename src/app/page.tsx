@@ -23,7 +23,9 @@ import { ButtonSize, ButtonType } from '@/components/ui/button/types';
 import Intro from '@/components/intro/intro';
 
 import { courses } from '@/lib/courses-data';
-import { MainCourseCard } from '@/components/course-card';
+
+import CourseCard from '@/components/course-card/course-card';
+import { CourseCardComposition } from '@/components/course-card/types';
 
 export default function Home() {
 	return (
@@ -43,7 +45,13 @@ export default function Home() {
 					{courses?.map((course) => {
 						const date = new Date(course.date);
 						const year = date.getFullYear();
-						return year < 2025 ? <MainCourseCard course={course} key={course.id} /> : null;
+						return year < 2025 ? (
+							<CourseCard
+								course={course}
+								composition={CourseCardComposition.Home}
+								key={course.id}
+							/>
+						) : null;
 					})}
 				</ul>
 			</section>
