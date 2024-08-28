@@ -1,0 +1,45 @@
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 32px;
+
+	a {
+		max-width: 354px;
+	}
+}
+
+.separator {
+	border: solid 1px var(--dark-beige);
+}
+
+%mainFont {
+	font-family: var(--font-family);
+	font-weight: 700;
+	font-size: 24px;
+	line-height: 125%;
+	color: var(--dark-grey);
+}
+
+.description {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+.title {
+	@extend %mainFont;
+}
+
+.text {
+	@extend %mainFont;
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 133%;
+}
+
+.details {
+}
+.titleDetails {
+}
+.moduleName {
+}

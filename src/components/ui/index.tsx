@@ -7,6 +7,7 @@ import WhatsUpIcon from './icons/whats-up-icon';
 import VKIcon from './icons/vk-icon';
 
 import DownChevronIcon from './icons/down-chevron-icon';
+import UpChevronGreyIcon from './icons/up-chevron-grey-icon';
 import UpChevronIcon from './icons/up-chevron-icon';
 //import PlusIcon from './icons/plus';
 //import PreviousIcon from './icons/previous';
@@ -32,7 +33,11 @@ import EyeOpenIcon from './icons/eye-open-icon';
 import EditIcon from './icons/edit-icon';
 import ExitIcon from './icons/exit-icon';
 import CalendarIcon from './icons/calendar-icon';
+import CalendarBigIcon from './icons/calendar-big-icon';
 import ClockIcon from './icons/clock-icon';
+import ClockBigIcon from './icons/clock-big-icon';
+import PlaceIcon from './icons/place-icon';
+import PlaceBigIcon from './icons/place-big-icon';
 
 import Button from './button/button';
 import IconButton from './button/icon-button/icon-button';
@@ -47,6 +52,7 @@ export {
 	WhatsUpIcon,
 	VKIcon,
 	DownChevronIcon,
+	UpChevronGreyIcon,
 	UpChevronIcon,
 	TeamIcon,
 	GameIcon,
@@ -69,7 +75,11 @@ export {
 	EditIcon,
 	ExitIcon,
 	ClockIcon,
+	ClockBigIcon,
 	CalendarIcon,
+	CalendarBigIcon,
 	Input,
 	CheckboxIcon,
+	PlaceIcon,
+	PlaceBigIcon,
 };
