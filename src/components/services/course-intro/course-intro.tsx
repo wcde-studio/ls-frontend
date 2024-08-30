@@ -10,7 +10,7 @@ import { CalendarBigIcon, ClockBigIcon, PlaceBigIcon } from '@/components/ui';
 import { Button } from '@/components/ui';
 import { ButtonSize, ButtonType } from '@/components/ui/button/types';
 
-type Props = {
+type TCourseIntroProps = {
 	image: string;
 	date: string;
 	city: string;
@@ -19,7 +19,7 @@ type Props = {
 	target: string;
 };
 
-const CourseIntro = (props: Props) => {
+const CourseIntro = (props: TCourseIntroProps) => {
 	const { image, date, end, duration, target, city } = props;
 
 	const dateData = new Date(date);

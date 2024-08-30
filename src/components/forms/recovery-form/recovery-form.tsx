@@ -33,13 +33,6 @@ const RecoveryForm = () => {
 	});
 
 	const router = useRouter();
-	/*
-	useEffect(() => {
-		if (valid && checkEnd) {
-			router.push('/personal-area');
-		}
-	}, [valid, checkEnd, router]);
-*/
 
 	return valid && checkEnd ? (
 		<FormWrapper

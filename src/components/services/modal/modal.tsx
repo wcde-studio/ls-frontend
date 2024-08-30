@@ -6,12 +6,12 @@ import { useRouter, usePathname } from 'next/navigation';
 
 import useLoginStore from '@/components/forms/useLoginStore';
 
-type Props = {
+type TModalProps = {
 	returnPath?: string;
 	children: ReactNode;
 };
 
-const Modal = (props: Props) => {
+const Modal = (props: TModalProps) => {
 	const { children, returnPath } = props;
 
 	const router = useRouter();

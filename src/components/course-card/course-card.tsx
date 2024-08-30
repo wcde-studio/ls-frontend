@@ -16,7 +16,7 @@ import { CourseCardComposition } from '@/components/course-card/types';
 
 import { months } from '@/lib/constants/date';
 
-type Props = {
+type TCourseCardProps = {
 	course: {
 		id: number;
 		name: string;
@@ -32,7 +32,7 @@ type Props = {
 	key: number;
 };
 
-const CourseCard = (props: Props) => {
+const CourseCard = (props: TCourseCardProps) => {
 	const { course, composition } = props;
 
 	const { name, image, date, end, duration, target, city } = course;

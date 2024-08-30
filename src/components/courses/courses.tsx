@@ -12,7 +12,7 @@ import { CourseCardComposition } from '@/components/course-card/types';
 
 import Pagination from '@/components/pagination/pagination';
 
-type Props = {
+type TCoursesProps = {
 	coursesData: {
 		id: number;
 		name: string;
@@ -28,7 +28,7 @@ type Props = {
 
 const PageSize = 6;
 
-const Courses = (props: Props) => {
+const Courses = (props: TCoursesProps) => {
 	const { coursesData } = props;
 	const [currentPage, setCurrentPage] = useState(1);
 

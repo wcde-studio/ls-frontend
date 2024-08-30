@@ -9,14 +9,14 @@ import Image from 'next/image';
 import { ButtonSize, ContentPosition } from '@/components/ui/button/types';
 import { IconButton, EditIcon, ExitIcon } from '@/components/ui';
 
-type Props = {
+type TPersonalAreaUserInfoProps = {
 	name: string;
 	surname: string;
 	email: string;
 	image: string;
 };
 
-const PersonalAreaUserInfo = (props: Props) => {
+const PersonalAreaUserInfo = (props: TPersonalAreaUserInfoProps) => {
 	const { name, surname, email, image } = props;
 
 	return (

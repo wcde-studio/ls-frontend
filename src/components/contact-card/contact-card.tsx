@@ -4,7 +4,7 @@ import styles from './contact-card.module.scss';
 
 import Link from 'next/link';
 
-type Props = {
+type TContactCardProps = {
 	contactInfo: {
 		name: string;
 		status: string;
@@ -19,7 +19,7 @@ type Props = {
 	key: number;
 };
 
-const ContactCard = (props: Props) => {
+const ContactCard = (props: TContactCardProps) => {
 	const { contactInfo } = props;
 
 	const { name, status, chats, tel } = contactInfo;

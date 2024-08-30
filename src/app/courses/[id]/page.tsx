@@ -10,13 +10,13 @@ import { description } from '@/lib/course-description-data';
 import CourseIntro from '@/components/services/course-intro/course-intro';
 import CourseDescription from '@/components/services/course-description/course-description';
 
-type Props = {
+type TCoursePageProps = {
 	params: {
 		id: string;
 	};
 };
 
-export default function Course(props: Props) {
+export default function CoursePage(props: TCoursePageProps) {
 	const { id } = props.params;
 	const course = courses.find((course) => `${course.id}` === id);
 

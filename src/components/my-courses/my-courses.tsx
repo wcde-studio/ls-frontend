@@ -14,14 +14,14 @@ import { CourseCardComposition } from '@/components/course-card/types';
 import { Button } from '@/components/ui';
 import { ButtonSize, ButtonType } from '@/components/ui/button/types';
 
-type Props = {
+type TMyCoursesProps = {
 	userCourses: {
 		active: number[];
 		complited: number[];
 	};
 };
 
-const MyCourses = (props: Props) => {
+const MyCourses = (props: TMyCoursesProps) => {
 	const { userCourses } = props;
 	const [link, setLink] = useState<'active' | 'complited'>('active');
 

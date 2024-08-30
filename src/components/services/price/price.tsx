@@ -13,12 +13,12 @@ interface TProperties {
 		| null;
 }
 
-type Props = {
+type TPriceProps = {
 	price: TProperties;
 	key?: number;
 };
 
-const Price = (props: Props) => {
+const Price = (props: TPriceProps) => {
 	const { price } = props;
 
 	const options = {

@@ -7,7 +7,7 @@ import Link from 'next/link';
 import { Button } from '@/components/ui';
 import { ButtonSize, ButtonType } from '@/components/ui/button/types';
 
-type Props = {
+type TCourseDescriptionProps = {
 	target: string;
 	goals: string;
 	description: {
@@ -31,7 +31,7 @@ type Props = {
 	};
 };
 
-const CourseDescription = (props: Props) => {
+const CourseDescription = (props: TCourseDescriptionProps) => {
 	const { target, goals, description, details } = props;
 
 	return (
