@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useCallback, useMemo } from 'react';
+import Link from 'next/link';
 import { clsx } from 'clsx';
 
 import styles from './courses.module.scss';
@@ -42,11 +43,13 @@ const Courses = (props: Props) => {
 			{coursesData.length ? (
 				<ul className={styles.coursesList}>
 					{currentCoursesData?.map((course) => (
-						<CourseCard
-							course={course}
-							composition={CourseCardComposition.Courses}
-							key={course.id}
-						/>
+						<Link href={`/courses/${course.id}`} key={course.id}>
+							<CourseCard
+								course={course}
+								composition={CourseCardComposition.Courses}
+								key={course.id}
+							/>
+						</Link>
 					))}
 				</ul>
 			) : null}
