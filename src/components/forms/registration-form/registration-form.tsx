@@ -47,7 +47,7 @@ const RegistrationForm = () => {
 	});
 
 	const router = useRouter();
-	
+
 	return valid && checkEnd ? (
 		<FormWrapper title={''} text={'Вы успешно зарегистрировались'} />
 	) : (

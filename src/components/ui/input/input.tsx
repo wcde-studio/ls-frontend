@@ -28,7 +28,7 @@ type TInputProps = {
 	resetValue: (arg0: string) => void;
 };
 
-const Input = (props: TInputProps ) => {
+const Input = (props: TInputProps) => {
 	const {
 		name,
 		type,
