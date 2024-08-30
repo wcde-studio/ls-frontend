@@ -1,14 +1,20 @@
-.main {
-	margin: 0 auto;
-	max-width: 1110px;
-}
-
-.table {
-	margin: 0 auto;
-}
-
-.paginationWrapper {
+.titleSection {
 	display: flex;
-	justify-content: center;
-	margin: 40px 0;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	padding-top: 140px;
+}
+
+.section {
+	padding-top: 64px;
+	padding-bottom: 140px;
+}
+
+.title {
+	font-family: var(--font-family);
+	font-weight: 500;
+	font-size: 48px;
+	text-align: start;
+	color: var(--dark-grey);
 }

@@ -1,0 +1,15 @@
+.courses {
+	display: flex;
+	flex-direction: column;
+	gap: 64px;
+}
+
+.coursesList {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+	gap: 24px;
+	justify-items: center;
+}
+
+.paginationWrapper {
+}
