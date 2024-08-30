@@ -7,10 +7,9 @@ import { clsx } from 'clsx';
 import styles from './my-courses.module.scss';
 
 import { courses } from '@/lib/courses-data';
-import {
-	PersonalAreaCourseCard,
-	MainCourseCard,
-} from '@/components/course-card';
+
+import CourseCard from '@/components/course-card/course-card';
+import { CourseCardComposition } from '@/components/course-card/types';
 
 import { Button } from '@/components/ui';
 import { ButtonSize, ButtonType } from '@/components/ui/button/types';
@@ -61,7 +60,11 @@ const MyCourses = (props: Props) => {
 			{coursesList.length ? (
 				<ul className={styles.coursesList}>
 					{coursesList?.map((course) => (
-						<PersonalAreaCourseCard course={course} key={course.id} />
+						<CourseCard
+							course={course}
+							composition={CourseCardComposition.Personal}
+							key={course.id}
+						/>
 					))}
 				</ul>
 			) : (
