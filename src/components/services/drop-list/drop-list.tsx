@@ -12,14 +12,14 @@ type TItem = {
 	text: string;
 };
 
-type Props = {
+type TDropListProps = {
 	title: string;
 	items: TItem[];
 	currentItem: TItem;
 	setCurrentItem: (item: TItem) => void;
 };
 
-const DropList = (props: Props) => {
+const DropList = (props: TDropListProps) => {
 	const { title, items, currentItem, setCurrentItem } = props;
 
 	const [isActive, setIsActive] = useState(false);

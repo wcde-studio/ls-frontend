@@ -32,12 +32,12 @@ interface TService extends Pick<TProperties, 'id' | 'properties'> {
 	note: string | null;
 }
 
-type Props = {
+type TAccordionProps = {
 	service: TService;
 	key?: number;
 };
 
-const Accordion = (props: Props) => {
+const Accordion = (props: TAccordionProps) => {
 	const { service, key } = props;
 
 	const [isActive, setIsActive] = useState(false);

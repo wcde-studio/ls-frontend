@@ -7,13 +7,13 @@ import styles from './form.module.scss';
 
 import { FormName } from './types';
 
-type Props = {
+type TFormProps = {
 	onSubmit: (e: React.ChangeEvent<HTMLFormElement>) => void;
 	name: FormName;
 	children: ReactNode;
 };
 
-const Form = (props: Props) => {
+const Form = (props: TFormProps) => {
 	const { onSubmit, name, children } = props;
 
 	return (

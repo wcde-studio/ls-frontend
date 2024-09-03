@@ -12,14 +12,14 @@ import { useRouter } from 'next/navigation';
 
 import useLoginStore from '@/components/forms/useLoginStore';
 
-type Props = {
+type TFormWrapperProps = {
 	title?: string;
 	text?: string;
 	loading?: boolean;
 	children?: ReactNode;
 };
 
-const FormWrapper = (props: Props) => {
+const FormWrapper = (props: TFormWrapperProps) => {
 	const { title = '', text, loading = false, children } = props;
 
 	const router = useRouter();

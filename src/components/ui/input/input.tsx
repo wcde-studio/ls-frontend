@@ -15,7 +15,7 @@ import {
 	CheckboxIcon,
 } from '@/components/ui';
 
-type Props = {
+type TInputProps = {
 	name: InputName;
 	type: InputType;
 	size: InputSize;
@@ -28,7 +28,7 @@ type Props = {
 	resetValue: (arg0: string) => void;
 };
 
-const Input = (props: Props) => {
+const Input = (props: TInputProps) => {
 	const {
 		name,
 		type,
