@@ -15,7 +15,7 @@ const Intro = () => {
 				<div>
 					<LadaVedIconSvg className={styles.ladaVedIconSvg} />
 					<div className={styles.introButton}>
-						<Link href={'/'}>
+						<Link href={'/courses'}>
 							<Button
 								type={ButtonType.Violet}
 								size={ButtonSize.Desctop}

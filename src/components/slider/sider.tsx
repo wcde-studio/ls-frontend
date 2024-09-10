@@ -1,0 +1,96 @@
+import {
+	useRef,
+	useCallback,
+	useState,
+	useEffect,
+	MouseEvent,
+	MouseEventHandler,
+} from 'react';
+import styles from './slider.module.scss';
+
+import Link from 'next/link';
+
+import { Button } from '@/components/ui';
+import { ButtonSize, ButtonType } from '@/components/ui/button/types';
+
+interface ISliderProps {
+	reviews: {
+		id: number;
+		name: string;
+		review: {
+			id: number;
+			text: string;
+		}[];
+	}[];
+}
+
+const Slider = (props: ISliderProps) => {
+	const { reviews } = props;
+	const reviewsRef = useRef<null | HTMLUListElement>(null);
+
+	useEffect(() => {
+		const refWidth = reviewsRef.current!.getBoundingClientRect().width;
+		const leftLimit = 374 - refWidth;
+		const rightLimit = reviewsRef.current!.getBoundingClientRect().left;
+
+		reviewsRef.current!.onmousedown = (event) => {
+			event.preventDefault();
+			reviewsRef.current!.style.position = 'absolute';
+			reviewsRef.current!.style.zIndex = '1000';
+			reviewsRef.current!.ondragstart = () => {
+				return false;
+			};
+
+			const shiftX =
+				event.clientX - reviewsRef.current!.getBoundingClientRect().left;
+
+			const moveAt = (pageX: number, pageY: number) => {
+				const refPositionX = pageX - shiftX;
+				console.log(rightLimit, refPositionX);
+				if (rightLimit > refPositionX && refPositionX > leftLimit) {
+					reviewsRef.current!.style.left = pageX - shiftX + 'px';
+				}
+			};
+
+			const onMouseMove = (event: any) => {
+				moveAt(event.pageX, event.pageY);
+			};
+
+			document.addEventListener('mousemove', onMouseMove);
+			document.addEventListener('mouseup', () => {
+				document.removeEventListener('mousemove', onMouseMove);
+				reviewsRef.current!.onmouseup = null;
+			});
+		};
+	}, [reviewsRef]);
+
+	return (
+		<div className={styles.slider}>
+			<div className={styles.sliderWrapper}>
+				<ul ref={reviewsRef} className={styles.reviews}>
+					{reviews.map((review) => (
+						<li className={styles.review} key={review.id}>
+							<h1 className={styles.reviewTitle}>{review.name}</h1>
+							<ul className={styles.reviewList}>
+								{review.review.map((rev) => (
+									<li key={rev.id}>
+										<p>{rev.text}</p>
+									</li>
+								))}
+							</ul>
+						</li>
+					))}
+				</ul>
+			</div>
+			<Link href={'/'}>
+				<Button
+					type={ButtonType.Violet}
+					size={ButtonSize.Desctop}
+					title={'Все отзывы'}
+				/>
+			</Link>
+		</div>
+	);
+};
+
+export default Slider;
