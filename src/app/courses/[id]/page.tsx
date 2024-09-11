@@ -11,7 +11,7 @@ import { reviews } from '@/lib/course-reviews-data';
 import CourseIntro from '@/components/services/course-intro/course-intro';
 import CourseDescription from '@/components/services/course-description/course-description';
 
-import Slider from '@/components/slider/sider';
+import Slider from '@/components/slider/slider';
 
 type TCoursePageProps = {
 	params: {

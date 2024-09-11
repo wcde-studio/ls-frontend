@@ -58,3 +58,25 @@
 	padding: 0px 20px 0px 20px;
 	overflow-y: hidden;
 }
+
+@keyframes linerMove {
+	from {
+		transform: translateX(60%);
+	}
+	to {
+		transform: translateX(-40%);
+	}
+}
+
+.reviews {
+	animation-name: linerMove;
+	animation-duration: 20s;
+	animation-direction: running;
+	animation-iteration-count: infinite;
+	animation-delay: 0s;
+	animation-timing-function: linear;
+}
+
+.reviews:hover {
+	animation-play-state: paused;
+}

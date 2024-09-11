@@ -80,6 +80,10 @@ body {
 	background: var(--beige-bg);
 }
 
+body {
+	overflow-x: hidden;
+}
+
 input {
 	all: unset;
 }

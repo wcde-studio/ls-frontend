@@ -6,6 +6,7 @@ import {
 	MouseEvent,
 	MouseEventHandler,
 } from 'react';
+
 import styles from './slider.module.scss';
 
 import Link from 'next/link';
@@ -13,11 +14,13 @@ import Link from 'next/link';
 import { Button } from '@/components/ui';
 import { ButtonSize, ButtonType } from '@/components/ui/button/types';
 
+import SliderReview from '@/components/services/slider-review/slider-review';
+
 interface ISliderProps {
 	reviews: {
 		id: number;
 		name: string;
-		review: {
+		sentences: {
 			id: number;
 			text: string;
 		}[];
@@ -46,7 +49,6 @@ const Slider = (props: ISliderProps) => {
 
 			const moveAt = (pageX: number, pageY: number) => {
 				const refPositionX = pageX - shiftX;
-				console.log(rightLimit, refPositionX);
 				if (rightLimit > refPositionX && refPositionX > leftLimit) {
 					reviewsRef.current!.style.left = pageX - shiftX + 'px';
 				}
@@ -70,14 +72,10 @@ const Slider = (props: ISliderProps) => {
 				<ul ref={reviewsRef} className={styles.reviews}>
 					{reviews.map((review) => (
 						<li className={styles.review} key={review.id}>
-							<h1 className={styles.reviewTitle}>{review.name}</h1>
-							<ul className={styles.reviewList}>
-								{review.review.map((rev) => (
-									<li key={rev.id}>
-										<p>{rev.text}</p>
-									</li>
-								))}
-							</ul>
+							<SliderReview
+								name={`${review.name} ${review.id}`}
+								sentences={review.sentences}
+							/>
 						</li>
 					))}
 				</ul>
