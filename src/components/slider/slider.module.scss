@@ -1,0 +1,82 @@
+.slider {
+	display: flex;
+	flex-direction: column;
+	gap: 40px;
+
+	a {
+		max-width: 354px;
+	}
+	padding-bottom: 140px;
+}
+
+.sliderWrapper {
+	width: 100%;
+	height: 239px;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	//border: 1px solid red;
+}
+
+.reviews {
+	position: relative;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 24px;
+	cursor: pointer;
+}
+
+.review {
+	width: 354px;
+	height: 199px;
+	background-color: var(--white);
+}
+
+%mainFont {
+	font-family: var(--font-family);
+	font-weight: 700;
+	font-size: 18px;
+	line-height: 133%;
+	color: var(--dark-grey);
+}
+
+.reviewTitle {
+	@extend %mainFont;
+	padding: 20px 20px 8px 20px;
+}
+
+.reviewList {
+	@extend %mainFont;
+	font-weight: 400;
+
+	height: 127px;
+
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	padding: 0px 20px 0px 20px;
+	overflow-y: hidden;
+}
+
+@keyframes linerMove {
+	from {
+		transform: translateX(60%);
+	}
+	to {
+		transform: translateX(-40%);
+	}
+}
+
+.reviews {
+	animation-name: linerMove;
+	animation-duration: 20s;
+	animation-direction: running;
+	animation-iteration-count: infinite;
+	animation-delay: 0s;
+	animation-timing-function: linear;
+}
+
+.reviews:hover {
+	animation-play-state: paused;
+}

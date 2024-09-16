@@ -43,13 +43,15 @@ const Courses = (props: TCoursesProps) => {
 			{coursesData.length ? (
 				<ul className={styles.coursesList}>
 					{currentCoursesData?.map((course) => (
-						<Link href={`/courses/${course.id}`} key={course.id}>
-							<CourseCard
-								course={course}
-								composition={CourseCardComposition.Courses}
-								key={course.id}
-							/>
-						</Link>
+						<li key={course.id}>
+							<Link href={`/courses/${course.id}`}>
+								<CourseCard
+									course={course}
+									composition={CourseCardComposition.Courses}
+									key={course.id}
+								/>
+							</Link>
+						</li>
 					))}
 				</ul>
 			) : null}

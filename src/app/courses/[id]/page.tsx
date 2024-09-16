@@ -6,9 +6,12 @@ import Link from 'next/link';
 
 import { courses } from '@/lib/courses-data';
 import { description } from '@/lib/course-description-data';
+import { reviews } from '@/lib/course-reviews-data';
 
 import CourseIntro from '@/components/services/course-intro/course-intro';
 import CourseDescription from '@/components/services/course-description/course-description';
+
+import Slider from '@/components/slider/slider';
 
 type TCoursePageProps = {
 	params: {
@@ -43,6 +46,9 @@ export default function CoursePage(props: TCoursePageProps) {
 			</section>
 			<section className={styles.section}>
 				<h1 className={styles.title}>{'Отзывы'}</h1>
+				<div>
+					<Slider reviews={reviews} />
+				</div>
 			</section>
 		</>
 	) : null;

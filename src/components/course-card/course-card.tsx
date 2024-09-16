@@ -73,7 +73,7 @@ const CourseCard = (props: TCourseCardProps) => {
 	const imageSrc = `/courses/${image}`;
 
 	return (
-		<li className={classNameCard}>
+		<div className={classNameCard}>
 			<div className={styles.imageWrapper}>
 				<Image
 					alt="course"
@@ -83,10 +83,10 @@ const CourseCard = (props: TCourseCardProps) => {
 					className={styles.image}
 				/>
 			</div>
+
 			<section className={styles.wrapper}>
 				<section className={styles.description}>
 					<h2 className={styles.name}>{name}</h2>
-
 					<div className={styles.location}>
 						<div className={styles.date}>
 							<p className={styles.day}>{day}</p>
@@ -95,7 +95,6 @@ const CourseCard = (props: TCourseCardProps) => {
 						<div className={styles.border}></div>
 						<p className={styles.city}>{city}</p>
 					</div>
-
 					<ul>
 						<li className={styles.date}>
 							<CalendarIcon />
@@ -113,15 +112,17 @@ const CourseCard = (props: TCourseCardProps) => {
 						<li className={styles.target}>{target}</li>
 					</ul>
 				</section>
-				<Link href={'/'}>
-					<Button
-						type={ButtonType.Violet}
-						size={ButtonSize.Desctop}
-						title={buttonTitle}
-					/>
-				</Link>
+				{composition === CourseCardComposition.Courses ? null : (
+					<Link href={`/courses/${course.id}`}>
+						<Button
+							type={ButtonType.Violet}
+							size={ButtonSize.Desctop}
+							title={buttonTitle}
+						/>
+					</Link>
+				)}
 			</section>
-		</li>
+		</div>
 	);
 };
 
