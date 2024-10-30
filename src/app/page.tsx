@@ -21,13 +21,19 @@ import { Button } from '@/components/ui';
 import { ButtonSize, ButtonType } from '@/components/ui/button/types';
 
 import Intro from '@/components/intro/intro';
-
-import { courses } from '@/lib/courses-data';
+//import { courses } from '@/lib/courses-data';
+import getCoursesHome from '@/lib/api/api-home';
 
 import CourseCard from '@/components/course-card/course-card';
 import { CourseCardComposition } from '@/components/course-card/types';
 
-export default function Home() {
+export default async function Home() {
+
+	const url = 'http://127.0.0.1:1337';
+	const path = '/api/courses';
+	const data = await getCoursesHome(url, path);
+	const courses = data?.data;
+	
 	return (
 		<>
 			<Intro />
@@ -42,16 +48,16 @@ export default function Home() {
 			<section className={styles.section}>
 				<h1 className={styles.title}>{'Ближайшие курсы'}</h1>
 				<ul className={styles.coursesList}>
-					{courses?.map((course) => {
+					{courses?.map((course, id: number) => {
 						const date = new Date(course.date);
 						const year = date.getFullYear();
-						return year < 2025 ? (
+						return (
 							<CourseCard
 								course={course}
 								composition={CourseCardComposition.Home}
 								key={course.id}
 							/>
-						) : null;
+						);
 					})}
 				</ul>
 			</section>
@@ -83,4 +89,5 @@ export default function Home() {
 			</section>
 		</>
 	);
+
 }

@@ -58,15 +58,16 @@ const MyCourses = (props: TMyCoursesProps) => {
 				</ul>
 			</nav>
 			{coursesList.length ? (
-				<ul className={styles.coursesList}>
+				{/*<ul className={styles.coursesList}>
 					{coursesList?.map((course) => (
 						<CourseCard
 							course={course}
 							composition={CourseCardComposition.Personal}
 							key={course.id}
-						/>
+					/>
 					))}
-				</ul>
+				
+				</ul>	*/}
 			) : (
 				<section className={styles.message}>
 					{link === 'active' ? (

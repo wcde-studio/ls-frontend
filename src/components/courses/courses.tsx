@@ -45,11 +45,11 @@ const Courses = (props: TCoursesProps) => {
 					{currentCoursesData?.map((course) => (
 						<li key={course.id}>
 							<Link href={`/courses/${course.id}`}>
-								<CourseCard
+								{/*<CourseCard
 									course={course}
 									composition={CourseCardComposition.Courses}
 									key={course.id}
-								/>
+					/>*/}
 							</Link>
 						</li>
 					))}

@@ -20,7 +20,13 @@ type TCourseCardProps = {
 	course: {
 		id: number;
 		name: string;
-		image: string;
+		image: {
+			id: number,
+			documentId: string,
+			alternativeText: null | string,
+			name: string,
+			url: string,
+			};
 		date: string;
 		city: string;
 		end: string;
@@ -70,9 +76,13 @@ const CourseCard = (props: TCourseCardProps) => {
 			? 'Узнать больше'
 			: 'Перейти к курсу';
 
-	const imageSrc = `/courses/${image}`;
+//	const imageSrc = `/courses/${image}`;
+const path = course.image.url;
+const url = 'http://127.0.0.1:1337';
+//const imageSrc = new URL(path, url);
+const imageSrc = url + path;
 
-	return (
+return (
 		<div className={classNameCard}>
 			<div className={styles.imageWrapper}>
 				<Image
