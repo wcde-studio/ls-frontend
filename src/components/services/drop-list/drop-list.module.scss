@@ -25,7 +25,7 @@
 	svg {
 		display: flex;
 		justify-content: center;
-		transition-duration: 0.3s;
+		transition-duration: 0.5s;
 		transition-property: transform;
 	}
 }
@@ -40,8 +40,8 @@
 	background: var(--white);
 	max-height: 0;
 	overflow: hidden;
-	transition-duration: 0.5s;
-	transition-property: max-height;
+//	transition-duration: 0.5s;
+//	transition-property: max-height;
 }
 
 .menuItems {
@@ -69,9 +69,14 @@
 .listOpened {
 	svg {
 		transform: rotate(180deg);
+		transition-duration: 0.5s;
+		transition-property: transform;
+
 	}
 	.menu {
 		max-height: 100rem;
+		transition-duration: 0.5s;
+		transition-property: max-height;
 	}
 }
 

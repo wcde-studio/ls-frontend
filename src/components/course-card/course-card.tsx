@@ -18,21 +18,27 @@ import { months } from '@/lib/constants/date';
 
 type TCourseCardProps = {
 	course: {
-		id: number;
-		name: string;
+		id: number,
+		documentId: string,
+		name: string,
+		date: string,
+		city: string,
+		end: string,
+		duration: string,
+		target: string,
+		goals: string,
+		description: string,
+		createdAt: string,
+		updatedAt: string,
+		publishedAt: string,
+		title: string,
+		topic: string,
 		image: {
 			id: number,
 			documentId: string,
 			alternativeText: null | string,
-			name: string,
-			url: string,
-			};
-		date: string;
-		city: string;
-		end: string;
-		duration: string;
-		target: string;
-		topic: string;
+			name: string,		
+		};
 	};
 	composition: CourseCardComposition;
 	key: number;
@@ -123,7 +129,7 @@ return (
 					</ul>
 				</section>
 				{composition === CourseCardComposition.Courses ? null : (
-					<Link href={`/courses/${course.id}`}>
+					<Link href={`/courses/${course.documentId}`}>
 						<Button
 							type={ButtonType.Violet}
 							size={ButtonSize.Desctop}

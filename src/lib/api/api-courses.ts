@@ -1,6 +1,6 @@
 import qs from 'qs';
 
-type TgetCoursesHome = {
+type TgetCourses = {
   data:
     {
       id: number,
@@ -36,7 +36,7 @@ type TgetCoursesHome = {
 		}
 	}
 
-const getCoursesHome = async (baseUrl: string, path: string): Promise<TgetCoursesHome>  => {
+const getCourses = async (baseUrl: string, path: string): Promise<TgetCourses>  => {
 	
 	const url = new URL(path, baseUrl);
 
@@ -52,18 +52,10 @@ const getCoursesHome = async (baseUrl: string, path: string): Promise<TgetCourse
 			}
 		},
 	});
-
-	//try {
 		const res = await fetch(url);
-		//if(!res.ok) throw new Error('Failed to fetch courses');
 		const data = await res.json();
-		//console.log(data);
-		return data;
-	//} catch (error) {
-	//	throw error;
-	//}
-	
+		return data;	
 };
 
 
-export default getCoursesHome;
+export default getCourses;
