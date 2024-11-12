@@ -8,7 +8,7 @@ import DropList from '@/components/services/drop-list/drop-list';
 import { courses } from '@/lib/courses-data';
 
 import Pagination from '@/components/pagination/pagination';
-import getCoursesHome from '@/lib/api/api-home';
+import getCourses from '@/lib/api/api-courses';
 
 type TCourses = {
       id: number,
@@ -35,9 +35,6 @@ type TCourses = {
       }
 		}
 
-
-
-
 export default function CoursesPage() {
 
 	const courseTopics = useMemo(() => {
@@ -48,9 +45,13 @@ export default function CoursesPage() {
 		];
 	}, []);
 
-	const [topic, setTopic] = useState(courseTopics[2]);
+	const [topic, setTopic] = useState(courseTopics[2].text);
 	const [currentPage, setCurrentPage] = useState(1);
-/*
+	const [totalCount, setTotalCount] = useState(6);
+	const pageSize = 6;
+	const [coursesData, setCoursesData] = useState<TCourses[] | null>(null);
+	
+	/*
 	const currentCoursesData = useMemo(() => {
 		const firstPageIndex = (currentPage - 1) * PageSize;
 		const lastPageIndex = firstPageIndex + PageSize;
@@ -58,27 +59,32 @@ export default function CoursesPage() {
 	}, [currentPage, coursesData]);
 */
 
-	const [coursesData, setCoursesData] = useState<TCourses[] | null>(null);
-	
+	useEffect(()=>{
+		setCurrentPage(1);
+	}, [topic]);	
+
+
 	useEffect(()=>{
 		async function fetchData() {
 			const url = 'http://127.0.0.1:1337';
 			const path = '/api/courses';
-			const data = await getCoursesHome(url, path);
+			const data = await getCourses(url, path, currentPage, pageSize, topic, courseTopics[2].text);
 			const courses = data?.data;
 			setCoursesData(courses);
-			console.log({courses});
+			setTotalCount(data.meta.pagination.total);
+			//console.log({courses});
 		}	
 		fetchData();
-	}, []);
+	}, [currentPage, topic, courseTopics]);
 
 
+/*
 	const curentCoursesData = useMemo(() => {
 		return topic.text === courseTopics[2].text
 			? courses
 			: courses.filter((course) => course.topic === topic.text);
 	}, [topic, courseTopics]);
-
+*/
 	return (
 		<>
 			<section className={styles.titleSection}>
@@ -99,8 +105,8 @@ export default function CoursesPage() {
 				<Pagination
 					className="paginationBar"
 					currentPage={currentPage}
-					totalCount={10}
-					pageSize={6}
+					totalCount={totalCount}
+					pageSize={pageSize}
 					onPageChange={(page) => setCurrentPage(page as number)}
 				/>
 			</section>

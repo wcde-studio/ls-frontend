@@ -49,7 +49,8 @@ type TCoursesProps = {
 			id: number,
 			documentId: string,
 			alternativeText: null | string,
-			name: string,		
+			name: string,	
+			url: string	
 		}
 	}[];
 }
@@ -58,28 +59,6 @@ const PageSize = 6;
 
 const Courses = (props: TCoursesProps) => {
 	const { coursesData } = props;
-/*
-	const [currentPage, setCurrentPage] = useState(1);
-
-	const currentCoursesData = useMemo(() => {
-		const firstPageIndex = (currentPage - 1) * PageSize;
-		const lastPageIndex = firstPageIndex + PageSize;
-		return coursesData.slice(firstPageIndex, lastPageIndex);
-	}, [currentPage, coursesData]);
-*/
-	//console.log({currentPage});
-/*
-	useEffect(()=>{
-		async function fetchData() {
-			const url = 'http://127.0.0.1:1337';
-			const path = '/api/courses';
-			const data = await getCourses(url, path);
-			const courses = data?.data;
-			console.log({courses});
-		}	
-		fetchData();
-	}, []);
-	*/
 	return (
 		<div className={styles.courses}>
 			{coursesData.length ? (
@@ -97,17 +76,6 @@ const Courses = (props: TCoursesProps) => {
 					))}
 				</ul>
 			) : null}
-			{/*}
-			<div className={styles.paginationWrapper}>
-				<Pagination
-					className="paginationBar"
-					currentPage={currentPage}
-					totalCount={coursesData.length}
-					pageSize={PageSize}
-					onPageChange={(page) => setCurrentPage(page as number)}
-				/>
-			</div>
-				*/}
 		</div>
 	);
 };

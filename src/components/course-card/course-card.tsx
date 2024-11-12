@@ -37,7 +37,8 @@ type TCourseCardProps = {
 			id: number,
 			documentId: string,
 			alternativeText: null | string,
-			name: string,		
+			name: string,
+			url: string		
 		};
 	};
 	composition: CourseCardComposition;
@@ -97,9 +98,9 @@ return (
 					width={165}
 					height={380}
 					className={styles.image}
+					priority={true}
 				/>
 			</div>
-
 			<section className={styles.wrapper}>
 				<section className={styles.description}>
 					<h2 className={styles.name}>{name}</h2>

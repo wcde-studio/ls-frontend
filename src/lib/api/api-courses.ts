@@ -36,15 +36,24 @@ type TgetCourses = {
 		}
 	}
 
-const getCourses = async (baseUrl: string, path: string): Promise<TgetCourses>  => {
+
+const getCourses = async (baseUrl: string, path: string, currentPage: number, pageSize: number, topic: string, allCourses: string): Promise<TgetCourses>  => {
 	
 	const url = new URL(path, baseUrl);
 
 	url.search = qs.stringify({
 		sort: ['date:asc'],
 		pagination: {
-			page: 1,
-			pageSize: 6,
+			page: currentPage,
+			pageSize: pageSize,
+		},
+		filters: {
+			topic: topic === allCourses ? 
+			{
+				$ne: topic
+			} :	{
+				$eq: topic
+			} 
 		},
 		populate: {
 			image: {
