@@ -5,7 +5,7 @@ import { useState, useMemo, useEffect } from 'react';
 import Courses from '@/components/courses/courses';
 import DropList from '@/components/services/drop-list/drop-list';
 
-import { courses } from '@/lib/courses-data';
+//import { courses } from '@/lib/courses-data';
 
 import Pagination from '@/components/pagination/pagination';
 import getCourses from '@/lib/api/api-courses';
@@ -51,14 +51,6 @@ export default function CoursesPage() {
 	const pageSize = 6;
 	const [coursesData, setCoursesData] = useState<TCourses[] | null>(null);
 	
-	/*
-	const currentCoursesData = useMemo(() => {
-		const firstPageIndex = (currentPage - 1) * PageSize;
-		const lastPageIndex = firstPageIndex + PageSize;
-		return coursesData.slice(firstPageIndex, lastPageIndex);
-	}, [currentPage, coursesData]);
-*/
-
 	useEffect(()=>{
 		setCurrentPage(1);
 	}, [topic]);	
@@ -78,13 +70,6 @@ export default function CoursesPage() {
 	}, [currentPage, topic, courseTopics]);
 
 
-/*
-	const curentCoursesData = useMemo(() => {
-		return topic.text === courseTopics[2].text
-			? courses
-			: courses.filter((course) => course.topic === topic.text);
-	}, [topic, courseTopics]);
-*/
 	return (
 		<>
 			<section className={styles.titleSection}>

@@ -20,11 +20,8 @@ interface ISliderProps {
 	reviews: {
 		id: number;
 		name: string;
-		sentences: {
-			id: number;
-			text: string;
+		text: string;
 		}[];
-	}[];
 }
 
 const Slider = (props: ISliderProps) => {
@@ -74,7 +71,7 @@ const Slider = (props: ISliderProps) => {
 						<li className={styles.review} key={review.id}>
 							<SliderReview
 								name={`${review.name} ${review.id}`}
-								sentences={review.sentences}
+								text={review.text}
 							/>
 						</li>
 					))}

@@ -130,7 +130,7 @@ return (
 					</ul>
 				</section>
 				{composition === CourseCardComposition.Courses ? null : (
-					<Link href={`/courses/${course.documentId}`}>
+					<Link href={`/courses/${course.id}`}>
 						<Button
 							type={ButtonType.Violet}
 							size={ButtonSize.Desctop}

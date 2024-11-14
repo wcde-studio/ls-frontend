@@ -1,34 +1,23 @@
 'use client';
 
-import {
-	useRef,
-	useCallback,
-	useState,
-	useEffect,
-	MouseEvent,
-	MouseEventHandler,
-} from 'react';
-
 import styles from './slider-review.module.scss';
 
 interface ISliderReviewProps {
 	name: string;
-	sentences: {
-		id: number;
-		text: string;
-	}[];
+	text: string;
 }
 
 const SliderReview = (props: ISliderReviewProps) => {
-	const { name, sentences } = props;
-
+	const { name, text } = props;
+	const sentences = text.split(/\r?\n/);
+	
 	return (
 		<>
 			<h2 className={styles.reviewName}>{name}</h2>
 			<ul className={styles.reviewSentences}>
-				{sentences.map((sentence) => (
-					<li key={sentence.id}>
-						<p>{sentence.text}</p>
+				{sentences.map((sentence, id) => (
+					<li key={id}>
+						<p>{sentence}</p>
 					</li>
 				))}
 			</ul>
