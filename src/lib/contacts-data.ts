@@ -1,4 +1,4 @@
-interface TContact {
+ interface TContact {
 	name: string;
 	status: string;
 	chats: {
@@ -35,7 +35,7 @@ export const contacts: TContact[] = [
 		id: 1,
 	},
 	{
-		name: 'Ильвир',
+		name: 'Ильвир e',
 		status: 'Администратор',
 		chats: [
 			{
