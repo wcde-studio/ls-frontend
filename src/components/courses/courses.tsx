@@ -12,7 +12,7 @@ import { CourseCardComposition } from '@/components/course-card/types';
 
 //import Pagination from '@/components/pagination/pagination';
 
-import getCourses  from '@/lib/api/api-courses';
+import getCourses from '@/lib/api/api-courses';
 /*
 type TCoursesProps = {
 	coursesData: {
@@ -30,30 +30,30 @@ type TCoursesProps = {
 */
 type TCoursesProps = {
 	coursesData: {
-		id: number,
-		documentId: string,
-		name: string,
-		date: string,
-		city: string,
-		end: string,
-		duration: string,
-		target: string,
-		goals: string,
-		description: string,
-		createdAt: string,
-		updatedAt: string,
-		publishedAt: string,
-		title: string,
-		topic: string,
+		id: number;
+		documentId: string;
+		name: string;
+		date: string;
+		city: string;
+		end: string;
+		duration: string;
+		target: string;
+		goals: string;
+		description: string;
+		createdAt: string;
+		updatedAt: string;
+		publishedAt: string;
+		title: string;
+		topic: string;
 		image: {
-			id: number,
-			documentId: string,
-			alternativeText: null | string,
-			name: string,	
-			url: string	
-		}
+			id: number;
+			documentId: string;
+			alternativeText: null | string;
+			name: string;
+			url: string;
+		};
 	}[];
-}
+};
 
 const PageSize = 6;
 
@@ -66,11 +66,13 @@ const Courses = (props: TCoursesProps) => {
 					{coursesData?.map((course) => (
 						<li key={course.id}>
 							<Link href={`/courses/${course.id}`}>
-								{<CourseCard
-									course={course}
-									composition={CourseCardComposition.Courses}
-									key={course.id}
-					/>}
+								{
+									<CourseCard
+										course={course}
+										composition={CourseCardComposition.Courses}
+										key={course.id}
+									/>
+								}
 							</Link>
 						</li>
 					))}

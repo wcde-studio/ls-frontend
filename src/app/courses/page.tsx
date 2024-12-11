@@ -11,32 +11,31 @@ import Pagination from '@/components/pagination/pagination';
 import getCourses from '@/lib/api/api-courses';
 
 type TCourses = {
-      id: number,
-      documentId: string,
-      name: string,
-      date: string,
-      city: string,
-      end: string,
-      duration: string,
-      target: string,
-      goals: string,
-      description: string,
-      createdAt: string,
-      updatedAt: string,
-      publishedAt: string,
-      title: string,
-      topic: string,
-      image: {
-        id: number,
-        documentId: string,
-        alternativeText: null | string,
-        name: string,
-        url: string
-      }
-		}
+	id: number;
+	documentId: string;
+	name: string;
+	date: string;
+	city: string;
+	end: string;
+	duration: string;
+	target: string;
+	goals: string;
+	description: string;
+	createdAt: string;
+	updatedAt: string;
+	publishedAt: string;
+	title: string;
+	topic: string;
+	image: {
+		id: number;
+		documentId: string;
+		alternativeText: null | string;
+		name: string;
+		url: string;
+	};
+};
 
 export default function CoursesPage() {
-
 	const courseTopics = useMemo(() => {
 		return [
 			{ id: 0, text: 'Эзотерика' },
@@ -50,25 +49,30 @@ export default function CoursesPage() {
 	const [totalCount, setTotalCount] = useState(6);
 	const pageSize = 6;
 	const [coursesData, setCoursesData] = useState<TCourses[] | null>(null);
-	
-	useEffect(()=>{
+
+	useEffect(() => {
 		setCurrentPage(1);
-	}, [topic]);	
+	}, [topic]);
 
-
-	useEffect(()=>{
+	useEffect(() => {
 		async function fetchData() {
 			const url = 'http://127.0.0.1:1337';
 			const path = '/api/courses';
-			const data = await getCourses(url, path, currentPage, pageSize, topic, courseTopics[2].text);
+			const data = await getCourses(
+				url,
+				path,
+				currentPage,
+				pageSize,
+				topic,
+				courseTopics[2].text
+			);
 			const courses = data?.data;
 			setCoursesData(courses);
 			setTotalCount(data.meta.pagination.total);
 			//console.log({courses});
-		}	
+		}
 		fetchData();
 	}, [currentPage, topic, courseTopics]);
-
 
 	return (
 		<>
@@ -82,10 +86,8 @@ export default function CoursesPage() {
 				/>
 			</section>
 			<section className={styles.section}>
-				{
-					coursesData ? <Courses coursesData={coursesData} /> : null
-				}
-					</section>
+				{coursesData ? <Courses coursesData={coursesData} /> : null}
+			</section>
 			<section className={styles.paginationSection}>
 				<Pagination
 					className="paginationBar"

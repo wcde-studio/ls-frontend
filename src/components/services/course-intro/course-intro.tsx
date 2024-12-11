@@ -40,13 +40,12 @@ const CourseIntro = (props: TCourseIntroProps) => {
 	const month = dateData.toLocaleString('ru-RU', { month: '2-digit' });
 	const year = dateData.getFullYear();
 
-//	const imageSrc = `/courses/${image}`;
+	//	const imageSrc = `/courses/${image}`;
 
 	const path = imageUrl;
 	const url = 'http://127.0.0.1:1337';
 	//const imageSrc = new URL(path, url);
 	const imageSrc = url + path;
-
 
 	return (
 		<>

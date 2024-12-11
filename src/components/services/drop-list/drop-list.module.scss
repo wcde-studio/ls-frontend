@@ -40,8 +40,8 @@
 	background: var(--white);
 	max-height: 0;
 	overflow: hidden;
-//	transition-duration: 0.5s;
-//	transition-property: max-height;
+	//	transition-duration: 0.5s;
+	//	transition-property: max-height;
 }
 
 .menuItems {
@@ -71,7 +71,6 @@
 		transform: rotate(180deg);
 		transition-duration: 0.5s;
 		transition-property: transform;
-
 	}
 	.menu {
 		max-height: 100rem;

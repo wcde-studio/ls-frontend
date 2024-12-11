@@ -85,7 +85,6 @@ const MyCourses = (props: TMyCoursesProps) => {
 
 export default MyCourses;
 
-
 /*<ul className={styles.coursesList}>
 					{coursesList?.map((course) => (
 						<CourseCard

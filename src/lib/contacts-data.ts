@@ -1,4 +1,4 @@
- interface TContact {
+interface TContact {
 	name: string;
 	status: string;
 	chats: {

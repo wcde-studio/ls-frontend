@@ -21,7 +21,7 @@ interface ISliderProps {
 		id: number;
 		name: string;
 		text: string;
-		}[];
+	}[];
 }
 
 const Slider = (props: ISliderProps) => {

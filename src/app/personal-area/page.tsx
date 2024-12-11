@@ -23,7 +23,6 @@ export default function PersonalArea() {
 					<MyCourses userCourses={userInfo.courses} />
 				</div>
 			</section>
-	
 		</>
 	);
 }

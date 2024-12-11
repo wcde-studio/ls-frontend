@@ -10,7 +10,7 @@ interface ISliderReviewProps {
 const SliderReview = (props: ISliderReviewProps) => {
 	const { name, text } = props;
 	const sentences = text.split(/\r?\n/);
-	
+
 	return (
 		<>
 			<h2 className={styles.reviewName}>{name}</h2>

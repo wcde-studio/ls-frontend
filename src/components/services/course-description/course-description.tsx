@@ -12,17 +12,16 @@ type TCourseDescriptionProps = {
 	goals: string;
 	description: string;
 	title: string;
-	modules:
-	{
-		id: number,
-		name: string,
+	modules: {
+		id: number;
+		name: string;
 		program: {
-			id: number,
-			title: string,
-			text: string,
-		}[]
-	}[],
-	};
+			id: number;
+			title: string;
+			text: string;
+		}[];
+	}[];
+};
 
 const CourseDescription = (props: TCourseDescriptionProps) => {
 	const { target, goals, description, title, modules } = props;
@@ -42,7 +41,9 @@ const CourseDescription = (props: TCourseDescriptionProps) => {
 				<section className={styles.description}>
 					<h1>{'Описание:'}</h1>
 					{description.split(/\r?\n/).length
-						? description.split(/\r?\n/).map((descr, id) => <p key={id}>{descr}</p>)
+						? description
+								.split(/\r?\n/)
+								.map((descr, id) => <p key={id}>{descr}</p>)
 						: null}
 				</section>
 				<section className={styles.details}>
@@ -58,13 +59,13 @@ const CourseDescription = (props: TCourseDescriptionProps) => {
 														<li key={listItem.id}>
 															{listItem.title}
 															<ul className={styles.listItem}>
-																{listItem ? 
-																	listItem.text?.split(/\r?\n/).map((text, id) => (
-																			<li key={id}>
-																				{text}
-																			</li>
-																		)) : null
-																	}
+																{listItem
+																	? listItem.text
+																			?.split(/\r?\n/)
+																			.map((text, id) => (
+																				<li key={id}>{text}</li>
+																			))
+																	: null}
 															</ul>
 														</li>
 													))

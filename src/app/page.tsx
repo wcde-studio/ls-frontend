@@ -28,12 +28,11 @@ import CourseCard from '@/components/course-card/course-card';
 import { CourseCardComposition } from '@/components/course-card/types';
 
 export default async function Home() {
-
 	const url = 'http://127.0.0.1:1337';
 	const path = '/api/courses';
 	const data = await getCoursesHome(url, path);
 	const courses = data?.data;
-	
+
 	return (
 		<>
 			<Intro />
@@ -89,5 +88,4 @@ export default async function Home() {
 			</section>
 		</>
 	);
-
 }

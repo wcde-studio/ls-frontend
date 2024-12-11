@@ -18,27 +18,27 @@ import { months } from '@/lib/constants/date';
 
 type TCourseCardProps = {
 	course: {
-		id: number,
-		documentId: string,
-		name: string,
-		date: string,
-		city: string,
-		end: string,
-		duration: string,
-		target: string,
-		goals: string,
-		description: string,
-		createdAt: string,
-		updatedAt: string,
-		publishedAt: string,
-		title: string,
-		topic: string,
+		id: number;
+		documentId: string;
+		name: string;
+		date: string;
+		city: string;
+		end: string;
+		duration: string;
+		target: string;
+		goals: string;
+		description: string;
+		createdAt: string;
+		updatedAt: string;
+		publishedAt: string;
+		title: string;
+		topic: string;
 		image: {
-			id: number,
-			documentId: string,
-			alternativeText: null | string,
-			name: string,
-			url: string		
+			id: number;
+			documentId: string;
+			alternativeText: null | string;
+			name: string;
+			url: string;
 		};
 	};
 	composition: CourseCardComposition;
@@ -83,13 +83,13 @@ const CourseCard = (props: TCourseCardProps) => {
 			? 'Узнать больше'
 			: 'Перейти к курсу';
 
-//	const imageSrc = `/courses/${image}`;
-const path = course.image.url;
-const url = 'http://127.0.0.1:1337';
-//const imageSrc = new URL(path, url);
-const imageSrc = url + path;
+	//	const imageSrc = `/courses/${image}`;
+	const path = course.image.url;
+	const url = 'http://127.0.0.1:1337';
+	//const imageSrc = new URL(path, url);
+	const imageSrc = url + path;
 
-return (
+	return (
 		<div className={classNameCard}>
 			<div className={styles.imageWrapper}>
 				<Image
