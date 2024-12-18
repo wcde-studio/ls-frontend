@@ -4,11 +4,14 @@
 	align-items: center;
 	justify-content: space-between;
 	padding-top: 140px;
+
+	//border: 1px solid red;
 }
 
 .section {
 	padding-top: 64px;
-	padding-bottom: 140px;
+	padding-bottom: 64px;
+	//border: 1px solid red;
 }
 
 .title {
@@ -17,4 +20,10 @@
 	font-size: 48px;
 	text-align: start;
 	color: var(--dark-grey);
+}
+
+.paginationSection {
+	//	padding-top: 64px;
+	padding-bottom: 140px;
+	//	border: 1px solid red;
 }

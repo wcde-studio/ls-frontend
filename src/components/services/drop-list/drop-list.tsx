@@ -15,8 +15,8 @@ type TItem = {
 type TDropListProps = {
 	title: string;
 	items: TItem[];
-	currentItem: TItem;
-	setCurrentItem: (item: TItem) => void;
+	currentItem: string;
+	setCurrentItem: (item: string) => void;
 };
 
 const DropList = (props: TDropListProps) => {
@@ -26,7 +26,7 @@ const DropList = (props: TDropListProps) => {
 	const dropList = clsx(styles.dropList, { [styles.listOpened]: isActive });
 
 	const itemOnClick = (item: TItem) => () => {
-		setCurrentItem(item);
+		setCurrentItem(item.text);
 		setIsActive(false);
 	};
 
@@ -41,7 +41,7 @@ const DropList = (props: TDropListProps) => {
 					{items?.map((item) => (
 						<li
 							className={clsx(styles.menuItemWrapper, {
-								[styles.activeItem]: currentItem.text === item.text,
+								[styles.activeItem]: currentItem === item.text,
 							})}
 							key={item.id}>
 							<button className={styles.menuItem} onClick={itemOnClick(item)}>

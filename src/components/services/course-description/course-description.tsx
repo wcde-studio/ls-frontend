@@ -10,29 +10,21 @@ import { ButtonSize, ButtonType } from '@/components/ui/button/types';
 type TCourseDescriptionProps = {
 	target: string;
 	goals: string;
-	description: {
+	description: string;
+	title: string;
+	modules: {
 		id: number;
-		text: string;
-	}[];
-	details: {
-		title: string;
-		modules: {
+		name: string;
+		program: {
 			id: number;
-			name: string;
-			list: {
-				id: number;
-				title: string;
-				list: {
-					id: number;
-					text: string;
-				}[];
-			}[];
+			title: string;
+			text: string;
 		}[];
-	};
+	}[];
 };
 
 const CourseDescription = (props: TCourseDescriptionProps) => {
-	const { target, goals, description, details } = props;
+	const { target, goals, description, title, modules } = props;
 
 	return (
 		<>
@@ -48,29 +40,31 @@ const CourseDescription = (props: TCourseDescriptionProps) => {
 				<div className={styles.separator}></div>
 				<section className={styles.description}>
 					<h1>{'Описание:'}</h1>
-					{description.length
-						? description.map((descr) => <p key={descr.id}>{descr.text}</p>)
+					{description.split(/\r?\n/).length
+						? description
+								.split(/\r?\n/)
+								.map((descr, id) => <p key={id}>{descr}</p>)
 						: null}
 				</section>
 				<section className={styles.details}>
-					<h2>{details.title}</h2>
+					<h2>{title}</h2>
 					<ul className={styles.modules}>
-						{details.modules.length
-							? details.modules.map((module) => (
+						{modules.length
+							? modules.map((module) => (
 									<li key={module.id}>
 										{module.name}
 										<ul className={styles.module}>
-											{module.list.length
-												? module.list.map((listItem) => (
+											{module.program.length
+												? module.program.map((listItem) => (
 														<li key={listItem.id}>
 															{listItem.title}
 															<ul className={styles.listItem}>
-																{listItem.list.length
-																	? listItem.list.map((listItemList) => (
-																			<li key={listItemList.id}>
-																				{listItemList.text}
-																			</li>
-																		))
+																{listItem
+																	? listItem.text
+																			?.split(/\r?\n/)
+																			.map((text, id) => (
+																				<li key={id}>{text}</li>
+																			))
 																	: null}
 															</ul>
 														</li>

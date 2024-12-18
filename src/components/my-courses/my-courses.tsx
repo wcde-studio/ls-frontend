@@ -58,15 +58,7 @@ const MyCourses = (props: TMyCoursesProps) => {
 				</ul>
 			</nav>
 			{coursesList.length ? (
-				<ul className={styles.coursesList}>
-					{coursesList?.map((course) => (
-						<CourseCard
-							course={course}
-							composition={CourseCardComposition.Personal}
-							key={course.id}
-						/>
-					))}
-				</ul>
+				<div>courses</div>
 			) : (
 				<section className={styles.message}>
 					{link === 'active' ? (
@@ -92,3 +84,14 @@ const MyCourses = (props: TMyCoursesProps) => {
 };
 
 export default MyCourses;
+
+/*<ul className={styles.coursesList}>
+					{coursesList?.map((course) => (
+						<CourseCard
+							course={course}
+							composition={CourseCardComposition.Personal}
+							key={course.id}
+					/>
+					))}
+				
+				</ul>	*/
