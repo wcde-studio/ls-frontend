@@ -38,7 +38,7 @@ type TCourseCardProps = {
 			documentId: string;
 			alternativeText: null | string;
 			name: string;
-			url: string;
+			url: URL | string;
 		};
 	};
 	composition: CourseCardComposition;
@@ -85,7 +85,9 @@ const CourseCard = (props: TCourseCardProps) => {
 
 	//	const imageSrc = `/courses/${image}`;
 	const path = course.image.url;
-	const url = 'http://127.0.0.1:1337';
+//	const url = 'http://127.0.0.1:1337';
+const url = process.env.API_SERVER_HOST ? process.env.API_SERVER_HOST : 'http://127.0.0.1:1337';
+
 	//const imageSrc = new URL(path, url);
 	const imageSrc = url + path;
 

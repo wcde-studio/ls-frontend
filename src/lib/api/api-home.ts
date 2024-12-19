@@ -22,7 +22,7 @@ type TgetCoursesHome = {
 			documentId: string;
 			alternativeText: null | string;
 			name: string;
-			url: string;
+			url: URL;
 		};
 	}[];
 	meta: {
