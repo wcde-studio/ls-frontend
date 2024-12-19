@@ -28,7 +28,9 @@ import CourseCard from '@/components/course-card/course-card';
 import { CourseCardComposition } from '@/components/course-card/types';
 
 export default async function Home() {
-	const url = process.env.API_SERVER_HOST ? process.env.API_SERVER_HOST : 'http://127.0.0.1:1337';
+	const url = process.env.API_SERVER_HOST
+		? process.env.API_SERVER_HOST
+		: 'http://127.0.0.1:1337';
 	const path = '/api/courses';
 	const data = await getCoursesHome(url, path);
 	const courses = data?.data;

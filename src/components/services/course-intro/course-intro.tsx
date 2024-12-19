@@ -44,7 +44,9 @@ const CourseIntro = (props: TCourseIntroProps) => {
 
 	const path = imageUrl;
 	//const url = 'http://127.0.0.1:1337';
-	const url = process.env.API_SERVER_HOST ? process.env.API_SERVER_HOST : 'http://127.0.0.1:1337';
+	const url = process.env.API_SERVER_HOST
+		? process.env.API_SERVER_HOST
+		: 'http://127.0.0.1:1337';
 
 	//const imageSrc = new URL(path, url);
 	const imageSrc = url + path;

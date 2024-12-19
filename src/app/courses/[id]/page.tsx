@@ -68,8 +68,10 @@ export default function CoursePage(props: TCoursePageProps) {
 
 	useEffect(() => {
 		async function fetchData() {
-//			const url = 'http://127.0.0.1:1337';
-			const url = process.env.API_SERVER_HOST ? process.env.API_SERVER_HOST : 'http://127.0.0.1:1337';
+			//			const url = 'http://127.0.0.1:1337';
+			const url = process.env.API_SERVER_HOST
+				? process.env.API_SERVER_HOST
+				: 'http://127.0.0.1:1337';
 			const path = '/api/courses';
 			const data = await getCourse(url, path, Number(id));
 			const course = data?.data[0];
