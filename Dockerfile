@@ -1,4 +1,5 @@
-FROM node:18-alpine
+#FROM node:18-alpine
+FROM: node:18.20.5-alpine
 RUN mkdir -p /app
 RUN apk add --no-cache libc6-compat
 
