@@ -42,7 +42,7 @@ const getCourses = async (
 	pageSize: number,
 	topic: string,
 	allCourses: string
-): Promise<TgetCourses> => {
+): Promise<TgetCourses | undefined> => {
 	const url = new URL(path, baseUrl);
 
 	url.search = qs.stringify({
@@ -67,9 +67,15 @@ const getCourses = async (
 			},
 		},
 	});
-	const res = await fetch(url);
-	const data = await res.json();
-	return data;
+
+	try {
+		const res = await fetch(url);
+		if (!res.ok) throw new Error('Failed to fetch courses');
+		const data = await res.json();
+		return data;
+	} catch (error) {
+		console.log(error);
+	}
 };
 
 export default getCourses;

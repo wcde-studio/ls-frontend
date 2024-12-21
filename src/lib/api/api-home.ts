@@ -38,7 +38,7 @@ type TgetCoursesHome = {
 const getCoursesHome = async (
 	baseUrl: string,
 	path: string
-): Promise<TgetCoursesHome> => {
+): Promise<TgetCoursesHome | undefined> => {
 	const url = new URL(path, baseUrl);
 
 	url.search = qs.stringify({
@@ -54,15 +54,14 @@ const getCoursesHome = async (
 		},
 	});
 
-	//try {
-	const res = await fetch(url);
-	//if(!res.ok) throw new Error('Failed to fetch courses');
-	const data = await res.json();
-	//console.log(data);
-	return data;
-	//} catch (error) {
-	//	throw error;
-	//}
+	try {
+		const res = await fetch(url);
+		if (!res.ok) throw new Error('Failed to fetch courses');
+		const data = await res.json();
+		return data;
+	} catch (error) {
+		console.log(error);
+	}
 };
 
 export default getCoursesHome;

@@ -9,6 +9,7 @@ import DropList from '@/components/services/drop-list/drop-list';
 
 import Pagination from '@/components/pagination/pagination';
 import getCourses from '@/lib/api/api-courses';
+import { getApiServerURL } from '@/lib/api/api-utils';
 
 type TCourses = {
 	id: number;
@@ -56,10 +57,7 @@ export default function CoursesPage() {
 
 	useEffect(() => {
 		async function fetchData() {
-			//			const url = 'http://127.0.0.1:1337';
-			const url = process.env.API_SERVER_HOST
-				? process.env.API_SERVER_HOST
-				: 'http://127.0.0.1:1337';
+			const url = getApiServerURL();
 			const path = '/api/courses';
 			const data = await getCourses(
 				url,
@@ -70,9 +68,9 @@ export default function CoursesPage() {
 				courseTopics[2].text
 			);
 			const courses = data?.data;
-			setCoursesData(courses);
-			setTotalCount(data.meta.pagination.total);
-			//console.log({courses});
+			if (courses) setCoursesData(courses);
+			if (data?.meta.pagination.total)
+				setTotalCount(data?.meta.pagination.total);
 		}
 		fetchData();
 	}, [currentPage, topic, courseTopics]);
