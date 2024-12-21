@@ -1,7 +1,7 @@
 import styles from './page.module.scss';
 
-import Image from 'next/image';
-import Link from 'next/link';
+//import Image from 'next/image';
+//import Link from 'next/link';
 
 import Accordion from '@/components/accordion/accordion';
 import {
@@ -15,10 +15,10 @@ import {
 import { services } from '@/lib/services-data';
 import { pageData } from '@/lib/page-data';
 
-import { LadaVedIcon, LadaVedIconSvg, LogoIcon } from '@/components/ui';
+//import { LadaVedIcon, LadaVedIconSvg, LogoIcon } from '@/components/ui';
 
-import { Button } from '@/components/ui';
-import { ButtonSize, ButtonType } from '@/components/ui/button/types';
+//import { Button } from '@/components/ui';
+//import { ButtonSize, ButtonType } from '@/components/ui/button/types';
 
 import Intro from '@/components/intro/intro';
 //import { courses } from '@/lib/courses-data';
@@ -26,11 +26,10 @@ import getCoursesHome from '@/lib/api/api-home';
 
 import CourseCard from '@/components/course-card/course-card';
 import { CourseCardComposition } from '@/components/course-card/types';
+import { getApiServerURL } from '@/lib/api/api-utils';
 
 export default async function Home() {
-	const url = process.env.API_SERVER_HOST
-		? process.env.API_SERVER_HOST
-		: 'http://127.0.0.1:1337';
+	const url = getApiServerURL();
 	const path = '/api/courses';
 	const data = await getCoursesHome(url, path);
 	const courses = data?.data;

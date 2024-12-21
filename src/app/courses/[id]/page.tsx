@@ -15,6 +15,7 @@ import CourseDescription from '@/components/services/course-description/course-d
 
 import Slider from '@/components/slider/slider';
 import getCourse from '@/lib/api/api-course';
+import { getApiServerURL } from '@/lib/api/api-utils';
 
 type TCoursePageProps = {
 	params: {
@@ -68,15 +69,11 @@ export default function CoursePage(props: TCoursePageProps) {
 
 	useEffect(() => {
 		async function fetchData() {
-			//			const url = 'http://127.0.0.1:1337';
-			const url = process.env.API_SERVER_HOST
-				? process.env.API_SERVER_HOST
-				: 'http://127.0.0.1:1337';
+			const url = getApiServerURL();
 			const path = '/api/courses';
 			const data = await getCourse(url, path, Number(id));
 			const course = data?.data[0];
-			setCourse(course);
-			//console.log({course});
+			if (course) setCourse(course);
 		}
 		fetchData();
 	}, []);

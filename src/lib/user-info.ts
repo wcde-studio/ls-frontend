@@ -17,7 +17,7 @@ export const userInfo: TUserInfo = {
 	image: 'valery.jpeg',
 	id: 1,
 	courses: {
-		active: [0, 1, 2, 4],
-		complited: [3, 5],
+		active: [],
+		complited: [],
 	},
 };

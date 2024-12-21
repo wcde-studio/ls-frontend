@@ -70,7 +70,7 @@ const MyCourses = (props: TMyCoursesProps) => {
 							{'У вас нет завершённых курсов'}
 						</h2>
 					)}
-					<Link href={'/'}>
+					<Link href={'/courses'}>
 						<Button
 							type={ButtonType.Violet}
 							size={ButtonSize.Desctop}
