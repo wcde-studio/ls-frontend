@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { FormName } from '@/components/forms/types';
 import { InputName } from '@/components/ui/input/types';
 
-const authorizatonFormValid: Record<string, string> = {
+	const authorizatonFormValid: Record<string, string> = {
 	email: 'gog3d@mail.ru',
 	password: '123123',
 };

@@ -20,11 +20,11 @@ type TInputProps = {
 	type: InputType;
 	size: InputSize;
 	className?: string;
-	errors: Record<string, boolean>;
+	//errors: Record<string, boolean>;
 	value: Record<string, string>;
 	onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 	placeholder?: string;
-	errorMessage?: string;
+	errorMessage?: string | null;
 	resetValue: (arg0: string) => void;
 };
 
@@ -36,7 +36,7 @@ const Input = (props: TInputProps) => {
 		className,
 		value,
 		onChange,
-		errors,
+		//errors,
 		placeholder,
 		errorMessage,
 		resetValue,
@@ -51,7 +51,8 @@ const Input = (props: TInputProps) => {
 					styles.inputCheckboxWrapper,
 					{
 						[styles[`${size}`]]: size,
-						[styles.error]: errors[name],
+//						[styles.error]: errors[name],
+						[styles.error]: errorMessage,
 						//[styles.value]: value[name],
 					},
 				]
@@ -59,7 +60,8 @@ const Input = (props: TInputProps) => {
 					styles.inputWrapper,
 					{
 						[styles[`${size}`]]: size,
-						[styles.error]: errors[name],
+//						[styles.error]: errors[name],
+						[styles.error]: errorMessage,
 						[styles.value]: value[name],
 					},
 				]
