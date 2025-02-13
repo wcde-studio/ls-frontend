@@ -58,7 +58,7 @@ const Slider = (props: ISliderProps) => {
 			document.addEventListener('mousemove', onMouseMove);
 			document.addEventListener('mouseup', () => {
 				document.removeEventListener('mousemove', onMouseMove);
-//				reviewsRef.current!.onmouseup = null;
+				//				reviewsRef.current!.onmouseup = null;
 			});
 		};
 	}, [reviewsRef]);

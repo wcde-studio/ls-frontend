@@ -51,7 +51,7 @@ const Input = (props: TInputProps) => {
 					styles.inputCheckboxWrapper,
 					{
 						[styles[`${size}`]]: size,
-//						[styles.error]: errors[name],
+						//						[styles.error]: errors[name],
 						[styles.error]: errorMessage,
 						//[styles.value]: value[name],
 					},
@@ -60,7 +60,7 @@ const Input = (props: TInputProps) => {
 					styles.inputWrapper,
 					{
 						[styles[`${size}`]]: size,
-//						[styles.error]: errors[name],
+						//						[styles.error]: errors[name],
 						[styles.error]: errorMessage,
 						[styles.value]: value[name],
 					},

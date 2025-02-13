@@ -1,32 +1,27 @@
 import React from 'react';
 import { useState } from 'react';
 export const useFormState = (
-	initialState:  Record<string, any>,
-	action: (initialState: Record<string, any>, formData: FormData) => void) => {
-	
+	initialState: Record<string, any>,
+	action: (initialState: Record<string, any>, formData: FormData) => void
+) => {
 	const [formState, setFormState] = useState<Record<string, any>>(initialState);
 	const [isProcessing, setIsProcessing] = useState(false);
 
-	const formSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-		event?.preventDefault();
+	const formSubmit = async (formData: FormData) => {
+		
+		//event?.preventDefault();
 		setIsProcessing(true);
 		try {
-			const formData = new FormData(event.currentTarget);
-			const actionState =	await action(initialState, formData);
-			//console.log(actionState);
-			setFormState((prevState) => (actionState));
+			const actionState = await action(initialState, formData);			
+			//console.log('useFormState', {actionState});
+			setFormState((prevState) => actionState);
 			setIsProcessing(false);
 		} catch (error) {
-			setFormState((prevState) => ({...prevState, error: error}));
+			setFormState((prevState) => ({ ...prevState, error: error }));
 			setIsProcessing(false);
-			console.error(error);
+			console.error('useFormState error: ', {error});
 		}
 	};
 
-	return {formState, formSubmit, isProcessing};
-	
+	return { formState, formSubmit, isProcessing };
 };
-
-		// for(const [key, value] of Object.entries(formState)) {
-			// setFormState((formState: any)=> ({...formState, [key]: formData.get(key)}));
-		// }

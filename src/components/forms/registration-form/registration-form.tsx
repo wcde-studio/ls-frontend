@@ -21,8 +21,9 @@ import { InputSize, InputName, InputType } from '@/components/ui/input/types';
 
 import { useInput, useForm, useFormState } from '@/hooks';
 
-import registerUserAction  from '@/lib/data/actions/auth-actions';
+import registerUserAction from '@/lib/data/actions/auth-actions';
 import { useEffect } from 'react';
+import createUser from '@/lib/data/actions/actions';
 
 const RegisterForm = () => {
 	const { inputValue, handleInputChange, resetInputValue } = useInput({
@@ -37,38 +38,30 @@ const RegisterForm = () => {
 		//		[InputName.ConfirmRegistration]: false,
 	});
 
-	const { handlerOnSubmit, errors, valid, loading, checkEnd } = useForm({
-		[InputName.UserName]: false,
-		[InputName.UserSurname]: false,
-		[InputName.Email]: false,
-		[InputName.Telephone]: false,
-		[InputName.Telegram]: false,
-		[InputName.City]: false,
-		[InputName.Password]: false,
-		[InputName.RepeatPassword]: false,
-		[InputName.ConfirmRegistration]: false,
-	});
-
 	const router = useRouter();
 
 	const initialState = {
 		data: null,
 	};
 
-	const {formState, formSubmit, isProcessing} = useFormState(initialState, registerUserAction);
-	//console.log(isProcessing);
+	const { formState, formSubmit, isProcessing } = useFormState(
+		initialState,
+		registerUserAction
+	);
 	
+	console.log(isProcessing);
+/*
 	useEffect(() => {
-//		console.log(formState);
+				console.log(formState);
 	}, [formState]);
 
+*/
 
-	return valid && checkEnd ? (
+	return isProcessing ? (
 		<FormWrapper title={''} text={'Вы успешно зарегистрировались'} />
 	) : (
 		<FormWrapper title={'Регистрация'} loading={isProcessing}>
-			{/*<Form onSubmit={handlerOnSubmit} name={FormName.Registration}>*/}
-			<form onSubmit={formSubmit}>
+			<form action={formSubmit}>
 				<ul className={styles.inputListContent}>
 					<li>
 						<Input
