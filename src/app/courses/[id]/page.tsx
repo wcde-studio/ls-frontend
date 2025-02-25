@@ -76,7 +76,7 @@ export default function CoursePage(props: TCoursePageProps) {
 			if (course) setCourse(course);
 		}
 		fetchData();
-	}, []);
+	}, [id]);
 
 	return course ? (
 		<>

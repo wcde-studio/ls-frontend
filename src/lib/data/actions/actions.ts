@@ -1,4 +1,4 @@
-'use server';
+/*'use server';
 
 import { InputSize, InputName, InputType } from '@/components/ui/input/types';
 import registerUserServices from '../services/auth-services';
@@ -18,11 +18,11 @@ const createUser = async (formData: FormData) => {
 		};
 		const responseData = await registerUserServices();
 
-		console.log({fields}, 'done', {responseData});
+		console.log({ fields }, 'done', { responseData });
 	} catch (error) {
-		console.log({error});
+		console.log({ error });
 	}
-
 };
 
 export default createUser;
+*/

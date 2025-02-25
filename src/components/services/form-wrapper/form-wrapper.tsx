@@ -17,10 +17,12 @@ type TFormWrapperProps = {
 	text?: string;
 	loading?: boolean;
 	children?: ReactNode;
+	className?: string;
 };
+;
 
 const FormWrapper = (props: TFormWrapperProps) => {
-	const { title = '', text, loading = false, children } = props;
+	const { title = '', text, loading = false, children, className } = props;
 
 	const router = useRouter();
 	const loginReturnPath = useLoginStore((state) => state.loginReturnPath);
@@ -29,9 +31,11 @@ const FormWrapper = (props: TFormWrapperProps) => {
 		router.push(loginReturnPath, { scroll: false });
 	};
 
+	const classNameFormWrapper = clsx(className, styles.formWrapper)
+
 	return (
-		<div className={styles.formWrapper}>
-			{loading ? <LoadingSpinner /> : null}
+		<div className={classNameFormWrapper}>
+			{/*loading ? <LoadingSpinner /> : null*/}
 			<section className={styles.formContent}>
 				<div className={styles.title}>
 					<h2>{title}</h2>

@@ -16,14 +16,12 @@ import {
 } from '@/components/ui/button/types';
 
 import { InputSize, InputName, InputType } from '@/components/ui/input/types';
-//import { FormName } from '@/components/forms/types';
-//import Form from '../form';
 
 import { useInput, useForm, useFormState } from '@/hooks';
 
 import registerUserAction from '@/lib/data/actions/auth-actions';
-import { useEffect } from 'react';
-import createUser from '@/lib/data/actions/actions';
+import { useEffect, useState } from 'react';
+import { useFormStatus } from 'react-dom';
 
 const RegisterForm = () => {
 	const { inputValue, handleInputChange, resetInputValue } = useInput({
@@ -39,6 +37,7 @@ const RegisterForm = () => {
 	});
 
 	const router = useRouter();
+	const [loading, setLoading] = useState(false);
 
 	const initialState = {
 		data: null,
@@ -46,21 +45,20 @@ const RegisterForm = () => {
 
 	const { formState, formSubmit, isProcessing } = useFormState(
 		initialState,
-		registerUserAction
+		registerUserAction,
+		//setLoading
 	);
-	
-	console.log(isProcessing);
 /*
-	useEffect(() => {
-				console.log(formState);
-	}, [formState]);
+	useEffect(()=>{
+		console.log(isProcessing);
 
-*/
-
-	return isProcessing ? (
-		<FormWrapper title={''} text={'Вы успешно зарегистрировались'} />
-	) : (
-		<FormWrapper title={'Регистрация'} loading={isProcessing}>
+		setLoading(!loading);
+	}, [isProcessing]);
+	*/
+	//const status = useFormStatus();
+	//console.log({status})
+	return (
+		<FormWrapper title={'Регистрация'} loading={false} className={styles.formWrapper}>
 			<form action={formSubmit}>
 				<ul className={styles.inputListContent}>
 					<li>
@@ -161,6 +159,9 @@ const RegisterForm = () => {
 					</li>
 				</ul>
 				<ul className={styles.buttonListContent}>
+				{formState?.strapiErrors ? (
+					<li className={styles.errorMessage}>{formState?.strapiErrors.message}</li>) : null
+				}
 					<li className={styles.interButton}>
 						<Button
 							type={ButtonType.Violet}
@@ -208,3 +209,4 @@ const RegisterForm = () => {
 };
 
 export default RegisterForm;
+

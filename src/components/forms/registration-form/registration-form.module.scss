@@ -36,3 +36,18 @@
 		color: var(--blue);
 	}
 }
+
+.errorMessage {
+	font-family: var(--font-family);
+	font-weight: 400;
+	font-size: 13px;
+	color: var(--orange);
+	top: 60px;
+	left: 0px;
+}
+
+.formWrapper {
+	max-height: 90vh;
+	overflow-y: scroll;
+	scrollbar-width: thin;
+}

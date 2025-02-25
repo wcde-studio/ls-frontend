@@ -30,6 +30,7 @@ interface TService extends Pick<TProperties, 'id' | 'properties'> {
 	subtitle: string;
 	services?: TProperties[] | null;
 	note: string | null;
+	link: string;
 }
 
 type TAccordionProps = {
@@ -69,7 +70,7 @@ const Accordion = (props: TAccordionProps) => {
 				)}
 				{service.note && <p className={styles.note}>{service.note}</p>}
 				<div className={styles.buttonWrapper}>
-					<Link href={'/'}>
+					<Link href={service.link}>
 						<Button
 							type={ButtonType.White}
 							size={ButtonSize.Desctop}

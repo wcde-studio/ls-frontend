@@ -36,5 +36,3 @@ export enum InputName {
 	RepeatPassword = 'repeatpassword',
 	ConfirmRegistration = 'confirmregistration',
 }
-
-

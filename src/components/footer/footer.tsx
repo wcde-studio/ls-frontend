@@ -4,6 +4,8 @@ import React from 'react';
 import Link from 'next/link';
 
 import { WCDEIcon, TelegramIcon, WhatsUpIcon, VKIcon } from '@/components/ui';
+import  SocialLinks from '@/components/services/social-links/social-links';
+
 
 const Footer = () => {
 	return (
@@ -19,38 +21,24 @@ const Footer = () => {
 							</li>
 							<li className={styles.siteMapLinkWrapper}>
 								<div className={styles.siteMapLink}>
-									<Link href={'/'}>Курсы</Link>
+									<Link href={'/courses'}>Курсы</Link>
 								</div>
 							</li>
 							<li className={styles.siteMapLinkWrapper}>
 								<div className={styles.siteMapLink}>
-									<Link href={'/'}>Контакты</Link>
+									<Link href={'/contacts'}>Контакты</Link>
 								</div>
 							</li>
 							<li className={styles.siteMapLinkWrapper}>
 								<div className={styles.siteMapLink}>
-									<Link href={'/'}>Личный кабинет</Link>
+									<Link href={'/auth/personal-area'}>Личный кабинет</Link>
 								</div>
 							</li>
 						</ul>
 					</nav>
 					<div className={styles.socialLinksContainer}>
 						<ul className={styles.socialLinksWrapper}>
-							<li className={styles.socialLink}>
-								<Link href={'/'}>
-									<TelegramIcon />
-								</Link>
-							</li>
-							<li className={styles.socialLink}>
-								<Link href={'/'}>
-									<WhatsUpIcon />
-								</Link>
-							</li>
-							<li className={styles.socialLink}>
-								<Link href={'/'}>
-									<VKIcon />
-								</Link>
-							</li>
+							<SocialLinks />
 						</ul>
 					</div>
 				</div>

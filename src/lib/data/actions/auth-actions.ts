@@ -2,7 +2,7 @@
 import { InputSize, InputName, InputType } from '@/components/ui/input/types';
 
 import { z } from 'zod';
-import  registerUserServices from '@/lib/data/services/auth-services';
+import registerUserServices from '@/lib/data/services/auth-services';
 
 const schemaRegister = z
 	.object({
@@ -55,12 +55,12 @@ const registerUserAction = async (
 			confirmregistration: formData.get(InputName.ConfirmRegistration),
 		});
 
-	/*	const sendData = await new Promise((resolve) => {
+			const sendData = await new Promise((resolve) => {
 			setTimeout(() => {
 				resolve('data');
-			}, 500);
+			}, 1000);
 		});
-	*/
+	
 
 		if (!validateFields.success) {
 			return {
@@ -73,34 +73,33 @@ const registerUserAction = async (
 
 		const responseData = await registerUserServices(validateFields.data);
 
-		if(!responseData) { 
+		if (!responseData) {
 			return {
 				...initialState,
 				strapiErrors: null,
-				zodErrors: null,				
-				message: 'Что то пошло не так, попробуйте еще раз.'
+				zodErrors: null,
+				message: 'Что то пошло не так, попробуйте еще раз.',
 			};
 		}
 
-		if(responseData.error) {
+		if (responseData.error) {
 			return {
 				...initialState,
 				strapiErrors: responseData.error,
-				zodErrors: null,				
-				message: 'Ошибка регистрации.'
+				zodErrors: null,
+				message: 'Ошибка регистрации.',
 			};
 		}
 		console.log('##########################');
 		console.log('User Register Successfuly', responseData.jwt);
 		console.log('##########################');
-
 	} catch (error) {
-		 console.log('auth-act-error: ', { error });
-		 return {
-			 ...initialState,
-			 error,
-		 };
-	 }
+		console.log('auth-act-error: ', { error });
+		return {
+			...initialState,
+			error,
+		};
+	}
 };
 
 export default registerUserAction;
