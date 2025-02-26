@@ -1,8 +1,5 @@
 import styles from './page.module.scss';
 
-//import Image from 'next/image';
-//import Link from 'next/link';
-
 import Accordion from '@/components/accordion/accordion';
 import {
 	Award,
@@ -12,35 +9,95 @@ import {
 	DiplomaSize,
 } from '@/components/services';
 
-import { services } from '@/lib/services-data';
-import { pageData } from '@/lib/page-data';
-
-//import { LadaVedIcon, LadaVedIconSvg, LogoIcon } from '@/components/ui';
-
-//import { Button } from '@/components/ui';
-//import { ButtonSize, ButtonType } from '@/components/ui/button/types';
-
 import Intro from '@/components/intro/intro';
-//import { courses } from '@/lib/courses-data';
-import getCoursesHome from '@/lib/api/api-home';
-
 import CourseCard from '@/components/course-card/course-card';
 import { CourseCardComposition } from '@/components/course-card/types';
-import { getApiServerURL } from '@/lib/api/api-utils';
+
+import {
+	getApiServerURL,
+	getAwards,
+	getDiplomas,
+	getServices,
+	getCoursesHome,
+	getIntro,
+} from '@/lib/api/api-utils';
+
+type TAwardType = {
+	id: number;
+	type: AwardType;
+	text: string;
+};
+
+type TDiplomasType = {
+	id: number;
+	alt: string;
+	src: {
+		id: number;
+		url: string;
+	};
+};
+
+type TServicesType = {
+	id: number;
+	title: string;
+	subtitle: string;
+	note: string | null;
+	services: {
+		id: number;
+		price: number;
+		currency: string;
+		properties: {
+			id: number;
+			text: string;
+		}[];
+	}[];
+	properties: {
+		id: number;
+		text: string;
+	}[];
+	link: string;
+};
+
+type TgetCoursesHome = {
+	id: number;
+	documentId: string;
+	name: string;
+	date: string;
+	city: string;
+	end: string;
+	duration: string;
+	target: string;
+	goals: string;
+	description: string;
+	createdAt: string;
+	updatedAt: string;
+	publishedAt: string;
+	title: string;
+	topic: string;
+	image: {
+		id: number;
+		documentId: string;
+		alternativeText: null | string;
+		name: string;
+		url: string;
+	};
+};
 
 export default async function Home() {
 	const url = getApiServerURL();
-	const path = '/api/courses';
-	const data = await getCoursesHome(url, path);
-	const courses = data?.data;
 
+	const awards = await getAwards();
+	const diplomas = await getDiplomas();
+	const services = await getServices();
+	const courses = await getCoursesHome();
+	const intro = await getIntro();
 	return (
 		<>
-			<Intro />
+			<Intro imageSrc={url + intro?.data.image.url} title={intro?.data.title} />
 			<section className={styles.section}>
 				<h1 className={styles.title}>Услуги</h1>
 				<ul className={styles.accordionList}>
-					{services?.map((service) => (
+					{services?.data.map((service: TServicesType) => (
 						<Accordion service={service} key={service.id} />
 					))}
 				</ul>
@@ -48,7 +105,7 @@ export default async function Home() {
 			<section className={styles.section}>
 				<h1 className={styles.title}>{'Ближайшие курсы'}</h1>
 				<ul className={styles.coursesList}>
-					{courses?.map((course, id: number) => {
+					{courses?.data.map((course: TgetCoursesHome) => {
 						const date = new Date(course.date);
 						const year = date.getFullYear();
 						return (
@@ -64,7 +121,7 @@ export default async function Home() {
 			<section className={styles.section}>
 				<h1 className={styles.title}>{'Премии и заслуги'}</h1>
 				<ul className={styles.awardsList}>
-					{pageData?.awards?.map((award) => (
+					{awards?.data.map((award: TAwardType) => (
 						<Award
 							size={AwardSize.Desctop}
 							type={award.type}
@@ -77,10 +134,10 @@ export default async function Home() {
 			<section className={styles.section}>
 				<h1 className={styles.title}>{'Дипломы'}</h1>
 				<ul className={styles.diplomaList}>
-					{pageData?.diplomas?.map((diploma) => (
+					{diplomas?.data.map((diploma: TDiplomasType) => (
 						<Diploma
 							size={DiplomaSize.Desctop}
-							src={diploma.src}
+							src={url + diploma.src.url}
 							alt={diploma.alt}
 							key={diploma.id}
 						/>

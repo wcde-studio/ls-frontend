@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 
 import Link from 'next/link';
@@ -5,6 +7,9 @@ import clsx from 'clsx';
 import styles from './button.module.scss';
 
 import { ButtonSize, ButtonType, ButtonHtmlType } from './types';
+
+import { useFormStatus } from 'react-dom';
+import { LoadingSpinner } from '@/components/services';
 
 interface IButtonProps {
 	type: ButtonType;
@@ -34,14 +39,20 @@ const Button = (props: IButtonProps) => {
 		className
 	);
 
+	const { pending } = useFormStatus();
+
+	//console.log(pending);
 	return (
-		<button
-			disabled={disabled}
-			className={classNameButton}
-			onClick={onClick}
-			type={htmlType}>
-			{title}
-		</button>
+		<>
+			{pending ? <LoadingSpinner /> : null}
+			<button
+				disabled={disabled && pending}
+				className={classNameButton}
+				onClick={onClick}
+				type={htmlType}>
+				{title}
+			</button>
+		</>
 	);
 };
 

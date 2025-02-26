@@ -59,7 +59,6 @@ const RecoveryForm = () => {
 							onChange={handleInputChange}
 							placeholder={'Email'}
 							errorMessage={'Введите корректный email'}
-							errors={errors}
 							resetValue={resetInputValue}
 						/>
 					</li>

@@ -27,6 +27,9 @@ const nextConfig = {
 
 		return config;
 	},
+	env: {
+		apiSeverURL: 'NEXT_PUBLIC_API_SERVER_HOST',
+	},
 	images: {
 		remotePatterns: [
 			{
@@ -36,7 +39,20 @@ const nextConfig = {
 				pathname: '**',
 			},
 		],
+		domains: [process.env.NEXT_PUBLIC_API_SERVER_HOST],
 	},
 };
 
 export default nextConfig;
+/*
+	images: {
+		remotePatterns: [
+			{
+				protocol: 'https',
+				hostname: 'ls-admin.widev.ru',
+				port: '',
+				pathname: '**',
+			},
+		],
+	},s
+*/

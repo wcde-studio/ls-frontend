@@ -57,7 +57,6 @@ const AuthorizationForm = () => {
 							onChange={handleInputChange}
 							placeholder={'Email'}
 							errorMessage={'Введите корректный email'}
-							errors={errors}
 							resetValue={resetInputValue}
 						/>
 					</li>
@@ -70,7 +69,6 @@ const AuthorizationForm = () => {
 							onChange={handleInputChange}
 							placeholder={'Пароль'}
 							errorMessage={'Введите корректный пароль'}
-							errors={errors}
 							resetValue={resetInputValue}
 						/>
 					</li>

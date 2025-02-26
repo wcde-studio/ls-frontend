@@ -1,10 +1,10 @@
-'use client';
+//'use client';
 import styles from './page.module.scss';
 
-import { useEffect, useState } from 'react';
+//import { useEffect, useState } from 'react';
 
-import Image from 'next/image';
-import Link from 'next/link';
+//import Image from 'next/image';
+//import Link from 'next/link';
 
 //import { courses } from '@/lib/courses-data';
 //import { description } from '@/lib/course-description-data';
@@ -14,15 +14,15 @@ import CourseIntro from '@/components/services/course-intro/course-intro';
 import CourseDescription from '@/components/services/course-description/course-description';
 
 import Slider from '@/components/slider/slider';
-import getCourse from '@/lib/api/api-course';
-import { getApiServerURL } from '@/lib/api/api-utils';
+//import getCourse from '@/lib/api/api-course';
+import { getApiServerURL, getCourse } from '@/lib/api/api-utils';
 
 type TCoursePageProps = {
 	params: {
 		id: string;
 	};
 };
-
+/*
 type TCourse = {
 	id: number;
 	documentId: string;
@@ -61,29 +61,19 @@ type TCourse = {
 		text: string;
 	}[];
 };
-
-export default function CoursePage(props: TCoursePageProps) {
+*/
+export default async function CoursePage(props: TCoursePageProps) {
 	const { id } = props.params;
-	//	const course = courses.find((course) => `${course.id}` === id);
-	const [course, setCourse] = useState<TCourse | null>(null);
-
-	useEffect(() => {
-		async function fetchData() {
-			const url = getApiServerURL();
-			const path = '/api/courses';
-			const data = await getCourse(url, path, Number(id));
-			const course = data?.data[0];
-			if (course) setCourse(course);
-		}
-		fetchData();
-	}, []);
+	const url = getApiServerURL();
+	const courseData = await getCourse(id);
+	const course = courseData?.data[0];
 
 	return course ? (
 		<>
 			<section className={styles.section}>
 				<h1 className={styles.title}>{course.name}</h1>
 				<CourseIntro
-					imageUrl={course.image.url}
+					imageUrl={url + course?.image.url}
 					date={course.date}
 					end={course.end}
 					duration={course.duration}
@@ -108,3 +98,4 @@ export default function CoursePage(props: TCoursePageProps) {
 		</>
 	) : null;
 }
+

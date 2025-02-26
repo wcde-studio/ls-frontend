@@ -1,6 +1,6 @@
 %maxWidth {
 	margin: 0 auto;
-	width: 1110px;
+	max-width: 1110px;
 }
 
 %mainFont {
@@ -22,8 +22,12 @@
 }
 
 .footerContainer {
-	display: grid;
-	grid-template-columns: 1fr auto;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: top;
+	//	display: grid;
+	//	grid-template-columns: 1fr auto;
 }
 
 .siteMapContainer {

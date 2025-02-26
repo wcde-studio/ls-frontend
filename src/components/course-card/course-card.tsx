@@ -15,11 +15,12 @@ import { ButtonSize, ButtonType } from '@/components/ui/button/types';
 import { CourseCardComposition } from '@/components/course-card/types';
 
 import { months } from '@/lib/constants/date';
+import { getApiServerURL } from '@/lib/api/api-utils';
 
 type TCourseCardProps = {
 	course: {
 		id: number;
-		documentId: string;
+		//		documentId: string;
 		name: string;
 		date: string;
 		city: string;
@@ -35,10 +36,10 @@ type TCourseCardProps = {
 		topic: string;
 		image: {
 			id: number;
-			documentId: string;
-			alternativeText: null | string;
-			name: string;
-			url: URL | string;
+			//			documentId: string;
+			//			alternativeText: null | string;
+			//			name: string;
+			url: string;
 		};
 	};
 	composition: CourseCardComposition;
@@ -83,15 +84,8 @@ const CourseCard = (props: TCourseCardProps) => {
 			? 'Узнать больше'
 			: 'Перейти к курсу';
 
-	//	const imageSrc = `/courses/${image}`;
-	const path = course.image.url;
-	//	const url = 'http://127.0.0.1:1337';
-	const url = process.env.API_SERVER_HOST
-		? process.env.API_SERVER_HOST
-		: 'http://127.0.0.1:1337';
-
-	//const imageSrc = new URL(path, url);
-	const imageSrc = url + path;
+	const url = getApiServerURL();
+	const imageSrc = url + image.url;
 
 	return (
 		<div className={classNameCard}>
@@ -100,7 +94,7 @@ const CourseCard = (props: TCourseCardProps) => {
 					alt="course"
 					src={imageSrc}
 					width={165}
-					height={380}
+					height={165}
 					className={styles.image}
 					priority={true}
 				/>

@@ -11,7 +11,7 @@ export enum InputSize {
 	//	Pad = 'PAD',
 	//	Mobile = 'MOBILE'
 }
-
+/*
 export enum InputName {
 	UserName = 'userName',
 	UserSurname = 'userSurname',
@@ -22,4 +22,17 @@ export enum InputName {
 	Password = 'password',
 	RepeatPassword = 'repeatPassword',
 	ConfirmRegistration = 'confirmRegistration',
+}
+*/
+
+export enum InputName {
+	UserName = 'username',
+	UserSurname = 'usersurname',
+	Email = 'email',
+	Telephone = 'telephone',
+	Telegram = 'telegram',
+	City = 'city',
+	Password = 'password',
+	RepeatPassword = 'repeatpassword',
+	ConfirmRegistration = 'confirmregistration',
 }

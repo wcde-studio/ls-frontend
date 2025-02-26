@@ -8,8 +8,8 @@ import DropList from '@/components/services/drop-list/drop-list';
 //import { courses } from '@/lib/courses-data';
 
 import Pagination from '@/components/pagination/pagination';
-import getCourses from '@/lib/api/api-courses';
-import { getApiServerURL } from '@/lib/api/api-utils';
+//import getCourses from '@/lib/api/api-courses';
+import { getCourses } from '@/lib/api/api-utils';
 
 type TCourses = {
 	id: number;
@@ -57,16 +57,13 @@ export default function CoursesPage() {
 
 	useEffect(() => {
 		async function fetchData() {
-			const url = getApiServerURL();
-			const path = '/api/courses';
 			const data = await getCourses(
-				url,
-				path,
 				currentPage,
 				pageSize,
 				topic,
 				courseTopics[2].text
 			);
+
 			const courses = data?.data;
 			if (courses) setCoursesData(courses);
 			if (data?.meta.pagination.total)

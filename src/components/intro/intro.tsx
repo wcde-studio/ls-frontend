@@ -8,7 +8,19 @@ import { LadaVedIcon, LadaVedIconSvg } from '@/components/ui';
 import { Button } from '@/components/ui';
 import { ButtonSize, ButtonType } from '@/components/ui/button/types';
 
-const Intro = () => {
+interface IIntroProps {
+	imageSrc: string;
+	title: {
+		propities: {
+			id: number;
+			text: string;
+		}[];
+	};
+}
+
+const Intro = (props: IIntroProps) => {
+	const { imageSrc, title } = props;
+
 	return (
 		<>
 			<section className={styles.intro}>
@@ -26,23 +38,20 @@ const Intro = () => {
 				</div>
 				<Image
 					alt="lada"
-					src={'/lada-intro.png'}
+					src={imageSrc}
 					width={'637'}
 					height={'622'}
 					className={styles.ladaImage}
 				/>
 			</section>
 			<section className={styles.sectionTitle}>
-				<p className={styles.topTitle}>
-					{
-						'Организационно-управленческий психолог, корпоративный бизнес-тренер, мотиватор, наставник'
-					}
-				</p>
-				<p className={styles.bottomTitle}>
-					{
-						'А ещё сильнейшая провидица современности, бизнес-маг, рунолог, этнолог, физик'
-					}
-				</p>
+				{title?.propities.map((propertie, key) => (
+					<p
+						className={key === 0 ? styles.topTitle : styles.bottomTitle}
+						key={propertie.id}>
+						{propertie.text}
+					</p>
+				))}
 			</section>
 		</>
 	);

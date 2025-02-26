@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+//import React, { useState, useEffect } from 'react';
 import styles from './registration-form.module.scss';
 
 import Link from 'next/link';
@@ -16,12 +16,14 @@ import {
 } from '@/components/ui/button/types';
 
 import { InputSize, InputName, InputType } from '@/components/ui/input/types';
-import { FormName } from '@/components/forms/types';
-import Form from '../form';
 
-import { useInput, useForm } from '@/hooks';
+import { useInput, useForm, useFormState } from '@/hooks';
 
-const RegistrationForm = () => {
+import registerUserAction from '@/lib/data/actions/auth-actions';
+import { useEffect, useState } from 'react';
+import { useFormStatus } from 'react-dom';
+
+const RegisterForm = () => {
 	const { inputValue, handleInputChange, resetInputValue } = useInput({
 		[InputName.UserName]: '',
 		[InputName.UserSurname]: '',
@@ -34,25 +36,33 @@ const RegistrationForm = () => {
 		//		[InputName.ConfirmRegistration]: false,
 	});
 
-	const { handlerOnSubmit, errors, valid, loading, checkEnd } = useForm({
-		[InputName.UserName]: false,
-		[InputName.UserSurname]: false,
-		[InputName.Email]: false,
-		[InputName.Telephone]: false,
-		[InputName.Telegram]: false,
-		[InputName.City]: false,
-		[InputName.Password]: false,
-		[InputName.RepeatPassword]: false,
-		[InputName.ConfirmRegistration]: false,
-	});
-
 	const router = useRouter();
+	const [loading, setLoading] = useState(false);
 
-	return valid && checkEnd ? (
-		<FormWrapper title={''} text={'Вы успешно зарегистрировались'} />
-	) : (
-		<FormWrapper title={'Регистрация'} loading={loading}>
-			<Form onSubmit={handlerOnSubmit} name={FormName.Registration}>
+	const initialState = {
+		data: null,
+	};
+
+	const { formState, formSubmit, isProcessing } = useFormState(
+		initialState,
+		registerUserAction
+		//setLoading
+	);
+	/*
+	useEffect(()=>{
+		console.log(isProcessing);
+
+		setLoading(!loading);
+	}, [isProcessing]);
+	*/
+	//const status = useFormStatus();
+	//console.log({status})
+	return (
+		<FormWrapper
+			title={'Регистрация'}
+			loading={false}
+			className={styles.formWrapper}>
+			<form action={formSubmit}>
 				<ul className={styles.inputListContent}>
 					<li>
 						<Input
@@ -62,8 +72,7 @@ const RegistrationForm = () => {
 							type={InputType.Text}
 							onChange={handleInputChange}
 							placeholder={'Имя*'}
-							errorMessage={'Введите имя'}
-							errors={errors}
+							errorMessage={formState?.zodErrors?.[InputName.UserName]}
 							resetValue={resetInputValue}
 						/>
 					</li>
@@ -75,8 +84,7 @@ const RegistrationForm = () => {
 							type={InputType.Text}
 							onChange={handleInputChange}
 							placeholder={'Фамилия*'}
-							errorMessage={'Введите фамилию'}
-							errors={errors}
+							errorMessage={formState?.zodErrors?.[InputName.UserSurname]}
 							resetValue={resetInputValue}
 						/>
 					</li>
@@ -88,8 +96,7 @@ const RegistrationForm = () => {
 							type={InputType.Email}
 							onChange={handleInputChange}
 							placeholder={'Email*'}
-							errorMessage={'Введите корректный email'}
-							errors={errors}
+							errorMessage={formState?.zodErrors?.[InputName.Email]}
 							resetValue={resetInputValue}
 						/>
 					</li>
@@ -101,8 +108,7 @@ const RegistrationForm = () => {
 							type={InputType.Tel}
 							onChange={handleInputChange}
 							placeholder={'Телефон*'}
-							errorMessage={'Введите телефон'}
-							errors={errors}
+							errorMessage={formState?.zodErrors?.[InputName.Telephone]}
 							resetValue={resetInputValue}
 						/>
 					</li>
@@ -114,8 +120,7 @@ const RegistrationForm = () => {
 							type={InputType.Text}
 							onChange={handleInputChange}
 							placeholder={'Ник в телеграм'}
-							errorMessage={''}
-							errors={errors}
+							errorMessage={formState?.zodErrors?.[InputName.Telegram]}
 							resetValue={resetInputValue}
 						/>
 					</li>
@@ -127,8 +132,7 @@ const RegistrationForm = () => {
 							type={InputType.Text}
 							onChange={handleInputChange}
 							placeholder={'Город'}
-							errorMessage={''}
-							errors={errors}
+							errorMessage={formState?.zodErrors?.[InputName.City]}
 							resetValue={resetInputValue}
 						/>
 					</li>
@@ -140,8 +144,7 @@ const RegistrationForm = () => {
 							type={InputType.Password}
 							onChange={handleInputChange}
 							placeholder={'Пароль'}
-							errorMessage={'Введите корректный пароль'}
-							errors={errors}
+							errorMessage={formState?.zodErrors?.[InputName.Password]}
 							resetValue={resetInputValue}
 						/>
 					</li>
@@ -153,13 +156,17 @@ const RegistrationForm = () => {
 							type={InputType.Password}
 							onChange={handleInputChange}
 							placeholder={'Повторите пароль*'}
-							errorMessage={'Введунные пароли не совпадают'}
-							errors={errors}
+							errorMessage={formState?.zodErrors?.[InputName.RepeatPassword]}
 							resetValue={resetInputValue}
 						/>
 					</li>
 				</ul>
 				<ul className={styles.buttonListContent}>
+					{formState?.strapiErrors ? (
+						<li className={styles.errorMessage}>
+							{formState?.strapiErrors.message}
+						</li>
+					) : null}
 					<li className={styles.interButton}>
 						<Button
 							type={ButtonType.Violet}
@@ -175,7 +182,6 @@ const RegistrationForm = () => {
 							value={inputValue}
 							type={InputType.Checkbox}
 							onChange={handleInputChange}
-							errors={errors}
 							resetValue={resetInputValue}
 						/>
 						<p>
@@ -201,9 +207,10 @@ const RegistrationForm = () => {
 						/>
 					</li>
 				</ul>
-			</Form>
+			</form>
+			{/*</Form>*/}
 		</FormWrapper>
 	);
 };
 
-export default RegistrationForm;
+export default RegisterForm;
