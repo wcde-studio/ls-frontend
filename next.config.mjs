@@ -28,7 +28,7 @@ const nextConfig = {
 		return config;
 	},
 	env: {
-		apiSeverURL: 'NEXT_PUBLIC_API_SERVER_HOST'
+		apiSeverURL: 'NEXT_PUBLIC_API_SERVER_HOST',
 	},
 	images: {
 		remotePatterns: [

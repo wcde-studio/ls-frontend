@@ -55,12 +55,11 @@ const registerUserAction = async (
 			confirmregistration: formData.get(InputName.ConfirmRegistration),
 		});
 
-			const sendData = await new Promise((resolve) => {
+		const sendData = await new Promise((resolve) => {
 			setTimeout(() => {
 				resolve('data');
 			}, 1000);
 		});
-	
 
 		if (!validateFields.success) {
 			return {

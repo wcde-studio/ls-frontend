@@ -9,9 +9,21 @@
 }
 
 .wrapper {
+/*	
 	display: grid;
 	grid-template-columns: 1fr 354px;
 	align-items: center;
+*/
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	gap: 24px;
+}
+
+.buttonSize {
+
+	width: 354px;
 }
 
 .description {
@@ -19,6 +31,7 @@
 		display: flex;
 		align-items: center;
 		justify-content: flex-start;
+		flex-wrap: wrap;
 		gap: 32px;
 	}
 }

@@ -16,11 +16,11 @@ interface TService extends Pick<TProperties, 'id' | 'properties'> {
 	title: string;
 	subtitle: string;
 	properties?:
-	| {
-			id: number;
-			text: string;
-		}[]
-	| null;
+		| {
+				id: number;
+				text: string;
+		  }[]
+		| null;
 	services?: TProperties[] | null;
 	note: string | null;
 }

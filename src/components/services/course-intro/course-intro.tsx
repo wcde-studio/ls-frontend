@@ -40,23 +40,12 @@ const CourseIntro = (props: TCourseIntroProps) => {
 	const month = dateData.toLocaleString('ru-RU', { month: '2-digit' });
 	const year = dateData.getFullYear();
 
-	//	const imageSrc = `/courses/${image}`;
-
-	const path = imageUrl;
-	//const url = 'http://127.0.0.1:1337';
-	const url = process.env.API_SERVER_HOST
-		? process.env.API_SERVER_HOST
-		: 'http://127.0.0.1:1337';
-
-	//const imageSrc = new URL(path, url);
-	const imageSrc = url + path;
-
 	return (
 		<>
 			<div className={styles.imageWrapper}>
 				<Image
 					alt="course"
-					src={imageSrc}
+					src={imageUrl}
 					width={1110}
 					height={503}
 					className={styles.image}
@@ -84,6 +73,7 @@ const CourseIntro = (props: TCourseIntroProps) => {
 						type={ButtonType.Violet}
 						size={ButtonSize.Desctop}
 						title={'Учавствовать'}
+						className={styles.buttonSize}
 					/>
 				</Link>
 			</section>
@@ -92,3 +82,4 @@ const CourseIntro = (props: TCourseIntroProps) => {
 };
 
 export default CourseIntro;
+

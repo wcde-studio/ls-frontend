@@ -14,12 +14,12 @@ interface IIntroProps {
 		propities: {
 			id: number;
 			text: string;
-		}[]
-	}
-};
+		}[];
+	};
+}
 
 const Intro = (props: IIntroProps) => {
-	const { imageSrc, title} = props;
+	const { imageSrc, title } = props;
 
 	return (
 		<>
@@ -45,19 +45,16 @@ const Intro = (props: IIntroProps) => {
 				/>
 			</section>
 			<section className={styles.sectionTitle}>
-				{
-					title?.propities.map((propertie, key)=>
-					<p 
+				{title?.propities.map((propertie, key) => (
+					<p
 						className={key === 0 ? styles.topTitle : styles.bottomTitle}
-						key={propertie.id}
-					>
+						key={propertie.id}>
 						{propertie.text}
 					</p>
-					)
-				}
+				))}
 			</section>
 		</>
 	);
-}; 
+};
 
 export default Intro;

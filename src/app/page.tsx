@@ -9,25 +9,17 @@ import {
 	DiplomaSize,
 } from '@/components/services';
 
-import { services } from '@/lib/services-data';
-import { pageData } from '@/lib/page-data';
-
-
 import Intro from '@/components/intro/intro';
-//import { courses } from '@/lib/courses-data';
-//import getCoursesHome from '@/lib/api/api-home';
-
 import CourseCard from '@/components/course-card/course-card';
 import { CourseCardComposition } from '@/components/course-card/types';
-//import { getApiServerURL } from '@/lib/api/api-utils';
 
-import { 
-	getApiServerURL, 
-	getAwards, 
-	getDiplomas, 
-	getServices, 
+import {
+	getApiServerURL,
+	getAwards,
+	getDiplomas,
+	getServices,
 	getCoursesHome,
-	getIntro 
+	getIntro,
 } from '@/lib/api/api-utils';
 
 type TAwardType = {
@@ -37,67 +29,63 @@ type TAwardType = {
 };
 
 type TDiplomasType = {
-		id: number,
-		alt: string,
-		src: {
-			id: number,
-			url: string
-		}
+	id: number;
+	alt: string;
+	src: {
+		id: number;
+		url: string;
+	};
 };
 
 type TServicesType = {
-	id: number,
-	title: string,
-	subtitle: string,
-	note: string | null,
-	services: 
-		{
-			id: number,
-			price: number,
-			currency: string,
-			properties: 
-				{
-					id: number,
-					text: string
-				}[]
-		}[],
+	id: number;
+	title: string;
+	subtitle: string;
+	note: string | null;
+	services: {
+		id: number;
+		price: number;
+		currency: string;
 		properties: {
-			id: number,
-			text: string,
-		}[],
-		link: string
+			id: number;
+			text: string;
+		}[];
+	}[];
+	properties: {
+		id: number;
+		text: string;
+	}[];
+	link: string;
 };
 
 type TgetCoursesHome = {
+	id: number;
+	documentId: string;
+	name: string;
+	date: string;
+	city: string;
+	end: string;
+	duration: string;
+	target: string;
+	goals: string;
+	description: string;
+	createdAt: string;
+	updatedAt: string;
+	publishedAt: string;
+	title: string;
+	topic: string;
+	image: {
 		id: number;
 		documentId: string;
+		alternativeText: null | string;
 		name: string;
-		date: string;
-		city: string;
-		end: string;
-		duration: string;
-		target: string;
-		goals: string;
-		description: string;
-		createdAt: string;
-		updatedAt: string;
-		publishedAt: string;
-		title: string;
-		topic: string;
-		image: {
-			id: number;
-			documentId: string;
-			alternativeText: null | string;
-			name: string;
-			url: string;
-		};
+		url: string;
 	};
-
+};
 
 export default async function Home() {
-	
 	const url = getApiServerURL();
-	
+
 	const awards = await getAwards();
 	const diplomas = await getDiplomas();
 	const services = await getServices();
@@ -105,10 +93,7 @@ export default async function Home() {
 	const intro = await getIntro();
 	return (
 		<>
-			<Intro
-				imageSrc={url + intro?.data.image.url}
-				title={intro?.data.title} 
-			/>
+			<Intro imageSrc={url + intro?.data.image.url} title={intro?.data.title} />
 			<section className={styles.section}>
 				<h1 className={styles.title}>Услуги</h1>
 				<ul className={styles.accordionList}>

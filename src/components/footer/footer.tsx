@@ -4,8 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 
 import { WCDEIcon, TelegramIcon, WhatsUpIcon, VKIcon } from '@/components/ui';
-import  SocialLinks from '@/components/services/social-links/social-links';
-
+import SocialLinks from '@/components/services/social-links/social-links';
 
 const Footer = () => {
 	return (

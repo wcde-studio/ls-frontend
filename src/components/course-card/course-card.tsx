@@ -20,7 +20,7 @@ import { getApiServerURL } from '@/lib/api/api-utils';
 type TCourseCardProps = {
 	course: {
 		id: number;
-//		documentId: string;
+		//		documentId: string;
 		name: string;
 		date: string;
 		city: string;
@@ -36,9 +36,9 @@ type TCourseCardProps = {
 		topic: string;
 		image: {
 			id: number;
-//			documentId: string;
-//			alternativeText: null | string;
-//			name: string;
+			//			documentId: string;
+			//			alternativeText: null | string;
+			//			name: string;
 			url: string;
 		};
 	};

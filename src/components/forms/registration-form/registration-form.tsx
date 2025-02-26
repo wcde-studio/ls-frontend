@@ -45,10 +45,10 @@ const RegisterForm = () => {
 
 	const { formState, formSubmit, isProcessing } = useFormState(
 		initialState,
-		registerUserAction,
+		registerUserAction
 		//setLoading
 	);
-/*
+	/*
 	useEffect(()=>{
 		console.log(isProcessing);
 
@@ -58,7 +58,10 @@ const RegisterForm = () => {
 	//const status = useFormStatus();
 	//console.log({status})
 	return (
-		<FormWrapper title={'Регистрация'} loading={false} className={styles.formWrapper}>
+		<FormWrapper
+			title={'Регистрация'}
+			loading={false}
+			className={styles.formWrapper}>
 			<form action={formSubmit}>
 				<ul className={styles.inputListContent}>
 					<li>
@@ -159,9 +162,11 @@ const RegisterForm = () => {
 					</li>
 				</ul>
 				<ul className={styles.buttonListContent}>
-				{formState?.strapiErrors ? (
-					<li className={styles.errorMessage}>{formState?.strapiErrors.message}</li>) : null
-				}
+					{formState?.strapiErrors ? (
+						<li className={styles.errorMessage}>
+							{formState?.strapiErrors.message}
+						</li>
+					) : null}
 					<li className={styles.interButton}>
 						<Button
 							type={ButtonType.Violet}
@@ -209,4 +214,3 @@ const RegisterForm = () => {
 };
 
 export default RegisterForm;
-

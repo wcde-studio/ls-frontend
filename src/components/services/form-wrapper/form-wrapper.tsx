@@ -19,8 +19,6 @@ type TFormWrapperProps = {
 	children?: ReactNode;
 	className?: string;
 };
-;
-
 const FormWrapper = (props: TFormWrapperProps) => {
 	const { title = '', text, loading = false, children, className } = props;
 
@@ -31,7 +29,7 @@ const FormWrapper = (props: TFormWrapperProps) => {
 		router.push(loginReturnPath, { scroll: false });
 	};
 
-	const classNameFormWrapper = clsx(className, styles.formWrapper)
+	const classNameFormWrapper = clsx(className, styles.formWrapper);
 
 	return (
 		<div className={classNameFormWrapper}>

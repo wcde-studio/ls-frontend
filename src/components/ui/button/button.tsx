@@ -11,7 +11,6 @@ import { ButtonSize, ButtonType, ButtonHtmlType } from './types';
 import { useFormStatus } from 'react-dom';
 import { LoadingSpinner } from '@/components/services';
 
-
 interface IButtonProps {
 	type: ButtonType;
 	size: ButtonSize;
@@ -45,14 +44,14 @@ const Button = (props: IButtonProps) => {
 	//console.log(pending);
 	return (
 		<>
-		{pending ? <LoadingSpinner /> : null}
-		<button
-			disabled={disabled && pending}
-			className={classNameButton}
-			onClick={onClick}
-			type={htmlType}>
-			{title}
-		</button>
+			{pending ? <LoadingSpinner /> : null}
+			<button
+				disabled={disabled && pending}
+				className={classNameButton}
+				onClick={onClick}
+				type={htmlType}>
+				{title}
+			</button>
 		</>
 	);
 };
