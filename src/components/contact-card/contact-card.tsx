@@ -34,9 +34,7 @@ const ContactCard = (props: TContactCardProps) => {
 				{chats?.map((chat) => (
 					<li className={styles.contact} key={chat.id}>
 						<h2 className={styles.chatTitle}>{chat.title}</h2>
-						<Link
-							href={chat.link}
-							className={styles.chatLink}>
+						<Link href={chat.link} className={styles.chatLink}>
 							{chat.link}
 						</Link>
 					</li>

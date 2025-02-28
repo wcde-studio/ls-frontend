@@ -110,7 +110,7 @@ export async function getIntro() {
 	return await getServerData(path, searchParams);
 }
 
-export async function getCourse (	id: string) {
+export async function getCourse(id: string) {
 	const path = '/api/courses';
 	const searchParams = {
 		filters: {
@@ -134,7 +134,7 @@ export async function getCourse (	id: string) {
 		},
 	};
 	return await getServerData(path, searchParams);
-};
+}
 
 export async function getServerDataFromClient(
 	path: string,
@@ -155,7 +155,7 @@ export async function getServerDataFromClient(
 	}
 }
 
-export async function getCourses (
+export async function getCourses(
 	currentPage: number,
 	pageSize: number,
 	topic: string,
@@ -186,18 +186,4 @@ export async function getCourses (
 	};
 
 	return await getServerDataFromClient(path, searchParams);
-};
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}

@@ -82,4 +82,3 @@ const CourseIntro = (props: TCourseIntroProps) => {
 };
 
 export default CourseIntro;
-
