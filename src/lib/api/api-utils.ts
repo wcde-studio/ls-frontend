@@ -187,3 +187,13 @@ export async function getCourses(
 
 	return await getServerDataFromClient(path, searchParams);
 }
+
+export async function getCourseTopics() {
+	const path = '/api/courses';
+	const searchParams = {
+			fields: ['topic']
+	};
+
+	return await getServerData(path, searchParams);
+}
+

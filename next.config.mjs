@@ -38,8 +38,7 @@ const nextConfig = {
 				port: '',
 				pathname: '**',
 			},
-		],
-		domains: [process.env.NEXT_PUBLIC_API_SERVER_HOST],
+		]
 	},
 };
 
