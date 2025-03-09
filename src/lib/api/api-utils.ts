@@ -191,9 +191,8 @@ export async function getCourses(
 export async function getCourseTopics() {
 	const path = '/api/courses';
 	const searchParams = {
-			fields: ['topic']
+		fields: ['topic'],
 	};
 
 	return await getServerData(path, searchParams);
 }
-

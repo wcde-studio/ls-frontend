@@ -1,12 +1,19 @@
+'use server';
 import styles from './footer.module.scss';
-import React from 'react';
+import { getSocials } from '@/lib/api/api-utils';
+
+//import React from 'react';
+
 
 import Link from 'next/link';
 
-import { WCDEIcon, TelegramIcon, WhatsUpIcon, VKIcon } from '@/components/ui';
+import { WCDEIcon } from '@/components/ui';
 import SocialLinks from '@/components/services/social-links/social-links';
 
-const Footer = () => {
+const Footer = async () => {
+	const data = await getSocials();
+	const socials = data?.data;
+
 	return (
 		<footer className={styles.footer}>
 			<div className={styles.footerWrapper}>
@@ -28,16 +35,11 @@ const Footer = () => {
 									<Link href={'/contacts'}>Контакты</Link>
 								</div>
 							</li>
-							<li className={styles.siteMapLinkWrapper}>
-								<div className={styles.siteMapLink}>
-									<Link href={'/auth/personal-area'}>Личный кабинет</Link>
-								</div>
-							</li>
 						</ul>
 					</nav>
 					<div className={styles.socialLinksContainer}>
 						<ul className={styles.socialLinksWrapper}>
-							<SocialLinks />
+							<SocialLinks socials={socials}/>
 						</ul>
 					</div>
 				</div>
@@ -67,3 +69,11 @@ const Footer = () => {
 };
 
 export default Footer;
+
+/*
+							<li className={styles.siteMapLinkWrapper}>
+								<div className={styles.siteMapLink}>
+									<Link href={'/auth/personal-area'}>Личный кабинет</Link>
+								</div>
+							</li>
+*/

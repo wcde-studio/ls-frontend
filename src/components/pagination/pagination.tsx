@@ -1,3 +1,4 @@
+'use client';
 import React, { SetStateAction } from 'react';
 
 import clsx from 'clsx';
