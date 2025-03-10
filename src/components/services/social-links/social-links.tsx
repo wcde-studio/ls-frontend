@@ -9,9 +9,8 @@ type TSocialType = {
 
 interface ISocialLinksProps {
 	className?: string;
-	socials?: TSocialType[]; 
+	socials?: TSocialType[];
 }
-
 
 const selectIcons = (title: string) => {
 	if (title.includes('telegram')) return <TelegramIcon />;

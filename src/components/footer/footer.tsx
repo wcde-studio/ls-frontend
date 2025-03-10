@@ -4,7 +4,6 @@ import { getSocials } from '@/lib/api/api-utils';
 
 //import React from 'react';
 
-
 import Link from 'next/link';
 
 import { WCDEIcon } from '@/components/ui';
@@ -39,7 +38,7 @@ const Footer = async () => {
 					</nav>
 					<div className={styles.socialLinksContainer}>
 						<ul className={styles.socialLinksWrapper}>
-							<SocialLinks socials={socials}/>
+							<SocialLinks socials={socials} />
 						</ul>
 					</div>
 				</div>

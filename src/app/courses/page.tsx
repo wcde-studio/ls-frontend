@@ -1,98 +1,65 @@
-'use client';
+'use server';
 import styles from './page.module.scss';
 
 import { useState, useMemo, useEffect } from 'react';
 import Courses from '@/components/courses/courses';
-import DropList from '@/components/services/drop-list/drop-list';
+import DropListLinkComponent from '@/components/services/drop-list/drop-list-link-component';
 
-//import { courses } from '@/lib/courses-data';
-
-import Pagination from '@/components/pagination/pagination';
+import PaginationLinkComponent from '@/components/pagination/pagination-link-component';
 //import getCourses from '@/lib/api/api-courses';
-import { getCourses } from '@/lib/api/api-utils';
+import { getCourses, getCourseTopics } from '@/lib/api/api-utils';
 
-type TCourses = {
-	id: number;
-	documentId: string;
-	name: string;
-	date: string;
-	city: string;
-	end: string;
-	duration: string;
-	target: string;
-	goals: string;
-	description: string;
-	createdAt: string;
-	updatedAt: string;
-	publishedAt: string;
-	title: string;
-	topic: string;
-	image: {
-		id: number;
-		documentId: string;
-		alternativeText: null | string;
-		name: string;
-		url: string;
-	};
+interface SearchParamsProps {
+	searchParams?: {
+		page?: string;
+		topic?: string;
+		query?: string;
+	}
 };
 
-export default function CoursesPage() {
-	const courseTopics = useMemo(() => {
-		return [
-			{ id: 0, text: 'Эзотерика' },
-			{ id: 1, text: 'Бизнес' },
-			{ id: 2, text: 'Все курсы' },
-		];
-	}, []);
+export default async function CoursesPage( { searchParams }: SearchParamsProps) {
 
-	const [topic, setTopic] = useState(courseTopics[2].text);
-	const [currentPage, setCurrentPage] = useState(1);
-	const [totalCount, setTotalCount] = useState(6);
+	const search = await searchParams;
+	const allCourseTopic = { id: 0, topic: 'Все курсы' };
+
+	const topic = search?.topic ? search?.topic : allCourseTopic.topic;
+
+	const currentPage = search?.page ? Number(search?.page) : 1;
 	const pageSize = 6;
-	const [coursesData, setCoursesData] = useState<TCourses[] | null>(null);
-
-	useEffect(() => {
-		setCurrentPage(1);
-	}, [topic]);
-
-	useEffect(() => {
-		async function fetchData() {
-			const data = await getCourses(
+	
+	const data = await getCourses(
 				currentPage,
 				pageSize,
 				topic,
-				courseTopics[2].text
+				allCourseTopic.topic
 			);
 
-			const courses = data?.data;
-			if (courses) setCoursesData(courses);
-			if (data?.meta.pagination.total)
-				setTotalCount(data?.meta.pagination.total);
-		}
-		fetchData();
-	}, [currentPage, topic, courseTopics]);
+	const courseTopics = await getCourseTopics();
+	courseTopics.push(allCourseTopic);
 
+	const totalCount = data?.meta ? Number(data?.meta.pagination.total) : 6;
+	const coursesData = data?.data;
+	
 	return (
 		<>
 			<section className={styles.titleSection}>
 				<h1 className={styles.title}>Курсы</h1>
-				<DropList
+				<DropListLinkComponent
 					title={'Тематика курса'}
 					items={courseTopics}
 					currentItem={topic}
-					setCurrentItem={setTopic}
 				/>
 			</section>
 			<section className={styles.section}>
 				{coursesData ? <Courses coursesData={coursesData} /> : null}
 			</section>
 			<section className={styles.paginationSection}>
-				<Pagination
+				<PaginationLinkComponent
 					className="paginationBar"
 					currentPage={currentPage}
 					totalCount={totalCount}
 					pageSize={pageSize}
-					onPageChange={(page) => setCurrentPage(page as number)}
+
 				/>
 			</section>
 		</>

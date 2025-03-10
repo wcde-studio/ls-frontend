@@ -38,6 +38,18 @@ const nextConfig = {
 				port: '1337',
 				pathname: '**',
 			},
+			{
+				protocol: 'https',
+				hostname: 'ls-admin.widev.ru',
+				port: '',
+				pathname: '**',
+			},
+			{
+				protocol: 'http',
+				hostname: 'ls-admin-panel',
+				port: '1337',
+				pathname: '**',
+			},
 		],
 	},
 };

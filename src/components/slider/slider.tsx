@@ -23,7 +23,7 @@ interface ISliderProps {
 		name: string;
 		text: string;
 	}[];
-}
+} 
 
 const Slider = (props: ISliderProps) => {
 	const { reviews } = props;
