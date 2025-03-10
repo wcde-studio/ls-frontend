@@ -15,6 +15,7 @@ export const metadata: Metadata = {
 	applicationName: 'Школа Лады/WCDE',
 	referrer: 'origin-when-cross-origin',
 	keywords: ['Next.js', 'React', 'JavaScript', 'WCDE', 'Школа Лады'],
+	icons: [{ url: '/favicon.ico' }],
 };
 
 export default function RootLayout({

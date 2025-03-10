@@ -1,4 +1,5 @@
 import qs from 'qs';
+import { listenerCount } from 'stream';
 
 export function getApiServerURL() {
 	return process.env.NEXT_PUBLIC_API_SERVER_HOST ?? 'http://127.0.0.1:1337';
@@ -185,5 +186,28 @@ export async function getCourses(
 		},
 	};
 
-	return await getServerDataFromClient(path, searchParams);
+	//return await getServerDataFromClient(path, searchParams);
+	return await getServerData(path, searchParams);
+}
+
+export async function getCourseTopics() {
+	const path = '/api/courses';
+	const searchParams = {
+		fields: ['topic'],
+	};
+
+	const topicNames:Array<string> = [];
+	const topicsUnique = [];
+
+	const data =  await getServerData(path, searchParams);
+	const topics = data?.data;
+
+	for (let i = 0; i < topics.length; i++) {
+		if(!topicNames.includes(topics[i].topic)) {
+			topicNames.push(topics[i]?.topic);
+			topicsUnique.push(topics[i]);
+		}
+	}
+	
+	return topicsUnique;
 }

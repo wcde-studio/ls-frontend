@@ -1,24 +1,14 @@
 'use client';
 
-import React, { useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import { clsx } from 'clsx';
 import { LogoIcon, ProfileIcon } from '../ui';
 import styles from './header.module.scss';
 import Link from 'next/link';
 
-import useLoginStore from '@/components/forms/useLoginStore';
-
 const Header = () => {
 	const pathname = usePathname();
 	const isActive = (path: string) => path === pathname;
-
-	const login = useLoginStore((state) => state.login);
-	const setLoginReturnPath = useLoginStore((state) => state.setLoginReturnPath);
-
-	useEffect(() => {
-		pathname.indexOf('auth') === -1 ? setLoginReturnPath(pathname) : null;
-	}, [pathname, setLoginReturnPath]);
 
 	return (
 		<header className={styles.headerContainer}>
@@ -49,6 +39,24 @@ const Header = () => {
 						)}>
 						Контакты
 					</Link>
+				</nav>
+			</div>
+		</header>
+	);
+};
+
+export default Header;
+/*
+	import React, { useEffect } from 'react';
+	import useLoginStore from '@/components/forms/useLoginStore';
+
+	const login = useLoginStore((state) => state.login);
+	const setLoginReturnPath = useLoginStore((state) => state.setLoginReturnPath);
+
+	useEffect(() => {
+		pathname.indexOf('auth') === -1 ? setLoginReturnPath(pathname) : null;
+	}, [pathname, setLoginReturnPath]);
+
 					<Link
 						href={login ? '/auth/personal-area' : '/auth/login'}
 						scroll={false}
@@ -60,10 +68,5 @@ const Header = () => {
 						<ProfileIcon className={styles.iconProfile} />
 						<span className={styles.profileLinkText}>Личный кабинет</span>
 					</Link>
-				</nav>
-			</div>
-		</header>
-	);
-};
 
-export default Header;
+*/

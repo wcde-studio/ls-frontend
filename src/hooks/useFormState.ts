@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 import { useState, SetStateAction, Dispatch } from 'react';
 export const useFormState = (

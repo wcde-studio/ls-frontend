@@ -1,3 +1,4 @@
+'use client';
 import React, { useState } from 'react';
 
 import { InputName, InputType } from '@/components/ui/input/types';

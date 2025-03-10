@@ -1,3 +1,4 @@
+'use client';
 import React, { useState } from 'react';
 import { FormName } from '@/components/forms/types';
 import { InputName } from '@/components/ui/input/types';

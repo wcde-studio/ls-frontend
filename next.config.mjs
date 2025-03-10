@@ -33,13 +33,24 @@ const nextConfig = {
 	images: {
 		remotePatterns: [
 			{
+				protocol: 'http',
+				hostname: '127.0.0.1',
+				port: '1337',
+				pathname: '**',
+			},
+			{
 				protocol: 'https',
 				hostname: 'ls-admin.widev.ru',
 				port: '',
 				pathname: '**',
 			},
+			{
+				protocol: 'http',
+				hostname: 'ls-admin-panel',
+				port: '1337',
+				pathname: '**',
+			},
 		],
-		domains: [process.env.NEXT_PUBLIC_API_SERVER_HOST],
 	},
 };
 
