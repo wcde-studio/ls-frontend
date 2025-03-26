@@ -1,3 +1,8 @@
+@import '@/app/global-variables.scss';
+//$mobile-max-width: 480px;
+//$desktop-min-width: 481px;
+//$desktop-max-width: 1440px;
+
 .button {
 	border: none;
 	cursor: pointer;
@@ -13,6 +18,12 @@
 	line-height: 133%;
 	color: var(--dark-grey);
 	padding: 12px 0px;
+}
+
+@media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {
+	.button {
+		font-size: 16px;
+	}
 }
 
 .DESCTOP {

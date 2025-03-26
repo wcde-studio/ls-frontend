@@ -1,20 +1,16 @@
-
-@import "@/app/global-variables.scss";
 $mobile-max-width: 480px;
 $desktop-min-width: 481px;
 $desktop-max-width: 1440px;
 
+/*@import "@/app/global-variables.scss";
+$mobile-max-width: 480px;
+$desktop-min-width: 481px;
+$desktop-max-width: 1440px;
 
 @media screen and (min-device-width: $desktop-min-width) {
-	.main {
-		margin: 0 auto;
-		max-width: 1110px;
-	}
-	
 }
 
 @media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {
-	.main {
-		padding: 0px 24px;
-	}
 }
+*/
+

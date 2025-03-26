@@ -68,11 +68,3 @@ const Footer = async () => {
 };
 
 export default Footer;
-
-/*
-							<li className={styles.siteMapLinkWrapper}>
-								<div className={styles.siteMapLink}>
-									<Link href={'/auth/personal-area'}>Личный кабинет</Link>
-								</div>
-							</li>
-*/

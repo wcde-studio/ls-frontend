@@ -6,28 +6,13 @@ import { clsx } from 'clsx';
 
 import styles from './courses.module.scss';
 
-//import { CoursesCourseCard } from '@/components/course-card';
 import CourseCard from '@/components/course-card/course-card';
 import { CourseCardComposition } from '@/components/course-card/types';
 
 //import Pagination from '@/components/pagination/pagination';
 
 import getCourses from '@/lib/api/api-courses';
-/*
-type TCoursesProps = {
-	coursesData: {
-		id: number;
-		name: string;
-		image: string;
-		date: string;
-		city: string;
-		end: string;
-		duration: string;
-		target: string;
-		topic: string;
-	}[];
-};
-*/
+
 type TCoursesProps = {
 	coursesData: {
 		id: number;
@@ -64,7 +49,7 @@ const Courses = (props: TCoursesProps) => {
 			{coursesData.length ? (
 				<ul className={styles.coursesList}>
 					{coursesData?.map((course) => (
-						<li key={course.id}>
+						<li key={course.id} className={styles.cardWrapper}>
 							<Link href={`/courses/${course.id}`}>
 								{
 									<CourseCard

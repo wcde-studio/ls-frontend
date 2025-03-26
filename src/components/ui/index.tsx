@@ -43,6 +43,7 @@ import Button from './button/button';
 import IconButton from './button/icon-button/icon-button';
 import Input from './input/input';
 import CheckboxIcon from './icons/checkbox-icon';
+import MenuIcon from './icons/menu-icon';
 
 export {
 	LogoIcon,
@@ -82,4 +83,5 @@ export {
 	CheckboxIcon,
 	PlaceIcon,
 	PlaceBigIcon,
+	MenuIcon,
 };

@@ -32,11 +32,11 @@ const PaginationLinkComponent = (props: IPagination) => {
 	const router = useRouter();
 
 	const topic = searchParams.get('topic');
-	
+
 	const createPageURL = (pageNumber: number | string) => {
 		const params = new URLSearchParams();
 		params.set('page', pageNumber.toString());
-		if(topic) params.set('topic', topic);
+		if (topic) params.set('topic', topic);
 		return `${pathname}?${params.toString()}`;
 	};
 
@@ -51,7 +51,8 @@ const PaginationLinkComponent = (props: IPagination) => {
 		pageSize,
 	});
 
-	const lastPage = paginationRange && paginationRange[paginationRange.length - 1];
+	const lastPage =
+		paginationRange && paginationRange[paginationRange.length - 1];
 
 	if (currentPage === 0 || (paginationRange && paginationRange.length < 2)) {
 		return null;

@@ -2,21 +2,49 @@
 
 import { usePathname } from 'next/navigation';
 import { clsx } from 'clsx';
-import { LogoIcon, ProfileIcon } from '../ui';
+import { LogoIcon, ProfileIcon, MenuIcon, CloseIcon } from '../ui';
 import styles from './header.module.scss';
 import Link from 'next/link';
+import { useState, useEffect, useCallback } from 'react';
 
 const Header = () => {
 	const pathname = usePathname();
 	const isActive = (path: string) => path === pathname;
+	const [menuOpen, setMenuOpen] = useState(false);
+	const [y, setY] = useState(0);
+	const [scrollUp, setScrollUp] = useState(false);
+
+	const handlerNavigation = useCallback(() => {
+		if(y > window?.scrollY) {
+			setScrollUp(true);
+		} else {
+			setScrollUp(false);
+		} 
+		setY(window?.scrollY);
+	}, [y]);
+	 
+	useEffect(() => {
+//		console.log(scrollUp);
+		window.addEventListener('scroll', handlerNavigation);
+		return () => window.removeEventListener('scroll', handlerNavigation);	
+	}, [handlerNavigation]);
+
+	useEffect(()=> {
+		setMenuOpen(false);
+	}, [pathname])
 
 	return (
-		<header className={styles.headerContainer}>
+		<header className={clsx(
+			styles.headerContainer, 
+			{[styles.menuOpen]: menuOpen}, 
+			{[styles.sticky]: scrollUp}
+		)}>
 			<div className={styles.header}>
 				<Link href="/" className={styles.logoContainer}>
 					<LogoIcon className={styles.iconLogo} />
 					<p className={styles.logoText}>Проектирование жизни и бизнеса</p>
 				</Link>
+
 				<nav className={styles.navigation}>
 					<Link
 						href="/"
@@ -40,6 +68,18 @@ const Header = () => {
 						Контакты
 					</Link>
 				</nav>
+				<button 
+					onClick={() => setMenuOpen(!menuOpen)}
+					className={clsx(styles.menuButton, styles.mobile)}
+				>
+					<MenuIcon />
+				</button>
+				<button 
+					className={clsx(styles.closeButton, styles.mobile)}
+					onClick={() => setMenuOpen(!menuOpen)}
+				>
+					<CloseIcon />
+				</button>			
 			</div>
 		</header>
 	);

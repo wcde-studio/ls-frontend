@@ -35,7 +35,6 @@ const DropListLinkComponent = (props: TDropListProps) => {
 	const onTopic = (href: string) => {
 		setIsActive(!isActive);
 		router.push(href);
-
 	};
 
 	const [isActive, setIsActive] = useState(false);
@@ -55,7 +54,9 @@ const DropListLinkComponent = (props: TDropListProps) => {
 								[styles.activeItem]: currentItem === item.topic,
 							})}
 							key={item.id}>
-							<button className={styles.menuItem} onClick={() => onTopic(createPageURL(item.topic))}>
+							<button
+								className={styles.menuItem}
+								onClick={() => onTopic(createPageURL(item.topic))}>
 								{item.topic}
 							</button>
 						</li>

@@ -12,7 +12,7 @@ type TModalProps = {
 };
 
 const Modal = (props: TModalProps) => {
-	const { children, returnPath } = props;
+	const { children } = props;
 
 	const router = useRouter();
 	const pathname = usePathname();

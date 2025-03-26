@@ -15,6 +15,7 @@
 	margin: 0 auto;
 	width: 100%;
 	background: var(--brown);
+	min-width: var(--desctop-min-width);
 }
 
 .footerWrapper {
@@ -89,7 +90,8 @@
 .privacyPolicyWrapper {
 	@extend %maxWidth;
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(370px, auto));
+	grid-template-columns: repeat(auto-fit, minmax(355px, auto));
+	//grid-template-columns: 1fr 1fr;
 	align-items: center;
 	padding: 26px 0px;
 }

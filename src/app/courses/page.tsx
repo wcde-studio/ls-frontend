@@ -14,11 +14,10 @@ interface SearchParamsProps {
 		page?: string;
 		topic?: string;
 		query?: string;
-	}
-};
+	};
+}
 
-export default async function CoursesPage( { searchParams }: SearchParamsProps) {
-
+export default async function CoursesPage({ searchParams }: SearchParamsProps) {
 	const search = await searchParams;
 	const allCourseTopic = { id: 0, topic: 'Все курсы' };
 
@@ -26,20 +25,20 @@ export default async function CoursesPage( { searchParams }: SearchParamsProps) 
 
 	const currentPage = search?.page ? Number(search?.page) : 1;
 	const pageSize = 6;
-	
+
 	const data = await getCourses(
-				currentPage,
-				pageSize,
-				topic,
-				allCourseTopic.topic
-			);
+		currentPage,
+		pageSize,
+		topic,
+		allCourseTopic.topic
+	);
 
 	const courseTopics = await getCourseTopics();
 	courseTopics.push(allCourseTopic);
 
 	const totalCount = data?.meta ? Number(data?.meta.pagination.total) : 6;
 	const coursesData = data?.data;
-	
+
 	return (
 		<>
 			<section className={styles.titleSection}>
@@ -59,7 +58,6 @@ export default async function CoursesPage( { searchParams }: SearchParamsProps) 
 					currentPage={currentPage}
 					totalCount={totalCount}
 					pageSize={pageSize}
-
 				/>
 			</section>
 		</>
