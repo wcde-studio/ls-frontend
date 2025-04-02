@@ -44,6 +44,7 @@ import IconButton from './button/icon-button/icon-button';
 import Input from './input/input';
 import CheckboxIcon from './icons/checkbox-icon';
 import MenuIcon from './icons/menu-icon';
+import MobileMenuIcon from './icons/mobile-menu-icon';
 
 export {
 	LogoIcon,
@@ -84,4 +85,5 @@ export {
 	PlaceIcon,
 	PlaceBigIcon,
 	MenuIcon,
+	MobileMenuIcon
 };

@@ -8,6 +8,8 @@ import DropListLinkComponent from '@/components/services/drop-list/drop-list-lin
 import PaginationLinkComponent from '@/components/pagination/pagination-link-component';
 //import getCourses from '@/lib/api/api-courses';
 import { getCourses, getCourseTopics } from '@/lib/api/api-utils';
+import clsx from 'clsx';
+
 
 interface SearchParamsProps {
 	searchParams?: {
@@ -42,7 +44,7 @@ export default async function CoursesPage({ searchParams }: SearchParamsProps) {
 	return (
 		<>
 			<section className={styles.titleSection}>
-				<h1 className={styles.title}>Курсы</h1>
+				<h1 className={clsx(styles.title, styles.desktop)}>Курсы</h1>
 				<DropListLinkComponent
 					title={'Тематика курса'}
 					items={courseTopics}

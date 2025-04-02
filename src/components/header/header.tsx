@@ -15,30 +15,31 @@ const Header = () => {
 	const [scrollUp, setScrollUp] = useState(false);
 
 	const handlerNavigation = useCallback(() => {
-		if(y > window?.scrollY) {
+		if (y > window?.scrollY) {
 			setScrollUp(true);
 		} else {
 			setScrollUp(false);
-		} 
+		}
 		setY(window?.scrollY);
 	}, [y]);
-	 
+
 	useEffect(() => {
-//		console.log(scrollUp);
+		//		console.log(scrollUp);
 		window.addEventListener('scroll', handlerNavigation);
-		return () => window.removeEventListener('scroll', handlerNavigation);	
+		return () => window.removeEventListener('scroll', handlerNavigation);
 	}, [handlerNavigation]);
 
-	useEffect(()=> {
+	useEffect(() => {
 		setMenuOpen(false);
-	}, [pathname])
+	}, [pathname]);
 
 	return (
-		<header className={clsx(
-			styles.headerContainer, 
-			{[styles.menuOpen]: menuOpen}, 
-			{[styles.sticky]: scrollUp}
-		)}>
+		<header
+			className={clsx(
+				styles.headerContainer,
+				{ [styles.menuOpen]: menuOpen },
+				{ [styles.sticky]: scrollUp }
+			)}>
 			<div className={styles.header}>
 				<Link href="/" className={styles.logoContainer}>
 					<LogoIcon className={styles.iconLogo} />
@@ -68,18 +69,16 @@ const Header = () => {
 						Контакты
 					</Link>
 				</nav>
-				<button 
+				<button
 					onClick={() => setMenuOpen(!menuOpen)}
-					className={clsx(styles.menuButton, styles.mobile)}
-				>
+					className={clsx(styles.menuButton, styles.mobile)}>
 					<MenuIcon />
 				</button>
-				<button 
+				<button
 					className={clsx(styles.closeButton, styles.mobile)}
-					onClick={() => setMenuOpen(!menuOpen)}
-				>
+					onClick={() => setMenuOpen(!menuOpen)}>
 					<CloseIcon />
-				</button>			
+				</button>
 			</div>
 		</header>
 	);
