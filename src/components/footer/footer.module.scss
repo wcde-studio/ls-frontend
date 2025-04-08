@@ -1,4 +1,4 @@
-@import "@/app/global-variables.scss";
+@import '@/app/global-variables.scss';
 //$mobile-max-width: 480px;
 //$desktop-min-width: 481px;
 //$desktop-max-width: 1440px;
@@ -39,9 +39,7 @@
 	}
 }
 
-
 .footer {
-
 	background: var(--brown);
 	//min-width: var(--desctop-min-width);
 }
@@ -49,7 +47,6 @@
 @media screen and (min-device-width: $desktop-min-width) {
 	.footer {
 		margin: 0 auto;
-
 	}
 }
 
@@ -58,9 +55,7 @@
 		min-width: var(--mobile-min-width);
 		//width: 100vw;
 	}
-	
 }
-
 
 .footerWrapper {
 	margin: 0 auto;
@@ -70,16 +65,14 @@
 	.footerWrapper {
 		max-width: var(--desktop-max-width);
 	}
-		
 }
 
 @media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {
 	.footerWrapper {
-//		min-width: var(--mobile-min-width);
-		padding: 24px; 
+		//		min-width: var(--mobile-min-width);
+		padding: 24px;
 	}
 }
-
 
 .footerContainer {
 	display: flex;
@@ -94,7 +87,7 @@
 @media screen and (min-device-width: $desktop-min-width) {
 	.siteMapContainer {
 		padding-top: 72px;
-	}	
+	}
 }
 
 @media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {
@@ -107,11 +100,10 @@
 	display: grid;
 	grid-template-rows: auto;
 	row-gap: 24px;
-	@extend %mainFont;	
+	@extend %mainFont;
 }
 
 @media screen and (min-device-width: $desktop-min-width) {
-	
 }
 
 @media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {
@@ -149,7 +141,6 @@
 	}
 }
 
-
 .socialLinksWrapper {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
@@ -174,7 +165,6 @@
 	}
 }
 
-
 .attentionText {
 	@extend %mainFont;
 }
@@ -192,7 +182,6 @@
 		font-size: 12px;
 	}
 }
-
 
 .privacyPolicy {
 	background: var(--dark-beige);
@@ -217,7 +206,7 @@
 		gap: 24px;
 		padding: 12px 24px 24px 24px;
 		//min-width: var(--mobile-min-width);
-	}	
+	}
 }
 
 .privacyPolicyLink {
@@ -239,7 +228,6 @@
 		font-size: 12px;
 	}
 }
-
 
 .creators {
 	display: grid;
@@ -263,14 +251,12 @@
 	}
 }
 
-
 .creatorsLogo {
 }
 
 .creatorsName {
 	@extend %mainFont;
 	text-align: right;
-
 }
 
 @media screen and (min-device-width: $desktop-min-width) {
@@ -282,4 +268,3 @@
 		font-size: 12px;
 	}
 }
-

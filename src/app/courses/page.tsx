@@ -10,7 +10,6 @@ import PaginationLinkComponent from '@/components/pagination/pagination-link-com
 import { getCourses, getCourseTopics } from '@/lib/api/api-utils';
 import clsx from 'clsx';
 
-
 interface SearchParamsProps {
 	searchParams?: {
 		page?: string;

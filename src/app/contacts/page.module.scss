@@ -1,4 +1,4 @@
-@import "@/app/global-variables.scss";
+@import '@/app/global-variables.scss';
 
 .section {
 	display: flex;
@@ -10,15 +10,14 @@
 		gap: 76px;
 		padding: 140px 0px;
 	}
-	}
+}
 
 @media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {
 	.section {
 		gap: 24px;
 		padding-bottom: 40px;
 	}
-	}
-
+}
 
 .title {
 	font-family: var(--font-family);
@@ -36,9 +35,8 @@
 @media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {
 	.title {
 		font-size: 20px;
-	}	
+	}
 }
-
 
 .contactsList {
 	display: grid;
@@ -46,19 +44,18 @@
 
 @media screen and (min-device-width: $desktop-min-width) {
 	.contactsList {
-			//grid-template-columns: repeat(auto-fit, minmax(543px, 1fr));
-		grid-template-columns: repeat(auto-fit,	minmax(481px, 1fr));
+		//grid-template-columns: repeat(auto-fit, minmax(543px, 1fr));
+		grid-template-columns: repeat(auto-fit, minmax(481px, 1fr));
 		gap: 24px;
 	}
-	}
+}
 
 @media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {
 	.contactsList {
 		grid-template-columns: auto;
 		gap: 24px;
 	}
-	}
-
+}
 
 /*@import "@/app/global-variables.scss";
 $mobile-max-width: 480px;

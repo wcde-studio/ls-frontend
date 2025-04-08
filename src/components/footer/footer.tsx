@@ -44,7 +44,9 @@ const Footer = async () => {
 				</div>
 				<div className={styles.attention}>
 					<p className={styles.attentionText}>
-						{'Любое копирование материалов сайта допускается только разрешения правообладателя'}
+						{
+							'Любое копирование материалов сайта допускается только разрешения правообладателя'
+						}
 					</p>
 				</div>
 			</section>
@@ -54,11 +56,15 @@ const Footer = async () => {
 						<Link href={'/'}>Пользовательское соглашение</Link>
 					</div>
 					<div className={styles.creators}>
-						<div className={clsx(styles.creatorsName, styles.mobile)}>Сделано WCDE.studio 2023</div>
+						<div className={clsx(styles.creatorsName, styles.mobile)}>
+							Сделано WCDE.studio 2023
+						</div>
 						<div className={styles.creatorsLogo}>
 							<WCDEIcon />
 						</div>
-						<div className={clsx(styles.creatorsName, styles.desktop)}>Сделано WCDE.studio 2023</div>
+						<div className={clsx(styles.creatorsName, styles.desktop)}>
+							Сделано WCDE.studio 2023
+						</div>
 					</div>
 				</div>
 			</section>

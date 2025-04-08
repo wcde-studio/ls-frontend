@@ -1,4 +1,4 @@
-@import "@/app/global-variables.scss";
+@import '@/app/global-variables.scss';
 
 .card {
 	display: flex;
@@ -97,7 +97,7 @@ $desktop-max-width: 1440px;
 	.contacts {
 		gap: 12px;
 	}
-	}
+}
 
 @media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {
 	.contacts {
@@ -114,7 +114,6 @@ $desktop-max-width: 1440px;
 	align-items: center;
 }
 
-
 .chatTitle {
 	@extend %chatFont;
 	line-height: 120%;
@@ -127,7 +126,6 @@ $desktop-max-width: 1440px;
 	.chatTitle {
 		font-size: 14px;
 	}
-	
 }
 
 .chatLink {
@@ -158,11 +156,5 @@ $desktop-max-width: 1440px;
 	.tel {
 		font-weight: 400;
 		font-size: 14px;
-	}	
+	}
 }
-
-
-
-
-
-

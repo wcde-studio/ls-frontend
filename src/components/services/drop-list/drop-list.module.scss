@@ -1,24 +1,64 @@
+@import "@/app/global-variables.scss";
+/*$mobile-max-width: 480px;
+$desktop-min-width: 481px;
+$desktop-max-width: 1440px;
+*/
+
 .dropList {
-	position: relative;
 	display: flex;
 	flex-direction: column;
-	/*	width: 100%;*/
+}
+
+@media screen and (min-device-width: $desktop-min-width) {
+	.dropList {
+		position: relative;
+	}
+}
+
+@media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {
+	.dropList {
+		width: 100%;
+	}	
 }
 
 .title {
 	display: flex;
 	align-items: center;
-	justify-content: space-between;
 	cursor: pointer;
+}
+@media screen and (min-device-width: $desktop-min-width) {
+	.title {
+		justify-content: space-between;
+	}
+}
+
+@media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {
+	.title {
+		justify-content:flex-start;
+		gap: 8px;
+	}
 }
 
 .titleText {
 	font-family: var(--font-family);
-	font-weight: 700;
-	font-size: 24px;
-	line-height: 125%;
-	text-align: center;
 	color: var(--dark-grey);
+}
+@media screen and (min-device-width: $desktop-min-width) {
+	.titleText {
+		font-weight: 700;
+		font-size: 24px;
+		line-height: 125%;
+		text-align: center;
+	}
+}
+
+@media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {
+	.titleText {
+		font-family: var(--font-family);
+		font-weight: 500;
+		font-size: 20px;
+		color: var(--dark-grey);
+	}	
 }
 
 .title {
@@ -30,55 +70,208 @@
 	}
 }
 
+@media screen and (min-device-width: $desktop-min-width) {
+}
+
+@media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {
+}
+
 .menu {
 	position: absolute;
-	top: 40px;
-	right: 0px;
-	width: 259px;
 
-	box-shadow: 0 4px 5px 0 #e9edf3;
-	background: var(--white);
-	max-height: 0;
-	overflow: hidden;
-	//	transition-duration: 0.5s;
-	//	transition-property: max-height;
+}
+@media screen and (min-device-width: $desktop-min-width) {
+	.menu {
+		top: 40px;
+		right: 0px;
+		width: 259px;
+		max-height: 0;
+		overflow: hidden;
+		box-shadow: 0 4px 5px 0 #e9edf3;
+		background: var(--white);
+	
+	}
+}
+
+@media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {
+	.menu {
+		position:fixed;
+		top: 0px;
+		left: 0px;
+		height: 0;
+		width: 100vw;
+		background: rgba(68, 68, 68, 0.25);
+	}	
 }
 
 .menuItems {
 	display: flex;
 	flex-direction: column;
+
+}
+@media screen and (min-device-width: $desktop-min-width) {
+}
+
+@media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {
+	.menuItems {
+		gap: 12px;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		padding-top: 24px;
+		border-radius: 12px 12px 0 0;
+		height: 214px;
+		width: 100vw;
+		background: var(--white);
+	}
 }
 
 .menuItemWrapper {
 }
+@media screen and (min-device-width: $desktop-min-width) {
+}
 
-.menuItem {
-	border-bottom: 1px solid var(--light-violet);
-	padding: 12px 16px;
+@media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {
+	.menuItemWrapper {
+		display: flex;
+		justify-items: center;
+		align-items: center;
+		gap: 8px;
+		padding: 0px 24px 0px 24px;
+	}
+}
+
+.mobileMenuTitle {
+	padding: 0px 24px 12px 24px;
+	font-family: var(--font-family);
+	font-weight: 700;
+	font-size: 14px;
+	color: var(--dark-grey);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+}
+
+.mobileMenuTitleText {
+	font-family: var(--font-family);
+	font-weight: 700;
+	font-size: 14px;
+	color: var(--dark-grey);
+}
+
+.radioLabel {
 	font-family: var(--font-family);
 	font-weight: 400;
 	font-size: 18px;
 	line-height: 133%;
 	color: var(--dark-grey);
-	text-align: start;
-
-	cursor: pointer;
-	width: 100%;
 }
 
-.listOpened {
-	svg {
-		transform: rotate(180deg);
-		transition-duration: 0.5s;
-		transition-property: transform;
-	}
-	.menu {
-		max-height: 100rem;
-		transition-duration: 0.5s;
-		transition-property: max-height;
+@media screen and (min-device-width: $desktop-min-width) {
+	.radioLabel {
+		display: block;
+		margin: 0;
+		border-bottom: 1px solid var(--light-violet);
+		padding: 12px 16px;
+		text-align: start;	
+		cursor: pointer;
+		width: 100%;
 	}
 }
 
-.activeItem {
-	background: var(--light-violet);
+@media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {	
+	.radioLabel {
+		width: 100%;
+		text-align: start;
+		font-size: 14px;
+	
+		display: grid;
+		grid-template-columns: 1em auto;
+		justify-content:start;
+		align-items: center;
+
+		gap: 12px;
+	}
+	
+	.radioInput {
+		margin: 0;
+		width: 16px;
+		height: 16px;
+		border: 2px solid var(--dark-grey);
+		border-radius: 50%;
+		display: grid;
+		place-content: center;
+	}
+	
+	.radioInput::before {
+		content: '';
+		width: 10px;
+		height: 10px;
+		border-radius: 50%;
+		transform: scale(0);
+		background: var(--dark-grey);
+		//box-shadow:inset 10px 10px var(--dark-grey);
+	}
+	
+	.radioInput:checked::before {
+		transform:scale(1);
+	}
+}
+
+	.listOpened {
+		svg {
+			transform: rotate(180deg);
+			transition-duration: 0.5s;
+			transition-property: transform;
+		}
+	}
+
+@media screen and (min-device-width: $desktop-min-width) {
+	.listOpened {
+		.menu {
+			max-height: 100rem;
+			transition-duration: 0.5s;
+			transition-property: max-height;
+		}
+	}	
+}
+
+@media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {
+	.listOpened {
+		.menu {
+			width: 100vw;
+			height: 100vh;
+		}
+	}
+}
+
+@media screen and (min-device-width: $desktop-min-width) {
+	.activeItem {
+		background: var(--light-violet);
+	}
+}
+
+@media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {
+	.activeItem {
+		//background: var(--light-violet);
+		.radioInput::before {
+			transform:scale(1);
+		}	
+	}
+}
+
+
+
+
+@media screen and (min-device-width: $desktop-min-width) {
+	.mobile {
+		display: none;
+	}
+}
+
+@media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {
+	.desktop {
+		display: none;
+	}
 }
