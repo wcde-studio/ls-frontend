@@ -5,10 +5,23 @@
 	flex-direction: row;
 	align-items: center;
 	justify-content: space-between;
-	padding-top: 140px;
-
-	//border: 1px solid red;
 }
+
+@media screen and (min-device-width: $desktop-min-width) {
+	.titleSection {
+		padding-top: 140px;
+	}
+	
+}
+
+@media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {
+	.titleSection {
+		padding-top: 0px;
+	}
+	
+}
+
+
 @media screen and (min-device-width: $desktop-min-width) {
 	.desktop {
 		display: block;
@@ -24,12 +37,20 @@
 .section {
 	padding-top: 64px;
 	padding-bottom: 64px;
-	//border: 1px solid red;
 }
 @media screen and (min-device-width: $desktop-min-width) {
+	.section {
+		padding-top: 64px;
+		padding-bottom: 64px;
+	}
 }
 
 @media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {
+	.section {
+		padding-top: 24px;
+		padding-bottom: 40px;
+		//border: 1px solid red;
+	}
 }
 
 .title {
@@ -46,12 +67,16 @@
 }
 
 .paginationSection {
-	//	padding-top: 64px;
 	padding-bottom: 140px;
-	//	border: 1px solid red;
 }
 @media screen and (min-device-width: $desktop-min-width) {
+	.paginationSection {
+		padding-bottom: 140px;
+	}
 }
 
 @media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {
+	.paginationSection {
+		padding-bottom: 40px;
+	}
 }

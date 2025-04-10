@@ -1,4 +1,4 @@
-const ClockIcon = () => {
+const ClockIconMobile = () => {
 	return (
 		<svg
 			width="24"
@@ -16,4 +16,4 @@ const ClockIcon = () => {
 	);
 };
 
-export default ClockIcon;
+export default ClockIconMobile;

@@ -1,4 +1,4 @@
-@import "@/app/global-variables.scss";
+@import '@/app/global-variables.scss';
 /*$mobile-max-width: 480px;
 $desktop-min-width: 481px;
 $desktop-max-width: 1440px;
@@ -18,7 +18,7 @@ $desktop-max-width: 1440px;
 @media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {
 	.dropList {
 		width: 100%;
-	}	
+	}
 }
 
 .title {
@@ -34,7 +34,7 @@ $desktop-max-width: 1440px;
 
 @media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {
 	.title {
-		justify-content:flex-start;
+		justify-content: flex-start;
 		gap: 8px;
 	}
 }
@@ -58,7 +58,7 @@ $desktop-max-width: 1440px;
 		font-weight: 500;
 		font-size: 20px;
 		color: var(--dark-grey);
-	}	
+	}
 }
 
 .title {
@@ -78,7 +78,6 @@ $desktop-max-width: 1440px;
 
 .menu {
 	position: absolute;
-
 }
 @media screen and (min-device-width: $desktop-min-width) {
 	.menu {
@@ -89,25 +88,23 @@ $desktop-max-width: 1440px;
 		overflow: hidden;
 		box-shadow: 0 4px 5px 0 #e9edf3;
 		background: var(--white);
-	
 	}
 }
 
 @media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {
 	.menu {
-		position:fixed;
+		position: fixed;
 		top: 0px;
 		left: 0px;
 		height: 0;
 		width: 100vw;
 		background: rgba(68, 68, 68, 0.25);
-	}	
+	}
 }
 
 .menuItems {
 	display: flex;
 	flex-direction: column;
-
 }
 @media screen and (min-device-width: $desktop-min-width) {
 }
@@ -150,7 +147,6 @@ $desktop-max-width: 1440px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-
 }
 
 .mobileMenuTitleText {
@@ -174,26 +170,26 @@ $desktop-max-width: 1440px;
 		margin: 0;
 		border-bottom: 1px solid var(--light-violet);
 		padding: 12px 16px;
-		text-align: start;	
+		text-align: start;
 		cursor: pointer;
 		width: 100%;
 	}
 }
 
-@media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {	
+@media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {
 	.radioLabel {
 		width: 100%;
 		text-align: start;
 		font-size: 14px;
-	
+
 		display: grid;
 		grid-template-columns: 1em auto;
-		justify-content:start;
+		justify-content: start;
 		align-items: center;
 
 		gap: 12px;
 	}
-	
+
 	.radioInput {
 		margin: 0;
 		width: 16px;
@@ -203,7 +199,7 @@ $desktop-max-width: 1440px;
 		display: grid;
 		place-content: center;
 	}
-	
+
 	.radioInput::before {
 		content: '';
 		width: 10px;
@@ -213,19 +209,19 @@ $desktop-max-width: 1440px;
 		background: var(--dark-grey);
 		//box-shadow:inset 10px 10px var(--dark-grey);
 	}
-	
+
 	.radioInput:checked::before {
-		transform:scale(1);
+		transform: scale(1);
 	}
 }
 
-	.listOpened {
-		svg {
-			transform: rotate(180deg);
-			transition-duration: 0.5s;
-			transition-property: transform;
-		}
+.listOpened {
+	svg {
+		transform: rotate(180deg);
+		transition-duration: 0.5s;
+		transition-property: transform;
 	}
+}
 
 @media screen and (min-device-width: $desktop-min-width) {
 	.listOpened {
@@ -234,7 +230,7 @@ $desktop-max-width: 1440px;
 			transition-duration: 0.5s;
 			transition-property: max-height;
 		}
-	}	
+	}
 }
 
 @media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {
@@ -256,13 +252,10 @@ $desktop-max-width: 1440px;
 	.activeItem {
 		//background: var(--light-violet);
 		.radioInput::before {
-			transform:scale(1);
-		}	
+			transform: scale(1);
+		}
 	}
 }
-
-
-
 
 @media screen and (min-device-width: $desktop-min-width) {
 	.mobile {

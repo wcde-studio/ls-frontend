@@ -6,15 +6,14 @@ import { usePathname, useRouter } from 'next/navigation';
 import styles from './drop-list.module.scss';
 import clsx from 'clsx';
 
-import { 
-	UpChevronGreyIcon, 
-	MobileMenuIcon, 
-	CheckboxRoundIcon, 
+import {
+	UpChevronGreyIcon,
+	MobileMenuIcon,
+	CheckboxRoundIcon,
 	CheckboxRingIcon,
 	InputCloseIcon,
-	CloseIconMobile
- } from '@/components/ui';
-
+	CloseIconMobile,
+} from '@/components/ui';
 
 type TItem = {
 	id: number;
@@ -50,13 +49,17 @@ const DropListLinkComponent = (props: TDropListProps) => {
 
 	return (
 		<section className={dropList}>
-			<button className={clsx(styles.title, styles.desktop)} onClick={() => setIsActive(!isActive)}>
+			<button
+				className={clsx(styles.title, styles.desktop)}
+				onClick={() => setIsActive(!isActive)}>
 				<h2 className={styles.titleText}>{title}</h2>
-					<UpChevronGreyIcon />
+				<UpChevronGreyIcon />
 			</button>
-			<button className={clsx(styles.title, styles.mobile)} onClick={() => setIsActive(!isActive)}>
+			<button
+				className={clsx(styles.title, styles.mobile)}
+				onClick={() => setIsActive(!isActive)}>
 				<h2 className={styles.titleText}>{currentItem}</h2>
-					<MobileMenuIcon />				
+				<MobileMenuIcon />
 			</button>
 			<nav className={styles.menu}>
 				<ul className={styles.menuItems}>
@@ -71,17 +74,16 @@ const DropListLinkComponent = (props: TDropListProps) => {
 							className={clsx(styles.menuItemWrapper, {
 								[styles.activeItem]: currentItem === item.topic,
 							})}
-							key={item.id}
-						>
-						<label className={styles.radioLabel}>
-							<input 
-								className={styles.radioInput}
-								type='radio'
-								name='radio'
-								onChange={() => onTopic(createPageURL(item.topic))}
-							/>
-							{item.topic}
-      			</label>
+							key={item.id}>
+							<label className={styles.radioLabel}>
+								<input
+									className={styles.radioInput}
+									type="radio"
+									name="radio"
+									onChange={() => onTopic(createPageURL(item.topic))}
+								/>
+								{item.topic}
+							</label>
 						</li>
 					))}
 				</ul>

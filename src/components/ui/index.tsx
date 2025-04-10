@@ -33,10 +33,16 @@ import EyeOpenIcon from './icons/eye-open-icon';
 import EditIcon from './icons/edit-icon';
 import ExitIcon from './icons/exit-icon';
 import CalendarIcon from './icons/calendar-icon';
+import CalendarIconMobile from './icons/calendar-icon-mobile';
+
 import CalendarBigIcon from './icons/calendar-big-icon';
 import ClockIcon from './icons/clock-icon';
+import ClockIconMobile from './icons/clock-icon-mobile';
+
 import ClockBigIcon from './icons/clock-big-icon';
 import PlaceIcon from './icons/place-icon';
+import PlaceIconMobile from './icons/place-icon-mobile';
+
 import PlaceBigIcon from './icons/place-big-icon';
 
 import Button from './button/button';
@@ -80,16 +86,19 @@ export {
 	EditIcon,
 	ExitIcon,
 	ClockIcon,
+	ClockIconMobile,
 	ClockBigIcon,
 	CalendarIcon,
+	CalendarIconMobile,
 	CalendarBigIcon,
 	Input,
 	CheckboxIcon,
 	PlaceIcon,
+	PlaceIconMobile,
 	PlaceBigIcon,
 	MenuIcon,
 	MobileMenuIcon,
 	CheckboxRoundIcon,
 	CheckboxRingIcon,
-	CloseIconMobile
+	CloseIconMobile,
 };

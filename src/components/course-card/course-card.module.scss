@@ -1,3 +1,6 @@
+@import "@/app/global-variables.scss";
+
+
 .card {
 	background: var(--white);
 }
@@ -11,6 +14,13 @@
 	justify-content: center;
 	align-items: center;
 }
+
+@media screen and (min-device-width: $desktop-min-width) {
+}
+
+@media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {
+}
+
 
 .wrapper {
 	display: flex;
@@ -30,6 +40,40 @@
 	}
 }
 
+@media screen and (min-device-width: $desktop-min-width) {
+	.description {
+		ul {
+			display: flex;
+			flex-direction: column;
+			gap: 8px;
+		}
+		.location {
+			display: none;
+		}
+		.mobile {
+			display: none;
+		}
+	}
+}
+
+@media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {
+	.description {
+		ul {
+			display: flex;
+			flex-direction: column;
+			gap: 4px;
+		}
+		.location {
+			display: none;
+		}
+		.desktop {
+			display: none;
+		}
+	}
+}
+
+
+
 %mainFont {
 	font-family: var(--font-family);
 	font-weight: 700;
@@ -40,45 +84,123 @@
 
 .name {
 	@extend %mainFont;
-	padding-bottom: 16px;
+}
+
+
+@media screen and (min-device-width: $desktop-min-width) {
+	.name {
+		padding-bottom: 16px;
+	}
+	
+}
+
+@media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {
+	.name {
+		font-size: 16px;
+		padding-bottom: 12px;
+	}
+	
 }
 
 .date,
 .city,
 .duration {
 	display: flex;
-	gap: 12px;
+}
+@media screen and (min-device-width: $desktop-min-width) {
+	.date,
+	.city,
+	.duration {
+		gap: 12px;
+	}	
+}
+
+@media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {
+	.date,
+	.city,
+	.duration {
+		gap: 4px;
+	}	
 }
 
 .text,
 .target {
 	@extend %mainFont;
 	font-weight: 400;
-	font-size: 18px;
 	line-height: 133%;
 }
+
+@media screen and (min-device-width: $desktop-min-width) {
+	.text,
+	.target {
+		font-size: 18px;
+	}
+}
+
+@media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {
+	.text,
+	.target {
+		font-size: 12px;
+	}
+	}
+
 
 .targetTitle {
 	@extend %mainFont;
-	font-size: 18px;
 	line-height: 133%;
-	padding-top: 8px;
 }
 
-.COURSES {
-	display: grid;
-	grid-template-columns: max-content 1fr;
-	width: 100%;
-
-	a {
-		display: none;
-	}
-	.image {
-		//width: 100%;
-		height: 100%;
-		object-fit: cover;
+@media screen and (min-device-width: $desktop-min-width) {
+	.targetTitle {
+		font-size: 18px;
+		padding-top: 8px;
 	}
 }
+
+@media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {
+	.targetTitle {
+		font-size: 12px;
+		padding-top: 12px;
+	}
+}
+
+
+
+@media screen and (min-device-width: $desktop-min-width) {
+	.COURSES {
+		display: grid;
+		grid-template-columns: max-content 1fr;
+		width: 100%;
+	
+		a {
+			display: none;
+		}
+		.image {
+			//width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+}
+
+@media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {
+	.COURSES {
+		display: grid;
+		grid-template-columns: max-content 1fr ; 
+		width: 100%;
+	
+		a {
+			display: none;
+		}
+		.image {
+			width: 114px;
+			height: 215px;
+			object-fit: cover;
+		}
+	}
+}
+
+
 
 .PERSONAL {
 	display: grid;
@@ -165,3 +287,16 @@
 		padding-left: 16px;
 	}
 }
+
+@media screen and (min-device-width: $desktop-min-width) {
+	.mobile {
+		display: none;
+	}
+}
+
+@media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {
+	.desktop {
+		display: none;
+	}
+}
+

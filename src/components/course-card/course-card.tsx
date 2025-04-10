@@ -7,7 +7,7 @@ import Link from 'next/link';
 
 import clsx from 'clsx';
 
-import { CalendarIcon, ClockIcon, PlaceIcon } from '@/components/ui';
+import { CalendarIcon, CalendarIconMobile, ClockIcon, PlaceIcon, ClockIconMobile, PlaceIconMobile } from '@/components/ui';
 
 import { Button } from '@/components/ui';
 import { ButtonSize, ButtonType } from '@/components/ui/button/types';
@@ -110,7 +110,7 @@ const CourseCard = (props: TCourseCardProps) => {
 						<div className={styles.border}></div>
 						<p className={styles.city}>{city}</p>
 					</div>
-					<ul>
+					<ul className={styles.desktop}>
 						<li className={styles.date}>
 							<CalendarIcon />
 							<p className={styles.text}>{dateDisplay}</p>
@@ -121,6 +121,22 @@ const CourseCard = (props: TCourseCardProps) => {
 						</li>
 						<li className={styles.duration}>
 							<ClockIcon />
+							<p className={styles.text}>{duration}</p>
+						</li>
+						<li className={styles.targetTitle}>Цель курса</li>
+						<li className={styles.target}>{target}</li>
+					</ul>
+					<ul className={styles.mobile}>
+						<li className={styles.date}>
+							<CalendarIconMobile />
+							<p className={styles.text}>{dateDisplay}</p>
+						</li>
+						<li className={styles.city}>
+							<PlaceIconMobile />
+							<p className={styles.text}>{city}</p>
+						</li>
+						<li className={styles.duration}>
+							<ClockIconMobile />
 							<p className={styles.text}>{duration}</p>
 						</li>
 						<li className={styles.targetTitle}>Цель курса</li>
