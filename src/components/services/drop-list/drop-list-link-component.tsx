@@ -40,8 +40,8 @@ const DropListLinkComponent = (props: TDropListProps) => {
 	};
 
 	const onTopic = (href: string) => {
-		setIsActive(!isActive);
 		router.push(href);
+		setIsActive(!isActive);
 	};
 
 	const [isActive, setIsActive] = useState(false);
