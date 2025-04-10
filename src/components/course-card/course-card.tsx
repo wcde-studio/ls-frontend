@@ -7,7 +7,14 @@ import Link from 'next/link';
 
 import clsx from 'clsx';
 
-import { CalendarIcon, CalendarIconMobile, ClockIcon, PlaceIcon, ClockIconMobile, PlaceIconMobile } from '@/components/ui';
+import {
+	CalendarIcon,
+	CalendarIconMobile,
+	ClockIcon,
+	PlaceIcon,
+	ClockIconMobile,
+	PlaceIconMobile,
+} from '@/components/ui';
 
 import { Button } from '@/components/ui';
 import { ButtonSize, ButtonType } from '@/components/ui/button/types';

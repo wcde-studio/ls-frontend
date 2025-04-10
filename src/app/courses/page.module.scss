@@ -11,16 +11,13 @@
 	.titleSection {
 		padding-top: 140px;
 	}
-	
 }
 
 @media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {
 	.titleSection {
 		padding-top: 0px;
 	}
-	
 }
-
 
 @media screen and (min-device-width: $desktop-min-width) {
 	.desktop {

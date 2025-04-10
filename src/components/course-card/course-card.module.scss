@@ -1,5 +1,4 @@
-@import "@/app/global-variables.scss";
-
+@import '@/app/global-variables.scss';
 
 .card {
 	background: var(--white);
@@ -20,7 +19,6 @@
 
 @media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {
 }
-
 
 .wrapper {
 	display: flex;
@@ -72,8 +70,6 @@
 	}
 }
 
-
-
 %mainFont {
 	font-family: var(--font-family);
 	font-weight: 700;
@@ -86,12 +82,10 @@
 	@extend %mainFont;
 }
 
-
 @media screen and (min-device-width: $desktop-min-width) {
 	.name {
 		padding-bottom: 16px;
 	}
-	
 }
 
 @media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {
@@ -99,7 +93,6 @@
 		font-size: 16px;
 		padding-bottom: 12px;
 	}
-	
 }
 
 .date,
@@ -112,7 +105,7 @@
 	.city,
 	.duration {
 		gap: 12px;
-	}	
+	}
 }
 
 @media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {
@@ -120,7 +113,7 @@
 	.city,
 	.duration {
 		gap: 4px;
-	}	
+	}
 }
 
 .text,
@@ -142,8 +135,7 @@
 	.target {
 		font-size: 12px;
 	}
-	}
-
+}
 
 .targetTitle {
 	@extend %mainFont;
@@ -164,14 +156,12 @@
 	}
 }
 
-
-
 @media screen and (min-device-width: $desktop-min-width) {
 	.COURSES {
 		display: grid;
 		grid-template-columns: max-content 1fr;
 		width: 100%;
-	
+
 		a {
 			display: none;
 		}
@@ -186,9 +176,9 @@
 @media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {
 	.COURSES {
 		display: grid;
-		grid-template-columns: max-content 1fr ; 
+		grid-template-columns: max-content 1fr;
 		width: 100%;
-	
+
 		a {
 			display: none;
 		}
@@ -199,8 +189,6 @@
 		}
 	}
 }
-
-
 
 .PERSONAL {
 	display: grid;
@@ -299,4 +287,3 @@
 		display: none;
 	}
 }
-
