@@ -9,10 +9,6 @@ import VKIcon from './icons/vk-icon';
 import DownChevronIcon from './icons/down-chevron-icon';
 import UpChevronGreyIcon from './icons/up-chevron-grey-icon';
 import UpChevronIcon from './icons/up-chevron-icon';
-//import PlusIcon from './icons/plus';
-//import PreviousIcon from './icons/previous';
-//import NextIcon from './icons/next';
-//import EditIcon from './icons/edit';
 
 import TeamIcon from './icons/awards/team-icon';
 import GameIcon from './icons/awards/game-icon';
@@ -54,6 +50,7 @@ import CheckboxRoundIcon from './icons/checkbox-round-icon';
 import CheckboxRingIcon from './icons/checkbox-ring-icon';
 import MobileMenuIcon from './icons/mobile-menu-icon';
 import CloseIconMobile from './icons/close-icon-mobile';
+import UpChevronBlueIcon from './icons/up-chevron-blue-icon';
 
 export {
 	LogoIcon,
@@ -64,6 +61,7 @@ export {
 	VKIcon,
 	DownChevronIcon,
 	UpChevronGreyIcon,
+	UpChevronBlueIcon,
 	UpChevronIcon,
 	TeamIcon,
 	GameIcon,

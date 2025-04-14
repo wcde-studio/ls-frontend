@@ -1,30 +1,65 @@
-.imageWrapper {
-	padding-bottom: 32px;
+@import "@/app/global-variables.scss";
+
+
+@media screen and (min-device-width: $desktop-min-width) {
+	.imageWrapper {
+		padding-bottom: 32px;
+	}
 }
 
-.image {
-	width: 100%;
-	max-height: 503px;
-	object-fit: cover;
+@media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {
+	.imageWrapper {
+		padding-bottom: 24px;
+	}
 }
 
-.wrapper {
-	/*	
-	display: grid;
-	grid-template-columns: 1fr 354px;
-	align-items: center;
-*/
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	flex-wrap: wrap;
-	gap: 24px;
+
+@media screen and (min-device-width: $desktop-min-width) {
+	.image {
+		width: 100%;
+		max-height: 503px;
+		object-fit: cover;
+	}
+	}
+
+@media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {
+	.image {
+		position:relative;
+		width: 100vw;
+		left: -24px;
+		max-height: 240px;
+		object-fit: cover;
+	}
 }
+
+@media screen and (min-device-width: $desktop-min-width) {
+	.wrapper {	
+		display: grid;
+		grid-template-columns: 1fr 354px;
+		align-items: center;
+	
+	/*	display: flex;
+		align-items: center;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		gap: 24px;
+	*/
+	}
+}
+
+@media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {
+	.wrapper {	
+		display: grid;
+		grid-template-columns: auto;
+		align-items: center;	
+	}
+}
+
 
 .buttonSize {
 	width: 354px;
 }
-
+/*
 .description {
 	ul {
 		display: flex;
@@ -34,19 +69,80 @@
 		gap: 32px;
 	}
 }
+*/
 
-.date,
-.city,
-.duration {
-	display: flex;
-	align-items: center;
-	gap: 12px;
+@media screen and (min-device-width: $desktop-min-width) {
+	.descriptionList {
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		flex-wrap: wrap;
+		gap: 32px;
+	}
+}
+
+@media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {
+	.descriptionList {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: center;
+		flex-wrap: wrap;
+		gap: 8px;
+	}
+}
+
+
+@media screen and (min-device-width: $desktop-min-width) {
+	.date,
+	.city,
+	.duration {
+		display: flex;
+		align-items: center;
+		gap: 12px;
+	}
+}
+
+@media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {
+	.date,
+	.city,
+	.duration {
+		display: flex;
+		align-items: center;
+		gap: 8px;
+	}
 }
 
 .text {
 	font-family: var(--font-family);
-	font-weight: 700;
-	font-size: 24px;
 	line-height: 125%;
 	color: var(--dark-grey);
 }
+
+@media screen and (min-device-width: $desktop-min-width) {
+	.text {
+		font-weight: 700;
+		font-size: 24px;
+	}
+}
+
+@media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {
+	.text {
+		font-weight: 400;
+		font-size: 14px;
+	}
+}
+
+@media screen and (min-device-width: $desktop-min-width) {
+	.mobile {
+		display: none;
+	}
+
+}
+
+@media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {
+	.desktop {
+		display: none;
+	}
+}
+

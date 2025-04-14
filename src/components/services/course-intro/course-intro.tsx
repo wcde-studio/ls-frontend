@@ -5,10 +5,18 @@ import styles from './course-intro.module.scss';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { CalendarBigIcon, ClockBigIcon, PlaceBigIcon } from '@/components/ui';
+import { 
+	CalendarBigIcon, 
+	ClockBigIcon, 
+	PlaceBigIcon,
+	CalendarIconMobile,
+	ClockIconMobile,
+	PlaceIconMobile 
+} from '@/components/ui';
 
 import { Button } from '@/components/ui';
 import { ButtonSize, ButtonType } from '@/components/ui/button/types';
+import clsx from 'clsx';
 
 type TCourseIntroProps = {
 	imageUrl: string;
@@ -53,7 +61,7 @@ const CourseIntro = (props: TCourseIntroProps) => {
 			</div>
 			<section className={styles.wrapper}>
 				<section className={styles.description}>
-					<ul>
+					<ul className={clsx(styles.descriptionList, styles.desktop)}>
 						<li className={styles.date}>
 							<CalendarBigIcon />
 							<p className={styles.text}>{`${day}.${month}.${year}`}</p>
@@ -67,8 +75,22 @@ const CourseIntro = (props: TCourseIntroProps) => {
 							<p className={styles.text}>{duration}</p>
 						</li>
 					</ul>
+					<ul className={clsx(styles.descriptionList, styles.mobile)}>
+						<li className={styles.date}>
+							<CalendarIconMobile />
+							<p className={styles.text}>{`${day}.${month}.${year}`}</p>
+						</li>
+						<li className={styles.city}>
+							<PlaceIconMobile />
+							<p className={styles.text}>{city}</p>
+						</li>
+						<li className={styles.duration}>
+							<ClockIconMobile />
+							<p className={styles.text}>{duration}</p>
+						</li>
+					</ul>
 				</section>
-				<Link href={'/'}>
+				<Link href={'/'} className={styles.desktop}>
 					<Button
 						type={ButtonType.Violet}
 						size={ButtonSize.Desctop}
