@@ -64,14 +64,15 @@ const Slider = (props: ISliderProps) => {
 
 		reviewsRef.current!.ontouchstart = (event) => {
 			event.preventDefault();
-//			reviewsRef.current!.style.position = 'absolute';
-//			reviewsRef.current!.style.zIndex = '1';
+			//			reviewsRef.current!.style.position = 'absolute';
+			//			reviewsRef.current!.style.zIndex = '1';
 			reviewsRef.current!.ondragstart = () => {
 				return false;
 			};
 
 			const shiftX =
-				event.touches[0].clientX - reviewsRef.current!.getBoundingClientRect().left;
+				event.touches[0].clientX -
+				reviewsRef.current!.getBoundingClientRect().left;
 
 			const moveAt = (pageX: number, pageY: number) => {
 				const refPositionX = pageX - shiftX;
@@ -86,13 +87,12 @@ const Slider = (props: ISliderProps) => {
 			document.addEventListener('touchmove', onTouchMove);
 			document.addEventListener('touchup', () => {
 				event.preventDefault();
-	//			reviewsRef.current!.style.position = 'relative';
-	//			reviewsRef.current!.style.zIndex = '0';	
+				//			reviewsRef.current!.style.position = 'relative';
+				//			reviewsRef.current!.style.zIndex = '0';
 				document.removeEventListener('touchmove', onTouchMove);
 			});
 		};
-
-}, [reviewsRef]);
+	}, [reviewsRef]);
 
 	return (
 		<div className={styles.slider}>

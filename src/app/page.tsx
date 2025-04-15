@@ -12,6 +12,8 @@ import {
 import Intro from '@/components/intro/intro';
 import CourseCard from '@/components/course-card/course-card';
 import { CourseCardComposition } from '@/components/course-card/types';
+import clsx from 'clsx';
+import Link from 'next/link';
 
 import {
 	getApiServerURL,
@@ -21,6 +23,7 @@ import {
 	getCoursesHome,
 	getIntro,
 } from '@/lib/api/api-utils';
+import { RightArrowMobileIcon } from '@/components/ui';
 
 type TAwardType = {
 	id: number;
@@ -103,7 +106,14 @@ export default async function Home() {
 				</ul>
 			</section>
 			<section className={styles.section}>
-				<h1 className={styles.title}>{'Ближайшие курсы'}</h1>
+				<h1 className={clsx(styles.title, styles.desktop)}>{'Ближайшие курсы'}</h1>
+				<div className={clsx(styles.linkWrapper, styles.mobile)}>
+					<h1 className={styles.title}>{'Ближайшие курсы'}</h1>
+					<Link href={'courses'}>
+						<h2>все</h2>
+						<RightArrowMobileIcon />
+					</Link>
+				</div>
 				<ul className={styles.coursesList}>
 					{courses?.data.map((course: TgetCoursesHome) => {
 						const date = new Date(course.date);

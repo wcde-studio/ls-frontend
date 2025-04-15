@@ -1,24 +1,23 @@
 @import '@/app/global-variables.scss';
 
-
 @media screen and (min-device-width: $desktop-min-width) {
 	.wrapper {
 		display: flex;
 		flex-direction: column;
 		gap: 32px;
-	
+
 		a {
 			max-width: 354px;
 		}
 	}
-	}
+}
 
 @media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {
 	.wrapper {
 		display: flex;
 		flex-direction: column;
 		gap: 16px;
-	
+
 		a {
 			padding-top: 24px;
 			width: 100%;
@@ -64,26 +63,26 @@
 @media screen and (min-device-width: $desktop-min-width) {
 	.description {
 		gap: 16px;
-	
+
 		h2 {
 		}
-	
+
 		p {
 			font-weight: 400;
 			font-size: 18px;
 			line-height: 133%;
 		}
 	}
-	}
+}
 
 @media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {
 	.description {
 		gap: 8px;
-	
+
 		h2 {
 			font-size: 14px;
 		}
-	
+
 		p {
 			font-weight: 400;
 			font-size: 14px;
@@ -105,8 +104,8 @@
 		@extend %mainFont;
 		font-weight: 700;
 		font-size: 14px;
-	//	font-size: 18px;
-	//	line-height: 133%;
+		//	font-size: 18px;
+		//	line-height: 133%;
 	}
 
 	.modules {
@@ -129,10 +128,9 @@
 					padding-left: 4px;
 
 					@extend %mainFont;
-//					font-weight: 400;
-//					font-size: 18px;
-//					line-height: 122%;
-
+					//					font-weight: 400;
+					//					font-size: 18px;
+					//					line-height: 122%;
 
 					.listItem {
 						& > li {
@@ -148,30 +146,30 @@
 @media screen and (min-device-width: $desktop-min-width) {
 	.details {
 		gap: 32px;
-	
+
 		h2 {
 			font-size: 18px;
 			line-height: 133%;
 		}
-	
+
 		.modules {
 			gap: 32px;
 			& > li {
 				gap: 16px;
-	
+
 				font-size: 18px;
 				line-height: 133%;
-	
+
 				.module {
 					& > li {
 						list-style-type: disc;
 						list-style-position: inside;
 						padding-left: 4px;
-	
+
 						font-weight: 400;
 						font-size: 18px;
 						line-height: 122%;
-	
+
 						.listItem {
 							& > li {
 								padding-left: 24px;
@@ -181,36 +179,37 @@
 				}
 			}
 		}
-	}}
+	}
+}
 
 @media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {
 	.details {
 		gap: 8px;
-	
+
 		h2 {
 			font-weight: 700;
 			font-size: 14px;
 		}
-	
+
 		.modules {
 			gap: 8px;
 			& > li {
 				display: flex;
 				flex-direction: column;
 				gap: 8px;
-	
+
 				font-weight: 700;
-				font-size: 14px;	
+				font-size: 14px;
 
 				.module {
 					& > li {
 						list-style-type: disc;
 						list-style-position: inside;
 						padding-left: 0px;
-	
+
 						font-weight: 400;
 						font-size: 14px;
-	
+
 						.listItem {
 							& > li {
 								padding-left: 8px;
@@ -229,7 +228,6 @@
 	}
 }
 
-
 .buttonDescription {
 	display: flex;
 	flex-direction: rows;
@@ -243,17 +241,15 @@
 		transition-duration: 0.3s;
 		transition-property: transform;
 	}
-
 }
 
 .buttonDescriptionOpened {
 	svg {
 		transform: rotate(180deg);
 	}
-
 }
 
-.buttonDescriptionText{
+.buttonDescriptionText {
 	font-family: var(--font-family);
 	font-weight: 400;
 	font-size: 14px;
@@ -278,8 +274,6 @@
 	}
 }
 
-
 .descriptionOpened {
 	display: flex;
 }
-

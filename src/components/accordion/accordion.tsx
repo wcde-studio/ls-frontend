@@ -6,7 +6,7 @@ import styles from './accordion.module.scss';
 import clsx from 'clsx';
 import Link from 'next/link';
 
-import { UpChevronIcon } from '@/components/ui';
+import { DownChevronIcon, DownChevronMobileIcon } from '@/components/ui';
 import { Button } from '@/components/ui';
 
 import { ButtonSize, ButtonType } from '@/components/ui/button/types';
@@ -45,15 +45,21 @@ const Accordion = (props: TAccordionProps) => {
 	const accordion = clsx(styles.accordion, {
 		[styles.accordionOpened]: isActive,
 	});
+	
 
 	return (
 		<li className={accordion}>
-			<button className={styles.title} onClick={() => setIsActive(!isActive)}>
+			<button className={clsx(styles.title, styles.desktop)} onClick={() => setIsActive(!isActive)}>
 				<h2 className={styles.titleText}>{service?.title}</h2>
-				<UpChevronIcon />
+				<DownChevronIcon />
 			</button>
+			<button className={clsx(styles.title, styles.mobile)} onClick={() => setIsActive(!isActive)}>
+				<h2 className={styles.titleText}>{service?.title}</h2>
+				<DownChevronMobileIcon />
+			</button>
+
 			<section className={styles.contentWrapper}>
-				<h3 className={styles.subtitle}>{service?.subtitle}</h3>
+				<div className={styles.subtitle}><b>Кому подходит: </b>{service?.subtitle}</div>
 				<ul className={styles.descriptionList}>
 					{service?.properties?.map((property) => (
 						<li className={styles.descriptionItem} key={property.id}>

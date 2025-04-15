@@ -1,4 +1,4 @@
-@import "@/app/global-variables.scss";
+@import '@/app/global-variables.scss';
 
 .courses {
 	display: flex;
@@ -16,7 +16,7 @@
 		gap: 24px;
 		justify-items: center;
 	}
-	}
+}
 
 @media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {
 	.coursesList {
@@ -25,7 +25,6 @@
 		justify-items: center;
 	}
 }
-
 
 .paginationWrapper {
 }

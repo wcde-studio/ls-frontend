@@ -1,5 +1,4 @@
-@import "@/app/global-variables.scss";
-
+@import '@/app/global-variables.scss';
 
 %mainFont {
 	font-family: var(--font-family);
@@ -23,7 +22,7 @@
 	.reviewName {
 		padding: 16px;
 		font-size: 16px;
-//		padding: 20px 20px 8px 20px;
+		//		padding: 20px 20px 8px 20px;
 	}
 }
 

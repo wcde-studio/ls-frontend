@@ -5,13 +5,13 @@ import styles from './course-intro.module.scss';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { 
-	CalendarBigIcon, 
-	ClockBigIcon, 
+import {
+	CalendarBigIcon,
+	ClockBigIcon,
 	PlaceBigIcon,
 	CalendarIconMobile,
 	ClockIconMobile,
-	PlaceIconMobile 
+	PlaceIconMobile,
 } from '@/components/ui';
 
 import { Button } from '@/components/ui';

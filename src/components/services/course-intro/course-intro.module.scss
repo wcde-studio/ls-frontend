@@ -1,5 +1,4 @@
-@import "@/app/global-variables.scss";
-
+@import '@/app/global-variables.scss';
 
 @media screen and (min-device-width: $desktop-min-width) {
 	.imageWrapper {
@@ -13,18 +12,17 @@
 	}
 }
 
-
 @media screen and (min-device-width: $desktop-min-width) {
 	.image {
 		width: 100%;
 		max-height: 503px;
 		object-fit: cover;
 	}
-	}
+}
 
 @media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {
 	.image {
-		position:relative;
+		position: relative;
 		width: 100vw;
 		left: -24px;
 		max-height: 240px;
@@ -33,12 +31,12 @@
 }
 
 @media screen and (min-device-width: $desktop-min-width) {
-	.wrapper {	
+	.wrapper {
 		display: grid;
 		grid-template-columns: 1fr 354px;
 		align-items: center;
-	
-	/*	display: flex;
+
+		/*	display: flex;
 		align-items: center;
 		justify-content: space-between;
 		flex-wrap: wrap;
@@ -48,13 +46,12 @@
 }
 
 @media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {
-	.wrapper {	
+	.wrapper {
 		display: grid;
 		grid-template-columns: auto;
-		align-items: center;	
+		align-items: center;
 	}
 }
-
 
 .buttonSize {
 	width: 354px;
@@ -91,7 +88,6 @@
 		gap: 8px;
 	}
 }
-
 
 @media screen and (min-device-width: $desktop-min-width) {
 	.date,
@@ -137,7 +133,6 @@
 	.mobile {
 		display: none;
 	}
-
 }
 
 @media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {
@@ -145,4 +140,3 @@
 		display: none;
 	}
 }
-

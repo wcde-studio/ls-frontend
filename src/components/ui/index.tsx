@@ -51,6 +51,8 @@ import CheckboxRingIcon from './icons/checkbox-ring-icon';
 import MobileMenuIcon from './icons/mobile-menu-icon';
 import CloseIconMobile from './icons/close-icon-mobile';
 import UpChevronBlueIcon from './icons/up-chevron-blue-icon';
+import RightArrowMobileIcon from './icons/right-arrow-mobile-icon';
+import DownChevronMobileIcon from './icons/down-chevron-mobile-icon';
 
 export {
 	LogoIcon,
@@ -99,4 +101,6 @@ export {
 	CheckboxRoundIcon,
 	CheckboxRingIcon,
 	CloseIconMobile,
+	RightArrowMobileIcon,
+	DownChevronMobileIcon
 };

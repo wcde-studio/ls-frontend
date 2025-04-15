@@ -1,4 +1,4 @@
-@import "@/app/global-variables.scss";
+@import '@/app/global-variables.scss';
 
 .main {
 	margin: 0 auto;
@@ -6,14 +6,12 @@
 }
 
 @media screen and (min-device-width: $desktop-min-width) {
-
 	.section {
 		padding-top: 140px;
 	}
 }
 
 @media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {
-
 	.section {
 		padding-top: 0px;
 	}
@@ -38,7 +36,6 @@
 		font-size: 20px;
 		padding-top: 24px;
 	}
-	
 }
 
 @media screen and (min-device-width: $desktop-min-width) {
@@ -63,6 +60,4 @@
 	.desktop {
 		display: none;
 	}
-
 }
-

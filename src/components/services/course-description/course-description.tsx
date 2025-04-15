@@ -25,7 +25,6 @@ type TCourseDescriptionProps = {
 	}[];
 };
 
-
 const CourseDescription = (props: TCourseDescriptionProps) => {
 	const { target, goals, description, title, modules } = props;
 	const [isActive, setIsActive] = useState(false);
@@ -54,21 +53,20 @@ const CourseDescription = (props: TCourseDescriptionProps) => {
 								.map((descr, id) => <p key={id}>{descr}</p>)
 						: null}
 				</section>
-				<button 
-					className={
-						clsx(styles.buttonDescription, styles.mobile,
-							{[styles.buttonDescriptionOpened]: isActive}
-						)}
-					onClick={() => setIsActive(!isActive)}
-				>
-					<h2 className={styles.buttonDescriptionText}>Смотреть полное описание</h2>
+				<button
+					className={clsx(styles.buttonDescription, styles.mobile, {
+						[styles.buttonDescriptionOpened]: isActive,
+					})}
+					onClick={() => setIsActive(!isActive)}>
+					<h2 className={styles.buttonDescriptionText}>
+						Смотреть полное описание
+					</h2>
 					<UpChevronBlueIcon />
 				</button>
-				<section className={
-					clsx(
-						styles.details, 
-						{[styles.descriptionOpened]: isActive})
-					}>
+				<section
+					className={clsx(styles.details, {
+						[styles.descriptionOpened]: isActive,
+					})}>
 					<h2>{title}</h2>
 					<ul className={styles.modules}>
 						{modules.length
