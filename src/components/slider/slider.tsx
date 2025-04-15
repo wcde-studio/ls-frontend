@@ -16,6 +16,7 @@ import { Button } from '@/components/ui';
 import { ButtonSize, ButtonType } from '@/components/ui/button/types';
 
 import SliderReview from '@/components/services/slider-review/slider-review';
+import clsx from 'clsx';
 
 interface ISliderProps {
 	reviews: {
@@ -96,10 +97,10 @@ const Slider = (props: ISliderProps) => {
 
 	return (
 		<div className={styles.slider}>
-			<div className={styles.sliderWrapper}>
-				<ul ref={reviewsRef} className={styles.reviews}>
+			<div className={clsx(styles.carousel, styles.sliderWrapper)}>
+				<ul ref={reviewsRef} className={clsx(styles.track, styles.reviews)}>
 					{reviews.map((review) => (
-						<li className={styles.review} key={review.id}>
+						<li className={clsx(styles.card, styles.review)} key={review.id}>
 							<SliderReview
 								name={`${review.name} ${review.id}`}
 								text={review.text}

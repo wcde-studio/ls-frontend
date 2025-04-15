@@ -1,4 +1,4 @@
-@import "@/app/global-variables.scss";
+@import '@/app/global-variables.scss';
 
 /*
 .main {
@@ -73,52 +73,77 @@
 			text-align: center;
 			color: var(--violet);
 		}
-	
 	}
 }
 
 .coursesList {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-	gap: 24px;
-	justify-items: center;
-	padding-top: 0px;
 }
 
 @media screen and (min-device-width: $desktop-min-width) {
-}
+	.coursesList {
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 24px;
+		justify-items: center;
+		padding-top: 0px;
+	}
+	}
 
 @media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {
-}
-
+	.coursesList {
+		grid-template-columns: auto;
+		gap: 16px;
+		justify-items: center;
+		padding-top: 0px;
+	}
+	}
 
 .awardsList {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(165px, 1fr));
-	row-gap: 71px;
-	column-gap: 64px;
-	justify-items: center;
-	padding-top: 40px;
 }
 @media screen and (min-device-width: $desktop-min-width) {
+	.awardsList {
+		grid-template-columns: repeat(auto-fit, minmax(165px, 1fr));
+		row-gap: 71px;
+		column-gap: 64px;
+		justify-items: center;
+		padding-top: 40px;
+	}
 }
 
 @media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {
+	.awardsList {
+		grid-template-columns: 1fr 1fr;
+		row-gap: 16px;
+		column-gap: 8px;
+		justify-items: center;
+		padding-top: 0px;
+	}
 }
+
 
 .diplomaList {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(259px, 1fr));
-	row-gap: 24px;
-	column-gap: 24px;
-	justify-items: center;
-	padding-top: 40px;
 }
 
 @media screen and (min-device-width: $desktop-min-width) {
+	.diplomaList {
+		grid-template-columns: repeat(auto-fit, minmax(259px, 1fr));
+		row-gap: 24px;
+		column-gap: 24px;
+		justify-items: center;
+		padding-top: 40px;
+	}
 }
 
 @media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {
+	.diplomaList {
+		grid-template-columns: 1fr 1fr;
+		row-gap: 16px;
+		column-gap: 16px;
+		justify-items: center;
+		padding-top: 0px;
+	}
 }
 
 @media screen and (min-device-width: $desktop-min-width) {

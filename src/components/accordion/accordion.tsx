@@ -45,21 +45,27 @@ const Accordion = (props: TAccordionProps) => {
 	const accordion = clsx(styles.accordion, {
 		[styles.accordionOpened]: isActive,
 	});
-	
 
 	return (
 		<li className={accordion}>
-			<button className={clsx(styles.title, styles.desktop)} onClick={() => setIsActive(!isActive)}>
+			<button
+				className={clsx(styles.title, styles.desktop)}
+				onClick={() => setIsActive(!isActive)}>
 				<h2 className={styles.titleText}>{service?.title}</h2>
 				<DownChevronIcon />
 			</button>
-			<button className={clsx(styles.title, styles.mobile)} onClick={() => setIsActive(!isActive)}>
+			<button
+				className={clsx(styles.title, styles.mobile)}
+				onClick={() => setIsActive(!isActive)}>
 				<h2 className={styles.titleText}>{service?.title}</h2>
 				<DownChevronMobileIcon />
 			</button>
 
 			<section className={styles.contentWrapper}>
-				<div className={styles.subtitle}><b>Кому подходит: </b>{service?.subtitle}</div>
+				<div className={styles.subtitle}>
+					<b>Кому подходит: </b>
+					{service?.subtitle}
+				</div>
 				<ul className={styles.descriptionList}>
 					{service?.properties?.map((property) => (
 						<li className={styles.descriptionItem} key={property.id}>

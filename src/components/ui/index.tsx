@@ -102,5 +102,5 @@ export {
 	CheckboxRingIcon,
 	CloseIconMobile,
 	RightArrowMobileIcon,
-	DownChevronMobileIcon
+	DownChevronMobileIcon,
 };

@@ -1,4 +1,4 @@
-@import "@/app/global-variables.scss";
+@import '@/app/global-variables.scss';
 
 @media screen and (min-device-width: $desktop-min-width) {
 }
@@ -22,7 +22,6 @@
 	line-height: 125%;
 }
 
-
 .propertyContainer {
 	padding-top: 4px;
 }
@@ -35,7 +34,7 @@
 	.propertyText {
 		font-size: 14px;
 	}
-	}
+}
 
 @media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {
 	.propertyText {

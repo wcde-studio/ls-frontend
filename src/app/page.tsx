@@ -106,7 +106,9 @@ export default async function Home() {
 				</ul>
 			</section>
 			<section className={styles.section}>
-				<h1 className={clsx(styles.title, styles.desktop)}>{'Ближайшие курсы'}</h1>
+				<h1 className={clsx(styles.title, styles.desktop)}>
+					{'Ближайшие курсы'}
+				</h1>
 				<div className={clsx(styles.linkWrapper, styles.mobile)}>
 					<h1 className={styles.title}>{'Ближайшие курсы'}</h1>
 					<Link href={'courses'}>

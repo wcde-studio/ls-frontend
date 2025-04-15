@@ -1,4 +1,4 @@
-@import "@/app/global-variables.scss";
+@import '@/app/global-variables.scss';
 
 %mainFont {
 	font-family: var(--font-family);
@@ -21,7 +21,7 @@
 	cursor: pointer;
 	background: var(--violet);
 	border-radius: 4px;
-//	padding: 16px 20px;
+	//	padding: 16px 20px;
 }
 
 @media screen and (min-device-width: $desktop-min-width) {
@@ -52,7 +52,6 @@
 		font-size: 16px;
 	}
 }
-
 
 .title {
 	svg {
@@ -88,21 +87,23 @@
 }
 
 .subtitle {
-		@extend %mainFont;
-		line-height: 120%;
+	@extend %mainFont;
+	line-height: 120%;
 }
 @media screen and (min-device-width: $desktop-min-width) {
 	.subtitle {
 		font-size: 20px;
 		padding-top: 20px;
-}}
+	}
+}
 
 @media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {
 	.subtitle {
 		font-weight: 400;
 		font-size: 12px;
 		padding-top: 16px;
-}}
+	}
+}
 
 .descriptionList {
 	padding: 40px 0px 0px 25px;
@@ -141,7 +142,6 @@
 }
 
 @media screen and (min-device-width: $desktop-min-width) {
-
 	.descriptionItem_text {
 		font-weight: 400;
 		font-size: 20px;
@@ -149,7 +149,6 @@
 }
 
 @media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {
-
 	.descriptionItem_text {
 		font-weight: 400;
 		font-size: 12px;
@@ -167,7 +166,7 @@
 		justify-items: center;
 		padding-top: 40px;
 	}
-	}
+}
 
 @media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {
 	.servicesWrapper {
@@ -195,7 +194,6 @@
 	}
 }
 
-
 @media screen and (min-device-width: $desktop-min-width) {
 	.buttonWrapper {
 		max-width: 280px;
@@ -212,7 +210,6 @@
 	}
 }
 
-
 @media screen and (min-device-width: $desktop-min-width) {
 	.mobile {
 		display: none;
@@ -224,4 +221,3 @@
 		display: none;
 	}
 }
-
