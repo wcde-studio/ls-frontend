@@ -1,7 +1,9 @@
+'use client';
 import styles from './intro.module.scss';
 
 import Image from 'next/image';
 import Link from 'next/link';
+import clsx from 'clsx';
 
 import { LadaVedIcon, LadaVedIconSvg } from '@/components/ui';
 
@@ -24,7 +26,7 @@ const Intro = (props: IIntroProps) => {
 	return (
 		<>
 			<section className={styles.intro}>
-				<div>
+				<div className={styles.desktop}>
 					<LadaVedIconSvg className={styles.ladaVedIconSvg} />
 					<div className={styles.introButton}>
 						<Link href={'/courses'}>
@@ -43,6 +45,9 @@ const Intro = (props: IIntroProps) => {
 					height={'622'}
 					className={styles.ladaImage}
 				/>
+				<LadaVedIconSvg
+					className={clsx(styles.ladaVedIconSvg, styles.mobile)}
+				/>
 			</section>
 			<section className={styles.sectionTitle}>
 				{title?.propities.map((propertie, key) => (
@@ -52,9 +57,49 @@ const Intro = (props: IIntroProps) => {
 						{propertie.text}
 					</p>
 				))}
+				<div className={clsx(styles.introButton, styles.mobile)}>
+					<Link href={'/courses'}>
+						<Button
+							type={ButtonType.Violet}
+							size={ButtonSize.Desctop}
+							title={'Курсы'}
+						/>
+					</Link>
+				</div>
 			</section>
 		</>
 	);
 };
 
 export default Intro;
+
+/*
+<section className={clsx(styles.intro, styles.mobile)}>
+<Image
+	alt="lada"
+	src={imageSrc}
+	width={'320'}
+	height={'316'}
+	className={styles.ladaImage}
+/>
+<LadaVedIconSvg className={styles.ladaVedIconSvg} />
+</section>
+<section className={clsx(styles.sectionTitle, styles.mobile)}>
+{title?.propities.map((propertie, key) => (
+	<p
+		className={key === 0 ? styles.topTitle : styles.bottomTitle}
+		key={propertie.id}>
+		{propertie.text}
+	</p>
+))}
+<div className={styles.introButton}>
+	<Link href={'/courses'}>
+		<Button
+			type={ButtonType.Violet}
+			size={ButtonSize.Desctop}
+			title={'Курсы'}
+		/>
+	</Link>
+</div>
+</section>
+*/

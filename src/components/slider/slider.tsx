@@ -28,28 +28,25 @@ interface ISliderProps {
 const Slider = (props: ISliderProps) => {
 	const { reviews } = props;
 	const reviewsRef = useRef<null | HTMLUListElement>(null);
+	const sliderWrapperRef = useRef<null | HTMLDivElement>(null);
+
 
 	useEffect(() => {
 		const refWidth = reviewsRef.current!.getBoundingClientRect().width;
-		const leftLimit = 374 - refWidth;
+		//const leftLimit = 374 - refWidth;
+		const leftLimit = refWidth;
 		const rightLimit = reviewsRef.current!.getBoundingClientRect().left;
 
-		reviewsRef.current!.onmousedown = (event) => {
+		//reviewsRef.current!.onmousedown = (event) => {
+		sliderWrapperRef.current!.onmousedown = (event) => {
 			event.preventDefault();
-			reviewsRef.current!.style.position = 'absolute';
-			reviewsRef.current!.style.zIndex = '1000';
-			reviewsRef.current!.ondragstart = () => {
-				return false;
-			};
-
-			const shiftX =
-				event.clientX - reviewsRef.current!.getBoundingClientRect().left;
+			const shiftX = event.clientX - reviewsRef.current!.getBoundingClientRect().left;
 
 			const moveAt = (pageX: number, pageY: number) => {
 				const refPositionX = pageX - shiftX;
-				if (rightLimit > refPositionX && refPositionX > leftLimit) {
+				//if (rightLimit > refPositionX && refPositionX > leftLimit) {
 					reviewsRef.current!.style.left = pageX - shiftX + 'px';
-				}
+				//}
 			};
 
 			const onMouseMove = (event: any) => {
@@ -62,11 +59,11 @@ const Slider = (props: ISliderProps) => {
 				//				reviewsRef.current!.onmouseup = null;
 			});
 		};
-	}, [reviewsRef]);
+	}, [reviewsRef, sliderWrapperRef]);
 
 	return (
 		<div className={styles.slider}>
-			<div className={styles.sliderWrapper}>
+			<div ref={sliderWrapperRef} className={styles.sliderWrapper}>
 				<ul ref={reviewsRef} className={styles.reviews}>
 					{reviews.map((review) => (
 						<li className={styles.review} key={review.id}>

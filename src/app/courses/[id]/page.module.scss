@@ -1,21 +1,63 @@
+@import '@/app/global-variables.scss';
+
 .main {
 	margin: 0 auto;
 	max-width: 1110px;
 }
 
-.section {
-	padding-top: 140px;
+@media screen and (min-device-width: $desktop-min-width) {
+	.section {
+		padding-top: 140px;
+	}
+}
+
+@media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {
+	.section {
+		padding-top: 0px;
+	}
 }
 
 .title {
 	font-family: var(--font-family);
-	font-weight: 500;
-	font-size: 48px;
 	color: var(--dark-grey);
-	padding-bottom: 64px;
 }
 
-.description {
-	padding-top: 64px;
+@media screen and (min-device-width: $desktop-min-width) {
+	.title {
+		font-weight: 500;
+		font-size: 48px;
+		padding-bottom: 64px;
+	}
 }
 
+@media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {
+	.title {
+		font-weight: 700;
+		font-size: 20px;
+		padding-top: 24px;
+	}
+}
+
+@media screen and (min-device-width: $desktop-min-width) {
+	.description {
+		padding-top: 64px;
+	}
+}
+
+@media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {
+	.description {
+		padding-top: 16px;
+	}
+}
+
+@media screen and (min-device-width: $desktop-min-width) {
+	.mobile {
+		display: none;
+	}
+}
+
+@media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {
+	.desktop {
+		display: none;
+	}
+}

@@ -2,10 +2,12 @@
 
 import styles from './course-description.module.scss';
 
+import { useState } from 'react';
 import Link from 'next/link';
 
-import { Button } from '@/components/ui';
+import { Button, UpChevronBlueIcon } from '@/components/ui';
 import { ButtonSize, ButtonType } from '@/components/ui/button/types';
+import clsx from 'clsx';
 
 type TCourseDescriptionProps = {
 	target: string;
@@ -25,28 +27,46 @@ type TCourseDescriptionProps = {
 
 const CourseDescription = (props: TCourseDescriptionProps) => {
 	const { target, goals, description, title, modules } = props;
+	const [isActive, setIsActive] = useState(false);
+
+	const accordion = clsx(styles.buttonDescription, {
+		[styles.accordionOpened]: isActive,
+	});
 
 	return (
 		<>
 			<section className={styles.wrapper}>
 				<section className={styles.description}>
-					<h1>{'Цель курса:'}</h1>
+					<h2>{'Цель курса:'}</h2>
 					<p>{target}</p>
 				</section>
 				<section className={styles.description}>
-					<h1>{'Задача курса:'}</h1>
+					<h2>{'Задача курса:'}</h2>
 					<p>{goals}</p>
 				</section>
 				<div className={styles.separator}></div>
 				<section className={styles.description}>
-					<h1>{'Описание:'}</h1>
+					<h2 className={styles.descriptionMobile}>{'Описание:'}</h2>
 					{description.split(/\r?\n/).length
 						? description
 								.split(/\r?\n/)
 								.map((descr, id) => <p key={id}>{descr}</p>)
 						: null}
 				</section>
-				<section className={styles.details}>
+				<button
+					className={clsx(styles.buttonDescription, styles.mobile, {
+						[styles.buttonDescriptionOpened]: isActive,
+					})}
+					onClick={() => setIsActive(!isActive)}>
+					<h2 className={styles.buttonDescriptionText}>
+						Смотреть полное описание
+					</h2>
+					<UpChevronBlueIcon />
+				</button>
+				<section
+					className={clsx(styles.details, {
+						[styles.descriptionOpened]: isActive,
+					})}>
 					<h2>{title}</h2>
 					<ul className={styles.modules}>
 						{modules.length
@@ -83,6 +103,7 @@ const CourseDescription = (props: TCourseDescriptionProps) => {
 						title={'Учавствовать'}
 					/>
 				</Link>
+				<div className={clsx(styles.separator, styles.mobile)}></div>
 			</section>
 		</>
 	);

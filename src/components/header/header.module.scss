@@ -1,27 +1,92 @@
+@import '@/app/global-variables.scss';
+//$desktop-min-width
+//$mobile-max-width
+
+.hide {
+	display: none;
+}
+
+.sticky {
+	position: sticky;
+	top: 0;
+	z-index: 10;
+}
+
+@media screen and (min-device-width: $desktop-min-width) {
+	.desktop {
+		display: block;
+	}
+
+	.mobile {
+		display: none;
+	}
+}
+
+@media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {
+	.desktop {
+		display: none;
+	}
+}
+
 .headerContainer {
-	width: 100%;
-	background-color: #fdf6f2;
+	//width: 100%;
+	background-color: var(--beige-bg);
 	display: flex;
 	justify-content: center;
+	align-items: center;
+}
+
+@media screen and (min-device-width: $desktop-min-width) {
+	.headerContainer {
+		min-width: var(--desctop-min-width);
+	}
+}
+
+@media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {
+	.headerContainer {
+		align-items: center;
+		padding: 24px;
+	}
 }
 
 .header {
 	display: flex;
 	justify-content: space-between;
-	align-items: center;
 	width: 100%;
-	min-height: 120px;
-	max-width: 1110px;
-	font-family: 'Roboto', sans-serif;
+	font-family: var(--font-family);
 	font-weight: 400;
-	font-size: 20px;
-	line-height: 120%;
-	color: #444;
+	color: var(--dark-grey);
 }
 
-.logoText {
-	width: 186px;
-	padding-left: 16px;
+@media screen and (min-device-width: $desktop-min-width) {
+	.header {
+		min-height: 120px;
+		max-width: 1110px;
+		font-size: 20px;
+		line-height: 120%;
+	}
+}
+
+@media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {
+	.header {
+		font-size: 12px;
+		line-height: 120%;
+		min-width: var(--mobile-min-width);
+	}
+}
+
+@media screen and (min-device-width: $desktop-min-width) {
+	.logoText {
+		width: 186px;
+		padding-left: 16px;
+	}
+}
+
+@media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {
+	.logoText {
+		width: 108px;
+		padding-left: 14px;
+	}
 }
 
 .logoContainer {
@@ -31,35 +96,112 @@
 }
 
 .navigation {
-	width: 100%;
-	height: auto;
-	max-width: 350px;
 	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	flex-wrap: wrap;
-	gap: 4px;
+}
+
+@media screen and (min-device-width: $desktop-min-width) {
+	.navigation {
+		width: 100%;
+		height: auto;
+		max-width: 350px;
+		align-items: center;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		gap: 4px;
+	}
+}
+
+@media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {
+	.navigation {
+		width: 0%;
+		overflow: hidden;
+	}
+	.menuButton {
+		display: block;
+	}
+
+	.closeButton {
+		display: none;
+	}
+	.menuOpen {
+		.menuButton {
+			display: none;
+		}
+		.closeButton {
+			display: block;
+			position: absolute;
+			right: 24px;
+			z-index: 2;
+		}
+		.navigation {
+			position: absolute;
+			left: 0px;
+			width: 100%;
+			height: 100vh;
+			background-color: var(--beige-bg);
+			z-index: 2;
+			transition-duration: 0.3s;
+			transition-property: width;
+			padding-top: 89px;
+			flex-direction: column;
+			align-items: start;
+			justify-content: start;
+			gap: 24px;
+			padding-left: 24px;
+		}
+	}
 }
 
 .link {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	cursor: pointer;
-	transition: transform 0.2s ease-in-out;
 
 	&_active {
 		text-decoration: underline;
 	}
+}
 
-	&:hover {
-		transform: scale(1.1);
+@media screen and (min-device-width: $desktop-min-width) {
+	.link {
+		cursor: pointer;
+		transition: transform 0.2s ease-in-out;
+
+		&:hover {
+			transform: scale(1.1);
+		}
 	}
 }
 
-.link:last-of-type {
+@media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {
+	.link {
+		font-weight: 500;
+		font-size: 20px;
+	}
 }
 
+.iconLogo {
+	width: 48px;
+	height: 48px;
+}
+
+@media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {
+	.iconLogo {
+		width: 40px;
+		height: 40px;
+	}
+}
+
+/*
+@media screen and (min-device-width: $desktop-min-width) {
+}
+
+@media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {
+}
+
+*/
+
+/*
 .profileLink {
 	gap: 4px;
 
@@ -69,10 +211,6 @@
 	display: none;
 }
 
-.iconLogo {
-	width: 48px;
-	height: 48px;
-}
 
 .iconProfile {
 	width: 20px;
@@ -81,3 +219,4 @@
 
 .profileLinkText {
 }
+*/

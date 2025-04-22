@@ -6,7 +6,14 @@ import { usePathname, useRouter } from 'next/navigation';
 import styles from './drop-list.module.scss';
 import clsx from 'clsx';
 
-import { UpChevronGreyIcon } from '@/components/ui';
+import {
+	UpChevronGreyIcon,
+	MobileMenuIcon,
+	CheckboxRoundIcon,
+	CheckboxRingIcon,
+	InputCloseIcon,
+	CloseIconMobile,
+} from '@/components/ui';
 
 type TItem = {
 	id: number;
@@ -33,9 +40,8 @@ const DropListLinkComponent = (props: TDropListProps) => {
 	};
 
 	const onTopic = (href: string) => {
-		setIsActive(!isActive);
 		router.push(href);
-
+		setIsActive(!isActive);
 	};
 
 	const [isActive, setIsActive] = useState(false);
@@ -43,21 +49,41 @@ const DropListLinkComponent = (props: TDropListProps) => {
 
 	return (
 		<section className={dropList}>
-			<button className={styles.title} onClick={() => setIsActive(!isActive)}>
+			<button
+				className={clsx(styles.title, styles.desktop)}
+				onClick={() => setIsActive(!isActive)}>
 				<h2 className={styles.titleText}>{title}</h2>
 				<UpChevronGreyIcon />
 			</button>
+			<button
+				className={clsx(styles.title, styles.mobile)}
+				onClick={() => setIsActive(!isActive)}>
+				<h2 className={styles.titleText}>{currentItem}</h2>
+				<MobileMenuIcon />
+			</button>
 			<nav className={styles.menu}>
 				<ul className={styles.menuItems}>
+					<li className={clsx(styles.mobileMenuTitle, styles.mobile)}>
+						<h3 className={styles.mobileMenuTitleText}>Тематика курса</h3>
+						<button onClick={() => setIsActive(!isActive)}>
+							<CloseIconMobile />
+						</button>
+					</li>
 					{items?.map((item) => (
 						<li
 							className={clsx(styles.menuItemWrapper, {
 								[styles.activeItem]: currentItem === item.topic,
 							})}
 							key={item.id}>
-							<button className={styles.menuItem} onClick={() => onTopic(createPageURL(item.topic))}>
+							<label className={styles.radioLabel}>
+								<input
+									className={styles.radioInput}
+									type="radio"
+									name="radio"
+									onChange={() => onTopic(createPageURL(item.topic))}
+								/>
 								{item.topic}
-							</button>
+							</label>
 						</li>
 					))}
 				</ul>
@@ -67,3 +93,31 @@ const DropListLinkComponent = (props: TDropListProps) => {
 };
 
 export default DropListLinkComponent;
+
+/*
+			<nav className={styles.menu} onClick={() => setIsActive(!isActive)}>
+						<button
+								className={clsx(styles.menuItem, styles.desktop)}
+								onClick={() => { onTopic(createPageURL(item.topic))}}>
+								{item.topic}
+						</button>
+						<label className={clsx(styles.radioLabel, styles.mobile)}>
+							<input 
+								className={styles.radioInput}
+								type='radio'
+								name='radio'
+								onChange={() => onTopic(createPageURL(item.topic))}
+							/>
+							{item.topic}
+      			</label>
+						<label className={styles.radioLabel}>
+							<input 
+								className={styles.radioInput}
+								type='radio'
+								name='radio'
+								onChange={() => onTopic(createPageURL(item.topic))}
+							/>
+							{item.topic}
+      			</label>
+
+*/

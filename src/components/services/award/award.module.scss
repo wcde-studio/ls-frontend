@@ -1,19 +1,52 @@
+@import '@/app/global-variables.scss';
+
 .award {
 	display: flex;
 	flex-direction: column;
-	gap: 16px;
+	//	gap: 16px;
 	justify-content: flex-start;
 	align-items: center;
-	padding: 8px 0px;
+	//	padding: 8px 0px;
+}
+
+@media screen and (min-device-width: $desktop-min-width) {
+	.award {
+		gap: 16px;
+		padding: 8px 0px;
+	}
+}
+
+@media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {
+	.award {
+		gap: 8px;
+		padding: 0px 0px;
+		> svg {
+			width: 40px;
+			height: 40px;
+		}
+	}
 }
 
 .text {
 	font-family: var(--font-family);
 	font-weight: 400;
-	font-size: 18px;
+	//	font-size: 18px;
 	line-height: 133%;
 	text-align: center;
 	color: var(--dark-grey);
 	overflow-wrap: break-word;
-	width: 165px;
+	//width: 165px;
+}
+@media screen and (min-device-width: $desktop-min-width) {
+	.text {
+		font-size: 18px;
+		width: 165px;
+	}
+}
+
+@media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {
+	.text {
+		font-size: 12px;
+		width: 148px;
+	}
 }

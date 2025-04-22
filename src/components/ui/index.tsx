@@ -9,10 +9,6 @@ import VKIcon from './icons/vk-icon';
 import DownChevronIcon from './icons/down-chevron-icon';
 import UpChevronGreyIcon from './icons/up-chevron-grey-icon';
 import UpChevronIcon from './icons/up-chevron-icon';
-//import PlusIcon from './icons/plus';
-//import PreviousIcon from './icons/previous';
-//import NextIcon from './icons/next';
-//import EditIcon from './icons/edit';
 
 import TeamIcon from './icons/awards/team-icon';
 import GameIcon from './icons/awards/game-icon';
@@ -33,16 +29,30 @@ import EyeOpenIcon from './icons/eye-open-icon';
 import EditIcon from './icons/edit-icon';
 import ExitIcon from './icons/exit-icon';
 import CalendarIcon from './icons/calendar-icon';
+import CalendarIconMobile from './icons/calendar-icon-mobile';
+
 import CalendarBigIcon from './icons/calendar-big-icon';
 import ClockIcon from './icons/clock-icon';
+import ClockIconMobile from './icons/clock-icon-mobile';
+
 import ClockBigIcon from './icons/clock-big-icon';
 import PlaceIcon from './icons/place-icon';
+import PlaceIconMobile from './icons/place-icon-mobile';
+
 import PlaceBigIcon from './icons/place-big-icon';
 
 import Button from './button/button';
 import IconButton from './button/icon-button/icon-button';
 import Input from './input/input';
 import CheckboxIcon from './icons/checkbox-icon';
+import MenuIcon from './icons/menu-icon';
+import CheckboxRoundIcon from './icons/checkbox-round-icon';
+import CheckboxRingIcon from './icons/checkbox-ring-icon';
+import MobileMenuIcon from './icons/mobile-menu-icon';
+import CloseIconMobile from './icons/close-icon-mobile';
+import UpChevronBlueIcon from './icons/up-chevron-blue-icon';
+import RightArrowMobileIcon from './icons/right-arrow-mobile-icon';
+import DownChevronMobileIcon from './icons/down-chevron-mobile-icon';
 
 export {
 	LogoIcon,
@@ -53,6 +63,7 @@ export {
 	VKIcon,
 	DownChevronIcon,
 	UpChevronGreyIcon,
+	UpChevronBlueIcon,
 	UpChevronIcon,
 	TeamIcon,
 	GameIcon,
@@ -75,11 +86,21 @@ export {
 	EditIcon,
 	ExitIcon,
 	ClockIcon,
+	ClockIconMobile,
 	ClockBigIcon,
 	CalendarIcon,
+	CalendarIconMobile,
 	CalendarBigIcon,
 	Input,
 	CheckboxIcon,
 	PlaceIcon,
+	PlaceIconMobile,
 	PlaceBigIcon,
+	MenuIcon,
+	MobileMenuIcon,
+	CheckboxRoundIcon,
+	CheckboxRingIcon,
+	CloseIconMobile,
+	RightArrowMobileIcon,
+	DownChevronMobileIcon,
 };

@@ -1,3 +1,5 @@
+@import '@/app/global-variables.scss';
+
 %mainFont {
 	font-family: var(--font-family);
 	font-weight: 700;
@@ -19,13 +21,36 @@
 	cursor: pointer;
 	background: var(--violet);
 	border-radius: 4px;
-	padding: 16px 20px;
+	//	padding: 16px 20px;
+}
+
+@media screen and (min-device-width: $desktop-min-width) {
+	.title {
+		padding: 16px 20px;
+	}
+}
+
+@media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {
+	.title {
+		padding: 10px 16px;
+	}
 }
 
 .titleText {
 	@extend %mainFont;
-	font-size: 24px;
 	line-height: 125%;
+}
+
+@media screen and (min-device-width: $desktop-min-width) {
+	.titleText {
+		font-size: 24px;
+	}
+}
+
+@media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {
+	.titleText {
+		font-size: 16px;
+	}
 }
 
 .title {
@@ -55,47 +80,144 @@
 	background: var(--violet);
 	padding: 0px 20px 0px 20px;
 }
+@media screen and (min-device-width: $desktop-min-width) {
+}
+
+@media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {
+}
 
 .subtitle {
 	@extend %mainFont;
-	font-size: 20px;
 	line-height: 120%;
-	padding-top: 20px;
+}
+@media screen and (min-device-width: $desktop-min-width) {
+	.subtitle {
+		font-size: 20px;
+		padding-top: 20px;
+	}
+}
+
+@media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {
+	.subtitle {
+		font-weight: 400;
+		font-size: 12px;
+		padding-top: 16px;
+	}
 }
 
 .descriptionList {
 	padding: 40px 0px 0px 25px;
 }
+@media screen and (min-device-width: $desktop-min-width) {
+	.descriptionList {
+		padding: 40px 0px 0px 25px;
+	}
+}
+
+@media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {
+	.descriptionList {
+		padding: 8px 0px 0px 16px;
+	}
+}
 
 .descriptionItem {
-	padding-top: 16px;
 	list-style-type: disc;
 	list-style-position: outside;
 	color: var(--white);
 }
+@media screen and (min-device-width: $desktop-min-width) {
+	.descriptionItem {
+		padding-top: 16px;
+	}
+}
+
+@media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {
+	.descriptionItem {
+		padding-top: 8px;
+	}
+}
 
 .descriptionItem_text {
 	@extend %mainFont;
-	font-weight: 400;
-	font-size: 20px;
 }
 
-.buttonWrapper {
-	max-width: 280px;
-	padding-top: 24px;
-	padding-bottom: 20px;
+@media screen and (min-device-width: $desktop-min-width) {
+	.descriptionItem_text {
+		font-weight: 400;
+		font-size: 20px;
+	}
 }
 
-.note {
-	@extend %mainFont;
-	font-size: 24px;
-	padding-top: 40px;
+@media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {
+	.descriptionItem_text {
+		font-weight: 400;
+		font-size: 12px;
+	}
 }
 
 .servicesWrapper {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-	row-gap: 40px;
-	justify-items: center;
-	padding-top: 40px;
+}
+
+@media screen and (min-device-width: $desktop-min-width) {
+	.servicesWrapper {
+		grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+		row-gap: 40px;
+		justify-items: center;
+		padding-top: 40px;
+	}
+}
+
+@media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {
+	.servicesWrapper {
+		grid-template-columns: auto;
+		row-gap: 20px;
+		justify-items: center;
+		padding-top: 32px;
+	}
+}
+
+.note {
+	@extend %mainFont;
+}
+@media screen and (min-device-width: $desktop-min-width) {
+	.note {
+		font-size: 24px;
+		padding-top: 40px;
+	}
+}
+
+@media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {
+	.note {
+		font-size: 12px;
+		padding-top: 32px;
+	}
+}
+
+@media screen and (min-device-width: $desktop-min-width) {
+	.buttonWrapper {
+		max-width: 280px;
+		padding-top: 24px;
+		padding-bottom: 20px;
+	}
+}
+
+@media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {
+	.buttonWrapper {
+		width: 100%;
+		padding-top: 28px;
+		padding-bottom: 16px;
+	}
+}
+
+@media screen and (min-device-width: $desktop-min-width) {
+	.mobile {
+		display: none;
+	}
+}
+
+@media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {
+	.desktop {
+		display: none;
+	}
 }

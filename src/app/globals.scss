@@ -1,3 +1,8 @@
+//@import url(https://db.onlinewebfonts.com/c/be6f31338eebea6cc5467e978fe98ea1?family=Miama+Nueva);
+@font-face {
+	font-family: 'Miama Nueva';
+	src: url('./styles//fonts//miamanueva.ttf') format('truetype');
+}
 :root {
 	--white: #fff;
 	--beige-bg: #fdf6f2;
@@ -30,8 +35,10 @@
 }
 
 :root {
+	--mobile-max-width: 480px;
 	--mobile-min-width: 360px;
-	--desctop-max-width: 1440px;
+	--desktop-min-width: 481px;
+	--desktop-max-width: 1110px;
 }
 
 /*

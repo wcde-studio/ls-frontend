@@ -1,14 +1,29 @@
+@import '@/app/global-variables.scss';
+
 .courses {
 	display: flex;
 	flex-direction: column;
-	gap: 64px;
+	//gap: 64px;
 }
 
 .coursesList {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-	gap: 24px;
-	justify-items: center;
+}
+
+@media screen and (min-device-width: $desktop-min-width) {
+	.coursesList {
+		grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+		gap: 24px;
+		justify-items: center;
+	}
+}
+
+@media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {
+	.coursesList {
+		grid-template-rows: auto;
+		gap: 16px;
+		justify-items: center;
+	}
 }
 
 .paginationWrapper {

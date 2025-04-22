@@ -196,18 +196,18 @@ export async function getCourseTopics() {
 		fields: ['topic'],
 	};
 
-	const topicNames:Array<string> = [];
+	const topicNames: Array<string> = [];
 	const topicsUnique = [];
 
-	const data =  await getServerData(path, searchParams);
+	const data = await getServerData(path, searchParams);
 	const topics = data?.data;
 
 	for (let i = 0; i < topics.length; i++) {
-		if(!topicNames.includes(topics[i].topic)) {
+		if (!topicNames.includes(topics[i].topic)) {
 			topicNames.push(topics[i]?.topic);
 			topicsUnique.push(topics[i]);
 		}
 	}
-	
+
 	return topicsUnique;
 }

@@ -1,3 +1,11 @@
+@import '@/app/global-variables.scss';
+
+@media screen and (min-device-width: $desktop-min-width) {
+}
+
+@media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {
+}
+
 .container {
 }
 
@@ -21,5 +29,15 @@
 .propertyText {
 	@extend %mainFont;
 	font-weight: 400;
-	font-size: 14px;
+}
+@media screen and (min-device-width: $desktop-min-width) {
+	.propertyText {
+		font-size: 14px;
+	}
+}
+
+@media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {
+	.propertyText {
+		font-size: 12px;
+	}
 }

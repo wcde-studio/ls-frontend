@@ -1,8 +1,4 @@
-.review {
-	width: 354px;
-	height: 199px;
-	background-color: var(--white);
-}
+@import '@/app/global-variables.scss';
 
 %mainFont {
 	font-family: var(--font-family);
@@ -14,16 +10,47 @@
 
 .reviewName {
 	@extend %mainFont;
-	padding: 20px 20px 8px 20px;
+}
+
+@media screen and (min-device-width: $desktop-min-width) {
+	.reviewName {
+		padding: 20px 20px 8px 20px;
+	}
+}
+
+@media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {
+	.reviewName {
+		padding: 16px;
+		font-size: 16px;
+		//		padding: 20px 20px 8px 20px;
+	}
 }
 
 .reviewSentences {
 	@extend %mainFont;
-	font-weight: 400;
-	height: 127px;
-	display: flex;
-	flex-direction: column;
-	gap: 8px;
-	padding: 0px 20px 0px 20px;
-	overflow-y: hidden;
+}
+
+@media screen and (min-device-width: $desktop-min-width) {
+	.reviewSentences {
+		font-weight: 400;
+		height: 127px;
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+		padding: 0px 20px 0px 20px;
+		overflow-y: hidden;
+	}
+}
+
+@media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {
+	.reviewSentences {
+		font-weight: 400;
+		font-size: 14px;
+		height: 90px;
+		//display: flex;
+		//flex-direction: column;
+		//gap: 8px;
+		overflow: hidden;
+		padding: 0px 16px 0px 16px;
+	}
 }
