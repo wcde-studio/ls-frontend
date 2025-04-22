@@ -3,28 +3,27 @@
 .slider {
 	display: flex;
 	flex-direction: column;
-	//	gap: 40px;
-	//	border: 1px solid red;
-	//	a {
-	//		max-width: 354px;
-	//	}
+//	border: 1px solid red;
+
 }
+
 
 @media screen and (min-device-width: $desktop-min-width) {
 	.slider {
 		gap: 40px;
-
+	//	border: 1px solid red;	
 		a {
 			max-width: 354px;
 		}
 		padding-bottom: 140px;
 	}
-}
+	}
 
 @media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {
 	.slider {
-		gap: 40px;
-
+		gap: 24px;
+	//	border: 1px solid red;
+	
 		a {
 			width: 100%;
 		}
@@ -32,88 +31,60 @@
 	}
 }
 
+
 .sliderWrapper {
 	//width: 100%;
-	//	max-width: 100vw;
-	//	overflow-y: hidden;
-
-	//	height: 239px;
+	max-width: 100vw;
+//	overflow-y: hidden;
+	
 	display: flex;
-	//	justify-content: flex-start;
-	//	align-items: center;
+	justify-content: flex-start;
+	align-items: center;
 }
+
 
 @media screen and (min-device-width: $desktop-min-width) {
 	.sliderWrapper {
-		max-width: 100vw;
-		//	overflow-y: hidden;
-
 		height: 239px;
-		justify-content: flex-start;
-		align-items: center;
 	}
 }
 
 @media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {
 	.sliderWrapper {
-		//width: 100%;
-		max-width: 100vw;
-		overflow: hidden;
-
-		height: 200px;
-		justify-content: flex-start;
-		align-items: center;
+		height: 239px;
 	}
 }
 
 .reviews {
 	position: relative;
 	display: flex;
-	//	justify-content: flex-start;
-	//	align-items: center;
-	//	gap: 24px;
-	//	cursor: pointer;
-}
+	justify-content: flex-start;
+	align-items: center;
+	gap: 24px;
+	cursor: pointer;
 
+	//border: 1px solid green;
+
+}
 @media screen and (min-device-width: $desktop-min-width) {
-	.reviews {
-		justify-content: flex-start;
-		align-items: center;
-		gap: 24px;
-		cursor: pointer;
-	}
 }
 
 @media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {
-	.reviews {
-		position: relative;
-		//position:inherit;
-		display: flex;
-		justify-content: flex-start;
-		align-items: center;
-		gap: 16px;
-		cursor: pointer;
-	}
 }
 
 .review {
+	width: 354px;
+	height: 199px;
 	background-color: var(--white);
 }
 
 @media screen and (min-device-width: $desktop-min-width) {
-	.review {
-		width: 354px;
-		height: 199px;
-	}
 }
 
 @media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {
-	.review {
-		width: 257px;
-		height: 160px;
-	}
 }
 
+/*
 %mainFont {
 	font-family: var(--font-family);
 	font-weight: 700;
@@ -123,12 +94,12 @@
 }
 
 .reviewTitle {
-	//	@extend %mainFont;
-	//	padding: 20px 20px 8px 20px;
+	@extend %mainFont;
+	padding: 20px 20px 8px 20px;
 }
 
 .reviewList {
-	/*	@extend %mainFont;
+	@extend %mainFont;
 	font-weight: 400;
 
 	height: 127px;
@@ -138,8 +109,9 @@
 	gap: 8px;
 	padding: 0px 20px 0px 20px;
 	overflow-y: hidden;
-*/
 }
+*/
+
 
 @keyframes linerMove {
 	from {
@@ -150,37 +122,16 @@
 	}
 }
 
-@media screen and (min-device-width: $desktop-min-width) {
-	.reviews {
-		animation-name: linerMove;
-		animation-duration: 30s;
-		animation-direction: running;
-		animation-iteration-count: infinite;
-		animation-delay: 0s;
-		animation-timing-function: linear;
-	}
+.reviews {
+	animation-name: linerMove;
+	animation-duration: 30s;
+	animation-direction: running;
+	animation-iteration-count: infinite;
+	animation-delay: 0s;
+	animation-timing-function: linear;
+
 }
 
-@media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {
-	.reviews {
-		animation-name: linerMove;
-		animation-duration: 30s;
-		animation-direction: running;
-		animation-iteration-count: infinite;
-		animation-delay: 0s;
-		animation-timing-function: linear;
-	}
-}
-
-@media screen and (min-device-width: $desktop-min-width) {
-	.reviews:hover {
-		animation-play-state: paused;
-	}
-}
-
-@media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {
-	//.reviews:hover, .reviews:active,
-	.reviews:focus {
-		animation-play-state: paused;
-	}
+.reviews:hover {
+	animation-play-state: paused;
 }

@@ -87,7 +87,7 @@
 		justify-items: center;
 		padding-top: 0px;
 	}
-	}
+}
 
 @media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {
 	.coursesList {
@@ -96,7 +96,7 @@
 		justify-items: center;
 		padding-top: 0px;
 	}
-	}
+}
 
 .awardsList {
 	display: grid;
@@ -120,7 +120,6 @@
 		padding-top: 0px;
 	}
 }
-
 
 .diplomaList {
 	display: grid;

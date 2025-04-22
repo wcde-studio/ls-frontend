@@ -1,12 +1,8 @@
 @import '@/app/global-variables.scss';
 
-
-
 @media screen and (min-device-width: $desktop-min-width) {
 	.imageWrapper {
-
 	}
-	
 }
 
 @media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {
@@ -16,5 +12,4 @@
 			width: 148px;
 		}
 	}
-	
 }
