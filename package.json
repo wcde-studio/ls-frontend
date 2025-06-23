@@ -12,6 +12,7 @@
 	"dependencies": {
 		"@reduxjs/toolkit": "^2.2.1",
 		"@types/qs": "^6.9.16",
+		"html-react-parser": "^5.2.5",
 		"next": "14.1.1",
 		"prettier": "^3.2.5",
 		"qs": "^6.13.0",

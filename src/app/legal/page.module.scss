@@ -1,0 +1,27 @@
+@import '@/app/global-variables.scss';
+
+.section {
+	display: flex;
+	flex-direction: column;
+	font-family: var(--font-family);
+	font-weight: 500;
+	color: var(--dark-grey);
+	text-align: start;
+	font-size: 28px;
+
+}
+
+
+@media screen and (min-device-width: $desktop-min-width) {
+	.section {
+		gap: 5px;
+		padding: 140px 0px;
+	}
+}
+
+@media screen and (max-device-width: $mobile-max-width) and (orientation: portrait) {
+	.section {
+		gap: 5px;
+		padding-bottom: 40px;
+	}
+}
