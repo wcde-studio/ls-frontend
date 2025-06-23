@@ -24,10 +24,12 @@ type TCourseIntroProps = {
 	city: string;
 	end: string;
 	duration: string;
+	link: string;
 };
 
 const CourseIntro = (props: TCourseIntroProps) => {
-	const { imageUrl, date, end, duration, city } = props;
+	const { imageUrl, date, end, duration, city, link } = props;
+	console.log(link)
 
 	const dateData = new Date(date);
 	const endData = new Date(end);
@@ -90,7 +92,7 @@ const CourseIntro = (props: TCourseIntroProps) => {
 						</li>
 					</ul>
 				</section>
-				<Link href={'/'} className={styles.desktop}>
+				<Link href={link} className={styles.desktop}>
 					<Button
 						type={ButtonType.Violet}
 						size={ButtonSize.Desctop}

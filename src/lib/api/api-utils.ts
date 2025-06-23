@@ -211,3 +211,20 @@ export async function getCourseTopics() {
 
 	return topicsUnique;
 }
+
+export async function getSitePolicy() {
+	const path = '/api/policy';
+	const searchParams = {
+		populate: true,
+	};
+	return await getServerData(path, searchParams);
+}
+
+
+export async function getLinks() {
+	const path = '/api/links';
+	const searchParams = {
+		populate: true,
+	};
+	return await getServerData(path, searchParams);
+}

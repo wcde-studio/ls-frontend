@@ -23,10 +23,11 @@ type TCourseDescriptionProps = {
 			text: string;
 		}[];
 	}[];
+	link:string;
 };
 
 const CourseDescription = (props: TCourseDescriptionProps) => {
-	const { target, goals, description, title, modules } = props;
+	const { target, goals, description, title, modules, link } = props;
 	const [isActive, setIsActive] = useState(false);
 
 	const accordion = clsx(styles.buttonDescription, {
@@ -96,7 +97,7 @@ const CourseDescription = (props: TCourseDescriptionProps) => {
 							: null}
 					</ul>
 				</section>
-				<Link href={'/'}>
+				<Link href={link}>
 					<Button
 						type={ButtonType.Violet}
 						size={ButtonSize.Desctop}

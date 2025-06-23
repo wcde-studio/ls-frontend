@@ -53,7 +53,7 @@ const Footer = async () => {
 			<section className={styles.privacyPolicy}>
 				<div className={styles.privacyPolicyWrapper}>
 					<div className={styles.privacyPolicyLink}>
-						<Link href={'/'}>Пользовательское соглашение</Link>
+						<Link href={'/legal'}>Пользовательское соглашение</Link>
 					</div>
 					<div className={styles.creators}>
 						<div className={clsx(styles.creatorsName, styles.mobile)}>
